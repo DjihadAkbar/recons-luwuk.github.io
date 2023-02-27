@@ -1,0 +1,71 @@
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    transition: all 0.3s;
+    height: 100%;
+    z-index: 0;
+}
+
+img#logo-asdp {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+}
+ul.menu {
+    list-style: none;
+    padding: 0px;
+
+}
+ul.menu li a{
+    padding: 10px 20px;
+    font-size: 1,1em;
+    display: block;
+color: white;
+text-decoration: none;
+}
+
+ul.menu li a:hover{
+background:#484be9;
+
+}
+
+ul.menu li.active > a{
+background:#3a5a75;
+
+}
+
+@media screen and (max-width: 767px) { 
+    #sidebar { 
+    width: 200px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    transition: all 0.3s;
+    height: 100%;
+
+    }
+}
+
+#sidebar.tutup {
+    margin-left: -250px;
+}
+
+#sidebar.layarPenuh {
+    width: 100%;
+}
+
+/* .dropdown-sidebar-asdp::after{
+    position: absolute;
+    display: block;
+    right: 20px;
+} */
+
+ul ul li a {
+    background: #7091ac;
+    padding-left: 40px !important;
+}
