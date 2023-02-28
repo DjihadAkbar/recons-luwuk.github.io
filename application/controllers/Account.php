@@ -6,12 +6,12 @@ class Account extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('User_model');
     }
     public function index()
     {
         $data['title'] = 'Account';
-        $data['contentView'] = 'pages/';
+        $data['contentView'] = 'pages/account/account';
+        $data['account'] = $this->User_model->account();
 
         $this->load->view('template/dashboard/body', $data);
         // $this->load->view('pages/dashboard', $data);

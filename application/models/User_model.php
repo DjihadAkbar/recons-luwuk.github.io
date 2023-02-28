@@ -16,6 +16,14 @@ class User_model extends CI_Model
         return $row;
     }
 
+    public function account(){
+        if ($this->session->userdata('logged_in'))
+            $username = $this->session->userdata['username'];
+        $this->db->select('*');
+        $this->db->where('username', $username);
+        return $this->db->get('users')->result_array();
+    }
+
     public function insertTrip($data)
     {
         $this->db->insert('trips', $data);

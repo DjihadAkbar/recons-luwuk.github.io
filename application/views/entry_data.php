@@ -93,7 +93,7 @@
 
                         <div class="col">
                             <input class="form-control" type="date" id="tanggal_berangkat" name="tanggal_berangkat"
-                                value="2022-11-01" min="2022-11-01" max="2023-12-31">
+                                value="2022-11-01" min="2022-11-01">
                         </div>
                     </div>
                     <!-- Input Jumlah Produksi -->

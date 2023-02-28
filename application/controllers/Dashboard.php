@@ -6,7 +6,6 @@ class Dashboard extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
-        $this->load->model('User_model');
         $this->load->helper('tgl_indo');
     }
     public function index()

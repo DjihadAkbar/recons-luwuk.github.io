@@ -26,11 +26,11 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="tanggal_berlaku" class="col-4 label-wrap"> TANGGAL BERLAKU </label>
+                <label for="tanggal_berangkat" class="col-4 label-wrap"> TANGGAL BERLAKU </label>
                 
                 <div class="col">
-                    <input class="form-control" type="date" id="tanggal_berlaku" name="tanggal_berlaku" value="2022-11-01"
-                    min="2022-11-01" max="2023-12-31">
+                    <input class="form-control" type="date" id="tanggal_berangkat" name="tanggal_berangkat" value="2022-11-01"
+                    min="2022-11-01">
                 </div>
             </div>
         </li>
@@ -44,7 +44,7 @@
                     </label>
                     <div class="col">
                         <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
-                            id="<?php echo $row['id_production']; ?>" value="0" min="0" required>
+                            id="<?php echo $row['id_production']; ?>" placeholder="0" min="0" required>
                     </div>
                 </div>
                 <?php
@@ -55,7 +55,7 @@
                     BARANG VOLUME
                 </label>
                 <div class="col">
-                    <input type="number" class="form-control" name="barang_volume" id="barang_volume" value="0"
+                    <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0"
                         min="0" placeholder="Jumlah Volume">
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 </label>
                 <div class="col">
                     <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
-                        value="0" min="0" placeholder="Jumlah Volume">
+                        placeholder="0" min="0" placeholder="Jumlah Volume">
                 </div>
             </div>
         </li>
@@ -83,7 +83,7 @@
                                 </label>
                                 <div class="col">
                                     <input type="number" name="<?php echo $row['id_production'] . "TJP"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "TJP"; ?>" value="0" min="0" required>
+                                        id="<?php echo $row['id_production'] . "TJP"; ?>" placeholder="0" min="0" required>
                                 </div>
                             </div>
                             <?php
@@ -104,7 +104,7 @@
                                 </label>
                                 <div class="col">
                                     <input type="number" name="<?php echo $row['id_production'] . "IW"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "IW"; ?>" value="0" min="0" required>
+                                        id="<?php echo $row['id_production'] . "IW"; ?>" placeholder="0" min="0" required>
                                 </div>
                             </div>
                             <?php

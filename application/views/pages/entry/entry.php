@@ -50,18 +50,6 @@
                     <option value="EXTRA TRIP">
                         EXTRA TRIP
                     </option>
-                    <option value="OFF REGULER">
-                        OFF REGULER
-                    </option>
-                    <option value="OFF CUACA EKSTRIM">
-                        OFF CUACA EKSTRIM
-                    </option>
-                    <option value="OFF RUSAK">
-                        OFF RUSAK
-                    </option>
-                    <option value="OFF DOCKING">
-                        OFF DOCKING
-                    </option>
                 </select>
                 <?php
                 echo form_error('trip');
@@ -85,7 +73,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="tanggal_berangkat" class="col-4 label-wrap"> Tanggal Operasi </label>
+            <label for="tanggal_berangkat" class="col-4 label-wrap"> Tanggal Berangkat </label>
 
             <div class="col-8">
                 <input class="form-control" type="date" id="tanggal_berangkat" name="tanggal_berangkat"
@@ -93,7 +81,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="waktu_berangkat" class="col-4 label-wrap"> Waktu Operasi </label>
+            <label for="waktu_berangkat" class="col-4 label-wrap"> Waktu Berangkat </label>
             <div class="col">
                 <input class="form-control" type="time" id="waktu_berangkat" name="waktu_berangkat">
             </div>
@@ -106,7 +94,7 @@
                 </label>
                 <div class="col">
                     <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
-                        id="<?php echo $row['id_production']; ?>" value="0" min="0" required>
+                        id="<?php echo $row['id_production']; ?>" placeholder="0" min="0" required>
                 </div>
             </div>
             <?php
@@ -116,47 +104,47 @@
 
         <div class="form-group row ">
             <label for="hewan" class="col-4 label-wrap">
-                Hewan
+                HEWAN
             </label>
             <div class="col">
-                <input type="number" class="form-control" name="hewan" id="hewan" placeholder="500000" value="0" min="0"
+                <input type="number" class="form-control" name="hewan" id="hewan" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
             </div>
         </div>
         <div class="form-group row ">
             <label for="gayor" class="col-4 label-wrap">
-                Gayor
+                GAYOR
             </label>
             <div class="col">
-                <input type="number" class="form-control" name="gayor" id="gayor" placeholder="500000" value="0" min="0"
+                <input type="number" class="form-control" name="gayor" id="gayor" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
             </div>
         </div>
         <div class="form-group row ">
             <label for="carter" class="col-4 label-wrap">
-                Carter
+                CARTER
             </label>
             <div class="col">
-                <input type="number" class="form-control" name="carter" id="carter" placeholder="500000" value="0"
+                <input type="number" class="form-control" name="carter" id="carter" placeholder="0"
                     min="0" placeholder="Jumlah Volume">
             </div>
         </div>
         <div class="form-group row ">
             <label for="barang_volume" class="col-4 label-wrap">
-                Barang Volume
+                BARANG VOLUME (JUMLAH BARANG CURAH)
             </label>
             <div class="col">
-                <input type="number" class="form-control" name="barang_volume" id="barang_volume" value="0" min="0"
+                <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
             </div>
         </div>
         <div class="form-group row ">
             <label for="barang_pendapatan" class="col-4 label-wrap">
-                Barang Pendapatan
+                BARANG PENDAPATAN (CURAH)
             </label>
             <div class="col">
                 <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
-                    placeholder="500000" value="0" min="0" placeholder="Jumlah Volume">
+                    placeholder="5000000" min="0" placeholder="Jumlah Volume">
             </div>
         </div>
         <?php

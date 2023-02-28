@@ -84,6 +84,7 @@ foreach($editData as $row){
                 <select class="form-control" name="trip" id="trip" required>
                     <option value="">No Selected</option>
                     <?php foreach ($trip as $row): ?>
+                    <?php if(!str_contains($row['id'], 'OFF')) {?>
                     <?php if($row['id'] == $dataTrip) {?>
                         <option value="<?php echo $row['id'];?>" selected>
                             <?php echo $row['id']; ?>
@@ -93,6 +94,7 @@ foreach($editData as $row){
                             <?php echo $row['id']; ?>
                         </option>
                         <?php 
+                            }
                         }
                         ?>
                         <?php endforeach; ?>
@@ -126,53 +128,33 @@ foreach($editData as $row){
                 ?>
             </div>
         </div>
-        <div class="form-group row">
-            <label for="jenis_tarif" class="col-4 label-wrap"> Jenis Tarif </label>
-            <div class="col">
-                <select class="form-control" name="jenis_tarif" id="jenis_tarif" required>
-                    <option value="">No Selected</option>
-                    <?php foreach ($tarif as $row): ?>
-                        <?php if($row['tarif'] == $dataTarif) {?>
-                        <option value="<?php echo $row['tarif'];?>" selected>
-                            <?php echo $row['tarif']; ?>
-                        </option>
-                        <?php } else { ?>
-                        <option value="<?php echo $row['tarif']; ?>">
-                            <?php echo $row['tarif']; ?>
-                        </option>
-                        <?php 
-                        }
-                        ?>
-                    <?php endforeach; ?>
-                </select>
-                <?php
-                echo form_error('pelabuhan_asal');
-                ?>
-            </div>
-        </div>
 
         <div class="form-group row">
-            <label for="tanggal_berangkat" class="col-4 label-wrap"> Tanggal Operasi </label>
+            <label for="edit_tanggal_berangkat" class="col-4 label-wrap"> Tanggal Berangkat </label>
 
             <div class="col-8">
-                <input class="form-control" type="date" id="tanggal_berangkat" name="tanggal_berangkat"
-                value=<?php echo $dataTanggal;?> min="2022-11-01" max="2023-12-31">
+                <input class="form-control" type="date" id="edit_tanggal_berangkat" name="edit_tanggal_berangkat"
+                value=<?php echo $dataTanggal;?> min="2022-11-01">
             </div>
         </div>
         <div class="form-group row">
-            <label for="waktu_berangkat" class="col-4 label-wrap"> Waktu Operasi </label>
+            <label for="edit_waktu_berangkat" class="col-4 label-wrap"> Waktu Berangkat </label>
             <div class="col">
-                <input class="form-control" type="time" id="waktu_berangkat" name="waktu_berangkat" value=<?php echo $dataWaktu;?>>
+                <input class="form-control" type="time" id="edit_waktu_berangkat" name="edit_waktu_berangkat" value=<?php echo $dataWaktu;?>>
             </div>
         </div>
         <!-- Input Jumlah Produksi -->
-        <?php $no = ""; foreach ($produksi as $row) { ?>
+        <?php $no = ""; 
+        foreach ($produksi as $row) { 
+            foreach($editData as $baris){
+                foreach($baris as $key => $baris){
+                    if($key == $row['id_production']){
+            ?>
             <div class="form-group row ">
                 <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
                     <?php echo $row['produksi']; ?>
                 </label>
                 <div class="col">
-                    
                     <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
                         id="<?php echo $row['id_production']; ?>" value=
                         <?php
@@ -183,12 +165,14 @@ foreach($editData as $row){
                                     }
                                 }
                             }
-
                         ?>
                         min="0" required>
                 </div>
             </div>
             <?php
+                    }
+                }
+            }
         }
         ?>
         <!-- Akhir Input Jumlah Produksi -->

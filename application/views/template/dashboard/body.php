@@ -13,16 +13,11 @@ if (!$this->session->userdata('logged_in'))
             ?>">
                 <?php echo anchor('dashboard', 'Dashboard') ?>
             </li>
-            <li class="<?php
-            echo menuAktif('account');
-            ?>">
-                <?php echo anchor('dashboard/account', 'Account') ?>
-            </li>
-            <li class="<?php
+            <!-- <li class="<?php
             echo menuAktif('machine');
             ?>">
                 <?php echo anchor('dashboard/machine', 'Mesin') ?>
-            </li>
+            </li> -->
             <li class="<?php
             echo menuAktif('entry');
             ?>">
@@ -44,7 +39,7 @@ if (!$this->session->userdata('logged_in'))
                     </li>
                 </ul>
             </li>
-            <li class="<?php
+            <!-- <li class="<?php
             echo menuAktif('administrasi');
             ?>">
                 <a href=" #administrasi" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp"
@@ -58,7 +53,7 @@ if (!$this->session->userdata('logged_in'))
                         <?php echo anchor('dashboard/kategori', 'Kategori') ?>
                     </li>
                 </ul>
-            </li>
+            </li> -->
             <li class="<?php
             echo menuAktif('report');
             ?>">
@@ -73,6 +68,11 @@ if (!$this->session->userdata('logged_in'))
                         <?php echo anchor('dashboard/kategori', 'Kategori') ?>
                     </li>
                 </ul>
+            </li>
+            <li class="<?php
+            echo menuAktif('account');
+            ?>">
+                <?php echo anchor('dashboard/account', 'Account') ?>
             </li>
             <li class="<?php
             echo menuAktif('Logout');
@@ -246,6 +246,9 @@ if (!$this->session->userdata('logged_in'))
                 $(this).addClass('selected');
             }
         });
+        
+
+    document.getElementById("tanggal_berangkat").valueAsDate = new Date();
     });
 </script>
 <?php $this->load->view('template/dashboard/footer'); ?>
