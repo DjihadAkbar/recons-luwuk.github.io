@@ -8,7 +8,7 @@
         <?php echo $title; ?>
     </title>
 
-    <link rel="icon" href="<?php echo base_url('assets/images/Logo_ASDP.png'); ?>" type="image/icon type">
+    <link rel="icon" href="<?php echo base_url('assets/images/TitleBarLogo_ASDP.png'); ?>">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

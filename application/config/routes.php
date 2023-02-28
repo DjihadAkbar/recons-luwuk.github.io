@@ -80,6 +80,8 @@ $route['dashboard/master/pelabuhan'] = 'master/pelabuhan';
 $route['dashboard/master/lintasan'] = 'master/lintasan';
 $route['dashboard/master/kapal'] = 'master/kapal';
 $route['dashboard/master/tarif'] = 'master/tarif';
+$route['dashboard/master/tarif/editDataTarif'] = 'master/editDataTarif';
+$route['dashboard/master/tarif/prosesEditTarif'] = 'master/prosesEditTarif';
 $route['dashboard/master/tarif/tambahTarif'] = 'master/tambahTarif';
 $route['dashboard/master/tarif/prosesTambahTarif'] = 'master/prosesTambahTarif';
 

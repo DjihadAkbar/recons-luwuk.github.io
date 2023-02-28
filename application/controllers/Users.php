@@ -11,6 +11,11 @@ class Users extends CI_Controller
         $this->load->model('User_model');
     }
 
+    public function index(){
+        $data['title'] = "Revenue Controlling System - Luwuk";
+        $this->load->view('landingPage', $data);
+    }
+
     public function entry()
     {
         $data['title'] = "Entry Data";

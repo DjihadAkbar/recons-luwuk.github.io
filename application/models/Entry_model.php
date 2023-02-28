@@ -12,7 +12,6 @@ class Entry_model extends CI_Model
         $this->db->join('ferry', 'routes.id_ferry = ferry.id');
         $this->db->group_by('monthname(date), route');
         return $this->db->get('daily_income')->result_array();
-
     }
 
     public function entryData()
@@ -80,8 +79,12 @@ class Entry_model extends CI_Model
 
     public function rate()
     {
-        $this->db->select('*');
+        $pelabuhan = $this->session->userdata['pelabuhan'];
+        $this->db->select('*,rate.id as id_rate');
         $this->db->join('routes', 'routes.id = rate.id_route');
+        if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $this->db->where('routes.spv', $pelabuhan);
+        }
         $query = $this->db->get('rate')->result_array();
         return $query;
     }
@@ -105,6 +108,24 @@ class Entry_model extends CI_Model
         $this->db->order_by('start_date ASC');
         $query = $this->db->get('rate')->result_array();
         return $query;
+    }
+
+    public function editTarif($data, $id){
+        $this->db->where('rate.id', $id);
+        $this->db->update('rate', $data);
+    }
+
+    public function editDataTarif($id){
+        $this->db->select('*');
+        $this->db->join('routes', 'routes.id = rate.id_route');
+        $this->db->where('rate.id', $id);
+        
+        return $this->db->get('rate')->result_array();
+    }
+
+    public function deleteTarif($id){
+        $this->db->where('rate.id', $id);
+        $this->db->delete('rate');
     }
 
     public function kapal_spv()
