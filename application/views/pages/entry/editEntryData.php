@@ -6,6 +6,8 @@ $dataTrip = '';
 $dataTanggal = ''; 
 $dataWaktu = ''; 
 $dataTarif = '';
+$dataBarangPendapatanSeriAwal = '';
+$dataBarangPendapatanSeriAkhir = '';
 $dataBarangPendapatan = '';
 $dataBarangVolume = '';
 foreach($editData as $row){
@@ -16,6 +18,8 @@ foreach($editData as $row){
     $dataTanggal = $row['date']; 
     $dataWaktu = $row['time']; 
     $dataTarif = $row['rate_type'];
+    $dataBarangPendapatanSeriAwal = $row['BarangPendapatanSerial_start'];
+    $dataBarangPendapatanSeriAkhir = $row['BarangPendapatanSerial_end'];
     $dataBarangPendapatan = $row['BarangPendapatan'];
     $dataBarangVolume = $row['BarangVolume'];
 }
@@ -156,7 +160,7 @@ foreach($editData as $row){
                 </label>
                 <div class="col">
                     <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
-                    id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder=<?php
+                    id="<?php echo $row['id_production']."Serial_start"; ?>" value="<?php
                             foreach($editData as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."Serial_start"){
@@ -168,7 +172,7 @@ foreach($editData as $row){
                 </div>
                 <div class="col">
                     <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
-                    id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php
+                    id="<?php echo $row['id_production']."Serial_end"; ?>" value="<?php
                             foreach($editData as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."Serial_end"){
@@ -202,35 +206,8 @@ foreach($editData as $row){
         <!-- Akhir Input Jumlah Produksi -->
 
         <div class="form-group row ">
-            <label for="hewan" class="col-4 label-wrap">
-                Hewan
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="hewan" id="hewan" placeholder="500000" value="0" min="0"
-                    placeholder="Jumlah Volume">
-            </div>
-        </div>
-        <div class="form-group row ">
-            <label for="gayor" class="col-4 label-wrap">
-                Gayor
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="gayor" id="gayor" placeholder="500000" value="0" min="0"
-                    placeholder="Jumlah Volume">
-            </div>
-        </div>
-        <div class="form-group row ">
-            <label for="carter" class="col-4 label-wrap">
-                Carter
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="carter" id="carter" placeholder="500000" value="0"
-                    min="0" placeholder="Jumlah Volume">
-            </div>
-        </div>
-        <div class="form-group row ">
             <label for="barang_volume" class="col-4 label-wrap">
-                Barang Volume
+                JUMLAH BARANG CURAH
             </label>
             <div class="col">
                 <input type="number" class="form-control" name="barang_volume" id="barang_volume" value=<?php echo $dataBarangVolume;?> min="0"
@@ -239,8 +216,16 @@ foreach($editData as $row){
         </div>
         <div class="form-group row ">
             <label for="barang_pendapatan" class="col-4 label-wrap">
-                Barang Pendapatan
+                Barang Pendapatan (BARANG CURAH)
             </label>
+            <div class="col">
+                    <input type="number" name="barang_pendapatan_seri_awal" class="form-control"
+                    id="barang_pendapatan_seri_awal" value="<?php echo $dataBarangPendapatanSeriAwal; ?>" min="0">
+                </div>
+                <div class="col">
+                    <input type="number" name="barang_pendapatan_seri_awal" class="form-control"
+                    id="barang_pendapatan_seri_awal" value=<?php echo $dataBarangPendapatanSeriAkhir; ?> min="0">
+                </div>
             <div class="col">
                 <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
                     placeholder="500000" value=<?php echo $dataBarangPendapatan; ?> min="0" placeholder="Jumlah Volume">
