@@ -19,10 +19,6 @@ foreach($editDataPelabuhan as $row){
         <?php
         echo form_open(base_url('dashboard/master/pelabuhan/prosesEditPelabuhan?id=').$_GET['id'] , ['class' => 'form-entry']);
         ?>
-        
-        <?php $no = ""; 
-        foreach ($pelabuhan as $row) { 
-            ?>
 
             <div class="form-group row ">
                 <label for="pelabuhan" class="col-4 label-wrap">
@@ -69,10 +65,7 @@ foreach($editDataPelabuhan as $row){
                 </div>
             </div>
             
-            
-            <?php
-        }    
-        ?>
+        
 
         
         <?php
