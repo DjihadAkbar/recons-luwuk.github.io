@@ -184,7 +184,7 @@ class Entry extends CI_Controller
             'ANGKPOSSerial_start' => $this->input->post('ANGKPOSSerial_start'),
             'BBMSerial_start' => $this->input->post('BBMSerial_start'),
             'BARTONSerial_start' => $this->input->post('BARTONSerial_start'),
-            'BarangPendapatanSerial_start' => $this->input->post('barang_pendapatan_serial_awal'),
+            'BarangPendapatanSerial_start' => $this->input->post('barang_pendapatan_serial_start'),
             'Gol1Serial_end' => $this->input->post('Gol1Serial_end'),
             'Gol2Serial_end' => $this->input->post('Gol2Serial_end'),
             'Gol3Serial_end' => $this->input->post('Gol3Serial_end'),
@@ -213,7 +213,7 @@ class Entry extends CI_Controller
             'ANGKPOSSerial_end' => $this->input->post('ANGKPOSSerial_end'),
             'BBMSerial_end' => $this->input->post('BBMSerial_end'),
             'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
-            'BarangPendapatanSerial_end' => $this->input->post('barang_pendapatan_serial_akhir'),
+            'BarangPendapatanSerial_end' => $this->input->post('barang_pendapatan_serial_end'),
         ];
         $this->User_model->entry($dataInput);
         redirect('dashboard/entry');
