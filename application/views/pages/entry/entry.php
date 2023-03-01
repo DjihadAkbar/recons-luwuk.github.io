@@ -109,6 +109,7 @@
                     id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                 </div>
             </div>
+            <?php } ?>
             <?php if(str_contains($row['produksi'],"BAYI")){ ?>
                 <div class="form-group row ">
                 <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
@@ -131,7 +132,6 @@
                     }
                 }
             }
-        }
         ?>
         <!-- Akhir Input Jumlah Produksi -->
 
