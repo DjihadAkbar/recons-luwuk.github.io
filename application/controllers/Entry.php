@@ -34,12 +34,33 @@ class Entry extends CI_Controller
     }
 
     public function prosesEditEntryData(){
+        $tahun = 0;
+        $bulan = 0;
+        $tarif = $this->Entry_model->tarif();
+        $lintasan = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        foreach($lintasan as $key => $value){
+            $namaLintasan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
+        }
+        $valueTarif = '';
+        foreach ($tarif as $key => $value) {
+            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $namaLintasan){
+                if(substr($value['tarif'], -2) >= $tahun){
+                    $tahun = substr($value['tarif'], -2);
+                }
+            }
+        }
+        foreach ($tarif as $key => $value) {
+            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $namaLintasan){
+                if($tahun == substr($value['tarif'], -2) && substr($value['tarif'],-4, -2) >= $bulan){
+                    $valueTarif = $value['tarif'];
+                }
+            }
+        }
         $dataInput = [
             'date' => $this->input->post('tanggal_berangkat'),
             'time' => $this->input->post('waktu_berangkat'),
             'id_ferry' => $this->input->post('nama_kapal'),
-            'rate_type' => $this->input->post('jenis_tarif'),
-            // 'rate_type' => $jenisTarif,
+            'rate_type' => $valueTarif,
             'id_route' => $this->input->post('lintasan'),
             'id_harbour' => $this->input->post('pelabuhan_asal'),
             'id_trip' => $this->input->post('trip'),
@@ -68,8 +89,69 @@ class Entry extends CI_Controller
             'Hewan' => $this->input->post('Hewan'),
             'Gayor' => $this->input->post('Gayor'),
             'Carter' => $this->input->post('Carter'),
+            'ANGKPOS' => $this->input->post('ANGKPOS'),
+            'BBM' => $this->input->post('BBM'),
+            'BARTON' => $this->input->post('BARTON'),
             'BarangVolume' => $this->input->post('barang_volume'),
             'BarangPendapatan' => $this->input->post('barang_pendapatan'),
+            'Gol1Serial_start' => $this->input->post('Gol1Serial_start'),
+            'Gol2Serial_start' => $this->input->post('Gol2Serial_start'),
+            'Gol3Serial_start' => $this->input->post('Gol3Serial_start'),
+            'Gol4PenSerial_start' => $this->input->post('Gol4PenSerial_start'),
+            'Gol4BarSerial_start' => $this->input->post('Gol4BarSerial_start'),
+            'Gol5PenSerial_start' => $this->input->post('Gol5PenSerial_start'),
+            'Gol5BarSerial_start' => $this->input->post('Gol5BarSerial_start'),
+            'Gol6PenSerial_start' => $this->input->post('Gol6PenSerial_start'),
+            'Gol6BarSerial_start' => $this->input->post('Gol6BarSerial_start'),
+            'Gol7Serial_start' => $this->input->post('Gol7Serial_start'),
+            'Gol8Serial_start' => $this->input->post('Gol8Serial_start'),
+            'Gol9Serial_start' => $this->input->post('Gol9Serial_start'),
+            'DewasaEksekutifSerial_start' => $this->input->post('DewasaEksekutifSerial_start'),
+            'BayiEksekutifSerial_start' => $this->input->post('BayiEksekutifSerial_start'),
+            'DewasaBisnisSerial_start' => $this->input->post('DewasaBisnisSerial_start'),
+            'BayiBisnisSerial_start' => $this->input->post('BayiBisnisSerial_start'),
+            'DewasaEkonomiSerial_start' => $this->input->post('DewasaEkonomiSerial_start'),
+            'BayiEkonomiSerial_start' => $this->input->post('BayiEkonomiSerial_start'),
+            'Suplesi1DewasaSerial_start' => $this->input->post('Suplesi1DewasaSerial_start'),
+            'Suplesi1AnakSerial_start' => $this->input->post('Suplesi1AnakSerial_start'),
+            'Suplesi2DewasaSerial_start' => $this->input->post('Suplesi2DewasaSerial_start'),
+            'Suplesi2AnakSerial_start' => $this->input->post('Suplesi2AnakSerial_start'),
+            'HewanSerial_start' => $this->input->post('HewanSerial_start'),
+            'GayorSerial_start' => $this->input->post('GayorSerial_start'),
+            'CarterSerial_start' => $this->input->post('CarterSerial_start'),
+            'ANGKPOSSerial_start' => $this->input->post('ANGKPOSSerial_start'),
+            'BBMSerial_start' => $this->input->post('BBMSerial_start'),
+            'BARTONSerial_start' => $this->input->post('BARTONSerial_start'),
+            'BarangPendapatanSerial_start' => $this->input->post('barang_pendapatan_serial_start'),
+            'Gol1Serial_end' => $this->input->post('Gol1Serial_end'),
+            'Gol2Serial_end' => $this->input->post('Gol2Serial_end'),
+            'Gol3Serial_end' => $this->input->post('Gol3Serial_end'),
+            'Gol4PenSerial_end' => $this->input->post('Gol4PenSerial_end'),
+            'Gol4BarSerial_end' => $this->input->post('Gol4BarSerial_end'),
+            'Gol5PenSerial_end' => $this->input->post('Gol5PenSerial_end'),
+            'Gol5BarSerial_end' => $this->input->post('Gol5BarSerial_end'),
+            'Gol6PenSerial_end' => $this->input->post('Gol6PenSerial_end'),
+            'Gol6BarSerial_end' => $this->input->post('Gol6BarSerial_end'),
+            'Gol7Serial_end' => $this->input->post('Gol7Serial_end'),
+            'Gol8Serial_end' => $this->input->post('Gol8Serial_end'),
+            'Gol9Serial_end' => $this->input->post('Gol9Serial_end'),
+            'DewasaEksekutifSerial_end' => $this->input->post('DewasaEksekutifSerial_end'),
+            'BayiEksekutifSerial_end' => $this->input->post('BayiEksekutifSerial_end'),
+            'DewasaBisnisSerial_end' => $this->input->post('DewasaBisnisSerial_end'),
+            'BayiBisnisSerial_end' => $this->input->post('BayiBisnisSerial_end'),
+            'DewasaEkonomiSerial_end' => $this->input->post('DewasaEkonomiSerial_end'),
+            'BayiEkonomiSerial_end' => $this->input->post('BayiEkonomiSerial_end'),
+            'Suplesi1DewasaSerial_end' => $this->input->post('Suplesi1DewasaSerial_end'),
+            'Suplesi1AnakSerial_end' => $this->input->post('Suplesi1AnakSerial_end'),
+            'Suplesi2DewasaSerial_end' => $this->input->post('Suplesi2DewasaSerial_end'),
+            'Suplesi2AnakSerial_end' => $this->input->post('Suplesi2AnakSerial_end'),
+            'HewanSerial_end' => $this->input->post('HewanSerial_end'),
+            'GayorSerial_end' => $this->input->post('GayorSerial_end'),
+            'CarterSerial_end' => $this->input->post('CarterSerial_end'),
+            'ANGKPOSSerial_end' => $this->input->post('ANGKPOSSerial_end'),
+            'BBMSerial_end' => $this->input->post('BBMSerial_end'),
+            'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
+            'BarangPendapatanSerial_end' => $this->input->post('barang_pendapatan_serial_end'),
         ];
         $this->Entry_model->editData($dataInput, $_GET['id']);
         redirect('dashboard/entry');
