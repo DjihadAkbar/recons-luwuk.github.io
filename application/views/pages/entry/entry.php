@@ -109,38 +109,18 @@
         }
         ?>
         <!-- Akhir Input Jumlah Produksi -->
-
-        <div class="form-group row ">
-            <label for="hewan" class="col-4 label-wrap">
-                HEWAN
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="hewan" id="hewan" placeholder="0" min="0"
-                    placeholder="Jumlah Volume">
-            </div>
-        </div>
-        <div class="form-group row ">
-            <label for="gayor" class="col-4 label-wrap">
-                GAYOR
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="gayor" id="gayor" placeholder="0" min="0"
-                    placeholder="Jumlah Volume">
-            </div>
-        </div>
-        <div class="form-group row ">
-            <label for="carter" class="col-4 label-wrap">
-                CARTER
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="carter" id="carter" placeholder="0"
-                    min="0" placeholder="Jumlah Volume">
-            </div>
-        </div>
         <div class="form-group row ">
             <label for="barang_volume" class="col-4 label-wrap">
                 BARANG VOLUME (JUMLAH BARANG CURAH)
             </label>
+            <div class="col">
+                    <input type="number" name="barang_volume_serial_start" class="form-control"
+                    id="barang_volume_serial_start" placeholder="<?php echo "Saldo Awal "?>" min="0">
+            </div>
+            <div class="col">
+                <input type="number" name="barang_volume_serial_end" class="form-control"
+                id="barang_volume_serial_end" placeholder="<?php echo "Saldo Akhir "?>" min="0">
+            </div>
             <div class="col">
                 <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
@@ -151,8 +131,16 @@
                 BARANG PENDAPATAN (CURAH)
             </label>
             <div class="col">
+                    <input type="number" name="barang_pendapatan_serial_start" class="form-control"
+                    id="barang_pendapatan_serial_start" placeholder="<?php echo "Saldo Awal "?>" min="0">
+            </div>
+            <div class="col">
+                <input type="number" name="barang_pendapatan_serial_end" class="form-control"
+                id="barang_pendapatan_serial_end" placeholder="<?php echo "Saldo Akhir "?>" min="0">
+            </div>
+            <div class="col">
                 <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
-                    placeholder="5000000" min="0" placeholder="Jumlah Volume">
+                    placeholder="5000000" min="0" >
             </div>
         </div>
         <?php
