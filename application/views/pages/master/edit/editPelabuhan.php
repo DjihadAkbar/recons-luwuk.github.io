@@ -64,10 +64,6 @@ foreach($editDataPelabuhan as $row){
                         min="0">
                 </div>
             </div>
-            
-        
-
-        
         <?php
         echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
         echo form_close();
