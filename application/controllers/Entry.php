@@ -57,8 +57,8 @@ class Entry extends CI_Controller
             }
         }
         $dataInput = [
-            'date' => $this->input->post('tanggal_berangkat'),
-            'time' => $this->input->post('waktu_berangkat'),
+            'date' => $this->input->post('edit_tanggal_berangkat'),
+            'time' => $this->input->post('edit_waktu_berangkat'),
             'id_ferry' => $this->input->post('nama_kapal'),
             'rate_type' => $valueTarif,
             'id_route' => $this->input->post('lintasan'),
