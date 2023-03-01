@@ -98,7 +98,17 @@
                         id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                     </div>
                 </div>
-                
+                <div class="row">
+                    <div class="col">
+                        <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
+                            id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo $row['id_production']."Serial_start"; ?>" min="0">
+                        </div>
+                    <div class="col">
+                        <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
+                                id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo $row['id_production']."Serial_end"; ?>" min="0">
+                            </div>
+                    </div>
+                </div>
             </div>
             <?php
         }
@@ -109,23 +119,10 @@
             <label for="hewan" class="col-4 label-wrap">
                 HEWAN
             </label>
-            <div class="row">
-                <div class="col">
-                    <input type="number" class="form-control" name="hewan" id="hewan" placeholder="0" min="0"
+            <div class="col">
+                <input type="number" class="form-control" name="hewan" id="hewan" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
-                </div>
             </div>
-            <div class="row">
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
-                            id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
-                        </div>
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
-                                id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
-                            </div>
-                    </div>
-                </div>
         </div>
         <div class="form-group row ">
             <label for="gayor" class="col-4 label-wrap">
