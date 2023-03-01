@@ -89,7 +89,9 @@
         <!-- Input Jumlah Produksi -->
         <?php $no = ""; foreach ($produksi as $row) {
             if($row['type'] == 'PENUMPANG'){
-            ?>
+                ?>
+                
+            <?php if(str_contains($row['produksi'],"DEWASA")){ ?>
             <div class="form-group row ">
                 <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
                     <?php echo $row['produksi']; ?>
@@ -107,7 +109,27 @@
                     id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                 </div>
             </div>
+            <?php if(str_contains($row['produksi'],"BAYI")){ ?>
+                <div class="form-group row ">
+                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                    <?php echo $row['produksi']; ?>
+                </label>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
+                    id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo "Saldo Awal "?>" min="0">
+                </div>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
+                    id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo "Saldo Akhir "?>" min="0">
+                </div>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
+                    id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
+                </div>
+            </div>
             <?php
+                    }
+                }
             }
         }
         ?>
