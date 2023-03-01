@@ -103,11 +103,11 @@
                 <div class="row">
                     <div class="col">
                         <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
-                            id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo "Nomor Seri Awal ".$row['production']; ?>" min="0">
+                            id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo "Nomor Seri Awal ".$row['produksi']; ?>" min="0">
                     </div>
                     <div class="col">
                         <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
-                        id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo "Nomor Seri Akhir ".$row['production']; ?>" min="0">
+                        id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo "Nomor Seri Akhir ".$row['produksi']; ?>" min="0">
                     </div>
                 </div>
             </div>
