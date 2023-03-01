@@ -94,7 +94,7 @@
                 </label>
                 <div class="col">
                     <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
-                        id="<?php echo $row['id_production']; ?>" placeholder="0" min="0" required>
+                        id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                 </div>
             </div>
             <?php

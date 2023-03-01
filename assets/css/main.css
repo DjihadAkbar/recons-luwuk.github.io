@@ -2,7 +2,9 @@ html, body {
     background-color: #e2edff; margin:0px;
     min-height: 100% !important; padding: 0;
     height: 100%;
+    background-image: url("KMP CENGKIH AFO.jpg");
 }
+
 
 .container {
     position: absolute;

@@ -64,8 +64,8 @@ if (!$this->session->userdata('logged_in'))
                 <ul id="report" class="collapse menu">
                     <li>
                         <?php echo anchor('dashboard/report', 'Report') ?>
-                        <?php echo anchor('dashboard/kategori', 'Kategori') ?>
-                        <?php echo anchor('dashboard/kategori', 'Kategori') ?>
+                        <!-- <?php echo anchor('dashboard/kategori', 'Kategori') ?>
+                        <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
                     </li>
                 </ul>
             </li>

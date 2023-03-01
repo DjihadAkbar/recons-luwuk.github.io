@@ -12,35 +12,228 @@ class Master extends CI_Controller
     {
         $data['title'] = 'Pelabuhan';
         $data['contentView'] = "pages/master/pelabuhan";
-        $data['pelabuhan'] = $this->Entry_model->semuaPelabuhan();
+        $data['pelabuhan'] = $this->Master_model->semuaPelabuhan();
         $this->load->view('template/dashboard/body', $data);
         // $this->load->view('pages/dashboard', $data);
     }
+
+    public function editDataPelabuhan(){
+        $data['title'] = 'Edit Pelabuhan';
+        $data['contentView'] = 'pages/master/edit/editPelabuhan';
+        $data['pelabuhan'] = $this->Master_model->pelabuhan();
+        $data['editDataPelabuhan'] = $this->Master_model->editDataPelabuhan($_GET['id']);
+        $this->load->view('template/dashboard/body', $data);
+    }
+
+    public function prosesEditPelabuhan(){
+        
+        $dataInput = [
+            'name' => $this->input->post('nama_pelabuhan'),
+            'code' => $this->input->post('code_pelabuhan'),
+            'timezone' => $this->input->post('timezone_pelabuhan'),
+        ];
+        $this->Master_model->editPelabuhan($dataInput, $_GET['id']);
+        redirect('dashboard/master/pelabuhan');
+    }
+
+    public function tambahPelabuhan()
+    {
+        $data['title'] = 'Tambah Pelabuhan';
+        $data['contentView'] = "pages/master/tambah/tambahPelabuhan";
+        
+        $this->load->view('template/dashboard/body', $data);
+    }
+    
+    public function prosesTambahPelabuhan()
+    {
+        $data['idHighest'] = 0;
+        $id = '';
+        foreach($this->Master_model->harbourAll() as $key => $value){
+            
+            if($data['idHighest'] < substr($value['id_harbours'], strlen($value['id_harbours'])-2,strlen($value['id_harbours']))){
+                $data['idHighest'] = intval(substr($value['id_harbours'], strlen($value['id_harbours'])-2,strlen($value['id_harbours'])));
+            }
+        }
+        if(strlen($data['idHighest']+1) == 1){
+            $id = substr($value['id_harbours'], 0,strlen($value['id_harbours'])-1).$data['idHighest'] + 1;
+        } else {
+            $id = substr($value['id_harbours'], 0,2).$data['idHighest'] + 1;
+        }
+        
+        $dataInput = [
+            'id_harbours' => $id,
+            'harbour' => $this->input->post('pelabuhan'),
+            'name' => $this->input->post('nama_pelabuhan'),
+            'code' => $this->input->post('code_pelabuhan'),
+            'timezone' => $this->input->post('timezone_pelabuhan'),
+        ];
+        $this->Master_model->tambahPelabuhan($dataInput);
+        redirect('dashboard/master/pelabuhan');
+    }
+
+
     public function lintasan()
     {
         $data['title'] = 'Lintasan';
         $data['contentView'] = "pages/master/lintasan";
-        $data['semuaLintasan'] = $this->Entry_model->semuaLintasan();
+        $data['semuaLintasan'] = $this->Master_model->semuaLintasan();
 
         $this->load->view('template/dashboard/body', $data);
         // $this->load->view('pages/dashboard', $data);
+    }
+    public function editDataLintasan(){
+        $data['title'] = 'Edit Lintasan';
+        $data['contentView'] = 'pages/master/edit/editLintasan';
+        $data['lintasan'] = $this->Master_model->semuaLintasan();
+        $data['editDataLintasan'] = $this->Master_model->editDataLintasan($_GET['id']);
+        $this->load->view('template/dashboard/body', $data);
+    }
+
+    public function prosesEditLintasan(){
+        
+        $dataInput = [
+            'segment' => $this->input->post('segmen'),
+            'distance' => $this->input->post('jarak'),
+            'travel_time' => $this->input->post('waktu_tempuh'),
+        ];
+        $this->Master_model->editLintasan($dataInput, $_GET['id']);
+        redirect('dashboard/master/lintasan');
+    }
+
+    public function tambahLintasan()
+    {
+        $data['title'] = 'Tambah Lintasan';
+        $data['contentView'] = "pages/master/tambah/tambahLintasan";
+        $data['pelabuhan'] = $this->Master_model->harbourAll();
+        
+        $this->load->view('template/dashboard/body', $data);
+    }
+    
+    public function prosesTambahLintasan()
+    {
+        $origin = '';
+        $destination = '';
+
+        foreach($this->Master_model->harbourAll() as $row){
+            if($row['id_harbours'] ==  $this->input->post('origin')){
+                $origin = $row['pelabuhan'];
+            }
+            if($row['id_harbours'] ==  $this->input->post('destination')){
+                $destination = $row['pelabuhan'];
+            }
+        }
+
+        $route = $origin."-".$destination;
+        
+        $dataInput = [
+            'route' => $route,
+            'origin'   => $this->input->post('origin'), 
+            'destination'   => $this->input->post('destination'), 
+            'segment'   => $this->input->post('segment'),
+            'distance'   => $this->input->post('distance'),
+            'travel_time'   => $this->input->post('travel_time'),
+            
+        ];
+        $this->Master_model->tambahLintasan($dataInput);
+        redirect('dashboard/master/lintasan');
     }
 
     public function kapal()
     {
         $data['title'] = 'Kapal';
         $data['contentView'] = "pages/master/kapal";
-        $data['kapal'] = $this->Entry_model->kapal();
+        $data['kapal'] = $this->Master_model->kapal();
 
         $this->load->view('template/dashboard/body', $data);
         // echo "DAta akan disimpan disini";
+    }
+    public function editDataKapal(){
+        $data['title'] = 'Edit Kapal';
+        $data['contentView'] = 'pages/master/edit/editKapal';
+        $data['kapal'] = $this->Master_model->kapal();
+        $data['editDataKapal'] = $this->Master_model->editDataKapal($_GET['id']);
+        $this->load->view('template/dashboard/body', $data);
+    }
+
+    public function prosesEditKapal(){
+        
+        $dataInput = [
+            'code'   => $this->input->post('code'), 
+            'company'   => $this->input->post('company'),
+            'grt'   => $this->input->post('grt'),
+            'type'   => $this->input->post('type'),
+            'register_num'   => $this->input->post('register_num'),
+            'imo_num'   => $this->input->post('imo_num'),
+            'id_card'   => $this->input->post('id_card'),
+            'mmsi'   => $this->input->post('mmsi'),
+            'length_over_all'   => $this->input->post('length_over_all'),
+            'breadth'   => $this->input->post('breadth'),
+            'draft'   => $this->input->post('draft'),
+            'gt'   => $this->input->post('gt'),
+            'build_year'   => $this->input->post('build_year'),
+            'shipyard'   => $this->input->post('shipyard'),
+            'registration_port'   => $this->input->post('registration_port'),
+            'anchor_weight'   => $this->input->post('anchor'),
+        ];
+        $this->Master_model->editKapal($dataInput, $_GET['id']);
+        redirect('dashboard/master/kapal');
+    }
+
+    public function tambahKapal()
+    {
+        $data['title'] = 'Tambah Kapal';
+        $data['contentView'] = "pages/master/tambah/tambahKapal";
+        $data['kapal'] = $this->Master_model->kapal();
+        
+        $this->load->view('template/dashboard/body', $data);
+    }
+    
+    public function prosesTambahKapal()
+    {
+        $data['idHighest'] = 0;
+        $id = '';
+        foreach($this->Master_model->kapal() as $key => $value){
+            
+            if($data['idHighest'] < substr($value['id'], strlen($value['id'])-2,strlen($value['id']))){
+                $data['idHighest'] = intval(substr($value['id'], strlen($value['id'])-2,strlen($value['id'])));
+            }
+        }
+
+        if(strlen($data['idHighest']+1) == 1){
+            $id = substr($value['id'], 0,strlen($value['id'])-1).$data['idHighest'] + 1;
+        } else {
+            $id = substr($value['id'], 0,2).$data['idHighest'] + 1;
+        }
+
+        $dataInput = [
+            'id' => $id,
+            'ferry'   => $this->input->post('ferry'), 
+            'code'   => $this->input->post('code'), 
+            'company'   => $this->input->post('company'),
+            'grt'   => $this->input->post('grt'),
+            'type'   => $this->input->post('type'),
+            'register_num'   => $this->input->post('register_num'),
+            'imo_num'   => $this->input->post('imo_num'),
+            'id_card'   => $this->input->post('id_card'),
+            'mmsi'   => $this->input->post('mmsi'),
+            'length_over_all'   => $this->input->post('length_over_all'),
+            'breadth'   => $this->input->post('breadth'),
+            'draft'   => $this->input->post('draft'),
+            'gt'   => $this->input->post('gt'),
+            'build_year'   => $this->input->post('build_year'),
+            'shipyard'   => $this->input->post('shipyard'),
+            'registration_port'   => $this->input->post('registration_port'),
+            'anchor_weight'   => $this->input->post('anchor'),
+        ];
+        $this->Master_model->tambahKapal($dataInput);
+        redirect('dashboard/master/kapal');
     }
 
     public function tarif()
     {
         $data['title'] = 'Tarif';
         $data['contentView'] = "pages/master/tarif";
-        $data['tarif'] = $this->Entry_model->rate();
+        $data['tarif'] = $this->Master_model->rate();
 
         $this->load->view('template/dashboard/body', $data);
         // echo "DAta akan disimpan disini";
@@ -48,20 +241,20 @@ class Master extends CI_Controller
 
     public function editDataTarif(){
         $data['title'] = 'Edit Tarif';
-        $data['contentView'] = 'pages/master/editTarif';
+        $data['contentView'] = 'pages/master/edit/editTarif';
         $data['produksi'] = $this->Entry_model->produksi();
-        $data['lintasan'] = $this->Entry_model->lintasan();
-        $data['pelabuhan'] = $this->Entry_model->pelabuhan();
-        $data['kapal'] = $this->Entry_model->kapal();
-        $data['kapal_spv'] = $this->Entry_model->kapal_spv();
-        $data['tarif'] = $this->Entry_model->tarif();
+        $data['lintasan'] = $this->Master_model->lintasan();
+        $data['pelabuhan'] = $this->Master_model->pelabuhan();
+        $data['kapal'] = $this->Master_model->kapal();
+        $data['kapal_spv'] = $this->Master_model->kapal_spv();
+        $data['tarif'] = $this->Master_model->tarif();
         $data['trip'] = $this->Entry_model->trip();
-        $data['editDataTarif'] = $this->Entry_model->editDataTarif($_GET['id']);
+        $data['editDataTarif'] = $this->Master_model->editDataTarif($_GET['id']);
         $this->load->view('template/dashboard/body', $data);
     }
 
     public function prosesEditTarif(){
-        $data['lintasan'] = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        $data['lintasan'] = $this->Master_model->lintasanWIthId($this->input->post('lintasan'));
         $tahun = substr($this->input->post('edit_tanggal_berlaku'),2,-6);
         $bulan = substr($this->input->post('edit_tanggal_berlaku'),5,-3);
         foreach($data['lintasan'] as $key => $value){
@@ -138,27 +331,27 @@ class Master extends CI_Controller
             'DewasaEkonomiIW' => $this->input->post('DewasaEkonomiIW'),
             'BayiEkonomiIW' => $this->input->post('BayiEkonomiIW'),
         ];
-        $this->Entry_model->editTarif($dataInput, $_GET['id']);
+        $this->Master_model->editTarif($dataInput, $_GET['id']);
         redirect('dashboard/master/tarif');
     }
 
     public function tambahTarif()
     {
         $data['title'] = 'Tambah Tarif';
-        $data['contentView'] = "pages/master/tambahTarif";
-        $data['tarif'] = $this->Entry_model->rate();
+        $data['contentView'] = "pages/master/tambah/tambahTarif";
+        $data['tarif'] = $this->Master_model->rate();
         $data['produksi'] = $this->Entry_model->produksi();
-        $data['lintasan'] = $this->Entry_model->lintasan();
-        $data['pelabuhan'] = $this->Entry_model->pelabuhan();
-        $data['kapal'] = $this->Entry_model->kapal();
-        $data['tarif'] = $this->Entry_model->tarif();
+        $data['lintasan'] = $this->Master_model->lintasan();
+        $data['pelabuhan'] = $this->Master_model->pelabuhan();
+        $data['kapal'] = $this->Master_model->kapal();
+        $data['tarif'] = $this->Master_model->tarif();
 
         $this->load->view('template/dashboard/body', $data);
     }
 
     public function prosesTambahTarif()
     {
-        $data['lintasan'] = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        $data['lintasan'] = $this->Master_model->lintasanWIthId($this->input->post('lintasan'));
         $tahun = substr($this->input->post('tanggal_berlaku'),2,-6);
         $bulan = substr($this->input->post('tanggal_berlaku'),5,-3);
         foreach($data['lintasan'] as $key => $value){
@@ -235,7 +428,24 @@ class Master extends CI_Controller
             'DewasaEkonomiIW' => $this->input->post('DewasaEkonomiIW'),
             'BayiEkonomiIW' => $this->input->post('BayiEkonomiIW'),
         ];
-        $this->User_model->tambahTarif($dataInput);
+        $this->Master_model->tambahTarif($dataInput);
         redirect('dashboard/master/tarif');
+    }
+
+    public function deleteTarif(){
+        $this->Master_model->deleteTarif($_GET['id']);
+        redirect('dashboard/master/tarif');
+    }
+    public function deletePelabuhan(){
+        $this->Master_model->deletePelabuhan($_GET['id']);
+        redirect('dashboard/master/pelabuhan');
+    }
+    public function deleteLintasan(){
+        $this->Master_model->deleteLintasan($_GET['id']);
+        redirect('dashboard/master/lintasan');
+    }
+    public function deleteKapal(){
+        $this->Master_model->deleteKapal($_GET['id']);
+        redirect('dashboard/master/kapal');
     }
 }

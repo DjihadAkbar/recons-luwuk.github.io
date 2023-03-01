@@ -81,9 +81,26 @@ $route['dashboard/master/lintasan'] = 'master/lintasan';
 $route['dashboard/master/kapal'] = 'master/kapal';
 $route['dashboard/master/tarif'] = 'master/tarif';
 $route['dashboard/master/tarif/editDataTarif'] = 'master/editDataTarif';
+$route['dashboard/master/pelabuhan/editDataPelabuhan'] = 'master/editDataPelabuhan';
+$route['dashboard/master/kapal/editDataKapal'] = 'master/editDataKapal';
+$route['dashboard/master/lintasan/editDataLintasan'] = 'master/editDataLintasan';
 $route['dashboard/master/tarif/prosesEditTarif'] = 'master/prosesEditTarif';
+$route['dashboard/master/pelabuhan/prosesEditPelabuhan'] = 'master/prosesEditPelabuhan';
+$route['dashboard/master/kapal/prosesEditKapal'] = 'master/prosesEditKapal';
+$route['dashboard/master/lintasan/prosesEditLintasan'] = 'master/prosesEditLintasan';
 $route['dashboard/master/tarif/tambahTarif'] = 'master/tambahTarif';
+$route['dashboard/master/pelabuhan/tambahPelabuhan'] = 'master/tambahPelabuhan';
+$route['dashboard/master/kapal/tambahKapal'] = 'master/tambahKapal';
+$route['dashboard/master/lintasan/tambahLintasan'] = 'master/tambahLintasan';
 $route['dashboard/master/tarif/prosesTambahTarif'] = 'master/prosesTambahTarif';
+$route['dashboard/master/pelabuhan/prosesTambahPelabuhan'] = 'master/prosesTambahPelabuhan';
+$route['dashboard/master/kapal/prosesTambahKapal'] = 'master/prosesTambahKapal';
+$route['dashboard/master/lintasan/prosesTambahLintasan'] = 'master/prosesTambahLintasan';
+$route['dashboard/master/tarif/deleteTarif'] = 'master/deleteTarif';
+$route['dashboard/master/pelabuhan/deletePelabuhan'] = 'master/deletePelabuhan';
+$route['dashboard/master/lintasan/deleteLintasan'] = 'master/deleteLintasan';
+$route['dashboard/master/kapal/deleteKapal'] = 'master/deleteKapal';
+
 
 //Report
 $route['dashboard/report'] = 'report/index';

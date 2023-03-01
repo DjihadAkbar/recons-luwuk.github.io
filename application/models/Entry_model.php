@@ -128,6 +128,11 @@ class Entry_model extends CI_Model
         $this->db->delete('rate');
     }
 
+    public function tambahTarif($data)
+    {
+        $this->db->insert('rate', $data);
+    }
+
     public function kapal_spv()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];

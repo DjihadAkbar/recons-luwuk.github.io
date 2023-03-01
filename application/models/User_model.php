@@ -32,8 +32,4 @@ class User_model extends CI_Model
     {
         $this->db->insert('entry_data', $data);
     }
-    public function tambahTarif($data)
-    {
-        $this->db->insert('rate', $data);
-    }
 }
