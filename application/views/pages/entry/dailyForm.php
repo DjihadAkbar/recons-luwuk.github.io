@@ -31,6 +31,12 @@
                                     <th scope="col">Lintasan </th>
                                     <th scope="col">Pelabuhan Asal </th>
                                     <th scope="col">Jenis Trip </th>
+                                    <th scope="col">Dewasa Eksekutif </th>
+                                    <th scope="col">Bayi Eksekutif </th>
+                                    <th scope="col">Dewasa Bisnis </th>
+                                    <th scope="col">Bayi Bisnis </th>
+                                    <th scope="col">Dewasa Ekonomi </th>
+                                    <th scope="col">Bayi Ekonomi </th>
                                     <th scope="col">Golongan 1 </th>
                                     <th scope="col">Golongan 2 </th>
                                     <th scope="col">Golongan 3 </th>
@@ -43,12 +49,6 @@
                                     <th scope="col">Golongan 7 </th>
                                     <th scope="col">Golongan 8 </th>
                                     <th scope="col">Golongan 9 </th>
-                                    <th scope="col">Dewasa Eksekutif </th>
-                                    <th scope="col">Bayi Eksekutif </th>
-                                    <th scope="col">Dewasa Bisnis </th>
-                                    <th scope="col">Bayi Bisnis </th>
-                                    <th scope="col">Dewasa Ekonomi </th>
-                                    <th scope="col">Bayi Ekonomi </th>
                                     <th scope="col">Hewan </th>
                                     <th scope="col">Gayor </th>
                                     <th scope="col">Carter </th>
@@ -98,6 +98,24 @@
                                             <?php echo $value['id_trip']; ?>
                                         </td>
                                         <td>
+                                            <?php echo $value['DewasaEksekutif']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEksekutif']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaBisnis']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiBisnis']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEkonomi']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEkonomi']; ?>
+                                        </td>
+                                        <td>
                                             <?php echo $value['Gol1']; ?>
                                         </td>
                                         <td>
@@ -121,6 +139,7 @@
                                         <td>
                                             <?php echo $value['Gol6Pen']; ?>
                                         </td>
+                                        
                                         <td>
                                             <?php echo $value['Gol6Bar']; ?>
                                         </td>
@@ -132,24 +151,6 @@
                                         </td>
                                         <td>
                                             <?php echo $value['Gol9']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['DewasaEksekutif']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BayiEksekutif']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['DewasaBisnis']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BayiBisnis']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['DewasaEkonomi']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BayiEkonomi']; ?>
                                         </td>
                                         <td>
                                             <?php echo $value['Hewan']; ?>
@@ -222,6 +223,12 @@
                                     <th scope="col">Lintasan </th>
                                     <th scope="col">Pelabuhan Asal </th>
                                     <th scope="col">Jenis Trip </th>
+                                    <th scope="col">Dewasa Eksekutif </th>
+                                    <th scope="col">Bayi Eksekutif </th>
+                                    <th scope="col">Dewasa Bisnis </th>
+                                    <th scope="col">Bayi Bisnis </th>
+                                    <th scope="col">Dewasa Ekonomi </th>
+                                    <th scope="col">Bayi Ekonomi </th>
                                     <th scope="col">Golongan 1 </th>
                                     <th scope="col">Golongan 2 </th>
                                     <th scope="col">Golongan 3 </th>
@@ -234,12 +241,6 @@
                                     <th scope="col">Golongan 7 </th>
                                     <th scope="col">Golongan 8 </th>
                                     <th scope="col">Golongan 9 </th>
-                                    <th scope="col">Dewasa Eksekutif </th>
-                                    <th scope="col">Bayi Eksekutif </th>
-                                    <th scope="col">Dewasa Bisnis </th>
-                                    <th scope="col">Bayi Bisnis </th>
-                                    <th scope="col">Dewasa Ekonomi </th>
-                                    <th scope="col">Bayi Ekonomi </th>
                                     <th scope="col">Hewan </th>
                                     <th scope="col">Gayor </th>
                                     <th scope="col">Carter </th>
