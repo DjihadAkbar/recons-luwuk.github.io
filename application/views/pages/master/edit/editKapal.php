@@ -38,7 +38,7 @@ foreach($editDataKapal as $row){
 ?>
 <div class="card ">
     <div class="card-header">
-        Edit Data Lintasan
+        Edit Data Kapal
     </div>
     <div class="card-body">
         <?php

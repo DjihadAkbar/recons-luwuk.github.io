@@ -1,6 +1,6 @@
 <div class="card ">
     <div class="card-header">
-        Edit Data Lintasan
+        Tambah Kapal
     </div>
     <div class="card-body">
         <?php

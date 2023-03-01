@@ -85,20 +85,6 @@ foreach($editDataTarif as $row){
                         ?>
                         min="0" required>
                 </div>
-                <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."TJP"; ?>" class="form-control"
-                        id="<?php echo $row['id_production']."TJP"; ?>" value=
-                        <?php
-                            foreach($editDataTarif as $baris){
-                                foreach($baris as $key => $baris){
-                                    if($key == $row['id_production']."TJP"){
-                                        echo $baris;
-                                    }
-                                }
-                            }
-                        ?>
-                        min="0" required>
-                </div>
             </div>
             <?php
                     }
