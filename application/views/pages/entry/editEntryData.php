@@ -155,6 +155,30 @@ foreach($editData as $row){
                     <?php echo $row['produksi']; ?>
                 </label>
                 <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
+                    id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder=<?php
+                            foreach($editData as $baris){
+                                foreach($baris as $key => $baris){
+                                    if($key == $row['id_production']."Serial_start"){
+                                        echo $baris;
+                                    }
+                                }
+                            }
+                        ?>" min="0">
+                </div>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
+                    id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php
+                            foreach($editData as $baris){
+                                foreach($baris as $key => $baris){
+                                    if($key == $row['id_production']."Serial_end"){
+                                        echo $baris;
+                                    }
+                                }
+                            }
+                        ?>" min="0">
+                </div>
+                <div class="col">
                     <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
                         id="<?php echo $row['id_production']; ?>" value=
                         <?php
