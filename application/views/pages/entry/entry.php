@@ -87,7 +87,9 @@
             </div>
         </div>
         <!-- Input Jumlah Produksi -->
-        <?php $no = ""; foreach ($produksi as $row) { ?>
+        <?php $no = ""; foreach ($produksi as $row) {
+            if($row['type'] == 'Penumpang'){
+            ?>
             <div class="form-group row ">
                 <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
                     <?php echo $row['produksi']; ?>
@@ -106,6 +108,7 @@
                 </div>
             </div>
             <?php
+            }
         }
         ?>
         <!-- Akhir Input Jumlah Produksi -->
