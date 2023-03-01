@@ -93,25 +93,18 @@
                     <?php echo $row['produksi']; ?>
                 </label>
                 <div class="col">
-
-                    <div class="row">
-                        <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
-                        id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
-                    </div>
+                    <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
+                    id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
-                            id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo "Nomor Seri Awal ".$row['produksi']; ?>" min="0">
-                    </div>
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
-                        id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo "Nomor Seri Akhir ".$row['produksi']; ?>" min="0">
-                    </div>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
+                        id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo "Saldo Awal "?>" min="0">
+                </div>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
+                    id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo "Saldo Akhir "?>" min="0">
                 </div>
             </div>
-        </div>
             <?php
         }
         ?>
