@@ -99,16 +99,7 @@
                         id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
-                            id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo $row['id_production']."Serial_start"; ?>" min="0">
-                        </div>
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
-                                id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo $row['id_production']."Serial_end"; ?>" min="0">
-                    </div>
-                </div>
+                
             </div>
             <?php
         }
