@@ -1,6 +1,12 @@
 $(document).ready(function(){
     var count = 0;
 
+    $('.akses-button').hide();
+    if (userType == 'EDITOR') {
+        $('.akses-button').show();
+    }
+
+
     $('#sidebar').mCustomScrollbar({
         theme: 'minimal'
     });
