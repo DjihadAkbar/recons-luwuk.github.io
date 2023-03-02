@@ -47,7 +47,7 @@ $(document).ready(function(){
         count = 1;
     }
 
-    $('#btnOpenModal'),on('click', function (e){
+    $('#btnOpenModal').on('click', function (e){
         e.preventDefault();
         var id = $(this).data('id');
         document.getElementById("btnDelete").href = "entry/deleteEntryData?id=" +id;
