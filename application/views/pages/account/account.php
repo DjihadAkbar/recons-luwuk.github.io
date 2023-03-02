@@ -1,8 +1,7 @@
-<div class="card">
+<div class="card p-2">
     <div class="container-fluid">
         
     <?php
-    // print_r($account); 
     foreach($account as $row){
     ?>
         <div class="input-group mb-3">

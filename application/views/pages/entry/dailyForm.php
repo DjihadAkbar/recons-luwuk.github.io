@@ -9,8 +9,11 @@
                 </button>
             </h5>
             <div class="tambah-data mb-0">
+                <button class="btn btn-dark text-light akses-button" style="display:none;" href="dashboard/entry/entryData">
+                    Tambah Data
+                </button>
                 <?php
-                    $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
+                    $dataAnchor = ['class' => 'btn btn-dark text-light akses-button','style'=>'display:none;'];
                     echo anchor('dashboard/entry/entryData', 'Tambah Data', $dataAnchor);
                     ?>
             </div>

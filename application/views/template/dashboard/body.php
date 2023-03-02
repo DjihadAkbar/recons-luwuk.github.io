@@ -165,8 +165,8 @@ if (!$this->session->userdata('logged_in'))
 </div>
 <script type="text/javascript">
     var userType = "<?php echo "$userType" ?>";
-    if (userType == 'VIEWER') {
-        $('.akses-button').hide();
+    if (userType == 'EDITOR') {
+        $('.akses-button').show();
     }
 
     $(document).ready(function () {
