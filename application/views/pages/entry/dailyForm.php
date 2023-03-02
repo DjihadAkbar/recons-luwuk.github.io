@@ -177,7 +177,7 @@
                                         <td>
                                             
                                             <div class="akses-button">
-                                                <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
+                                                <a id="btnOpenModal" data-id="<?php echo $value['id_entry']; ?>" data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                                 <!-- Modal delete -->
@@ -199,8 +199,9 @@
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                                                             <div class="delete-button">
-                                                                <a class="btn btn-primary" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
+                                                                <a id='btnDelete' class="btn btn-primary" href="">
                                                                 <?php echo $value['id_entry']; ?>Sure
+                                                                <!-- entry/deleteEntryData?id=<?php echo $value['id_entry']; ?> -->
                                                                 </a>
                                                             </div>
                                                         </div>

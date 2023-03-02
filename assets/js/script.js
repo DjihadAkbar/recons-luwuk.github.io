@@ -1,12 +1,6 @@
 $(document).ready(function(){
     var count = 0;
 
-    $('.akses-button').hide();
-    if (userType == 'EDITOR') {
-        $('.akses-button').show();
-    }
-
-
     $('#sidebar').mCustomScrollbar({
         theme: 'minimal'
     });
@@ -53,6 +47,10 @@ $(document).ready(function(){
         count = 1;
     }
 
-        
+    $('#btnOpenModal'),on('click', function (e){
+        e.preventDefault();
+        var id = $(this).data('id');
+        document.getElementById("btnDelete").href = "entry/deleteEntryData?id=" +id;
+    });
 });
 
