@@ -220,7 +220,7 @@ class Income_model extends CI_Model
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
                 SUM(
                 (rate.Gol1 * entry_a.Gol1) + 
-                (rate.Gol2 * entry_data.Gol2) +
+                (rate.Gol2 * entry_a.Gol2) +
                 (rate.Gol3 * entry_a.Gol3) +
                 (rate.Gol4Pen * entry_a.Gol4Pen) +
                 (rate.Gol4Bar * entry_a.Gol4Bar) +
