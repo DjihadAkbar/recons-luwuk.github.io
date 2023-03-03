@@ -202,7 +202,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', "February");
+        $this->db->where('monthname(entry_a.date)', "March");
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date),ferry, route');
