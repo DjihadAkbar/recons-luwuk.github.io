@@ -58,7 +58,7 @@ class Account extends CI_Controller
         }
     }
     public function prosesChangeDetail(){
-            $this->form_validation->set_rules('nama', 'Nama', 'required|min_length[6]');
+            $this->form_validation->set_rules('nama', 'Nama', 'required');
             $this->form_validation->set_rules('username', 'Username', 'required');
             $this->form_validation->set_rules('pelabuhan', 'Pelabuhan', 'required');
             $this->form_validation->set_rules('email', 'Email', '');
