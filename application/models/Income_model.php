@@ -384,14 +384,14 @@ class Income_model extends CI_Model
                         )
                         FROM entry_data as entry_b
                         JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
-                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" AND entry_a.id_route = entry_b.id_route AND entry_a.id_harbour = entry_b.id_harbour
+                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" AND entry_a.id_route = entry_b.id_route AND entry_a.id_harbour = entry_b.id_harbour and entry_a.id_trip = "REGULER"
                         GROUP BY harbour
                     ) AS totalLastYear,
                     (
-                        SELECT COUNT(trip)
+                        SELECT COUNT(case when trips.trip != 1 then 1 END)
                         FROM entry_data as entry_c
                         join trips on trips.id = entry_c.id_trip
-                        WHERE trip = 1 AND MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '" AND entry_a.id_harbour = entry_c.id_harbour
+                        WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '" AND entry_a.id_harbour = entry_c.id_harbour
                         GROUP BY harbour
                     ) as tripLastYear,
                     (
