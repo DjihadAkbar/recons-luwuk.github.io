@@ -391,7 +391,7 @@ class Income_model extends CI_Model
                         SELECT COUNT(case when trips.trip != 1 then 1 END)
                         FROM entry_data as entry_c
                         join trips on trips.id = entry_c.id_trip
-                        WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '" AND entry_a.id_harbour = entry_c.id_harbour
+                        WHERE trip = 1, MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '" AND entry_a.id_harbour = entry_c.id_harbour
                         GROUP BY harbour
                     ) as tripLastYear,
                     (
