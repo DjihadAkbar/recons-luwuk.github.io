@@ -70,7 +70,7 @@ class Account extends CI_Controller
                 $dataChangeDetail = [
                     'name' => $this->input->post('nama'),
                     'username' => $this->input->post('username'),
-                    'harbours' => $this->input->post('pelabuhan'),
+                    'harbours' => ucwords($this->input->post('pelabuhan')),
                     'email' => $this->input->post('email'),
                     'phone' => $this->input->post('telepon'),
                 ];
