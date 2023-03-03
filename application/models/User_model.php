@@ -2,6 +2,19 @@
 
 class User_model extends CI_Model
 {
+
+    public function changePassword($password, $id){
+        
+        $this->db->where('id',$id);
+        $this->db->update('users',$password);
+
+    }
+    public function changeDetail($detail, $id){
+        
+        $this->db->where('id',$id);
+        $this->db->update('users',$detail);
+
+    }
     public function register($data)
     {
         $this->db->insert('users', $data);

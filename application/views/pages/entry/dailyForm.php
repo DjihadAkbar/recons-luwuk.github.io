@@ -177,11 +177,15 @@
                                         <td>
                                             
                                             <div class="akses-button">
-                                                <a id="btnOpenModal" data-id="<?php echo $value['id_entry']; ?>" data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
+                                                <!-- <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
+                                                    <i class="fas fa-delete-left"></i>
+                                                </a> -->
+                                                <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
-                                                <!-- Modal delete -->
+                                                
                                             </div>
+                                            <!-- Modal delete
                                             <div class="modal fade" id="deleteConfirmation" tabindex="2" role="dialog"
                                                 aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
                                                 <div class="modal-dialog" role="document">
@@ -199,16 +203,15 @@
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
                                                             <div class="delete-button">
-                                                                <a id='btnDelete' class="btn btn-primary" href="">
+                                                                <a class="btn btn-primary" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
                                                                 <?php echo $value['id_entry']; ?>Sure
-                                                                <!-- entry/deleteEntryData?id=<?php echo $value['id_entry']; ?> -->
                                                                 </a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <!-- Modal Logout End -->
+                                            Modal Logout End -->
                                         </td>
                                     </tr>
                                     

@@ -69,13 +69,16 @@
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                                <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
+                                                <!-- <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
+                                                    <i class="fas fa-delete-left"></i>
+                                                </a> -->
+                                                <a class="btn btn-danger text-dark" href="lintasan/deleteLintasan?id=<?php echo $value['id']; ?>">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- Modal delete -->
+                                    <!-- Modal delete
                                     <div class="modal fade" id="deleteConfirmation" tabindex="2" role="dialog"
                                         aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
@@ -101,7 +104,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- Modal Logout End -->
+                                    Modal Logout End -->
                                     <?php
                                 }
                                 ?>

@@ -129,9 +129,9 @@ class Master extends CI_Controller
             'route' => $route,
             'origin'   => $this->input->post('origin'), 
             'destination'   => $this->input->post('destination'), 
-            'segment'   => $this->input->post('segment'),
-            'distance'   => $this->input->post('distance'),
-            'travel_time'   => $this->input->post('travel_time'),
+            'segment'   => $this->input->post('segmen'),
+            'distance'   => $this->input->post('jarak'),
+            'travel_time'   => $this->input->post('waktu_tempuh'),
             
         ];
         $this->Master_model->tambahLintasan($dataInput);
