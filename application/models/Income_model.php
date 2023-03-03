@@ -277,7 +277,7 @@ class Income_model extends CI_Model
                         (rate.BarCur * entry_b.BarangPendapatan)
                         )
                         FROM entry_data as entry_b
-                        JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
+                        JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date
                         WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" AND entry_a.id_ferry = entry_b.id_ferry
                         GROUP BY ferry
                     ) AS totalLastYear,
