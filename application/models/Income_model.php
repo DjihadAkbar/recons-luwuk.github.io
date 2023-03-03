@@ -318,7 +318,7 @@ class Income_model extends CI_Model
 
     public function incomePerHarbour()
     {
-        $lastMonth = date("F", strtotime('-1 month'));
+        $lastMonth = date("F", strtotime('-2 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
