@@ -118,7 +118,7 @@ class Income_model extends CI_Model
 
     public function incomePerRoute()
     {
-        $lastMonth = date("F", strtotime('-2 month'));
+        $lastMonth = date("F", strtotime('-1 month'));
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, 
@@ -202,7 +202,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date),ferry, route');
@@ -212,7 +212,7 @@ class Income_model extends CI_Model
 
     public function incomePerShip()
     {
-        $lastMonth = date("F", strtotime('-2 month'));
+        $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -309,7 +309,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         $this->db->group_by(' month(entry_a.date),ferry');
         $this->db->order_by('ferry');
@@ -318,7 +318,7 @@ class Income_model extends CI_Model
 
     public function incomePerHarbour()
     {
-        $lastMonth = date("F", strtotime('-2 month'));
+        $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -384,7 +384,7 @@ class Income_model extends CI_Model
                         )
                         FROM entry_data as entry_b
                         JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
-                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" AND entry_b.id_trip = "REGULER"
+                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" AND entry_a.id_route = entry_b.id_route AND entry_a.id_harbour = entry_b.id_harbour
                         GROUP BY harbour
                     ) AS totalLastYear,
                     (
@@ -416,7 +416,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date),harbour');
