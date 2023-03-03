@@ -286,7 +286,7 @@ class Income_model extends CI_Model
                         FROM entry_data as entry_c
                         join trips on trips.id = entry_c.id_trip
                         WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '"  AND entry_a.id_ferry = entry_c.id_ferry
-                        GROUP BY entry_b.id_ferry      
+                        GROUP BY entry_c.id_ferry      
                     ) as tripLastYear,
                     (
                         SELECT sum(trip)
