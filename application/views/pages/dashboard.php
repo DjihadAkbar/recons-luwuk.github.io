@@ -21,10 +21,8 @@ function formatRupiah($angka)
                 <div style="white-space:normal"> 
                 <?php
                 if ($monthname != null) {
-                    echo "Disini";
                     echo "Total Pendapatan Pertanggal 1  " . $monthname . " " . date("Y") . " s.d " . date("d") . " " . $monthname . " " . date("Y");
                 } else {
-                    echo "Disini2";
                     echo "Total Pendapatan Pertanggal 1  " . date("F") . " " . date("Y") . " s.d " . date("d") . " " . date("F") . " " . date("Y");
                 }
                 ?>
