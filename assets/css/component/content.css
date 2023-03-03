@@ -82,8 +82,10 @@
 }
 
 .account-user {
-    position: relative;
-    margin-left: auto;
+    right: 0;
+    position: fixed;
+    margin-right: 20px;
+    z-index:1;
 }
 
 .tambah-data {
