@@ -108,5 +108,7 @@ $route['dashboard/master/kapal/deleteKapal'] = 'master/deleteKapal';
 
 //Report
 $route['dashboard/report'] = 'report/index';
+$route['dashboard/report/buktiPenyetoran'] = 'report/buktiPenyetoran';
+$route['dashboard/report/downloadBuktiPenyetoran'] = 'report/downloadBuktiPenyetoran';
 
 

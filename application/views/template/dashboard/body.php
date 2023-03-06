@@ -1,4 +1,6 @@
 <?php
+    require 'vendor/autoload.php';
+
 $this->load->view('template/dashboard/header', $title);
 if (!$this->session->userdata('logged_in'))
     redirect('login');
