@@ -44,7 +44,33 @@ class Report extends CI_Controller
 
 
         $this->load->view('template/dashboard/body', $data);
-        // redirect(index);
+        redirect(base_url('dashboard/report'));
+    }
+    
+    public function dailyReport (){
+        $data['title'] = 'Laporan Pendapatan Harian';
+        $data['contentView'] = 'report/dailyReport';
+        
+        $data['tarif'] = $this->Master_model->rate();
+        $data['produksi'] = $this->Entry_model->produksi();
+        $data['lintasan'] = $this->Master_model->lintasan();
+        $data['pelabuhan'] = $this->Master_model->pelabuhan();
+        $data['kapal'] = $this->Master_model->kapal_spv();
+        $data['tarif'] = $this->Master_model->tarif();
+        $data['report'] = array(
+            'kapalReport' => $this->input->post('nama_kapal'),
+            'tripReport' => $this->input->post('trip'),
+            'pelabuhanReport' => $this->input->post('pelabuhan_asal'),
+            'lintasanReport' => $this->input->post('lintasan'),
+            'tanggalAwalReport' => $this->input->post('tanggal_awal'),
+            'tanggalAkhirReport' => $this->input->post('tanggal_akhir'),
+        );
+    
+    
+    
+        $this->load->view('template/dashboard/body', $data);
+        // redirect('index');
+
     }
     
 }
