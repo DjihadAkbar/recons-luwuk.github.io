@@ -12,12 +12,12 @@ class Report extends CI_Controller
         $data['title'] = 'Export Report';
         $data['contentView'] = 'report/report';
         
-        $data['tarif'] = $this->Entry_model->rate();
+        $data['tarif'] = $this->Master_model->rate();
         $data['produksi'] = $this->Entry_model->produksi();
-        $data['lintasan'] = $this->Entry_model->lintasan();
-        $data['pelabuhan'] = $this->Entry_model->pelabuhan();
-        $data['kapal'] = $this->Entry_model->kapal();
-        $data['tarif'] = $this->Entry_model->tarif();
+        $data['lintasan'] = $this->Master_model->lintasan();
+        $data['pelabuhan'] = $this->Master_model->pelabuhan();
+        $data['kapal'] = $this->Master_model->kapal_spv();
+        $data['tarif'] = $this->Master_model->tarif();
         $this->load->view('template/dashboard/body', $data);
     }
 }

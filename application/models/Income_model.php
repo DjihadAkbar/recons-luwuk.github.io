@@ -278,8 +278,8 @@ class Income_model extends CI_Model
                         )
                         FROM entry_data as entry_b
                         JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
-                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '"
-                        GROUP BY entry_b.id_ferry
+                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" and entry_b.id_ferry = entry_a.id_ferry
+                        GROUP BY entry_a.id_ferry
                     ) AS totalLastYear,
                     (
                         SELECT COUNT(case when trips.trip != 1 then 1 END)

@@ -2,6 +2,7 @@
 require 'vendor/autoload.php';
 
 // koneksi php dan mysql
+// $koneksi = mysqli_connect("localhost","root","","asdp_luwuk");
 $koneksi = mysqli_connect("217.21.72.151","u1578336_admin","5september_","u1578336_db_recons_luwuk");
 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -13,6 +14,36 @@ $title = 'Bukti Penyetoran';
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
+$entryData = mysqli_query($koneksi,"
+    SELECT *,dayname(date), 
+    entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi',
+    entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9', 
+    (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
+    (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
+    (rate.DewasaBisnis * entry_data.DewasaBisnis) as 'Dewasa Bisnis',
+    (rate.BayiBisnis * entry_data.BayiBisnis) as 'Bayi Bisnis',
+    (rate.DewasaEkonomi * entry_data.DewasaEkonomi) as 'Dewasa Ekonomi',
+    (rate.BayiEkonomi * entry_data.BayiEkonomi) as 'Bayi Ekonomi',
+    (rate.Gol1 * entry_data.Gol1) as 'Golongan 1',
+    (rate.Gol2 * entry_data.Gol2) as 'Golongan 2',
+    (rate.Gol3 * entry_data.Gol3) as 'Golongan 3',
+    (rate.Gol4Pen * entry_data.Gol4Pen) as 'Golongan 4 Penumpang',
+    (rate.Gol4Bar * entry_data.Gol4Bar) as 'Golongan 4 Barang',
+    (rate.Gol5Pen * entry_data.Gol5Pen) as 'Golongan 5 Penumpang',
+    (rate.Gol5Bar * entry_data.Gol5Bar) as 'Golongan 5 Barang',
+    (rate.Gol6Pen * entry_data.Gol6Pen) as 'Golongan 6 Penumpang',
+    (rate.Gol6Bar * entry_data.Gol6Bar) as 'Golongan 6 Barang',
+    (rate.Gol7 * entry_data.Gol7) as 'Golongan 7',
+    (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
+    (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
+    entry_data.BarangVolume as 'Entry Barang Volume'
+    FROM entry_data
+    JOIN ferry ON ferry.id = entry_data.id_ferry
+    JOIN routes ON routes.id = entry_data.id_route
+    JOIN harbours on harbours.id_harbours = entry_data.id_harbour
+    JOIN rate ON rate.id_route = routes.id and entry_data.date >= rate.start_date and rate.rate_type = entry_data.rate_type
+    WHERE date='2023-01-12' and ferry = 'KMP DOLOSI' and route = 'LUWUK-SAIYONG'
+");
 
 // sheet peratama
 $sheet->setTitle($title);
@@ -108,36 +139,7 @@ $sheet->getStyle('C35')->getAlignment()->setWrapText(true);
 
 $sheet->getStyle('A7:J34')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
 
-$entryData = mysqli_query($koneksi,"
-    SELECT *,dayname(date), 
-    entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi',
-    entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9', 
-    (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
-    (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
-    (rate.DewasaBisnis * entry_data.DewasaBisnis) as 'Dewasa Bisnis',
-    (rate.BayiBisnis * entry_data.BayiBisnis) as 'Bayi Bisnis',
-    (rate.DewasaEkonomi * entry_data.DewasaEkonomi) as 'Dewasa Ekonomi',
-    (rate.BayiEkonomi * entry_data.BayiEkonomi) as 'Bayi Ekonomi',
-    (rate.Gol1 * entry_data.Gol1) as 'Golongan 1',
-    (rate.Gol2 * entry_data.Gol2) as 'Golongan 2',
-    (rate.Gol3 * entry_data.Gol3) as 'Golongan 3',
-    (rate.Gol4Pen * entry_data.Gol4Pen) as 'Golongan 4 Penumpang',
-    (rate.Gol4Bar * entry_data.Gol4Bar) as 'Golongan 4 Barang',
-    (rate.Gol5Pen * entry_data.Gol5Pen) as 'Golongan 5 Penumpang',
-    (rate.Gol5Bar * entry_data.Gol5Bar) as 'Golongan 5 Barang',
-    (rate.Gol6Pen * entry_data.Gol6Pen) as 'Golongan 6 Penumpang',
-    (rate.Gol6Bar * entry_data.Gol6Bar) as 'Golongan 6 Barang',
-    (rate.Gol7 * entry_data.Gol7) as 'Golongan 7',
-    (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
-    (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
-    entry_data.BarangVolume as 'Entry Barang Volume'
-    FROM entry_data
-    JOIN ferry ON ferry.id = entry_data.id_ferry
-    JOIN routes ON routes.id = entry_data.id_route
-    JOIN harbours on harbours.id_harbours = entry_data.id_harbour
-    JOIN rate ON rate.id_route = routes.id and entry_data.date >= rate.start_date and rate.rate_type = entry_data.rate_type
-    WHERE date='2023-01-12' and ferry = 'KMP DOLOSI' and route = 'LUWUK-SAIYONG'
-");
+
 
 $rowEntry = 8;
 while($record = mysqli_fetch_array($entryData))
@@ -317,6 +319,7 @@ while($record = mysqli_fetch_array($entryData))
     $sheet->setCellValue('C35', strtoupper(terbilang($sheet->getCell('J34')->getCalculatedValue())));
 }
 
+
 // $sheet->getStyle('C10:J16')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_EUR);
 // $sheet->getStyle('C18:J30')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
 // $sheet->getStyle('C32:J34')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
@@ -347,150 +350,149 @@ $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
 
 
 
-$writer = new Xlsx($spreadsheet);
+// $writer = new Xlsx($spreadsheet);
 // ob_end_clean();
 // header('Content-Type: application/vnd.ms-excel');
 // header('Content-Disposition: attachment;filename="'.$title.'.xlsx"');
 // $writer->save('php://output');
-$writer->save($title.'.xlsx');
+// $writer->save($title.'.xlsx');
 
+$writer = new Xlsx($spreadsheet);
+ob_end_clean();
+header('Content-Type: application/vnd.ms-excel');
+// header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+header('Content-Disposition: attachment; filename="'. urlencode($title.".xlsx").'"');
+ob_end_clean();
+$writer->save('php://output');
+exit()
 ?>
 
 
 <div class="card ">
-<div class="card-header d-flex justify-content-between align-items-center text-center" id="headingOne" >
-            <h5 class="mb-0">
-                <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                    <div style="white-space:normal"> 
-                    Lintasan
-                    </div>
-                </button>
-            </h5>
-            <div class="tambah-data">
+<div class="card-header d-flex justify-content-between align-items-center " id="headingOne" >
+    
+    <?php
+        echo form_open(base_url('dashboard/master/tarif/prosesTambahTarif'), ['class' => 'form-entry']);
+        ?>
+    <div class="form-group row">
+        <div class="form-group col">
+            <label for="nama_kapal" class="label-wrap  ml-2"> Nama Kapal </label>
+            <div class="col">
+                <select class="form-control" name="nama_kapal" id="nama_kapal" required>
+                    <option value="">No Selected</option>
+                    <?php foreach ($kapal as $row): ?>
+                        <option value="<?php echo $row['id_ferry']; ?>">
+                            <?php echo $row['kapal']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
                 <?php
-                $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
-                echo anchor('dashboard/master/lintasan/tambahLintasan', 'Tambah Data', $dataAnchor);
+                echo form_error('nama_kapal');
                 ?>
             </div>
         </div>
-    <div class="card-body">
-        <?php
-        echo form_open(base_url('dashboard/master/tarif/prosesTambahTarif'), ['class' => 'form-entry']);
-        ?>
-       <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-
-            <div class="form-group row">
-                <label for="lintasan" class="col-4 label-wrap"> LINTASAN </label>
-                <div class="col">
-                    <select class="form-control" name="lintasan" id="lintasan" required>
-                        <option value="">No Selected</option>
-                        <?php foreach ($lintasan as $row): ?>
-                            <option value="<?php echo $row['id']; ?>">
-                                <?php echo $row['lintasan']; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?php
-                    echo form_error('lintasan');
-                    ?>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="tanggal_berlaku" class="col-4 label-wrap"> TANGGAL BERLAKU </label>
-                
-                <div class="col">
-                    <input class="form-control" type="date" id="tanggal_berlaku" name="tanggal_berlaku" value="2022-11-01"
-                    min="2022-11-01" max="2023-12-31">
-                </div>
-            </div>
-        </li>
-
-        <li class="list-group-item tarif-utama">
-            <!-- Input Jumlah Produksi -->
-            <?php $no = ""; foreach ($produksi as $row) { ?>
-                <div class="form-group row">
-                    <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
-                        <?php echo $row['produksi']; ?>
-                    </label>
-                    <div class="col">
-                        <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
-                            id="<?php echo $row['id_production']; ?>" value="0" min="0" required>
-                    </div>
-                </div>
+   
+           
+        <div class="form-group col">
+            <label for="trip" class="label-wrap  ml-2"> Trip </label>
+            <div class="col">
+                <select class="form-control" name="trip" id="trip" required>
+                    <option value="">No Selected</option>
+                    <option value="Laporan Pendapatan harian">
+                        Laporan Pendapatan harian
+                    </option>
+                    <option value="EXTRA TRIP">
+                        EXTRA TRIP
+                    </option>
+                </select>
                 <?php
-            }
-            ?>
-            <div class="form-group row ">
-                <label for="barang_volume" class="col-4 label-wrap">
-                    BARANG VOLUME
-                </label>
-                <div class="col">
-                    <input type="number" class="form-control" name="barang_volume" id="barang_volume" value="0"
-                        min="0" placeholder="Jumlah Volume">
-                </div>
+                echo form_error('trip');
+                ?>
             </div>
-            <div class="form-group row ">
-                <label for="barang_pendapatan" class="col-4 label-wrap">
-                    BARANG PENDAPATAN (CURAH)
-                </label>
-                <div class="col">
-                    <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
-                        value="0" min="0" placeholder="Jumlah Volume">
-                </div>
+        </div>
+        <div class="form-group col">
+            <label for="pelabuhan_asal" class="label-wrap  ml-2"> Pelabuhan Asal </label>
+            <div class="col">
+                <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" required>
+                    <option value="">No Selected</option>
+                    <?php foreach ($pelabuhan as $row): ?>
+                        <option value="<?php echo $row['id_harbours']; ?>">
+                            <?php echo $row['pelabuhan']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <?php
+                echo form_error('pelabuhan_asal');
+                ?>
             </div>
-        </li>
+        </div>
 
-            <li class="list-group-item tjp">
-
-                    <!-- Input Jumlah Produksi -->
-                    <?php $no = "";
-                    foreach ($produksi as $row) {
-                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
-                            ?>
-                            <div class="form-group row ">
-                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
-                                    <?php echo $row['produksi'] . " TJP"; ?>
-                                </label>
-                                <div class="col">
-                                    <input type="number" name="<?php echo $row['id_production'] . "TJP"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "TJP"; ?>" value="0" min="0" required>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    }
-                    ?>
-            </li>
-            <li class="list-group-item iw">
-
-                    <!-- Input Jumlah Produksi -->
-                    <?php $no = "";
-                    foreach ($produksi as $row) {
-                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
-                            ?>
-                            <div class="form-group row ">
-                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
-                                    <?php echo $row['produksi'] . " IW"; ?>
-                                </label>
-                                <div class="col">
-                                    <input type="number" name="<?php echo $row['id_production'] . "IW"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "IW"; ?>" value="0" min="0" required>
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    }
-                    ?>
-            </li>
-        </ul>
-
-        <!-- Akhir Input Jumlah Produksi -->
+        <div class="form-group col">
+            <label for="lintasan" class="label-wrap  ml-2"> LINTASAN </label>
+            <div class="col">
+                <select class="form-control" name="lintasan" id="lintasan" required>
+                    <option value="">No Selected</option>
+                    <?php foreach ($lintasan as $row): ?>
+                        <option value="<?php echo $row['id']; ?>">
+                            <?php echo $row['lintasan']; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+                <?php
+                echo form_error('lintasan');
+                ?>
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="tanggal_berlaku" class="label-wrap  ml-2"> TANGGAL AWAL </label>
+            
+            <div class="col">
+                <input class="form-control" type="date" id="tanggal_berlaku" name="tanggal_berlaku" value="2022-11-01"
+                min="2022-11-01" max="2023-12-31">
+            </div>
+        </div>
+        <div class="form-group col">
+            <label for="tanggal_berlaku" class="label-wrap  ml-2"> TANGGAL AKHIR </label>
+            
+            <div class="col">
+                <input class="form-control" type="date" id="tanggal_berlaku" name="tanggal_berlaku" value="2022-11-01"
+                min="2022-11-01" max="2023-12-31">
+            </div>
+        </div>
 
 
-        <?php
+        <div class="form-group col">
+            <label for="trip" class="label-wrap  ml-2"> Jenis Laporan </label>
+            <div class="col">
+                <select class="form-control" name="trip" id="trip" required>
+                    <option value="">No Selected</option>
+                    <option value="DailyReport">
+                        Laporan Pendapatan harian
+                    </option>
+                    <option value="EXTRA TRIP">
+                        EXTRA TRIP
+                    </option>
+                </select>
+                <?php
+                echo form_error('trip');
+                ?>
+            </div>
+        </div>
+
+        <div class="form-group col">
+            
+            <label for="trip" class="label-wrap  ml-2" style="display:inline-block;">&#8203;  </label>
+        <div class="col">
+            <?php
         echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
         echo form_close();
         ?>
+        </div>
+
+        </div>
     </div>
+    <div class="card-body">
+        
+    </div>
+</div>
 </div>
