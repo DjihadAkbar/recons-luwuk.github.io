@@ -14,256 +14,7 @@ function formatRupiah($angka)
 ?>
 
 <div id="accordion">
-    <div class="card">
-        <div class="card-header" id="headingOne">
-            <h5 class="mb-0">
-            <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                <div style="white-space:normal"> 
-                <?php
-                if ($monthname != null) {
-                    echo "Total Pendapatan Pertanggal 1  " . $monthname . " " . date("Y") . " s.d " . date("d") . " " . $monthname . " " . date("Y");
-                } else {
-                    echo "Total Pendapatan Pertanggal 1  " . date("F") . " " . date("Y") . " s.d " . date("d") . " " . date("F") . " " . date("Y");
-                }
-                ?>
-                </div>
-            </button>
-            </h5>
-        </div>
-
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-            <div class="card-body">
-                <!-- Total Lintasan Tgl 1 s.d Hari ini -->
-                <div class="card">
-                    <?php
-                    foreach ($incomePerRoute as $key => $value) {
-                        ?>
-                        <?php $monthname = $value['month_date']; ?>
-                    <?php
-                    }
-                    ?>
-                    <h5 class="card-header d-flex justify-content-between align-items-center">
-                        Lintasan
-                    </h5>
-
-                    <div class="card-body">
-                        <div class="wrapper" style="overflow-x: auto;">
-                            <table class="dashboard-table table table-striped table-data">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">
-                                            Kapal
-                                        </th>
-                                        <th scope="col">
-                                            Lintasan
-                                        </th>
-                                        <th scope="col">
-                                            Pelabuhan Asal
-                                        </th>
-                                        <th scope="col">
-                                            <?php echo "Total Tanggal 1 " . $monthname . " " . date("Y") . " s.d " . date("d") . " " . $monthname . " " . date("Y"); ?>
-                                        </th>
-                                        <th scope="col">
-                                            Jumlah Trip
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    foreach ($totalDaily as $key => $value) {
-                                        ?>
-                                                                                                                                        <tr>
-                                                                                                                                            <td rowspan="1">
-                                                                                                                                                <?php echo $value['ferry']; ?>
-                                                                                                                                            </td>
-
-                                                                                                                                            <td>
-                                                                                                                                                <?php echo $value['rute']; ?>
-                                                                                                                                            </td>
-                                                                                                                                            <td>
-                                                                                                                                                <?php echo $value['harbour']; ?>
-                                                                                                                                            </td>
-                                                                                                                                            <td>
-                                                                                                                                                <?php
-                                                                                                                                                echo formatRupiah($value['total']);
-
-                                                                                                                                                ?>
-                                                                                                                                            </td>
-                                                                                                                                            <td style=" width:15%">
-                                                                                                                                                <?php echo "" . $value['trip'] . " Trip"; ?>
-                                                                                                                                            </td>
-                                                                                                                                        </tr>
-                                                                                                                                        <?php
-                                    }
-                                    ?>
-                                </tbody>
-                                <tfoot class="thead-dark">
-                                    <tr>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-                                        </th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- Total Lintasan Tgl 1 s.d Hari ini -->
-
-                <!-- Total Kapal Tgl 1 s.d Hari ini -->
-                <div class="card mt-3">
-                    <?php
-                    foreach ($incomePerRoute as $key => $value) {
-                        ?>
-                                                                                                                                                                                    <?php $monthname = $value['month_date']; ?>
-                                                                                                                                                                                    <?php
-                    }
-                    ?>
-                    <h5 class="card-header d-flex justify-content-between align-items-center">
-                        Kapal
-                    </h5>
-
-                    <div class="card-body">
-                        <div class="wrapper" style="overflow-x: auto;">
-                            <table class="dashboard-table table table-striped table-data">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">
-                                            Kapal
-                                        </th>
-                                        <th scope="col">
-
-                                            <?php echo "Total Tanggal 1 " . $monthname . " " . date("Y") . " s.d " . date("d") . " " . $monthname . " " . date("Y"); ?>
-                                        </th>
-                                        <th scope="col">
-                                            Jumlah Trip
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    foreach ($totalDailyPerShip as $key => $value) {
-                                        ?>
-                                                                                                                            <tr>
-                                                                                                                                <td rowspan="1">
-                                                                                                                                    <?php echo $value['ferry']; ?>
-                                                                                                                                </td>
-                                                                                                                                <td>
-                                                                                                                                    <?php
-                                                                                                                                    echo formatRupiah($value['total']);
-
-                                                                                                                                    ?>
-                                                                                                                                </td>
-                                                                                                                                <td style=" width:15%">
-                                                                                                                                    <?php echo "" . $value['trip'] . " Trip"; ?>
-                                                                                                                                </td>
-                                                                                                                            </tr>
-                                                                                                                            <?php
-                                    }
-                                    ?>
-                                </tbody>
-                                <tfoot class="thead-dark">
-                                    <tr>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-                                        </th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- Total Kapal Tgl 1 s.d Hari ini -->
-
-                <!-- Total Pelabuhan Tgl 1 s.d Hari ini -->
-                <div class="card mt-3">
-                    <?php
-                    foreach ($incomePerRoute as $key => $value) {
-                        ?>
-                                                                                                                            <?php $monthname = $value['month_date']; ?>
-                                                                                                                            <?php
-                    }
-                    ?>
-                    <h5 class="card-header d-flex justify-content-between align-items-center">
-                        Pelabuhan
-                    </h5>
-
-                    <div class="card-body">
-                        <div class="wrapper" style="overflow-x: auto;">
-                            <table class="dashboard-table table table-striped table-data">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">
-                                            Pelabuhan Asal
-                                        </th>
-                                        <th scope="col">
-
-                                            <?php echo "Total Tanggal 1 " . $monthname . " " . date("Y") . " s.d " . date("d") . " " . $monthname . " " . date("Y"); ?>
-                                        </th>
-                                        <th scope="col">
-                                            Jumlah Trip
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    foreach ($totalDailyPerHarbour as $key => $value) {
-                                        ?>
-                                                                                                                                            <tr>
-                                                                                                                                                <td>
-                                                                                                                                                    <?php echo $value['harbour']; ?>
-                                                                                                                                                </td>
-                                                                                                                                                <td>
-                                                                                                                                                    <?php
-                                                                                                                                                    echo formatRupiah($value['total']);
-
-                                                                                                                                                    ?>
-                                                                                                                                                </td>
-                                                                                                                                                <td style=" width:15%">
-                                                                                                                                                    <?php echo "" . $value['trip'] . " Trip"; ?>
-                                                                                                                                                </td>
-                                                                                                                                            </tr>
-                                                                                                                                            <?php
-                                    }
-                                    ?>
-                                </tbody>
-                                <tfoot class="thead-dark">
-                                    <tr>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-                                        </th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <!-- Total Pelabuhan Tgl 1 s.d Hari ini -->
-            </div>
-        </div>
-    </div>
-    <div class="card">
+<div class="card">
         <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
             <button style="text-decoration:none; display: block; color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -481,20 +232,20 @@ function formatRupiah($angka)
 
                                     foreach ($incomeDailyPerHarbour as $key => $value) {
                                         ?>
-                                                                                                                                        <tr>
-                                                                                                                                            <td>
-                                                                                                                                                <?php echo $value['harbour']; ?>
-                                                                                                                                            </td>
-                                                                                                                                            <td>
-                                                                                                                                                <?php
-                                                                                                                                                echo formatRupiah($value['total']);
-                                                                                                                                                ?>
-                                                                                                                                            </td>
-                                                                                                                                            <td>
-                                                                                                                                                <?php echo $value['Jumlah Trip']; ?>
-                                                                                                                                            </td>
-                                                                                                                                        </tr>
-                                                                                                                                        <?php
+                                        <tr>
+                                            <td>
+                                                <?php echo $value['harbour']; ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                echo formatRupiah($value['total']);
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Jumlah Trip']; ?>
+                                            </td>
+                                        </tr>
+                                        <?php
                                     }
                                     ?>
                                 </tbody>
@@ -520,14 +271,264 @@ function formatRupiah($angka)
         </div>
     </div>
     <div class="card">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+            <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <div style="white-space:normal"> 
+                <?php
+                if (getBulan($monthname) != null) {
+                    echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan($monthname)) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y");
+                } else {
+                    echo "Total Pendapatan Pertanggal 1  " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                }
+                ?>
+                </div>
+            </button>
+            </h5>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+                <!-- Total Lintasan Tgl 1 s.d Hari ini -->
+                <div class="card">
+                    <?php
+                    foreach ($incomePerRoute as $key => $value) {
+                        ?>
+                        <?php $monthname = $value['month_date']; ?>
+                    <?php
+                    }
+                    ?>
+                    <h5 class="card-header d-flex justify-content-between align-items-center">
+                        Lintasan
+                    </h5>
+
+                    <div class="card-body">
+                        <div class="wrapper" style="overflow-x: auto;">
+                            <table class="dashboard-table table table-striped table-data">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">
+                                            Kapal
+                                        </th>
+                                        <th scope="col">
+                                            Lintasan
+                                        </th>
+                                        <th scope="col">
+                                            Pelabuhan Asal
+                                        </th>
+                                        <th scope="col">
+                                            <?php echo "Total Tanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y"); ?>
+                                        </th>
+                                        <th scope="col">
+                                            Jumlah Trip
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($totalDaily as $key => $value) {
+                                        ?>
+                                                                                                                                        <tr>
+                                                                                                                                            <td rowspan="1">
+                                                                                                                                                <?php echo $value['ferry']; ?>
+                                                                                                                                            </td>
+
+                                                                                                                                            <td>
+                                                                                                                                                <?php echo $value['rute']; ?>
+                                                                                                                                            </td>
+                                                                                                                                            <td>
+                                                                                                                                                <?php echo $value['harbour']; ?>
+                                                                                                                                            </td>
+                                                                                                                                            <td>
+                                                                                                                                                <?php
+                                                                                                                                                echo formatRupiah($value['total']);
+
+                                                                                                                                                ?>
+                                                                                                                                            </td>
+                                                                                                                                            <td style=" width:15%">
+                                                                                                                                                <?php echo "" . $value['trip'] . " Trip"; ?>
+                                                                                                                                            </td>
+                                                                                                                                        </tr>
+                                                                                                                                        <?php
+                                    }
+                                    ?>
+                                </tbody>
+                                <tfoot class="thead-dark">
+                                    <tr>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Lintasan Tgl 1 s.d Hari ini -->
+
+                <!-- Total Kapal Tgl 1 s.d Hari ini -->
+                <div class="card mt-3">
+                    <?php
+                    foreach ($incomePerRoute as $key => $value) {
+                        ?>
+                                                                                                                                                                                    <?php $monthname = $value['month_date']; ?>
+                                                                                                                                                                                    <?php
+                    }
+                    ?>
+                    <h5 class="card-header d-flex justify-content-between align-items-center">
+                        Kapal
+                    </h5>
+
+                    <div class="card-body">
+                        <div class="wrapper" style="overflow-x: auto;">
+                            <table class="dashboard-table table table-striped table-data">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">
+                                            Kapal
+                                        </th>
+                                        <th scope="col">
+
+                                            <?php echo "Total Tanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y"); ?>
+                                        </th>
+                                        <th scope="col">
+                                            Jumlah Trip
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($totalDailyPerShip as $key => $value) {
+                                        ?>
+                                                                                                                            <tr>
+                                                                                                                                <td rowspan="1">
+                                                                                                                                    <?php echo $value['ferry']; ?>
+                                                                                                                                </td>
+                                                                                                                                <td>
+                                                                                                                                    <?php
+                                                                                                                                    echo formatRupiah($value['total']);
+
+                                                                                                                                    ?>
+                                                                                                                                </td>
+                                                                                                                                <td style=" width:15%">
+                                                                                                                                    <?php echo "" . $value['trip'] . " Trip"; ?>
+                                                                                                                                </td>
+                                                                                                                            </tr>
+                                                                                                                            <?php
+                                    }
+                                    ?>
+                                </tbody>
+                                <tfoot class="thead-dark">
+                                    <tr>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Kapal Tgl 1 s.d Hari ini -->
+
+                <!-- Total Pelabuhan Tgl 1 s.d Hari ini -->
+                <div class="card mt-3">
+                    <?php
+                    foreach ($incomePerRoute as $key => $value) {
+                        ?>
+                                                                                                                            <?php $monthname = $value['month_date']; ?>
+                                                                                                                            <?php
+                    }
+                    ?>
+                    <h5 class="card-header d-flex justify-content-between align-items-center">
+                        Pelabuhan
+                    </h5>
+
+                    <div class="card-body">
+                        <div class="wrapper" style="overflow-x: auto;">
+                            <table class="dashboard-table table table-striped table-data">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">
+                                            Pelabuhan Asal
+                                        </th>
+                                        <th scope="col">
+
+                                            <?php echo "Total Tanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y"); ?>
+                                        </th>
+                                        <th scope="col">
+                                            Jumlah Trip
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach ($totalDailyPerHarbour as $key => $value) {
+                                        ?>
+                                                                                                                                            <tr>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php echo $value['harbour']; ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td>
+                                                                                                                                                    <?php
+                                                                                                                                                    echo formatRupiah($value['total']);
+
+                                                                                                                                                    ?>
+                                                                                                                                                </td>
+                                                                                                                                                <td style=" width:15%">
+                                                                                                                                                    <?php echo "" . $value['trip'] . " Trip"; ?>
+                                                                                                                                                </td>
+                                                                                                                                            </tr>
+                                                                                                                                            <?php
+                                    }
+                                    ?>
+                                </tbody>
+                                <tfoot class="thead-dark">
+                                    <tr>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+
+                                        </th>
+                                        <th scope="col">
+                                        </th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- Total Pelabuhan Tgl 1 s.d Hari ini -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="card">
         <div class="card-header" id="headingThree">
             <h5 class="mb-0">
             <button style="text-decoration:none; display: block; color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 <?php
-                if ($monthname != null) {
-                    echo "Total Produksi Pertanggal 1 " . $monthname . " " . date("Y") . " s.d " . date("d") . " " . $monthname . " " . date("Y");
+                if (getBulan($monthname) != null) {
+                    echo "Total Produksi Pertanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y");
                 } else {
-                    echo "Total Produksi Pertanggal 1 " . date("F") . " " . date("Y") . " s.d " . date("d") . " " . date("F") . " " . date("Y");
+                    echo "Total Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                 }
                 ?>
             </button>
@@ -1190,10 +1191,10 @@ function formatRupiah($angka)
     display: block;
 color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                 <?php
-                if ($monthname != null) {
-                    echo "Perbandingan Realisasi " . $monthname . " " . date("Y") . " & RKA " . $monthname . " " . date("Y");
+                if (getBulan($monthname) != null) {
+                    echo "Perbandingan Realisasi " . getBulan($monthname) . " " . date("Y") . " & RKA " . getBulan($monthname) . " " . date("Y");
                 } else {
-                    echo "Perbandingan Realisasi " . date("F") . " " . date("Y") . " & RKA " . date("F") . " " . date("Y");
+                    echo "Perbandingan Realisasi " . getBulan(date("F")) . " " . date("Y") . " & RKA " . getBulan(date("F")) . " " . date("Y");
                 }
                 ?>
             </button>
@@ -1209,7 +1210,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                 <?php $monthname = $value['month_date']; ?>
                                                                                                                 <?php $totalTrip += $value['Jumlah Trip']; ?>
                                                                                                                 <!-- <?php echo date("Y"); ?> Print Current Year -->
-                                                                                                                <!-- <?php echo date("F"); ?> Print Current Month -->
+                                                                                                                <!-- <?php echo getBulan(date("F")); ?> Print Current Month -->
                                                                                                                 <?php
                     }
                     ?>
@@ -1232,10 +1233,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "Realisasi " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "RKA " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "RKA " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1364,7 +1365,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                 <?php $monthname = $value['month_date']; ?>
                                                                                                                 <?php $totalTrip += $value['Jumlah Trip']; ?>
                                                                                                                 <!-- <?php echo date("Y"); ?> Print Current Year -->
-                                                                                                                <!-- <?php echo date("F"); ?> Print Current Month -->
+                                                                                                                <!-- <?php echo getBulan(date("F")); ?> Print Current Month -->
                                                                                                                 <?php
                     }
                     ?>
@@ -1381,10 +1382,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Kapal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Kapal " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Kapal " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "RKA Kapal " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "RKA Kapal " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1504,7 +1505,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                 <?php $monthname = $value['month_date']; ?>
                                                                                                                 <?php $totalTrip += $value['Jumlah Trip']; ?>
                                                                                                                 <!-- <?php echo date("Y"); ?> Print Current Year -->
-                                                                                                                <!-- <?php echo date("F"); ?> Print Current Month -->
+                                                                                                                <!-- <?php echo getBulan(date("F")); ?> Print Current Month -->
                                                                                                                 <?php
                     }
                     ?>
@@ -1521,10 +1522,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Pelabuhan " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Pelabuhan " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "RKA Pelabuhan " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "RKA Pelabuhan " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1645,10 +1646,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
     display: block;
 color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 <?php
-                if ($monthname != null) {
-                    echo "Perbandingan Realisasi Lintasan " . $monthname . " " . date("Y") - 1 . " & Realisasi " . $monthname . " " . date("Y");
+                if (getBulan($monthname) != null) {
+                    echo "Perbandingan Realisasi Lintasan " . getBulan($monthname) . " " . date("Y") - 1 . " & Realisasi " . getBulan($monthname) . " " . date("Y");
                 } else {
-                    echo "Perbandingan Realisasi Lintasan " . date("F") . " " . date("Y") - 1 . " & Realisasi " . date("F") . " " . date("Y");
+                    echo "Perbandingan Realisasi Lintasan " . getBulan(date("F")) . " " . date("Y") - 1 . " & Realisasi " . getBulan(date("F")) . " " . date("Y");
                 }
                 ?>
             </button>
@@ -1664,7 +1665,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                 <?php $monthname = $value['month_date']; ?>
                                                                                                                 <?php $totalTrip += $value['Jumlah Trip']; ?>
                                                                                                                 <!-- <?php echo date("Y"); ?> Print Current Year -->
-                                                                                                                <!-- <?php echo date("F"); ?> Print Current Month -->
+                                                                                                                <!-- <?php echo getBulan(date("F")); ?> Print Current Month -->
 
                                                                                                                 <?php
                     }
@@ -1690,10 +1691,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Lintasan " . $monthname . " " . date("Y") - 1; ?>
+                                            <?php echo "Realisasi Lintasan " . getBulan($monthname) . " " . date("Y") - 1; ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Lintasan " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Lintasan " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1829,7 +1830,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                 <?php $monthname = $value['month_date']; ?>
                                                                                                                 <?php $totalTrip += $value['Jumlah Trip']; ?>
                                                                                                                 <!-- <?php echo date("Y"); ?> Print Current Year -->
-                                                                                                                <!-- <?php echo date("F"); ?> Print Current Month -->
+                                                                                                                <!-- <?php echo getBulan(date("F")); ?> Print Current Month -->
 
                                                                                                                 <?php
                     }
@@ -1850,10 +1851,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                         </th>
                                         
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Kapal " . $monthname . " " . date("Y") - 1; ?>
+                                            <?php echo "Realisasi Kapal " . getBulan($monthname) . " " . date("Y") - 1; ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Kapal " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Kapal " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1978,7 +1979,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                 <?php $monthname = $value['month_date']; ?>
                                                                                                                 <?php $totalTrip += $value['Jumlah Trip']; ?>
                                                                                                                 <!-- <?php echo date("Y"); ?> Print Current Year -->
-                                                                                                                <!-- <?php echo date("F"); ?> Print Current Month -->
+                                                                                                                <!-- <?php echo getBulan(date("F")); ?> Print Current Month -->
 
                                                                                                                 <?php
                     }
@@ -2000,10 +2001,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Pelabuhan " . $monthname . " " . date("Y") - 1; ?>
+                                            <?php echo "Realisasi Pelabuhan " . getBulan($monthname) . " " . date("Y") - 1; ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Pelabuhan " . $monthname . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Pelabuhan " . getBulan($monthname) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
