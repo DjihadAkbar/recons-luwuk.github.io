@@ -1842,7 +1842,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
 
                     <div class="card-body">
                         <div class="wrapper" style="overflow-x: auto;">
-                            <table class="dashboard-table table table-striped  table-data" style="border-collapse: collapse">
+                            <table class="dashboard-table table table-striped  table-data table-vcenter" style="border-collapse: collapse font-size:80%;">
                                 <thead class="thead-dark">
                                     <tr>
                                     <tr class=" border-0">
