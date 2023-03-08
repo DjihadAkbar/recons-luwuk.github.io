@@ -446,7 +446,7 @@ class Income_model extends CI_Model
                     ) as target'
         );
         $this->db->join('(
-            SELECT id_ferry, ferry, trip, id_harbour
+            SELECT id_ferry, ferry, trip, id_harbour,
             SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
                 (rate.Gol2 * entry_data.Gol2) +
