@@ -216,8 +216,7 @@ class Income_model extends CI_Model
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, 
-        COUNT(case when entry_d.trip != 1 then 1 END) as tripLastYear,
+        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
                 SUM(
                 (rate.Gol1 * entry_a.Gol1) + 
@@ -287,7 +286,7 @@ class Income_model extends CI_Model
                         join trips on trips.id = entry_c.id_trip
                         WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '"  AND entry_a.id_ferry = entry_c.id_ferry
                         GROUP BY entry_c.id_ferry     
-                    ) as tripLastYear2,
+                    ) as tripLastYear,
                     (
                         SELECT sum(trip)
                         FROM harbour_target
@@ -336,7 +335,7 @@ class Income_model extends CI_Model
                             JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                             JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                             JOIN trips on trips.id = entry_data.id_trip
-                            WHERE MONTHNAME(entry_data.DATE) = "January" AND YEAR(entry_data.DATE) = 2022
+                            WHERE MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
                             GROUP BY entry_data.id_ferry
                         ) as entry_d','entry_a.id_ferry = entry_d.id_ferry');
         $this->db->join('routes', 'entry_a.id_route = routes.id');
@@ -361,7 +360,7 @@ class Income_model extends CI_Model
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry,monthname(entry_a.date) as month_date,entry_a.date as date,harbour, 
+        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date as date,harbour,entry_d.total as totalLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
                 SUM(
                 (rate.Gol1 * entry_a.Gol1) + 
@@ -425,7 +424,7 @@ class Income_model extends CI_Model
                         JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
                         WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '"
                         GROUP BY harbour
-                    ) AS totalLastYear,
+                    ) AS totalLastYear2,
                     (
                         SELECT COUNT(case when trips.trip != 1 then 1 END)
                         FROM entry_data as entry_c
@@ -446,6 +445,45 @@ class Income_model extends CI_Model
                         GROUP BY id_harbour
                     ) as target'
         );
+        $this->db->join('(
+            SELECT id_ferry, ferry, trip,
+            SUM(
+                (rate.Gol1 * entry_data.Gol1) + 
+                (rate.Gol2 * entry_data.Gol2) +
+                (rate.Gol3 * entry_data.Gol3) +
+                (rate.Gol4Pen * entry_data.Gol4Pen) +
+                (rate.Gol4Bar * entry_data.Gol4Bar) +
+                (rate.Gol5Pen * entry_data.Gol5Pen) +
+                (rate.Gol5Bar * entry_data.Gol5Bar) +
+                (rate.Gol6Pen * entry_data.Gol6Pen) +
+                (rate.Gol6Bar * entry_data.Gol6Bar) +
+                (rate.Gol7 * entry_data.Gol7) +
+                (rate.Gol8 * entry_data.Gol8) +
+                (rate.Gol9 * entry_data.Gol9) +
+                (rate.DewasaEksekutif * entry_data.DewasaEksekutif) +
+                (rate.BayiEksekutif * entry_data.BayiEksekutif) +
+                (rate.DewasaBisnis * entry_data.DewasaBisnis) +
+                (rate.BayiBisnis * entry_data.BayiBisnis) +
+                (rate.DewasaEkonomi * entry_data.DewasaEkonomi) +
+                (rate.BayiEkonomi * entry_data.BayiEkonomi) +
+                (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) +
+                (rate.Suplesi1Anak * entry_data.Suplesi1Anak) +
+                (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) +
+                (rate.Suplesi2Anak * entry_data.Suplesi2Anak) +
+                (rate.Hewan * entry_data.Hewan) +
+                (rate.Gayor * entry_data.Gayor) +
+                (rate.Carter * entry_data.Carter) +
+                (rate.BarCur * entry_data.BarangPendapatan))
+                AS total
+                FROM entry_data
+                JOIN routes ON routes.id = entry_data.id_route
+                JOIN ferry ON ferry.id = entry_data.id_ferry
+                JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
+                JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
+                JOIN trips on trips.id = entry_data.id_trip
+                WHERE MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
+                GROUP BY entry_data.id_harbour
+            ) as entry_d','entry_a.id_ferry = entry_d.id_ferry');
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
         $this->db->join('harbour_target', 'entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month');
