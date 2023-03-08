@@ -2037,66 +2037,66 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                     <?php
                                     foreach ($incomePerHarbour as $key => $value) {
                                         ?>
-                                                                                                                                <tr class="text-center">
+                                        <tr class="text-center">
 
 
-                                                                                                                                    <td style=" width:20%">
-                                                                                                                                        <?php echo $value['harbour']; ?>
-                                                                                                                                    </td>
-                                                                                                                                    <td style=" width:15%">
-                                                                                                                                        <?php echo "" . $value['tripLastYear'] . " Trip"; ?>
-                                                                                                                                    </td>
-                                                                                                                                    <td style=" width:15%">
-                                                                                                                                        <?php
-                                                                                                                                        if ($value['totalLastYear'] == null) {
-                                                                                                                                            echo formatRupiah(0);
-                                                                                                                                        } else {
-                                                                                                                                            echo formatRupiah($value['totalLastYear']);
-                                                                                                                                        }
-                                                                                                                                        ?>
-                                                                                                                                    </td>
+                                            <td style=" width:20%">
+                                                <?php echo $value['harbour']; ?>
+                                            </td>
+                                            <td style=" width:15%">
+                                                <?php echo "" . $value['tripLastYear'] . " Trip"; ?>
+                                            </td>
+                                            <td style=" width:15%">
+                                                <?php
+                                                if ($value['totalLastYear'] == null) {
+                                                    echo formatRupiah(0);
+                                                } else {
+                                                    echo formatRupiah($value['totalLastYear']);
+                                                }
+                                                ?>
+                                            </td>
 
-                                                                                                                                    <td style=" width:15%">
-                                                                                                                                        <?php echo "" . $value['Jumlah Trip'] . " Trip"; ?>
-                                                                                                                                    </td>
-                                                                                                                                    <td style=" width:15%">
-                                                                                                                                        <?php
-                                                                                                                                        echo formatRupiah($value['total']);
-                                                                                                                                        ?>
-                                                                                                                                    </td>
+                                            <td style=" width:15%">
+                                                <?php echo "" . $value['Jumlah Trip'] . " Trip"; ?>
+                                            </td>
+                                            <td style=" width:15%">
+                                                <?php
+                                                echo formatRupiah($value['total']);
+                                                ?>
+                                            </td>
 
-                                                                                                                                    <td>
-                                                                                                                                        <?php
-                                                                                                                                        $tripSebelum = $value['tripLastYear'];
-                                                                                                                                        $tripSetelah = $value['Jumlah Trip'];
-                                                                                                                                        if ($tripSetelah == 0 && $tripSebelum != 0):
-                                                                                                                                            $persentase = -100;
-                                                                                                                                        elseif ($tripSebelum == 0 && $tripSetelah == 0):
-                                                                                                                                            $persentase = 0;
-                                                                                                                                        else:
-                                                                                                                                            $persentase = ($tripSebelum / $tripSetelah) * 100;
-                                                                                                                                        endif;
-                                                                                                                                        echo number_format($persentase, 2) . "%";
-                                                                                                                                        ?>
-                                                                                                                                    </td>
-                                                                                                                                    <td>
-                                                                                                                                        <?php
-                                                                                                                                        $totalSebelum = $value['totalLastYear'];
-                                                                                                                                        $totalSetelah = $value['total'];
-                                                                                                                                        if ($totalSetelah == 0 && $totalSebelum != 0):
-                                                                                                                                            $persentase = -100;
-                                                                                                                                        elseif ($tripSetelah == 0 && $totalSetelah == 0):
-                                                                                                                                            $persentase = 0;
-                                                                                                                                        else:
-                                                                                                                                            $persentase = ($totalSebelum / $totalSetelah) * 100;
-                                                                                                                                        endif;
-                                                                                                                                        echo number_format($persentase, 2) . "%";
-                                                                                                                                        ?>
-                                                                                                                                    </td>
+                                            <td>
+                                                <?php
+                                                $tripSebelum = $value['tripLastYear'];
+                                                $tripSetelah = $value['Jumlah Trip'];
+                                                if ($tripSetelah == 0 && $tripSebelum != 0):
+                                                    $persentase = -100;
+                                                elseif ($tripSebelum == 0 && $tripSetelah == 0):
+                                                    $persentase = 0;
+                                                else:
+                                                    $persentase = ($tripSebelum / $tripSetelah) * 100;
+                                                endif;
+                                                echo number_format($persentase, 2) . "%";
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                $totalSebelum = $value['totalLastYear'];
+                                                $totalSetelah = $value['total'];
+                                                if ($totalSetelah == 0 && $totalSebelum != 0):
+                                                    $persentase = -100;
+                                                elseif ($tripSetelah == 0 && $totalSetelah == 0):
+                                                    $persentase = 0;
+                                                else:
+                                                    $persentase = ($totalSebelum / $totalSetelah) * 100;
+                                                endif;
+                                                echo number_format($persentase, 2) . "%";
+                                                ?>
+                                            </td>
 
-                                                                                                                                </tr>
-                                                                                                                                <?php
-                                    }
+                                        </tr>
+                                        <?php
+                                }
                                     ?>
 
                                 </tbody>
