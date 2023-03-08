@@ -483,7 +483,7 @@ class Income_model extends CI_Model
                 JOIN trips on trips.id = entry_data.id_trip
                 WHERE MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
                 GROUP BY entry_data.id_harbour
-            ) as entry_d','entry_a.id_ferry = entry_d.id_ferry');
+            ) as entry_d','entry_a.id_harbour = entry_d.id_harbour');
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
         $this->db->join('harbour_target', 'entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month');
