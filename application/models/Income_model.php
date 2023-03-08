@@ -302,7 +302,7 @@ class Income_model extends CI_Model
                         GROUP BY ferry
                     ) as target');
                     $this->db->join('
-                        SELECT id_ferry, ferry,
+                        SELECT id_ferry,
                         SUM(
                             (rate.Gol1 * entry_data.Gol1) + 
                             (rate.Gol2 * entry_data.Gol2) +
