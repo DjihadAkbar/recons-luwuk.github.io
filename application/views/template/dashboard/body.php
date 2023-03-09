@@ -83,7 +83,7 @@ if (!$this->session->userdata('logged_in'))
                     </a>
                     <ul id="admin" class="collapse menu">
                         <li>
-                            <?php echo anchor('dashboard/accountSettings', 'Account Settings') ?>
+                            <?php echo anchor('dashboard/admin/accountSettings', 'Account Settings') ?>
                             <!-- <?php echo anchor('dashboard/kategori', 'Kategori') ?>
                             <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
                         </li>
