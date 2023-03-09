@@ -29,13 +29,13 @@ class Admin extends CI_Controller
     }
 
     public function accountSettings(){
-        if(!$this->session->userdata['type'] != 'ADMIN'){
+        if($this->session->userdata['type'] != 'ADMIN'){
             redirect(base_url('dashboard'));
         } else {
             $data['title'] = 'Accoount Settings';
             $data['contentView'] = 'admin/accountSettings';
 
-            
+
             $this->load->view('template/dashboard/body', $data);
         }
     }
