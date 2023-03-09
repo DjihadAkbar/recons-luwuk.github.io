@@ -1302,7 +1302,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                 elseif ($tripSebelum == 0 && $tripSetelah == 0):
                                                                                                                                                     $persentase = 0;
                                                                                                                                                 else:
-                                                                                                                                                    $persentase = ($tripSetelah/$tripSebelum) * 100;
+                                                                                                                                                    $persentase = ($tripSebelum / $tripSetelah) * 100;
                                                                                                                                                 endif;
                                                                                                                                                 echo number_format($persentase, 2) . "%";
                                                                                                                                                 ?>
@@ -1317,7 +1317,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                 elseif ($tripSetelah == 0 && $totalSetelah == 0):
                                                                                                                                                     $persentase = 0;
                                                                                                                                                 else:
-                                                                                                                                                    $persentase = ( $totalSetelah / $totalSebelum) * 100;
+                                                                                                                                                    $persentase = ($totalSebelum / $totalSetelah) * 100;
                                                                                                                                                 endif;
                                                                                                                                                 echo number_format($persentase, 2) . "%";
                                                                                                                                                 ?>
@@ -1447,7 +1447,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                     ) {
                                                                                                                                                         $persentase = 0;
                                                                                                                                                     } else {
-                                                                                                                                                        $persentase = ($tripSetelah/$tripSebelum) * 100;
+                                                                                                                                                        $persentase = ($tripSebelum / $tripSetelah) * 100;
                                                                                                                                                     }
                                                                                                                                                     echo number_format($persentase, 2) . "%";
                                                                                                                                                     ?>
@@ -1461,7 +1461,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                     elseif ($tripSetelah == 0 && $totalSetelah == 0):
                                                                                                                                                         $persentase = 0;
                                                                                                                                                     else:
-                                                                                                                                                        $persentase = ( $totalSetelah / $totalSebelum) * 100;
+                                                                                                                                                        $persentase = ($totalSebelum / $totalSetelah) * 100;
                                                                                                                                                     endif;
                                                                                                                                                     echo number_format($persentase, 2) . "%";
                                                                                                                                                     ?>
@@ -1588,7 +1588,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                     elseif ($tripSebelum == 0 && $tripSetelah == 0):
                                                                                                                                                         $persentase = 0;
                                                                                                                                                     else:
-                                                                                                                                                        $persentase = ($tripSetelah/$tripSebelum) * 100;
+                                                                                                                                                        $persentase = ($tripSebelum / $tripSetelah) * 100;
                                                                                                                                                     endif;
                                                                                                                                                     echo number_format($persentase, 2) . "%";
                                                                                                                                                     ?>
@@ -1602,7 +1602,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                     elseif ($tripSetelah == 0 && $totalSetelah == 0):
                                                                                                                                                         $persentase = 0;
                                                                                                                                                     else:
-                                                                                                                                                        $persentase = ( $totalSetelah / $totalSebelum) * 100;
+                                                                                                                                                        $persentase = ($totalSebelum / $totalSetelah) * 100;
                                                                                                                                                     endif;
                                                                                                                                                     echo number_format($persentase, 2) . "%";
                                                                                                                                                     ?>
@@ -1761,14 +1761,14 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
 
                                                                                                                                                 <td>
                                                                                                                                                     <?php
-                                                                                                                                                    $tripSetelah = $value['tripLastYear'];
-                                                                                                                                                    $tripSebelum = $value['Jumlah Trip'];
-                                                                                                                                                    if ($tripSebelum == 0 && $tripSetelah != 0):
+                                                                                                                                                    $tripSebelum = $value['tripLastYear'];
+                                                                                                                                                    $tripSetelah = $value['Jumlah Trip'];
+                                                                                                                                                    if ($tripSetelah == 0 && $tripSebelum != 0):
                                                                                                                                                         $persentase = -100;
-                                                                                                                                                    elseif ($tripSetelah == 0 && $tripSebelum == 0):
+                                                                                                                                                    elseif ($tripSebelum == 0 && $tripSetelah == 0):
                                                                                                                                                         $persentase = 0;
                                                                                                                                                     else:
-                                                                                                                                                        $persentase = ($tripSetelah / $tripSebelum) * 100;
+                                                                                                                                                        $persentase = ($tripSebelum / $tripSetelah) * 100;
                                                                                                                                                     endif;
                                                                                                                                                     echo number_format($persentase, 2) . "%";
                                                                                                                                                     ?>
@@ -1779,10 +1779,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                     $totalSetelah = $value['total'];
                                                                                                                                                     if ($totalSetelah == 0 && $totalSebelum != 0):
                                                                                                                                                         $persentase = -100;
-                                                                                                                                                    elseif ($tripSebelum == 0 && $totalSetelah == 0):
+                                                                                                                                                    elseif ($tripSetelah == 0 && $totalSetelah == 0):
                                                                                                                                                         $persentase = 0;
                                                                                                                                                     else:
-                                                                                                                                                        $persentase = ( $totalSetelah / $totalSebelum) * 100;
+                                                                                                                                                        $persentase = ($totalSebelum / $totalSetelah) * 100;
                                                                                                                                                     endif;
                                                                                                                                                     echo number_format($persentase, 2) . "%";
                                                                                                                                                     ?>
@@ -1836,6 +1836,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                     }
                     ?>
                     <h5 class="card-header d-flex justify-content-between align-items-center">
+
                         Kapal
                     </h5>
 
@@ -1913,14 +1914,14 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
 
                                                                                                                                             <td>
                                                                                                                                                 <?php
-                                                                                                                                                $tripSetelah = $value['tripLastYear'];
-                                                                                                                                                $tripSebelum = $value['Jumlah Trip'];
-                                                                                                                                                if ($tripSebelum == 0 && $tripSetelah != 0):
+                                                                                                                                                $tripSebelum = $value['tripLastYear'];
+                                                                                                                                                $tripSetelah = $value['Jumlah Trip'];
+                                                                                                                                                if ($tripSetelah == 0 && $tripSebelum != 0):
                                                                                                                                                     $persentase = -100;
-                                                                                                                                                elseif ($tripSetelah == 0 && $tripSebelum == 0):
+                                                                                                                                                elseif ($tripSebelum == 0 && $tripSetelah == 0):
                                                                                                                                                     $persentase = 0;
                                                                                                                                                 else:
-                                                                                                                                                    $persentase = ($tripSetelah / $tripSebelum) * 100;
+                                                                                                                                                    $persentase = ($tripSebelum / $tripSetelah) * 100;
                                                                                                                                                 endif;
                                                                                                                                                 echo number_format($persentase, 2) . "%";
                                                                                                                                                 ?>
@@ -1931,10 +1932,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                 $totalSetelah = $value['total'];
                                                                                                                                                 if ($totalSetelah == 0 && $totalSebelum != 0):
                                                                                                                                                     $persentase = -100;
-                                                                                                                                                elseif ($tripSebelum == 0 && $totalSetelah == 0):
+                                                                                                                                                elseif ($tripSetelah == 0 && $totalSetelah == 0):
                                                                                                                                                     $persentase = 0;
                                                                                                                                                 else:
-                                                                                                                                                    $persentase = ( $totalSetelah / $totalSebelum) * 100;
+                                                                                                                                                    $persentase = ($totalSebelum / $totalSetelah) * 100;
                                                                                                                                                 endif;
                                                                                                                                                 echo number_format($persentase, 2) . "%";
                                                                                                                                                 ?>
@@ -2066,14 +2067,14 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
 
                                             <td>
                                                 <?php
-                                                $tripSetelah = $value['tripLastYear'];
-                                                $tripSebelum = $value['Jumlah Trip'];
-                                                if ($tripSebelum == 0 && $tripSetelah != 0):
+                                                $tripSebelum = $value['tripLastYear'];
+                                                $tripSetelah = $value['Jumlah Trip'];
+                                                if ($tripSetelah == 0 && $tripSebelum != 0):
                                                     $persentase = -100;
-                                                elseif ($tripSetelah == 0 && $tripSebelum == 0):
+                                                elseif ($tripSebelum == 0 && $tripSetelah == 0):
                                                     $persentase = 0;
                                                 else:
-                                                    $persentase = ($tripSebelum) * 100;
+                                                    $persentase = ($tripSebelum / $tripSetelah) * 100;
                                                 endif;
                                                 echo number_format($persentase, 2) . "%";
                                                 ?>
@@ -2084,10 +2085,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 $totalSetelah = $value['total'];
                                                 if ($totalSetelah == 0 && $totalSebelum != 0):
                                                     $persentase = -100;
-                                                elseif ($tripSebelum == 0 && $totalSetelah == 0):
+                                                elseif ($tripSetelah == 0 && $totalSetelah == 0):
                                                     $persentase = 0;
                                                 else:
-                                                    $persentase = ( $totalSetelah / $totalSebelum) * 100;
+                                                    $persentase = ($totalSebelum / $totalSetelah) * 100;
                                                 endif;
                                                 echo number_format($persentase, 2) . "%";
                                                 ?>
