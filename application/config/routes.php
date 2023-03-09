@@ -113,4 +113,8 @@ $route['dashboard/report/downloadBuktiPenyetoran'] = 'report/downloadBuktiPenyet
 $route['dashboard/report/dailyReport'] = 'report/dailyReport';
 $route['dashboard/report/downloadDailyReport'] = 'report/downloadDailyReport';
 
+//Admin
+$route['dashboard/admin/accountSettings'] = 'admin/accountSettings';
+
+
 
