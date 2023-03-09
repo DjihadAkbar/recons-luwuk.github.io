@@ -71,6 +71,27 @@ if (!$this->session->userdata('logged_in'))
                     </li>
                 </ul>
             </li>
+            <?php
+            if($this->session->userdata['type'] == 'ADMIN'){
+                ?>
+                <li class="<?php
+                echo menuAktif('admin');
+                ?>">
+                    <a href=" #admin" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp"
+                        data-toggle="collapse">
+                        Admin
+                    </a>
+                    <ul id="admin" class="collapse menu">
+                        <li>
+                            <?php echo anchor('dashboard/accountSettings', 'Account Settings') ?>
+                            <!-- <?php echo anchor('dashboard/kategori', 'Kategori') ?>
+                            <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
+                        </li>
+                    </ul>
+                </li>
+                <?php
+            }
+            ?>
             <li class="<?php
             echo menuAktif('account');
             ?>">
