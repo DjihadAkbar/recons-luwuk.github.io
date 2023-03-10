@@ -1842,7 +1842,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
 
                     <div class="card-body">
                         <div class="wrapper" style="overflow-x: auto;">
-                            <table class="dashboard-table table table-striped  table-data table-vcenter" style="border-collapse: collapse font-size:80%;">
+                            <table class="dashboard-table table table-striped  table-data table-vcenter" style="border-collapse: collapse; font-size:80%;">
                                 <thead class="thead-dark">
                                     <tr class=" border-0">
                                         <th scope="col" rowspan="2" style="vertical-align:middle;" id="card-button" class="text-center">
@@ -2084,10 +2084,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 $totalSetelah = $value['total'];
                                                 if ($totalSetelah == 0 && $totalSebelum != 0):
                                                     $persentase = -100;
-                                                elseif ($tripSetelah == 0 && $totalSetelah == 0):
+                                                elseif ($totalSebelum == 0 && $totalSetelah == 0):
                                                     $persentase = 0;
-                                                else:
-                                                    $persentase = ($totalSebelum / $totalSetelah) * 100;
+                                                elseif($totalSebelum!=0 && $totalSetelah != 0):
+                                                    $persentase = ($totalSetelah / $totalSebelum) * 100;
                                                 endif;
                                                 echo number_format($persentase, 2) . "%";
                                                 ?>
