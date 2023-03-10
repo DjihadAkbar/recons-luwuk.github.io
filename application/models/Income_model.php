@@ -249,7 +249,7 @@ class Income_model extends CI_Model
                 FROM entry_data
                 JOIN routes ON routes.id = entry_data.id_route
                 JOIN ferry ON ferry.id = entry_data.id_ferry
-                JOIN harbours ON harbours.id_harbours = entry_data.id_ferry
+                JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                 JOIN trips on trips.id = entry_data.id_trip';
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
