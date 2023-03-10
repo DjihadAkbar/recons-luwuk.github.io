@@ -258,8 +258,7 @@ class Income_model extends CI_Model
                     $textTengah ='WHERE ';
                 }
                 $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
-                GROUP BY entry_data.id_ferry
-            ) as entry_d';
+                GROUP BY entry_data.id_ferry) as entry_d';
             $textAkhir = 'entry_a.id_ferry = entry_d.id_ferry';
         
         $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear,
@@ -405,9 +404,9 @@ class Income_model extends CI_Model
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                 JOIN trips on trips.id = entry_data.id_trip';
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-                    $textTengah = 'WHERE routes.spv = '.$pelabuhan. ' AND ';
+                    $textTengah = ' WHERE routes.spv = '.$pelabuhan. ' AND ';
                 } else {
-                    $textTengah ='WHERE ';
+                    $textTengah =' WHERE ';
                 }
                 $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
                 GROUP BY entry_data.id_harbour
@@ -512,7 +511,6 @@ class Income_model extends CI_Model
         }
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
-        // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date),harbour');
         $this->db->order_by('harbour');
         return $this->db->get('entry_data as entry_a')->result_array();
