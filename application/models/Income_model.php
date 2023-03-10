@@ -123,7 +123,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
         $textDepan = '(
-            SELECT id_ferry, ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip, entry_data.id_route,
+            SELECT id_ferry, ferry.ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip, entry_data.id_route,
             SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
                 (rate.Gol2 * entry_data.Gol2) +
