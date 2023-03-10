@@ -123,7 +123,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
         $textDepan = '(
-            SELECT id_ferry, ferry.ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip, entry_data.id_route,
+            SELECT id_ferry, ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip, entry_data.id_route,
             SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
                 (rate.Gol2 * entry_data.Gol2) +
@@ -167,7 +167,7 @@ class Income_model extends CI_Model
                 GROUP BY entry_data.id_harbour,entry_data.id_route) as entry_d';
             $textAkhir = 'entry_a.id_route = entry_d.id_route AND entry_a.id_harbour = entry_d.id_harbour';
         
-        $this->db->select('ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
+        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id, target, harbour_target.trip as target_trip,
                 SUM(
