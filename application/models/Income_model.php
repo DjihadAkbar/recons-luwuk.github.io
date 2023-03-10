@@ -358,8 +358,14 @@ class Income_model extends CI_Model
     {
         $lastMonth = date("F", strtotime('-2 month'));
         $lastYear = date("Y") - 1;
+        $pelabuhanSpv = '';
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
+        
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $pelabuhanSpv = $pelabuhan;
+        }
+        
         $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date as date,harbour,entry_d.total as totalLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
                 SUM(
@@ -481,7 +487,7 @@ class Income_model extends CI_Model
                 JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                 JOIN trips on trips.id = entry_data.id_trip
-                WHERE MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
+                WHERE routes.spv = "'.$pelabuhanSpv.'" AND MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
                 GROUP BY entry_data.id_harbour
             ) as entry_d','entry_a.id_harbour = entry_d.id_harbour');
         $this->db->join('routes', 'entry_a.id_route = routes.id');
