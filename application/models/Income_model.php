@@ -300,9 +300,11 @@ class Income_model extends CI_Model
                 JOIN ferry ON ferry.id = entry_data.id_ferry
                 JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
-                JOIN trips on trips.id = entry_data.id_trip';
+                JOIN trips on trips.id = entry_data.id_trip
+                JOIN spv_ferry ON spv_ferry.id_ferry = entry_data.id_ferry
+                ';
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-                    $textTengah = ' WHERE routes.spv = "'.$pelabuhan. '" AND ';
+                    $textTengah = ' WHERE spv_ferry.spv = "'.$pelabuhan. '" AND ';
                 } else {
                     $textTengah =' WHERE ';
                 }
