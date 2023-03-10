@@ -266,7 +266,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
         $textDepan = '(
-            SELECT entry_data.id_ferry, ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip,
+            SELECT entry_data.id as id_entry,id_ferry, ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip,
             SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
                 (rate.Gol2 * entry_data.Gol2) +
@@ -300,17 +300,15 @@ class Income_model extends CI_Model
                 JOIN ferry ON ferry.id = entry_data.id_ferry
                 JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
-                JOIN trips on trips.id = entry_data.id_trip
-                JOIN spv_ferry ON spv_ferry.id_ferry = entry_data.id_ferry
-                ';
+                JOIN trips on trips.id = entry_data.id_trip';
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-                    $textTengah = ' WHERE spv_ferry.spv = "'.$pelabuhan. '" AND ';
+                    $textTengah = ' WHERE routes.spv = "'.$pelabuhan. '" AND ';
                 } else {
                     $textTengah =' WHERE ';
                 }
                 $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
-                GROUP BY ferry) as entry_d';
-            $textAkhir = 'entry_a.id_ferry = entry_d.id_ferry';
+                GROUP BY entry_data.id_ferry) as entry_d';
+            $textAkhir = 'entry_a.id = entry_d.id_entry';
         
         $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
