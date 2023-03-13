@@ -72,7 +72,7 @@ if (!$this->session->userdata('logged_in'))
                 </ul>
             </li>
             <?php
-            if($this->session->userdata['type'] == 'ADMIN'){
+            if($this->session->userdata['type'] == 'ADMIN' ){
                 ?>
                 <li class="<?php
                 echo menuAktif('admin');
@@ -189,7 +189,7 @@ if (!$this->session->userdata('logged_in'))
 <script type="text/javascript">
     var userType = "<?php echo "$userType" ?>";
     $('.akses-button').hide();
-    if (userType == 'EDITOR') {
+    if (userType != 'VIEWER') {
         $('.akses-button').show();
     }
     
