@@ -1,10 +1,4 @@
-<?php
-print_r($user_accounts);
-foreach($user_accounts as $row){
-    echo $row['name'];
-    echo $row['type'];
-}
-?>
+
 <div id="accordion">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center text-center" id="headingOne" >
@@ -93,10 +87,9 @@ foreach($user_accounts as $row){
                                         <td>
                                             <?php echo $value['jabatan']; ?>
                                         </td>
-                                        
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
+                                                <a class="btn btn-warning text-dark" href="admin/editAccount?id=<?php echo $value['id']; ?>"><i class="fas fa-file-edit"></i></a>
                                             </div>
                                         </td>
                                         <td>
@@ -105,7 +98,7 @@ foreach($user_accounts as $row){
                                                 <!-- <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a> -->
-                                                <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
+                                                <a class="btn btn-danger text-dark" href="admin/deleteAccountid=<?php echo $value['id']; ?>">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                                 
