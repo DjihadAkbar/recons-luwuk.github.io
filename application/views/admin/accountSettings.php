@@ -36,7 +36,8 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Telepon</th>
                                     <th scope="col">Jabatan</th>
-                                    <th colspan="2" scope="col">Action </th>
+                                    <th scope="col">Action </th>
+                                    <th scope="col"> </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -149,7 +150,8 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Telepon</th>
                                     <th scope="col">Jabatan </th>
-                                    <th colspan="2" scope="col">Action </th>
+                                    <th scope="col">Action </th>
+                                    <th scope="col"> </th>
                                 </tr>
                             </tfoot>
                         </table>
