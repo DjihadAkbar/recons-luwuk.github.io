@@ -90,7 +90,8 @@
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-warning text-dark" href="admin/editAccount?id=<?php echo $value['id']; ?>"><i class="fas fa-file-edit"></i></a>
+                                            <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
+                                            
                                             </div>
                                         </td>
                                         <td>
@@ -99,7 +100,7 @@
                                                 <!-- <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a> -->
-                                                <a class="btn btn-danger text-dark" href="admin/deleteAccountid=<?php echo $value['id']; ?>">
+                                                <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                                 
@@ -160,8 +161,4 @@
             </div>
         </div>
     </div>
-
 </div>
-
-
-                                        
