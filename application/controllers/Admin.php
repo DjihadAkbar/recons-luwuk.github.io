@@ -32,9 +32,10 @@ class Admin extends CI_Controller
         if($this->session->userdata['type'] != 'ADMIN'){
             redirect(base_url('dashboard'));
         } else {
-            $data['title'] = 'Accoount Settings';
+            $data['title'] = 'Account Settings';
             $data['contentView'] = 'admin/accountSettings';
 
+            $data['user_accounts'] = $this->Admin_model->user_accounts();
 
             $this->load->view('template/dashboard/body', $data);
         }

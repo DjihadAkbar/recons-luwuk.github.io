@@ -1,2 +1,5 @@
 <?php
-echo $title;
+foreach($user_accounts as $row){
+    echo $row['name'];
+    echo $row['type'];
+}
