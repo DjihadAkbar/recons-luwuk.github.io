@@ -36,8 +36,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Telepon</th>
                                     <th scope="col">Jabatan</th>
-                                    <th scope="col">Action </th>
-                                    <th scope="col"> </th>
+                                    <th colspan="2" scope="col">Action </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,14 +50,14 @@
                                         </th>
                                         <td>
                                             <!-- <?php
-                                            $original_date = $value['date'];
+                                            // $original_date = $value['date'];
 
-                                            // Creating timestamp from given date
-                                            $timestamp = strtotime($original_date);
+                                            // // Creating timestamp from given date
+                                            // $timestamp = strtotime($original_date);
 
-                                            // Creating new date format from that timestamp
-                                            $new_date = date("d-m-Y", $timestamp);
-                                            echo $new_date;
+                                            // // Creating new date format from that timestamp
+                                            // $new_date = date("d-m-Y", $timestamp);
+                                            // echo $new_date;
 
                                             ?> -->
                                         </td>
@@ -150,8 +149,7 @@
                                     <th scope="col">Email</th>
                                     <th scope="col">Telepon</th>
                                     <th scope="col">Jabatan </th>
-                                    <th scope="col">Action </th>
-                                    <th scope="col"> </th>
+                                    <th colspan="2" scope="col">Action </th>
                                 </tr>
                             </tfoot>
                         </table>
