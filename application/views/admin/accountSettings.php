@@ -33,17 +33,16 @@ foreach($user_accounts as $row){
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col"> # </th>
-                                    <th scope="col">Tanggal Operasi </th>
-                                    <th scope="col">Waktu Keberangkatan </th>
-                                    <th scope="col">Nama Kapal </th>
-                                    <th scope="col">Lintasan </th>
-                                    <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">Last Login</th>
+                                    <th scope="col">Pelabuhan </th>
+                                    <th scope="col">Type </th>
+                                    <th scope="col">Nama </th>
+                                    <th scope="col">Username</th>
                                     <th scope="col">Jenis Trip </th>
-                                    <th scope="col">Dewasa Eksekutif </th>
-                                    <th scope="col">Bayi Eksekutif </th>
-                                    <th scope="col">Dewasa Bisnis </th>
-                                    <th scope="col">Action </th>
-                                    <th scope="col"> </th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telepon</th>
+                                    <th scope="col">Jabatan</th>
+                                    <th colspan="2" scope="col">Action </th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -97,8 +96,7 @@ foreach($user_accounts as $row){
                                         
                                         <td>
                                             <div class="akses-button">
-                                            <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
-                                            
+                                                <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
                                             </div>
                                         </td>
                                         <td>
@@ -149,17 +147,16 @@ foreach($user_accounts as $row){
                             <tfoot class="thead-dark">
                                 <tr>
                                     <th scope="col"> # </th>
-                                    <th scope="col">Tanggal Operasi </th>
-                                    <th scope="col">Waktu Keberangkatan </th>
-                                    <th scope="col">Nama Kapal </th>
-                                    <th scope="col">Lintasan </th>
-                                    <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">Last Login</th>
+                                    <th scope="col">Pelabuhan </th>
+                                    <th scope="col">Type </th>
+                                    <th scope="col">Nama </th>
+                                    <th scope="col">Username</th>
                                     <th scope="col">Jenis Trip </th>
-                                    <th scope="col">Dewasa Eksekutif </th>
-                                    <th scope="col">Bayi Eksekutif </th>
-                                    <th scope="col">Dewasa Bisnis </th>
-                                    <th scope="col">Action </th>
-                                    <th scope="col"> </th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Telepon</th>
+                                    <th scope="col">Jabatan </th>
+                                    <th colspan="2" scope="col">Action </th>
                                 </tr>
                             </tfoot>
                         </table>
