@@ -2,7 +2,10 @@
 
 class User_model extends CI_Model
 {
-
+    public function updateLastLogin($date, $id){
+        $this->db->where('id', $id);
+        $this->db->update('users', $date);
+    }
     public function changePassword($password, $id){
         
         $this->db->where('id',$id);

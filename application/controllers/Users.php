@@ -155,9 +155,15 @@ class Users extends CI_Controller
 
     public function logout()
     {
+        date_default_timezone_set("ASIA/JAKARTA");
+        $lastLogin = array('last_login' => date('Y-m-d H:i:s'));
+        $id = $this->session->userdata('id');
         $dataLogin = ['logged_in', 'user_id', 'username', 'name'];
+        
+        $this->User_model->updateLastLogin($lastLogin, $id);
 
         $this->session->unset_userdata($dataLogin);
+        $this->session->sess_destroy();
         redirect('login');
     }
     public function inputTrip()
