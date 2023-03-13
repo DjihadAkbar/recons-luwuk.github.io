@@ -42,26 +42,6 @@ foreach($user_accounts as $row){
                                     <th scope="col">Dewasa Eksekutif </th>
                                     <th scope="col">Bayi Eksekutif </th>
                                     <th scope="col">Dewasa Bisnis </th>
-                                    <th scope="col">Bayi Bisnis </th>
-                                    <th scope="col">Dewasa Ekonomi </th>
-                                    <th scope="col">Bayi Ekonomi </th>
-                                    <th scope="col">Golongan 1 </th>
-                                    <th scope="col">Golongan 2 </th>
-                                    <th scope="col">Golongan 3 </th>
-                                    <th scope="col">Golongan 4 Penumpang </th>
-                                    <th scope="col">Golongan 4 Barang </th>
-                                    <th scope="col">Golongan 5 Penumpang </th>
-                                    <th scope="col">Golongan 5 Barang </th>
-                                    <th scope="col">Golongan 6 Penumpang </th>
-                                    <th scope="col">Golongan 6 Barang </th>
-                                    <th scope="col">Golongan 7 </th>
-                                    <th scope="col">Golongan 8 </th>
-                                    <th scope="col">Golongan 9 </th>
-                                    <th scope="col">Hewan </th>
-                                    <th scope="col">Gayor </th>
-                                    <th scope="col">Carter </th>
-                                    <th scope="col">Barang Volume </th>
-                                    <th scope="col">Barang Pendapatan </th>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                 </tr>
@@ -76,7 +56,7 @@ foreach($user_accounts as $row){
                                             <?php echo $no++; ?>
                                         </th>
                                         <td>
-                                            <?php
+                                            <!-- <?php
                                             $original_date = $value['date'];
 
                                             // Creating timestamp from given date
@@ -86,95 +66,35 @@ foreach($user_accounts as $row){
                                             $new_date = date("d-m-Y", $timestamp);
                                             echo $new_date;
 
-                                            ?>
+                                            ?> -->
                                         </td>
                                         <td>
                                             <?php
-                                            echo $value['time'];
+                                            echo $value['harbours'];
                                             ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['ferry']; ?>
+                                            <?php echo $value['type']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['route']; ?>
+                                            <?php echo $value['name']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['harbour']; ?>
+                                            <?php echo $value['username']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['id_trip']; ?>
+                                            <?php echo $value['status']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['DewasaEksekutif']; ?>
+                                            <?php echo $value['email']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['BayiEksekutif']; ?>
+                                            <?php echo $value['phone']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['DewasaBisnis']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BayiBisnis']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['DewasaEkonomi']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BayiEkonomi']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol1']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol2']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol3']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol4Pen']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol4Bar']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol5Pen']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol5Bar']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol6Pen']; ?>
+                                            <?php echo $value['jabatan']; ?>
                                         </td>
                                         
-                                        <td>
-                                            <?php echo $value['Gol6Bar']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol7']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol8']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gol9']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Hewan']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Gayor']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['Carter']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BarangVolume']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $value['BarangPendapatan']; ?>
-                                        </td>
                                         <td>
                                             <div class="akses-button">
                                             <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
@@ -238,26 +158,6 @@ foreach($user_accounts as $row){
                                     <th scope="col">Dewasa Eksekutif </th>
                                     <th scope="col">Bayi Eksekutif </th>
                                     <th scope="col">Dewasa Bisnis </th>
-                                    <th scope="col">Bayi Bisnis </th>
-                                    <th scope="col">Dewasa Ekonomi </th>
-                                    <th scope="col">Bayi Ekonomi </th>
-                                    <th scope="col">Golongan 1 </th>
-                                    <th scope="col">Golongan 2 </th>
-                                    <th scope="col">Golongan 3 </th>
-                                    <th scope="col">Golongan 4 Penumpang </th>
-                                    <th scope="col">Golongan 4 Barang </th>
-                                    <th scope="col">Golongan 5 Penumpang </th>
-                                    <th scope="col">Golongan 5 Barang </th>
-                                    <th scope="col">Golongan 6 Penumpang </th>
-                                    <th scope="col">Golongan 6 Barang </th>
-                                    <th scope="col">Golongan 7 </th>
-                                    <th scope="col">Golongan 8 </th>
-                                    <th scope="col">Golongan 9 </th>
-                                    <th scope="col">Hewan </th>
-                                    <th scope="col">Gayor </th>
-                                    <th scope="col">Carter </th>
-                                    <th scope="col">Barang Volume </th>
-                                    <th scope="col">Barang Pendapatan </th>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                 </tr>
