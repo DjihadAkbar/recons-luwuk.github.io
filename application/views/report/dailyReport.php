@@ -383,9 +383,9 @@
             </div>
 
             <div class="form-group col">
-                <label for="lintasan" class="label-wrap  ml-2"> LINTASAN </label>
+                <label for="lintasan_report" class="label-wrap  ml-2"> LINTASAN </label>
                 <div class="col">
-                    <select class="form-control" name="lintasan" id="lintasan" required>
+                    <select class="form-control" name="lintasan_report" id="lintasan_report" required>
                         <option value="" disabled Selected>No Selected</option>
                         <?php foreach ($lintasan as $row): ?>
                             <option value="<?php echo $row['lintasan']; ?>">
