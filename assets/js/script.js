@@ -60,6 +60,8 @@ $(document).ready(function(){
             var $arr = ($lintasanAsal.val()).split('-');
             if($arr[0] != $pelabuhan){
                 $lintasanAsal.hide();
+            } else {
+                $lintasanAsal.show();
             }     
         });
         
