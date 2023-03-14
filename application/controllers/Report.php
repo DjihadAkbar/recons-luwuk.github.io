@@ -656,7 +656,7 @@ class Report extends CI_Controller
 
             // Barang
             // Jumlah Produksi
-            $sheet->setCellValue('E32', $record['Jumlah BarangVolume']);
+            $sheet->setCellValue('E32', $record['Entry Barang Volume']);
             $sheet->setCellValue('E34', '=SUM(E32)');
             
             // // Pendapatan Pelayaran
