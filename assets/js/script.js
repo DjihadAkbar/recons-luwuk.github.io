@@ -58,9 +58,9 @@ $(document).ready(function(){
         $('#lintasan option').each(function(){
             var $lintasanAsal = $(this);
             var $arr = ($lintasanAsal.val()).split('-');
-            if($arr[0] != $pelabuhan || $pelabuhan != '' ){
+            if($arr[0] != $pelabuhan && $pelabuhan != ''){
                 $lintasanAsal.hide();
-            }    
+            }     
         });
         
 
