@@ -52,5 +52,10 @@ $(document).ready(function(){
     $('#jenis_laporan').change(function(){
         $("#form-report").attr("action","report/" + $(this).val()); 
     })
+
+    $('#pelabuhan_asal').change(function(){
+        $("#lintasan option[value='"+$(this).val+"']").remove();
+    })
+
 });
 
