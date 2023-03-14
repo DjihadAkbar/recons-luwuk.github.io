@@ -54,7 +54,7 @@ $(document).ready(function(){
     })
 
     $('#pelabuhan_asal').change(function(){
-        var $pelabuhan = $(this);
+        var $pelabuhan = $(this).val;
         alert($pelabuhan);
         $('#lintasan option').each(function(){
             var $lintasanAsal = $(this);
