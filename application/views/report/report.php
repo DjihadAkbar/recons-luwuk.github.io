@@ -125,9 +125,9 @@
         </div>
     </div>
 </div>
-
+<!-- 
 <script>
     $('#jenis_laporan').change(function(){
         $("#form-report").attr("action","report/" + $(this).val()); 
     })
-</script>
+</script> -->
