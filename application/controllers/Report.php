@@ -46,8 +46,6 @@ class Report extends CI_Controller
     }
 
     public function downloadBuktiPenyetoran(){
-        // koneksi php dan mysql
-    // $koneksi = mysqli_connect("localhost","root","","asdp_luwuk");
     $koneksi = mysqli_connect("217.21.72.151","u1578336_admin","5september_","u1578336_db_recons_luwuk");
 
     $title = 'Bukti Penyetoran';
@@ -445,7 +443,7 @@ class Report extends CI_Controller
 
         $entryData = mysqli_query($koneksi,"
             SELECT *,dayname(date), 
-            entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi',
+            entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi', entry_data.BarangVolume AS 'Jumlah BarangVolume', entry_data.BarangPendapatan AS 'Jumlah BarangPendapatan'
             entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9', 
             (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
             (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
@@ -465,6 +463,7 @@ class Report extends CI_Controller
             (rate.Gol7 * entry_data.Gol7) as 'Golongan 7',
             (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
             (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
+            entry_data.BarangPendapatan as 'Barang Pendapatan',
             entry_data.BarangVolume as 'Entry Barang Volume'
             FROM entry_data
             JOIN ferry ON ferry.id = entry_data.id_ferry
@@ -654,6 +653,23 @@ class Report extends CI_Controller
             $sheet->setCellValue('H28', '=F28 + G28');
             $sheet->setCellValue('H29', '=F29 + G29');
             $sheet->setCellValue('H30', '=SUM(H18:H29)');
+
+            // Barang
+            // Jumlah Produksi
+            $sheet->setCellValue('E32', $record['Jumlah BarangVolume']);
+            $sheet->setCellValue('E34', '=SUM(E32)');
+            
+            // // Pendapatan Pelayaran
+            $sheet->setCellValue('F32', $record['Barang Pendapatan']);
+            $sheet->setCellValue('F34', '=SUM(F32)');
+            
+            // // Pendapatan Asuransi
+            // $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah BarangVolume']);
+            // $sheet->setCellValue('G16', '=SUM(G10:G15)');
+            
+            // Total Penumpang
+            $sheet->setCellValue('H32', '=F32 + G32');
+            $sheet->setCellValue('H34', '=SUM(H32)');
         }
 
 
