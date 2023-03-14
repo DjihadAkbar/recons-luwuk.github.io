@@ -408,9 +408,9 @@
                 </div>
             </div>
             <div class="form-group col">
-                <label for="pelabuhan_asal" class="label-wrap  ml-2"> PELABUHAN </label>
+                <label for="pelabuhan_asal_report" class="label-wrap  ml-2"> PELABUHAN </label>
                 <div class="col">
-                    <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" required>
+                    <select class="form-control" name="pelabuhan_asal_report" id="pelabuhan_asal_report" required>
                         <option value="" disabled Selected>No Selected</option>
                         <?php foreach ($pelabuhan as $row): ?>
                             <option value="<?php echo $row['pelabuhan']; ?>">
@@ -419,15 +419,15 @@
                         <?php endforeach; ?>
                     </select>
                     <?php
-                    echo form_error('pelabuhan_asal');
+                    echo form_error('pelabuhan_asal_report');
                     ?>
                 </div>
             </div>
 
             <div class="form-group col">
-                <label for="lintasan" class="label-wrap  ml-2"> LINTASAN </label>
+                <label for="lintasan_report" class="label-wrap  ml-2"> LINTASAN </label>
                 <div class="col">
-                    <select class="form-control" name="lintasan" id="lintasan" required>
+                    <select class="form-control" name="lintasan_report" id="lintasan_report" required>
                         <option value="" disabled Selected>No Selected</option>
                         <?php foreach ($lintasan as $row): ?>
                             <option value="<?php echo $row['lintasan']; ?>">
@@ -436,7 +436,7 @@
                         <?php endforeach; ?>
                     </select>
                     <?php
-                    echo form_error('lintasan');
+                    echo form_error('lintasan_report');
                     ?>
                 </div>
             </div>

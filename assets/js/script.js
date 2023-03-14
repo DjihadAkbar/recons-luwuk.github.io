@@ -53,9 +53,9 @@ $(document).ready(function(){
         $("#form-report").attr("action","report/" + $(this).val()); 
     })
 
-    $('#pelabuhan_asal').change(function(){
+    $('#pelabuhan_asal_report').change(function(){
         var $pelabuhan = $(this).val();
-        $('#lintasan option').each(function(){
+        $('#lintasan_report option').each(function(){
             var $lintasanAsal = $(this);
             var $arr = ($lintasanAsal.val()).split('-');
             if($arr[0] != $pelabuhan){
