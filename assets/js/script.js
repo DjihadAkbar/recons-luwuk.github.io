@@ -55,6 +55,7 @@ $(document).ready(function(){
 
     $('#pelabuhan_asal').change(function(){
         var $pelabuhan = $(this);
+        alert($pelabuhan);
         $('#lintasan option').each(function(){
             var $lintasanAsal = $(this);
             var $arr = ($lintasanAsal.val).split('-');
