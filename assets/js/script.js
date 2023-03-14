@@ -54,7 +54,17 @@ $(document).ready(function(){
     })
 
     $('#pelabuhan_asal').change(function(){
-        $("#lintasan option[value='"+$(this).val+"']").remove();
+        var pelabuhan = $(this).val;
+        $('#lintasan option').each(function(i){
+            var lintasanAsal = ($(this).val).split('-')[0];
+            alert(pelabuhan + lintasanAsal);
+            if(lintasanAsal != pelabuhan){
+                lintasanAsal.remove();
+            }    
+        });
+        
+
+        // $("#lintasan option[value='"+$(this).val+"']").remove();
     })
 
 });
