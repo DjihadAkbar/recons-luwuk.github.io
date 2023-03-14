@@ -47,5 +47,10 @@ $(document).ready(function(){
         count = 1;
     }
 
+    //Report.php
+    //On Change Selected
+    $('#jenis_laporan').change(function(){
+        $("#form-report").attr("action","report/" + $(this).val()); 
+    })
 });
 
