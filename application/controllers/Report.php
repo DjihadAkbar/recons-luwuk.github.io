@@ -51,8 +51,8 @@ class Report extends CI_Controller
     $title = 'Bukti Penyetoran';
     $kapalReport = $this->input->post('nama_kapal');
     $tripReport = $this->input->post('trip');
-    $pelabuhanReport = $this->input->post('pelabuhan_asal');
-    $lintasanReport = $this->input->post('lintasan');
+    $pelabuhanReport = $this->input->post('pelabuhan_asal_report');
+    $lintasanReport = $this->input->post('lintasan_report');
     $tanggalAwalReport = $this->input->post('tanggal_awal');
     $jamReport = $this->input->post('jam');
 
@@ -434,7 +434,7 @@ class Report extends CI_Controller
 
         $title = 'Laporan Pendapatan Harian';
         $kapalReport = $this->input->post('nama_kapal');
-        $lintasanReport = $this->input->post('lintasan');
+        $lintasanReport = $this->input->post('lintasan_report');
         $tanggalAwalReport = $this->input->post('tanggal_awal');
     
 
