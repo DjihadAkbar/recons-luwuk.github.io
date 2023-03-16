@@ -2126,7 +2126,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
             <button style="text-decoration:none;
     display: block;
 color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                Pendapatan Total
+                Pendapatan Harian
             </button>
             </h5>
         </div>
@@ -2135,7 +2135,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
             <!-- Table Pendapatan -->
             <div class="card mt-3">
                     <h5 class="card-header d-flex justify-content-between align-items-center">
-                        Pendapatan Total
+                        Pendapatan Harian
                     </h5>
                     <div class="card-body p-4">
                         <div class="row">
@@ -2144,44 +2144,99 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                     <thead class="thead-dark">
                                         <tr>
                                             <th scope="col"> # </th>
+                                            <th scope="col">Minggu </th>
                                             <th scope="col">Tanggal Operasi </th>
                                             <th scope="col">Waktu Keberangkatan </th>
                                             <th scope="col">Nama Kapal </th>
                                             <th scope="col">Lintasan </th>
-                                            <th scope="col">Golongan 1 </th>
-                                            <th scope="col">Golongan 2 </th>
-                                            <th scope="col">Golongan 3 </th>
-                                            <th scope="col">Golongan 4 - Penumpang </th>
-                                            <th scope="col">Golongan 4 - Barang </th>
-                                            <th scope="col">Golongan 5 - Penumpang </th>
-                                            <th scope="col">Golongan 5 - Barang </th>
-                                            <th scope="col">Golongan 6 - Penumpang </th>
-                                            <th scope="col">Golongan 6 - Barang </th>
-                                            <th scope="col">Golongan 7 </th>
-                                            <th scope="col">Golongan 8 </th>
-                                            <th scope="col">Golongan 9 </th>
+                                            <th scope="col">Pelabuhan Asal </th>
+                                            <th scope="col">Jenis Trip </th>
                                             <th scope="col">Dewasa Eksekutif </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Bayi Eksekutif </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Dewasa Bisnis </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Bayi Bisnis </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Dewasa Ekonomi </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Bayi Ekonomi </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 1 </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 2 </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 3 </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 4 - Penumpang </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 4 - Barang </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 5 - Penumpang </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 5 - Barang </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 6 - Penumpang </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 6 - Barang </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 7 </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 8 </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 9 </th>
+                                                <th scope="col">Nomor Seri Awal </th>
+                                                <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi I Dewasa
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi I Anak
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi II Dewasa
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi II Anak
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Hewan </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Gayor </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Carter </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Barang Curah </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Total </th>
                                         </tr>
                                     </thead>
@@ -2190,158 +2245,380 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                         $no = 1;
                                         foreach ($pendapatan as $key => $value) {
                                             ?>
-                                                                                                                                    <tr>
-                                                                                                                                        <th scope="row">
-                                                                                                                                            <?php echo $no++; ?>
-                                                                                                                                        </th>
-                                                                                                                                        <td>
-                                                                                                                                            <?php
-                                                                                                                                            $original_date = $value['date'];
+                                        <tr>
+                                            <th scope="row">
+                                                <?php echo $no++; ?>
+                                            </th>
+                                            <th>
+                                                <?php echo $value['week']; ?>
+                                            </th>
+                                            <td>
+                                                <?php
+                                                $original_date = $value['date'];
 
-                                                                                                                                            // Creating timestamp from given date
-                                                                                                                                            $timestamp = strtotime($original_date);
+                                                // Creating timestamp from given date
+                                                $timestamp = strtotime($original_date);
 
-                                                                                                                                            // Creating new date format from that timestamp
-                                                                                                                                            $new_date = date("d-m-Y", $timestamp);
-                                                                                                                                            echo $new_date;
+                                                // Creating new date format from that timestamp
+                                                $new_date = date("d-m-Y", $timestamp);
+                                                echo $new_date;
 
-                                                                                                                                            ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo $value['time']; ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo $value['ferry']; ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo $value['rute']; ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan I']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan II']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan III']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan IV - Penumpang']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan IV - Barang']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan V - Penumpang']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan V - Barang']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan VI - Penumpang']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan VI - Barang']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan VII']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan VIII']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Golongan IX']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Dewasa Eksekutif']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Bayi Eksekutif']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Dewasa Bisnis']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Bayi Bisnis']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Dewasa Ekonomi']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Bayi Ekonomi']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Suplesi Ekonomi I Dewasa']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Suplesi Ekonomi I Anak']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Suplesi Ekonomi II Dewasa']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Suplesi Ekonomi II Anak']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Hewan']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Gayor']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Carter']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['Barang Curah']); ?>
-                                                                                                                                        </td>
-                                                                                                                                        <td>
-                                                                                                                                            <?php echo formatRupiah($value['total']); ?>
-                                                                                                                                        </td>
-                                                                                                                                    </tr>
-                                                                                                                                    <?php
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['time']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['ferry']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['rute']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['harbour']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['trip']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Dewasa Eksekutif']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutifSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutifSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Bayi Eksekutif']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutifSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutifSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Dewasa Bisnis']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnisSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnisSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Bayi Bisnis']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnisSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnisSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Dewasa Ekonomi']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomiSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomiSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Bayi Ekonomi']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomiSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomiSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan I']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol1Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol1Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan II']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan III']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan IV - Penumpang']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4PenSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4PenSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan IV - Barang']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4BarSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4BarSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan V - Penumpang']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5PenSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5PenSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan V - Barang']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5BarSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5BarSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan VI - Penumpang']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6PenSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6PenSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan VI - Barang']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6BarSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6BarSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan VII']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol7Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol7Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan VIII']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol8Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol8Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Golongan IX']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol9Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol9Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi Ekonomi I Dewasa']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1DewasaSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1DewasaSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi Ekonomi I Anak']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1AnakSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1AnakSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi Ekonomi II Dewasa']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2DewasaSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2DewasaSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi Ekonomi II Anak']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2AnakSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2AnakSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['HewanSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['HewanSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['GayorSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['GayorSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['CarterSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['CarterSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Barang Curah']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatanSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatanSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['total']; ?>
+                                            </td>
+                                            
+                                        </tr>
+                                        <?php
                                         }
                                         ?>
                                     <tbody>
                                     <tfoot class="thead-dark">
                                         <tr>
                                             <th scope="col"> # </th>
+                                            <th scope="col">Minggu </th>
                                             <th scope="col">Tanggal Operasi </th>
+                                            <th scope="col">Waktu Keberangkatan </th>
                                             <th scope="col">Nama Kapal </th>
                                             <th scope="col">Lintasan </th>
-                                            <th scope="col">Golongan 1 </th>
-                                            <th scope="col">Golongan 2 </th>
-                                            <th scope="col">Golongan 3 </th>
-                                            <th scope="col">Golongan 4 - Penumpang </th>
-                                            <th scope="col">Golongan 4 - Barang </th>
-                                            <th scope="col">Golongan 5 - Penumpang </th>
-                                            <th scope="col">Golongan 5 - Barang </th>
-                                            <th scope="col">Golongan 6 - Penumpang </th>
-                                            <th scope="col">Golongan 6 - Barang </th>
-                                            <th scope="col">Golongan 7 </th>
-                                            <th scope="col">Golongan 8 </th>
-                                            <th scope="col">Golongan 9 </th>
+                                            <th scope="col">Pelabuhan Asal </th>
+                                            <th scope="col">Jenis Trip </th>
                                             <th scope="col">Dewasa Eksekutif </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Bayi Eksekutif </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Dewasa Bisnis </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Bayi Bisnis </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Dewasa Ekonomi </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Bayi Ekonomi </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 1 </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 2 </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 3 </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 4 - Penumpang </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 4 - Barang </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 5 - Penumpang </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 5 - Barang </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 6 - Penumpang </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 6 - Barang </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 7 </th>
+                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 8 </th>
+                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
+                                            <th scope="col">Golongan 9 </th>
+                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi I Dewasa
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi I Anak
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi II Dewasa
                                             </th>
+                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi II Anak
                                             </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Hewan </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Gayor </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Carter </th>
+                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Barang Curah </th>
+                                            <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Total </th>
                                         </tr>
                                     </tfoot>

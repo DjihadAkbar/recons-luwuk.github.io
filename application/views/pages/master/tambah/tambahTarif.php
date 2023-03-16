@@ -91,9 +91,9 @@
                     }
                     ?>
             </li>
+            <!-- Input Jumlah Produksi -->
             <li class="list-group-item iw">
 
-                    <!-- Input Jumlah Produksi -->
                     <?php $no = "";
                     foreach ($produksi as $row) {
                         if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
@@ -112,9 +112,53 @@
                     }
                     ?>
             </li>
+            <!-- Akhir Input Jumlah Produksi -->
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item dermaga">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " DERMAGA"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "Dermaga"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "Dermaga"; ?>" placeholder="0" min="0" required>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item terminal">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " TERMINAL"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "Terminal"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "Terminal"; ?>" placeholder="0" min="0" required>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
         </ul>
 
-        <!-- Akhir Input Jumlah Produksi -->
 
 
         <?php

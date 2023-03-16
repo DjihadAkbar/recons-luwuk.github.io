@@ -177,6 +177,14 @@ class Entry extends CI_Controller
     public function prosesEntry()
     {
 
+        $valueWeek = '';
+        if($this->input->post('tanggal_berangkat') <= 7) $valueWeek = 'W1';
+        if($this->input->post('tanggal_berangkat') > 7 & $this->input->post('tanggal_berangkat') <= 14) $valueWeek = 'W1';
+        if($this->input->post('tanggal_berangkat') > 7 & $this->input->post('tanggal_berangkat') <= 14) $valueWeek = 'W2';
+        if($this->input->post('tanggal_berangkat') > 14 & $this->input->post('tanggal_berangkat') <= 21) $valueWeek = 'W3';
+        if($this->input->post('tanggal_berangkat') > 21 & $this->input->post('tanggal_berangkat') <= 28) $valueWeek = 'W4';
+        if($this->input->post('tanggal_berangkat') > 28 & $this->input->post('tanggal_berangkat') <= 31) $valueWeek = 'W5';
+        
         $tahun = 0;
         $bulan = 0;
         $tarif = $this->Entry_model->tarif();
@@ -201,6 +209,7 @@ class Entry extends CI_Controller
         }
         
         $dataInput = [
+            'week' => $valueWeek,
             'date' => $this->input->post('tanggal_berangkat'),
             'time' => $this->input->post('waktu_berangkat'),
             'id_ferry' => $this->input->post('nama_kapal'),

@@ -179,6 +179,72 @@ foreach($editDataTarif as $row){
         }
         ?>
         <!-- Akhir Input Jumlah Produksi IW-->
+        <!-- Input Jumlah Produksi Dermaga-->
+        <?php $no = ""; 
+        foreach ($produksi as $row) { 
+            foreach($editDataTarif as $baris){
+                foreach($baris as $key => $baris){
+                    if($key == $row['id_production']."Dermaga"){
+            ?>
+            <div class="form-group row ">
+                <label for="<?php echo $row['produksi']." Dermaga"; ?>" class="col-4 label-wrap">
+                    <?php echo $row['produksi']." DERMAGA"; ?>
+                </label>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Dermaga"; ?>" class="form-control"
+                        id="<?php echo $row['id_production']."Dermaga"; ?>" value=
+                        <?php
+                            foreach($editDataTarif as $baris){
+                                foreach($baris as $key => $baris){
+                                    if($key == $row['id_production']."Dermaga"){
+                                        echo $baris;
+                                    }
+                                }
+                            }
+                        ?>
+                        min="0" required>
+                </div>
+            </div>
+            <?php
+                    }
+                }
+            }
+        }
+        ?>
+        <!-- Akhir Input Jumlah Produksi Dermaga-->
+        <!-- Input Jumlah Produksi Terminal-->
+        <?php $no = ""; 
+        foreach ($produksi as $row) { 
+            foreach($editDataTarif as $baris){
+                foreach($baris as $key => $baris){
+                    if($key == $row['id_production']."Terminal"){
+            ?>
+            <div class="form-group row ">
+                <label for="<?php echo $row['produksi']." Terminal"; ?>" class="col-4 label-wrap">
+                    <?php echo $row['produksi']." TERMINAL"; ?>
+                </label>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."Terminal"; ?>" class="form-control"
+                        id="<?php echo $row['id_production']."Terminal"; ?>" value=
+                        <?php
+                            foreach($editDataTarif as $baris){
+                                foreach($baris as $key => $baris){
+                                    if($key == $row['id_production']."Terminal"){
+                                        echo $baris;
+                                    }
+                                }
+                            }
+                        ?>
+                        min="0" required>
+                </div>
+            </div>
+            <?php
+                    }
+                }
+            }
+        }
+        ?>
+        <!-- Akhir Input Jumlah Produksi Terminal-->
 
         
         <?php

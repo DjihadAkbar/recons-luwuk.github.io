@@ -96,6 +96,42 @@
                                     <th scope="col">Bayi Bisnis IW</th>
                                     <th scope="col">Dewasa Ekonomi IW</th>
                                     <th scope="col">Bayi Ekonomi IW</th>
+                                    <th scope="col">Golongan 1 Dermaga</th>
+                                    <th scope="col">Golongan 2 Dermaga</th>
+                                    <th scope="col">Golongan 3 Dermaga</th>
+                                    <th scope="col">Golongan 4 - Penumpang Dermaga</th>
+                                    <th scope="col">Golongan 4 - Barang Dermaga</th>
+                                    <th scope="col">Golongan 5 - Penumpang Dermaga</th>
+                                    <th scope="col">Golongan 5 - Barang Dermaga</th>
+                                    <th scope="col">Golongan 6 - Penumpang Dermaga</th>
+                                    <th scope="col">Golongan 6 - Barang Dermaga</th>
+                                    <th scope="col">Golongan 7 Dermaga</th>
+                                    <th scope="col">Golongan 8 Dermaga</th>
+                                    <th scope="col">Golongan 9 Dermaga</th>
+                                    <th scope="col">Dewasa Eksekutif Dermaga</th>
+                                    <th scope="col">Bayi Eksekutif Dermaga</th>
+                                    <th scope="col">Dewasa Bisnis Dermaga</th>
+                                    <th scope="col">Bayi Bisnis Dermaga</th>
+                                    <th scope="col">Dewasa Ekonomi Dermaga</th>
+                                    <th scope="col">Bayi Ekonomi Dermaga</th>
+                                    <th scope="col">Golongan 1 Terminal</th>
+                                    <th scope="col">Golongan 2 Terminal</th>
+                                    <th scope="col">Golongan 3 Terminal</th>
+                                    <th scope="col">Golongan 4 - Penumpang Terminal</th>
+                                    <th scope="col">Golongan 4 - Barang Terminal</th>
+                                    <th scope="col">Golongan 5 - Penumpang Terminal</th>
+                                    <th scope="col">Golongan 5 - Barang Terminal</th>
+                                    <th scope="col">Golongan 6 - Penumpang Terminal</th>
+                                    <th scope="col">Golongan 6 - Barang Terminal</th>
+                                    <th scope="col">Golongan 7 Terminal</th>
+                                    <th scope="col">Golongan 8 Terminal</th>
+                                    <th scope="col">Golongan 9 Terminal</th>
+                                    <th scope="col">Dewasa Eksekutif Terminal</th>
+                                    <th scope="col">Bayi Eksekutif Terminal</th>
+                                    <th scope="col">Dewasa Bisnis Terminal</th>
+                                    <th scope="col">Bayi Bisnis Terminal</th>
+                                    <th scope="col">Dewasa Ekonomi Terminal</th>
+                                    <th scope="col">Bayi Ekonomi Terminal</th>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                 </tr>
@@ -313,6 +349,114 @@
                                         </td>
                                         <td>
                                             <?php echo $value['BayiEkonomiIW']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol1Dermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol2Dermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol3Dermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol4PenDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol4BarDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol5PenDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol5BarDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol6PenDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol6BarDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol7Dermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol8Dermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol9Dermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEksekutifDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEksekutifDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaBisnisDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiBisnisDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEkonomiDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEkonomiDermaga']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol1Terminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol2Terminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol3Terminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol4PenTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol4BarTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol5PenTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol5BarTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol6PenTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol6BarTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol7Terminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol8Terminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol9Terminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEksekutifTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEksekutifTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaBisnisTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiBisnisTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEkonomiTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEkonomiTerminal']; ?>
                                         </td>
                                         <td>
                                             <div class="akses-button">
