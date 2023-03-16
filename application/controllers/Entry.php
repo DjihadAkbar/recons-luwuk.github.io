@@ -9,7 +9,7 @@ class Entry extends CI_Controller
     }
     public function index()
     {
-        $data['title'] = 'Pendapatan Harian';
+        $data['title'] = 'Produksi Harian';
         $data['contentView'] = 'pages/entry/dailyForm';
         $data['entry_data'] = $this->Entry_model->entryData();
         $data['produksi'] = $this->Entry_model->produksi();
@@ -34,12 +34,37 @@ class Entry extends CI_Controller
     }
 
     public function prosesEditEntryData(){
+        //AutoWeek
+        $valueWeek = 0;
+        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 7) $valueWeek = 'W1';
+        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 7 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 14) $valueWeek = 'W2';
+        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 14 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 21) $valueWeek = 'W3';
+        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 21 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 28) $valueWeek = 'W4';
+        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 28 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 31) $valueWeek = 'W5';
+
+        //Auto IdLintasan
+        $idLintasan = $this->Entry_model->lintasanWithName($this->input->post('lintasan'),$this->input->post('pelabuhan_asal'));
+        foreach($idLintasan as $key => $value){
+            $dataIdLintasan = $value['id'];
+        }
+
         $tahun = 0;
         $bulan = 0;
         $tarif = $this->Entry_model->tarif();
-        $lintasan = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        $lintasan = $this->Entry_model->lintasanWIthId($dataIdLintasan);
+        // $lintasan = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        // $pelabuhan = $this->Entry_model->harbourWIthId($this->input->post('pelabuhan_asal'));
+        // foreach($pelabuhan as $key => $value){
+        //     $namaPelabuhan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['pelabuhan']))));
+        // }
         foreach($lintasan as $key => $value){
             $namaLintasan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
+            // $setelahExplode = explode('-',$value['lintasan']);
+            // if(ucwords(strtolower($setelahExplode[0])) == $namaPelabuhan){
+            //     $namaLintasan = $namaPelabuhan.ucwords(strtolower($setelahExplode[1]));
+            // } else {
+            //     $namaLintasan = $namaPelabuhan.ucwords(strtolower($setelahExplode[0]));
+            // }
         }
         $valueTarif = '';
         foreach ($tarif as $key => $value) {
@@ -56,12 +81,14 @@ class Entry extends CI_Controller
                 }
             }
         }
+
         $dataInput = [
+            'week' => $valueWeek,
             'date' => $this->input->post('edit_tanggal_berangkat'),
             'time' => $this->input->post('edit_waktu_berangkat'),
             'id_ferry' => $this->input->post('nama_kapal'),
             'rate_type' => $valueTarif,
-            'id_route' => $this->input->post('lintasan'),
+            'id_route' => $dataIdLintasan,
             'id_harbour' => $this->input->post('pelabuhan_asal'),
             'id_trip' => $this->input->post('trip'),
             'Gol1' => $this->input->post('Gol1'),
@@ -176,45 +203,68 @@ class Entry extends CI_Controller
     }
     public function prosesEntry()
     {
+        //AutoWeek
+        $valueWeek = 0;
+        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 7) $valueWeek = 'W1';
+        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 7 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 14) $valueWeek = 'W2';
+        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 14 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 21) $valueWeek = 'W3';
+        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 21 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 28) $valueWeek = 'W4';
+        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 28 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 31) $valueWeek = 'W5';
 
-        $valueWeek = '';
-        if($this->input->post('tanggal_berangkat') <= 7) $valueWeek = 'W1';
-        if($this->input->post('tanggal_berangkat') > 7 & $this->input->post('tanggal_berangkat') <= 14) $valueWeek = 'W1';
-        if($this->input->post('tanggal_berangkat') > 7 & $this->input->post('tanggal_berangkat') <= 14) $valueWeek = 'W2';
-        if($this->input->post('tanggal_berangkat') > 14 & $this->input->post('tanggal_berangkat') <= 21) $valueWeek = 'W3';
-        if($this->input->post('tanggal_berangkat') > 21 & $this->input->post('tanggal_berangkat') <= 28) $valueWeek = 'W4';
-        if($this->input->post('tanggal_berangkat') > 28 & $this->input->post('tanggal_berangkat') <= 31) $valueWeek = 'W5';
-        
+        //Auto IdLintasan
+        $idLintasan = $this->Entry_model->lintasanWithName($this->input->post('lintasan'),$this->input->post('pelabuhan_asal'));
+        foreach($idLintasan as $key => $value){
+            $dataIdLintasan = $value['id'];
+        }
+        //Auto JenisTarif
         $tahun = 0;
         $bulan = 0;
         $tarif = $this->Entry_model->tarif();
-        $lintasan = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        $lintasan = $this->Entry_model->lintasanWIthId($dataIdLintasan);
+        // $lintasan = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
+        // $pelabuhan = $this->Entry_model->harbourWIthId($this->input->post('pelabuhan_asal'));
+        // foreach($pelabuhan as $key => $value){
+        //     $namaPelabuhan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['pelabuhan']))));
+        // }
         foreach($lintasan as $key => $value){
-            $namaLintasan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
+            $data['namaLintasan'] = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
+            // $setelahExplode = explode('-',$value['lintasan']);
+            // if(ucwords(strtolower($setelahExplode[0])) == $namaPelabuhan){
+            //     $data['namaLintasan'] = $namaPelabuhan.ucwords(strtolower($setelahExplode[1]));
+            // } else {
+            //     $data['namaLintasan'] = $namaPelabuhan.ucwords(strtolower($setelahExplode[0]));
+            // }
         }
         $valueTarif = '';
         foreach ($tarif as $key => $value) {
-            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $namaLintasan){
+            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $data['namaLintasan']){
                 if(substr($value['tarif'], -2) >= $tahun){
                     $tahun = substr($value['tarif'], -2);
                 }
             }
         }
         foreach ($tarif as $key => $value) {
-            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $namaLintasan){
+            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $data['namaLintasan']){
                 if($tahun == substr($value['tarif'], -2) && substr($value['tarif'],-4, -2) >= $bulan){
                     $valueTarif = $value['tarif'];
+                    $data['tarif'] = $valueTarif ;
                 }
             }
         }
         
+
+        $data['title'] = 'Entry Data';
+        $data['contentView'] = 'pages/entry/testEntry';
+        $this->load->view('template/dashboard/body', $data);
+
         $dataInput = [
             'week' => $valueWeek,
             'date' => $this->input->post('tanggal_berangkat'),
             'time' => $this->input->post('waktu_berangkat'),
             'id_ferry' => $this->input->post('nama_kapal'),
             'rate_type' => $valueTarif,
-            'id_route' => $this->input->post('lintasan'),
+            'id_route' => $dataIdLintasan,
+            // 'id_route' => $this->input->post('lintasan'),
             'id_harbour' => $this->input->post('pelabuhan_asal'),
             'id_trip' => $this->input->post('trip'),
             'Gol1' => $this->input->post('Gol1'),

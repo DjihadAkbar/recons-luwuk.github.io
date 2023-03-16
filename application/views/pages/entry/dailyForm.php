@@ -413,36 +413,9 @@
                                                         <i class="fas fa-delete-left"></i>
                                                     </a>
                                                 </div>
-                                                <!-- Modal delete
-                                                <div class="modal fade" id="deleteConfirmation" tabindex="2" role="dialog"
-                                                    aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="deleteConfirmationLabel">Logout Confirmation</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                Are you sure?
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                                <div class="delete-button">
-                                                                    <a class="btn btn-primary" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
-                                                                    <?php echo $value['id_entry']; ?>Sure
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                Modal Logout End -->
+                                                
                                             </td>
                                         </tr>
-                                    
                                     <?php
                                 }
                                 ?>
@@ -559,4 +532,30 @@
 </div>
 
 
-                                        
+                   <!-- Modal delete -->
+                   <!-- <div class="modal fade" id="deleteConfirmation" tabindex="2" role="dialog"
+                                                    aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="deleteConfirmationLabel">Logout Confirmation</h5>
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Are you sure?
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                                                                <div class="delete-button">
+                                                                    <a class="btn btn-primary" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
+                                                                    <?php echo $value['id_entry']; ?>Sure
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <!-- Modal Logout End -->                     

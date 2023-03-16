@@ -8,14 +8,29 @@
         ?>
        <ul class="list-group list-group-flush">
         <li class="list-group-item">
-
+            <div class="form-group row">
+                <label for="pelabuhan_asal" class="col-4 label-wrap"> PELABUHAN ASAL </label>
+                <div class="col">
+                    <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" required>
+                        <option value="">No Selected</option>
+                        <?php foreach ($pelabuhan as $row): ?>
+                            <option value="<?php echo $row['id_harbours']; ?>">
+                                <?php echo $row['pelabuhan']; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php
+                    echo form_error('pelabuhan_asal');
+                    ?>
+                </div>
+            </div>
             <div class="form-group row">
                 <label for="lintasan" class="col-4 label-wrap"> LINTASAN </label>
                 <div class="col">
                     <select class="form-control" name="lintasan" id="lintasan" required>
                         <option value="">No Selected</option>
                         <?php foreach ($lintasan as $row): ?>
-                            <option value="<?php echo $row['id']; ?>">
+                            <option value="<?php echo $row['lintasan']; ?>">
                                 <?php echo $row['lintasan']; ?>
                             </option>
                         <?php endforeach; ?>
@@ -44,7 +59,7 @@
                     </label>
                     <div class="col">
                         <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
-                            id="<?php echo $row['id_production']; ?>" placeholder="0" min="0" required>
+                            id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                     </div>
                 </div>
                 <?php
@@ -83,7 +98,7 @@
                                 </label>
                                 <div class="col">
                                     <input type="number" name="<?php echo $row['id_production'] . "TJP"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "TJP"; ?>" placeholder="0" min="0" required>
+                                        id="<?php echo $row['id_production'] . "TJP"; ?>" placeholder="0" min="0" >
                                 </div>
                             </div>
                             <?php
@@ -104,7 +119,7 @@
                                 </label>
                                 <div class="col">
                                     <input type="number" name="<?php echo $row['id_production'] . "IW"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "IW"; ?>" placeholder="0" min="0" required>
+                                        id="<?php echo $row['id_production'] . "IW"; ?>" placeholder="0" min="0" >
                                 </div>
                             </div>
                             <?php
@@ -126,7 +141,7 @@
                                 </label>
                                 <div class="col">
                                     <input type="number" name="<?php echo $row['id_production'] . "Dermaga"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "Dermaga"; ?>" placeholder="0" min="0" required>
+                                        id="<?php echo $row['id_production'] . "Dermaga"; ?>" placeholder="0" min="0" >
                                 </div>
                             </div>
                             <?php
@@ -148,7 +163,7 @@
                                 </label>
                                 <div class="col">
                                     <input type="number" name="<?php echo $row['id_production'] . "Terminal"; ?>" class="form-control"
-                                        id="<?php echo $row['id_production'] . "Terminal"; ?>" placeholder="0" min="0" required>
+                                        id="<?php echo $row['id_production'] . "Terminal"; ?>" placeholder="0" min="0" >
                                 </div>
                             </div>
                             <?php

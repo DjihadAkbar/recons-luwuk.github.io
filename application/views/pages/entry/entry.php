@@ -29,7 +29,7 @@
                 <select class="form-control" name="lintasan" id="lintasan" required>
                     <option value="">No Selected</option>
                     <?php foreach ($lintasan as $row): ?>
-                        <option value="<?php echo $row['id']; ?>">
+                        <option value="<?php echo $row['lintasan']; ?>">
                             <?php echo $row['lintasan']; ?>
                         </option>
                     <?php endforeach; ?>

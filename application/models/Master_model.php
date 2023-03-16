@@ -106,6 +106,7 @@ class Master_model extends CI_Model
     public function editDataTarif($id){
         $this->db->select('*');
         $this->db->join('routes', 'routes.id = rate.id_route');
+        
         $this->db->where('rate.id', $id);
         
         return $this->db->get('rate')->result_array();
@@ -139,7 +140,8 @@ class Master_model extends CI_Model
     public function lintasan()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('id, route as lintasan');
+        $this->db->distinct();
+        $this->db->select('route as lintasan');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
@@ -187,6 +189,19 @@ class Master_model extends CI_Model
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('route as lintasan');
         $this->db->where('id', $id);
+        if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $this->db->where('routes.spv', $pelabuhan);
+        }
+        $query = $this->db->get('routes')->result_array();
+
+        return $query;
+    }
+    public function lintasanWIthName($name,$id)
+    {
+        $pelabuhan = $this->session->userdata['pelabuhan'];
+        $this->db->select('id');
+        $this->db->where('route', $name);
+        $this->db->where('origin', $id);
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
