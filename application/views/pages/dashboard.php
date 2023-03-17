@@ -2579,13 +2579,13 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             <th scope="col">Nomor Seri Awal </th>
                                             <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Golongan 7 </th>
-                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Awal </th>
                                             <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Golongan 8 </th>
-                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Awal </th>
                                             <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">Golongan 9 </th>
-                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Awal </th>
                                             <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi I Dewasa
@@ -2600,7 +2600,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             <th scope="col">
                                                 Suplesi Ekonomi II Dewasa
                                             </th>
-                                                                                        <th scope="col">Nomor Seri Awal </th>
+                                            <th scope="col">Nomor Seri Awal </th>
                                             <th scope="col">Nomor Seri Akhir </th>
                                             <th scope="col">
                                                 Suplesi Ekonomi II Anak
