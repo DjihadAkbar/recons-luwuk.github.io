@@ -419,32 +419,32 @@ class Income_model extends CI_Model
         $textDepan = '(
             SELECT id_ferry, ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip,
             SUM(
-                (rate.Gol1 * entry_a.Gol1) + 
-                (rate.Gol2 * entry_a.Gol2) +
-                (rate.Gol3 * entry_a.Gol3) +
-                (rate.Gol4Pen * entry_a.Gol4Pen) +
-                (rate.Gol4Bar * entry_a.Gol4Bar) +
-                (rate.Gol5Pen * entry_a.Gol5Pen) +
-                (rate.Gol5Bar * entry_a.Gol5Bar) +
-                (rate.Gol6Pen * entry_a.Gol6Pen) +
-                (rate.Gol6Bar * entry_a.Gol6Bar) +
-                (rate.Gol7 * entry_a.Gol7) +
-                (rate.Gol8 * entry_a.Gol8) +
-                (rate.Gol9 * entry_a.Gol9) +
-                (rate.DewasaEksekutif * entry_a.DewasaEksekutif) +
-                (rate.BayiEksekutif * entry_a.BayiEksekutif) +
-                (rate.DewasaBisnis * entry_a.DewasaBisnis) +
-                (rate.BayiBisnis * entry_a.BayiBisnis) +
-                (rate.DewasaEkonomi * entry_a.DewasaEkonomi) +
-                (rate.BayiEkonomi * entry_a.BayiEkonomi) +
-                (rate.Suplesi1Dewasa * entry_a.Suplesi1Dewasa) +
-                (rate.Suplesi1Anak * entry_a.Suplesi1Anak) +
-                (rate.Suplesi2Dewasa * entry_a.Suplesi2Dewasa) +
-                (rate.Suplesi2Anak * entry_a.Suplesi2Anak) +
-                (rate.Hewan * entry_a.Hewan) +
-                (rate.Gayor * entry_a.Gayor) +
-                (rate.Carter * entry_a.Carter) +
-                (rate.BarCur * entry_a.BarangPendapatan))
+                (rate.Gol1 * entry_data.Gol1) + 
+                (rate.Gol2 * entry_data.Gol2) +
+                (rate.Gol3 * entry_data.Gol3) +
+                (rate.Gol4Pen * entry_data.Gol4Pen) +
+                (rate.Gol4Bar * entry_data.Gol4Bar) +
+                (rate.Gol5Pen * entry_data.Gol5Pen) +
+                (rate.Gol5Bar * entry_data.Gol5Bar) +
+                (rate.Gol6Pen * entry_data.Gol6Pen) +
+                (rate.Gol6Bar * entry_data.Gol6Bar) +
+                (rate.Gol7 * entry_data.Gol7) +
+                (rate.Gol8 * entry_data.Gol8) +
+                (rate.Gol9 * entry_data.Gol9) +
+                (rate.DewasaEksekutif * entry_data.DewasaEksekutif) +
+                (rate.BayiEksekutif * entry_data.BayiEksekutif) +
+                (rate.DewasaBisnis * entry_data.DewasaBisnis) +
+                (rate.BayiBisnis * entry_data.BayiBisnis) +
+                (rate.DewasaEkonomi * entry_data.DewasaEkonomi) +
+                (rate.BayiEkonomi * entry_data.BayiEkonomi) +
+                (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) +
+                (rate.Suplesi1Anak * entry_data.Suplesi1Anak) +
+                (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) +
+                (rate.Suplesi2Anak * entry_data.Suplesi2Anak) +
+                (rate.Hewan * entry_data.Hewan) +
+                (rate.Gayor * entry_data.Gayor) +
+                (rate.Carter * entry_data.Carter) +
+                (rate.BarCur * entry_data.BarangPendapatan))
                 AS total
                 FROM entry_data
                 JOIN routes ON routes.id = entry_data.id_route
