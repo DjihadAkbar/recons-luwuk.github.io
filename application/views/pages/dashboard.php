@@ -1724,7 +1724,6 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                 <tbody>
 
                                     <?php
-                                    print_r($incomePerRoute);
                                     foreach ($incomePerRoute as $key => $value) {
                                         ?>
                                             <tr class="text-center">
