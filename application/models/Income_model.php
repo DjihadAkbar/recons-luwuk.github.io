@@ -406,7 +406,7 @@ class Income_model extends CI_Model
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         $this->db->group_by(' month(entry_a.date),ferry');
-        $this->db->order_by('ferry');
+        $this->db->order_by('harbour,ferry');
         return $this->db->get('entry_data as entry_a')->result_array();
     }
 

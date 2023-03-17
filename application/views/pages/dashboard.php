@@ -1738,14 +1738,14 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     <?php echo $value['harbour']; ?>
                                                 </td>
                                                 <td style=" width:15%">
-                                                    <?php echo "" . $value['tripLastYear'] . " Trip"; ?>
+                                                    <?php echo "" . $value['tripLastYear2'] . " Trip"; ?>
                                                 </td>
                                                 <td style=" width:15%">
                                                     <?php
-                                                    if ($value['totalLastYear'] == null) {
+                                                    if ($value['totalLastYear2'] == null) {
                                                         echo formatRupiah(0);
                                                     } else {
-                                                        echo formatRupiah($value['totalLastYear']);
+                                                        echo formatRupiah($value['totalLastYear2']);
                                                     }
                                                     ?>
                                                 </td>
