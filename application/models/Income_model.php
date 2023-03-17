@@ -437,14 +437,14 @@ class Income_model extends CI_Model
                 ((rate.BayiBisnis      + rate.BayiBisnisDermaga + rate.BayiBisnisPasMasuk) * entry_data.BayiBisnis) +
                 ((rate.DewasaEkonomi   + rate.DewasaEkonomiDermaga + rate.DewasaEkonomiPasMasuk) * entry_data.DewasaEkonomi) +
                 ((rate.BayiEkonomi     + rate.BayiEkonomiDermaga + rate.BayiEkonomiPasMasuk) * entry_data.BayiEkonomi) +
-                ((rate.Suplesi1Dewasa  + rate.Suplesi1DewasaDermaga + rate.Suplesi1DewasaPasMasuk) * entry_data.Suplesi1Dewasa) +
-                ((rate.Suplesi1Anak    + rate.Suplesi1AnakDermaga + rate.Suplesi1AnakPasMasuk) * entry_data.Suplesi1Anak) +
-                ((rate.Suplesi2Dewasa  + rate.Suplesi2DewasaDermaga + rate.Suplesi2DewasaPasMasuk) * entry_data.Suplesi2Dewasa) +
-                ((rate.Suplesi2Anak    + rate.Suplesi2AnakDermaga + rate.Suplesi2AnakPasMasuk) * entry_data.Suplesi2Anak) +
-                ((rate.Hewan + rate.HewanDermaga + rate.HewanPasMasuk) * entry_data.Hewan) +
-                ((rate.Gayor + rate.GayorDermaga + rate.GayorPasMasuk) * entry_data.Gayor) +
-                ((rate.Carter + rate.CarterDermaga + rate.CarterPasMasuk) * entry_data.Carter) +
-                ((rate.BarCur + rate.BarCurDermaga + rate.BarCurPasMasuk) * entry_data.BarangPendapatan))
+                ((rate.Suplesi1Dewasa) * entry_data.Suplesi1Dewasa) +
+                ((rate.Suplesi1Anak) * entry_data.Suplesi1Anak) +
+                ((rate.Suplesi2Dewasa) * entry_data.Suplesi2Dewasa) +
+                ((rate.Suplesi2Anak) * entry_data.Suplesi2Anak) +
+                ((rate.Hewan) * entry_data.Hewan) +
+                ((rate.Gayor) * entry_data.Gayor) +
+                ((rate.Carter) * entry_data.Carter) +
+                ((rate.BarCur) * entry_data.BarangPendapatan))
                 AS total
                 FROM entry_data
                 JOIN routes ON routes.id = entry_data.id_route
