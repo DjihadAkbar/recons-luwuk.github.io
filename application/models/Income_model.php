@@ -419,32 +419,32 @@ class Income_model extends CI_Model
         $textDepan = '(
             SELECT id_ferry, ferry, id_harbour, COUNT(case when trips.trip != 1 then 1 END) as trip,
             SUM(
-                ((rate.Gol1 + rate.Gol1Dermaga + rate.Gol1PasMasuk) * entry_data.Gol1) + 
-                ((rate.Gol2 + rate.Gol2Dermaga + rate.Gol2PasMasuk) * entry_data.Gol2) +
-                ((rate.Gol3 + rate.Gol3Dermaga + rate.Gol3PasMasuk) * entry_data.Gol3) +
-                ((rate.Gol4Pen + rate.Gol4PenDermaga + rate.Gol4PenPasMasuk) * entry_data.Gol4Pen) +
-                ((rate.Gol4Bar + rate.Gol4BarDermaga + rate.Gol4BarPasMasuk) * entry_data.Gol4Bar) +
-                ((rate.Gol5Pen + rate.Gol5PenDermaga + rate.Gol5PenPasMasuk) * entry_data.Gol5Pen) +
-                ((rate.Gol5Bar + rate.Gol5BarDermaga + rate.Gol5BarPasMasuk) * entry_data.Gol5Bar) +
-                ((rate.Gol6Pen + rate.Gol6PenDermaga + rate.Gol6PenPasMasuk) * entry_data.Gol6Pen) +
-                ((rate.Gol6Bar + rate.Gol6BarDermaga + rate.Gol6BarPasMasuk) * entry_data.Gol6Bar) +
-                ((rate.Gol7 + rate.Gol7Dermaga + rate.Gol7PasMasuk) * entry_data.Gol7) +
-                ((rate.Gol8 + rate.Gol8Dermaga + rate.Gol8PasMasuk) * entry_data.Gol8) +
-                ((rate.Gol9 + rate.Gol9Dermaga + rate.Gol9PasMasuk) * entry_data.Gol9) +
-                ((rate.DewasaEksekutif + rate.DewasaEksekutifDermaga + rate.DewasaEksekutifPasMasuk) * entry_data.DewasaEksekutif) +
-                ((rate.BayiEksekutif   + rate.BayiEksekutifDermaga + rate.BayiEksekutifPasMasuk) * entry_data.BayiEksekutif) +
-                ((rate.DewasaBisnis    + rate.DewasaBisnisDermaga + rate.DewasaBisnisPasMasuk) * entry_data.DewasaBisnis) +
-                ((rate.BayiBisnis      + rate.BayiBisnisDermaga + rate.BayiBisnisPasMasuk) * entry_data.BayiBisnis) +
-                ((rate.DewasaEkonomi   + rate.DewasaEkonomiDermaga + rate.DewasaEkonomiPasMasuk) * entry_data.DewasaEkonomi) +
-                ((rate.BayiEkonomi     + rate.BayiEkonomiDermaga + rate.BayiEkonomiPasMasuk) * entry_data.BayiEkonomi) +
-                ((rate.Suplesi1Dewasa) * entry_data.Suplesi1Dewasa) +
-                ((rate.Suplesi1Anak) * entry_data.Suplesi1Anak) +
-                ((rate.Suplesi2Dewasa) * entry_data.Suplesi2Dewasa) +
-                ((rate.Suplesi2Anak) * entry_data.Suplesi2Anak) +
-                ((rate.Hewan) * entry_data.Hewan) +
-                ((rate.Gayor) * entry_data.Gayor) +
-                ((rate.Carter) * entry_data.Carter) +
-                ((rate.BarCur) * entry_data.BarangPendapatan))
+                (rate.Gol1 * entry_a.Gol1) + 
+                (rate.Gol2 * entry_a.Gol2) +
+                (rate.Gol3 * entry_a.Gol3) +
+                (rate.Gol4Pen * entry_a.Gol4Pen) +
+                (rate.Gol4Bar * entry_a.Gol4Bar) +
+                (rate.Gol5Pen * entry_a.Gol5Pen) +
+                (rate.Gol5Bar * entry_a.Gol5Bar) +
+                (rate.Gol6Pen * entry_a.Gol6Pen) +
+                (rate.Gol6Bar * entry_a.Gol6Bar) +
+                (rate.Gol7 * entry_a.Gol7) +
+                (rate.Gol8 * entry_a.Gol8) +
+                (rate.Gol9 * entry_a.Gol9) +
+                (rate.DewasaEksekutif * entry_a.DewasaEksekutif) +
+                (rate.BayiEksekutif * entry_a.BayiEksekutif) +
+                (rate.DewasaBisnis * entry_a.DewasaBisnis) +
+                (rate.BayiBisnis * entry_a.BayiBisnis) +
+                (rate.DewasaEkonomi * entry_a.DewasaEkonomi) +
+                (rate.BayiEkonomi * entry_a.BayiEkonomi) +
+                (rate.Suplesi1Dewasa * entry_a.Suplesi1Dewasa) +
+                (rate.Suplesi1Anak * entry_a.Suplesi1Anak) +
+                (rate.Suplesi2Dewasa * entry_a.Suplesi2Dewasa) +
+                (rate.Suplesi2Anak * entry_a.Suplesi2Anak) +
+                (rate.Hewan * entry_a.Hewan) +
+                (rate.Gayor * entry_a.Gayor) +
+                (rate.Carter * entry_a.Carter) +
+                (rate.BarCur * entry_a.BarangPendapatan))
                 AS total
                 FROM entry_data
                 JOIN routes ON routes.id = entry_data.id_route
