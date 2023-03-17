@@ -165,7 +165,7 @@ class Income_model extends CI_Model
                 }
                 $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
                 GROUP BY entry_data.id_route) as entry_d';
-            $textAkhir = 'entry_a.id_route = entry_d.id_route AND entry_a.id_harbour = entry_d.id_harbour';
+            $textAkhir = 'entry_a.id_route = entry_d.id_route';
         
         $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         
@@ -254,7 +254,7 @@ class Income_model extends CI_Model
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
-        $this->db->group_by(' month(entry_a.date),ferry, route');
+        $this->db->group_by(' month(entry_a.date), route');
         $this->db->order_by('ferry');
         return $this->db->get('entry_data as entry_a')->result_array();
     }
