@@ -113,12 +113,25 @@ class Master extends CI_Controller
     {
         $origin = '';
         $destination = '';
+        $originName = '';
+        $destinationName = '';
 
         foreach($this->Master_model->harbourAll() as $row){
             if($row['id_harbours'] ==  $this->input->post('origin_name')){
-                $origin = $row['pelabuhan'];
+                $originName = $row['pelabuhan'];
             }
             if($row['id_harbours'] ==  $this->input->post('destination_name')){
+                $destinationName = $row['pelabuhan'];
+            }
+        }
+
+        $routeName = $originName."-".$destinationName;
+
+        foreach($this->Master_model->harbourAll() as $row){
+            if($row['id_harbours'] ==  $this->input->post('origin')){
+                $origin = $row['pelabuhan'];
+            }
+            if($row['id_harbours'] ==  $this->input->post('destination')){
                 $destination = $row['pelabuhan'];
             }
         }
@@ -126,6 +139,7 @@ class Master extends CI_Controller
         $route = $origin."-".$destination;
         
         $dataInput = [
+            'ofc_route' => $routeName,
             'route' => $route,
             'origin'   => $this->input->post('origin'), 
             'destination'   => $this->input->post('destination'), 
@@ -255,13 +269,13 @@ class Master extends CI_Controller
 
     public function prosesEditTarif(){
 
-        $idLintasan = $this->Master_model->lintasanWIthName($this->input->post('lintasan'),$this->input->post('pelabuhan_asal'));
-        foreach($idLintasan as $row => $value){
-            $dataIdLintasan = $value['id'];
-        }
+        // $idLintasan = $this->Master_model->lintasanWIthName($this->input->post('lintasan'),$this->input->post('pelabuhan_asal'));
+        // foreach($idLintasan as $row => $value){
+        //     $dataIdLintasan = $value['id'];
+        // }
 
 
-        $data['lintasan'] = $this->Master_model->lintasanWIthId($dataIdLintasan);
+        $data['lintasan'] = $this->Master_model->lintasanWIthId($this->input->post('lintasan'));
         $tahun = substr($this->input->post('edit_tanggal_berlaku'),2,-6);
         $bulan = substr($this->input->post('edit_tanggal_berlaku'),5,-3);
         foreach($data['lintasan'] as $key => $value){
@@ -273,7 +287,7 @@ class Master extends CI_Controller
             'start_date' => $this->input->post('edit_tanggal_berlaku'),
             // 'rate_type' => $this->input->post('jenis_tarif'),
             'rate_type' => $valueTarif,
-            'id_route' => $dataIdLintasan,
+            'id_route' => $this->input->post('lintasan'),
             'Gol1' => $this->input->post('Gol1'),
             'Gol2' => $this->input->post('Gol2'),
             'Gol3' => $this->input->post('Gol3'),
@@ -394,12 +408,13 @@ class Master extends CI_Controller
 
     public function prosesTambahTarif()
     {
-        $idLintasan = $this->Master_model->lintasanWIthName($this->input->post('lintasan'),$this->input->post('pelabuhan_asal'));
-        foreach($idLintasan as $row => $value){
-            $dataIdLintasan = $value['id'];
-        }
+        // $idLintasan = $this->Master_model->lintasanWIthName($this->input->post('lintasan'),$this->input->post('pelabuhan_asal'));
+        // foreach($idLintasan as $row => $value){
+        //     $dataIdLintasan = $value['id'];
+        // }
 
-        $data['lintasan'] = $this->Master_model->lintasanWIthId($dataIdLintasan);
+        // $data['lintasan'] = $this->Master_model->lintasanWIthId($dataIdLintasan);
+        $data['lintasan'] = $this->Master_model->lintasanWIthId($this->input->post('lintasan'));
         $tahun = substr($this->input->post('tanggal_berangkat'),2,-6);
         $bulan = substr($this->input->post('tanggal_berangkat'),5,-3);
         
@@ -414,7 +429,7 @@ class Master extends CI_Controller
             'start_date' => $this->input->post('tanggal_berangkat'),
             // 'rate_type' => $this->input->post('jenis_tarif'),
             'rate_type' => $valueTarif,
-            'id_route' => $dataIdLintasan,
+            'id_route' => $this->input->post('lintasan'),
             'Gol1' => $this->input->post('Gol1'),
             'Gol2' => $this->input->post('Gol2'),
             'Gol3' => $this->input->post('Gol3'),

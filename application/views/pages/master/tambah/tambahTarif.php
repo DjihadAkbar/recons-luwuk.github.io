@@ -6,31 +6,15 @@
         <?php
         echo form_open(base_url('dashboard/master/tarif/prosesTambahTarif'), ['class' => 'form-entry']);
         ?>
-       <ul class="list-group list-group-flush">
+    <ul class="list-group list-group-flush">
         <li class="list-group-item">
-            <div class="form-group row">
-                <label for="pelabuhan_asal" class="col-4 label-wrap"> PELABUHAN ASAL </label>
-                <div class="col">
-                    <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" required>
-                        <option value="">No Selected</option>
-                        <?php foreach ($pelabuhan as $row): ?>
-                            <option value="<?php echo $row['id_harbours']; ?>">
-                                <?php echo $row['pelabuhan']; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?php
-                    echo form_error('pelabuhan_asal');
-                    ?>
-                </div>
-            </div>
             <div class="form-group row">
                 <label for="lintasan" class="col-4 label-wrap"> LINTASAN </label>
                 <div class="col">
                     <select class="form-control" name="lintasan" id="lintasan" required>
                         <option value="">No Selected</option>
                         <?php foreach ($lintasan as $row): ?>
-                            <option value="<?php echo $row['lintasan']; ?>">
+                            <option value="<?php echo $row['id']; ?>">
                                 <?php echo $row['lintasan']; ?>
                             </option>
                         <?php endforeach; ?>

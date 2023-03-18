@@ -2272,7 +2272,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <?php echo $value['ferry']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['rute']; ?>
+                                                <?php echo $value['ofc_route']; ?>
                                             </td>
                                             <td>
                                                 <?php echo $value['harbour']; ?>

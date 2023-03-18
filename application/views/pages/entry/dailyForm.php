@@ -156,7 +156,7 @@
                                                 <?php echo $value['ferry']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['route']; ?>
+                                                <?php echo $value['ofc_route']; ?>
                                             </td>
                                             <td>
                                                 <?php echo $value['harbour']; ?>

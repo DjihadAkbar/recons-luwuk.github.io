@@ -140,8 +140,7 @@ class Master_model extends CI_Model
     public function lintasan()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->distinct();
-        $this->db->select('route as lintasan');
+        $this->db->select('route as lintasan, id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }

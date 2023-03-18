@@ -6,7 +6,7 @@ $dataBarangPendapatan = '';
 $dataBarangVolume = '';
 foreach($editDataTarif as $row){
 
-    $dataLintasan = $row['route']; 
+    $dataLintasan = $row['id_route']; 
     $dataTanggal = $row['start_date']; 
     $dataTarif = $row['rate_type'];
     $dataBarangPendapatan = $row['BarCur'];
@@ -23,34 +23,19 @@ foreach($editDataTarif as $row){
         echo form_open(base_url('dashboard/master/tarif/prosesEditTarif?id=').$_GET['id'] , ['class' => 'form-entry']);
         ?>
         
-        <div class="form-group row">
-                <label for="pelabuhan_asal" class="col-4 label-wrap"> PELABUHAN ASAL </label>
-                <div class="col">
-                    <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" required>
-                        <option value="">No Selected</option>
-                        <?php foreach ($pelabuhan as $row): ?>
-                            <option value="<?php echo $row['id_harbours']; ?>">
-                                <?php echo $row['pelabuhan']; ?>
-                            </option>
-                        <?php endforeach; ?>
-                    </select>
-                    <?php
-                    echo form_error('pelabuhan_asal');
-                    ?>
-                </div>
-            </div>
+        
         <div class="form-group row">
             <label for="lintasan" class="col-4 label-wrap"> Lintasan </label>
             <div class="col">
                 <select class="form-control" name="lintasan" id="lintasan" required>
                     <option value="">No Selected</option>
                     <?php foreach ($lintasan as $row): ?>
-                        <?php if($row['lintasan'] == $dataLintasan) {?>
-                        <option value="<?php echo $row['lintasan'];?>" selected>
+                        <?php if($row['id'] == $dataLintasan) {?>
+                        <option value="<?php echo $row['id'];?>" selected>
                             <?php echo $row['lintasan']; ?>
                         </option>
                         <?php } else { ?>
-                        <option value="<?php echo $row['lintasan']; ?>">
+                        <option value="<?php echo $row['id']; ?>">
                             <?php echo $row['lintasan']; ?>
                         </option>
                         <?php 

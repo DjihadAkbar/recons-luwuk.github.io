@@ -12,7 +12,7 @@ $dataBarangPendapatan = '';
 $dataBarangVolume = '';
 foreach($editData as $row){
     $dataKapal = $row['id_ferry']; 
-    $dataLintasan = $row['route']; 
+    $dataLintasan = $row['id_route']; 
     $dataPelabuhan = $row['id_harbour']; 
     $dataTrip = $row['id_trip']; 
     $dataTanggal = $row['date']; 
@@ -64,12 +64,12 @@ foreach($editData as $row){
                 <select class="form-control" name="lintasan" id="lintasan" required>
                     <option value="">No Selected</option>
                     <?php foreach ($lintasan as $row): ?>
-                        <?php if($row['lintasan'] == $dataLintasan) {?>
-                        <option value="<?php echo $row['lintasan'];?>" selected>
+                        <?php if($row['id'] == $dataLintasan) {?>
+                        <option value="<?php echo $row['id'];?>" selected>
                             <?php echo $row['lintasan']; ?>
                         </option>
                         <?php } else { ?>
-                        <option value="<?php echo $row['lintasan']; ?>">
+                        <option value="<?php echo $row['id']; ?>">
                             <?php echo $row['lintasan']; ?>
                         </option>
                         <?php 
