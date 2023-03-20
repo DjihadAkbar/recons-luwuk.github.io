@@ -245,6 +245,39 @@ foreach($editDataTarif as $row){
         }
         ?>
         <!-- Akhir Input Jumlah Produksi Terminal-->
+        <!-- Input Jumlah Produksi PasMasuk-->
+        <?php $no = ""; 
+        foreach ($produksi as $row) { 
+            foreach($editDataTarif as $baris){
+                foreach($baris as $key => $baris){
+                    if($key == $row['id_production']."PasMasuk"){
+            ?>
+            <div class="form-group row ">
+                <label for="<?php echo $row['produksi']." PasMasuk"; ?>" class="col-4 label-wrap">
+                    <?php echo $row['produksi']." PAS MASUK"; ?>
+                </label>
+                <div class="col">
+                    <input type="number" name="<?php echo $row['id_production']."PasMasuk"; ?>" class="form-control"
+                        id="<?php echo $row['id_production']."PasMasuk"; ?>" value=
+                        <?php
+                            foreach($editDataTarif as $baris){
+                                foreach($baris as $key => $baris){
+                                    if($key == $row['id_production']."PasMasuk"){
+                                        echo $baris;
+                                    }
+                                }
+                            }
+                        ?>
+                        min="0" required>
+                </div>
+            </div>
+            <?php
+                    }
+                }
+            }
+        }
+        ?>
+        <!-- Akhir Input Jumlah Produksi PasMasuk-->
 
         
         <?php

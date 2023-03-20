@@ -132,6 +132,24 @@
                                     <th scope="col">Bayi Bisnis Terminal</th>
                                     <th scope="col">Dewasa Ekonomi Terminal</th>
                                     <th scope="col">Bayi Ekonomi Terminal</th>
+                                    <th scope="col">Golongan 1 Pas Masuk</th>
+                                    <th scope="col">Golongan 2 Pas Masuk</th>
+                                    <th scope="col">Golongan 3 Pas Masuk</th>
+                                    <th scope="col">Golongan 4 - Penumpang Pas Masuk</th>
+                                    <th scope="col">Golongan 4 - Barang Pas Masuk</th>
+                                    <th scope="col">Golongan 5 - Penumpang Pas Masuk</th>
+                                    <th scope="col">Golongan 5 - Barang Pas Masuk</th>
+                                    <th scope="col">Golongan 6 - Penumpang Pas Masuk</th>
+                                    <th scope="col">Golongan 6 - Barang Pas Masuk</th>
+                                    <th scope="col">Golongan 7 Pas Masuk</th>
+                                    <th scope="col">Golongan 8 Pas Masuk</th>
+                                    <th scope="col">Golongan 9 Pas Masuk</th>
+                                    <th scope="col">Dewasa Eksekutif Pas Masuk</th>
+                                    <th scope="col">Bayi Eksekutif Pas Masuk</th>
+                                    <th scope="col">Dewasa Bisnis Pas Masuk</th>
+                                    <th scope="col">Bayi Bisnis Pas Masuk</th>
+                                    <th scope="col">Dewasa Ekonomi Pas Masuk</th>
+                                    <th scope="col">Bayi Ekonomi Pas Masuk</th>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                 </tr>
@@ -457,6 +475,60 @@
                                         </td>
                                         <td>
                                             <?php echo $value['BayiEkonomiTerminal']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol1PasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol2PasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol3PasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol4PenPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol4BarPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol5PenPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol5BarPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol6PenPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol6BarPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol7PasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol8PasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Gol9PasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEksekutifPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEksekutifPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaBisnisPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiBisnisPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['DewasaEkonomiPasMasuk']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['BayiEkonomiPasMasuk']; ?>
                                         </td>
                                         <td>
                                             <div class="akses-button">

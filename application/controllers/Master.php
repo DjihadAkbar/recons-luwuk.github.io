@@ -310,8 +310,6 @@ class Master extends CI_Controller
             'Suplesi1Anak' => $this->input->post('Suplesi1Anak'),
             'Suplesi2Dewasa' => $this->input->post('Suplesi2Dewasa'),
             'Suplesi2Anak' => $this->input->post('Suplesi2Anak'),
-            'Hewan' => $this->input->post('Hewan'),
-            'Gayor' => $this->input->post('Gayor'),
             'Carter' => $this->input->post('Carter'),
             'BarangVolume' => $this->input->post('barang_volume'),
             'BarCur' => $this->input->post('barang_pendapatan'),
@@ -387,10 +385,32 @@ class Master extends CI_Controller
             'BayiBisnisTerminal' => $this->input->post('BayiBisnisTerminal'),
             'DewasaEkonomiTerminal' => $this->input->post('DewasaEkonomiTerminal'),
             'BayiEkonomiTerminal' => $this->input->post('BayiEkonomiTerminal'),
+            'Gol1PasMasuk' => $this->input->post('Gol1PasMasuk'),
+            'Gol2PasMasuk' => $this->input->post('Gol2PasMasuk'),
+            'Gol3PasMasuk' => $this->input->post('Gol3PasMasuk'),
+            'Gol4PenPasMasuk' => $this->input->post('Gol4PenPasMasuk'),
+            'Gol4BarPasMasuk' => $this->input->post('Gol4BarPasMasuk'),
+            'Gol5PenPasMasuk' => $this->input->post('Gol5PenPasMasuk'),
+            'Gol5BarPasMasuk' => $this->input->post('Gol5BarPasMasuk'),
+            'Gol6PenPasMasuk' => $this->input->post('Gol6PenPasMasuk'),
+            'Gol6BarPasMasuk' => $this->input->post('Gol6BarPasMasuk'),
+            'Gol7PasMasuk' => $this->input->post('Gol7PasMasuk'),
+            'Gol8PasMasuk' => $this->input->post('Gol8PasMasuk'),
+            'Gol9PasMasuk' => $this->input->post('Gol9PasMasuk'),
+            'DewasaEksekutifPasMasuk' => $this->input->post('DewasaEksekutifPasMasuk'),
+            'BayiEksekutifPasMasuk' => $this->input->post('BayiEksekutifPasMasuk'),
+            'DewasaBisnisPasMasuk' => $this->input->post('DewasaBisnisPasMasuk'),
+            'BayiBisnisPasMasuk' => $this->input->post('BayiBisnisPasMasuk'),
+            'DewasaEkonomiPasMasuk' => $this->input->post('DewasaEkonomiPasMasuk'),
+            'BayiEkonomiPasMasuk' => $this->input->post('BayiEkonomiPasMasuk'),
         ];
         $this->Master_model->editTarif($dataInput, $_GET['id']);
         redirect('dashboard/master/tarif');
     }
+
+
+
+
 
     public function tambahTarif()
     {
@@ -452,8 +472,6 @@ class Master extends CI_Controller
             'Suplesi1Anak' => $this->input->post('Suplesi1Anak'),
             'Suplesi2Dewasa' => $this->input->post('Suplesi2Dewasa'),
             'Suplesi2Anak' => $this->input->post('Suplesi2Anak'),
-            'Hewan' => $this->input->post('Hewan'),
-            'Gayor' => $this->input->post('Gayor'),
             'Carter' => $this->input->post('Carter'),
             'BarangVolume' => $this->input->post('barang_volume'),
             'BarCur' => $this->input->post('barang_pendapatan'),
@@ -529,6 +547,24 @@ class Master extends CI_Controller
             'BayiBisnisTerminal' => $this->input->post('BayiBisnisTerminal'),
             'DewasaEkonomiTerminal' => $this->input->post('DewasaEkonomiTerminal'),
             'BayiEkonomiTerminal' => $this->input->post('BayiEkonomiTerminal'),
+            'Gol1PasMasuk' => $this->input->post('Gol1PasMasuk'),
+            'Gol2PasMasuk' => $this->input->post('Gol2PasMasuk'),
+            'Gol3PasMasuk' => $this->input->post('Gol3PasMasuk'),
+            'Gol4PenPasMasuk' => $this->input->post('Gol4PenPasMasuk'),
+            'Gol4BarPasMasuk' => $this->input->post('Gol4BarPasMasuk'),
+            'Gol5PenPasMasuk' => $this->input->post('Gol5PenPasMasuk'),
+            'Gol5BarPasMasuk' => $this->input->post('Gol5BarPasMasuk'),
+            'Gol6PenPasMasuk' => $this->input->post('Gol6PenPasMasuk'),
+            'Gol6BarPasMasuk' => $this->input->post('Gol6BarPasMasuk'),
+            'Gol7PasMasuk' => $this->input->post('Gol7PasMasuk'),
+            'Gol8PasMasuk' => $this->input->post('Gol8PasMasuk'),
+            'Gol9PasMasuk' => $this->input->post('Gol9PasMasuk'),
+            'DewasaEksekutifPasMasuk' => $this->input->post('DewasaEksekutifPasMasuk'),
+            'BayiEksekutifPasMasuk' => $this->input->post('BayiEksekutifPasMasuk'),
+            'DewasaBisnisPasMasuk' => $this->input->post('DewasaBisnisPasMasuk'),
+            'BayiBisnisPasMasuk' => $this->input->post('BayiBisnisPasMasuk'),
+            'DewasaEkonomiPasMasuk' => $this->input->post('DewasaEkonomiPasMasuk'),
+            'BayiEkonomiPasMasuk' => $this->input->post('BayiEkonomiPasMasuk'),
         ];
         $this->Master_model->tambahTarif($dataInput);
         redirect('dashboard/master/tarif');

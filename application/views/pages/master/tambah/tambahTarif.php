@@ -156,6 +156,28 @@
                     ?>
             </li>
             <!-- Akhir Input Jumlah Produksi -->
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item terminal">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " PAS MASUK"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "PasMasuk"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "PasMasuk"; ?>" placeholder="0" min="0" >
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
         </ul>
 
 

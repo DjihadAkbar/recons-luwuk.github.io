@@ -96,12 +96,14 @@
                 <div class="col">
                     <select onchange="OnSelectionChange()" class="form-control" name="jenis_laporan" id="jenis_laporan" required>
                         <option value="" disabled Selected>No Selected</option>
-                        <option value="dailyReport">
-                            Laporan Pendapatan harian
-                        </option>
-                        <option value="buktiPenyetoran">
-                            Bukti Penyetoran
-                        </option>
+                        <?php if($this->session->userdata['jabatan'] == 'SUPERVISOR' || $this->session->userdata['type'] == 'ADMIN') {?>
+                            <option value="dailyReport">
+                                Laporan Pendapatan harian
+                            </option>
+                            <option value="buktiPenyetoran">
+                                Bukti Penyetoran
+                            </option>
+                        <?php }?>
                     </select>
                     <?php
                     echo form_error('trip');
