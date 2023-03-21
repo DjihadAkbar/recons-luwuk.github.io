@@ -255,6 +255,9 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
+        }
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
@@ -406,6 +409,9 @@ class Income_model extends CI_Model
         $this->db->join('trips', 'trips.id = entry_a.id_trip');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
+        }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
         }
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
@@ -560,6 +566,9 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
+        }
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         $this->db->group_by(' month(entry_a.date),harbour');
@@ -608,6 +617,9 @@ class Income_model extends CI_Model
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
+        }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
         $this->db->where('MONTHname(date)', date("F", strtotime('-2 month')));
@@ -659,6 +671,9 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
+        }
         $this->db->where('day(date)', date("d"));
         $this->db->where('MONTHname(date)', date("F", strtotime('-2 month')));
         $this->db->where('year(date)', date("Y"));
@@ -708,6 +723,9 @@ class Income_model extends CI_Model
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
+        }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
         $this->db->where('MONTHname(date)', date("F", strtotime('-2 month')));
@@ -786,6 +804,9 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
+        }
         $this->db->where('day(date) <=', date("d"));
         // $this->db->where('monthname(date)', date("F"));
         $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
@@ -863,6 +884,9 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
+        }
         $this->db->where('day(date) <=', date("d"));
         // $this->db->where('monthname(date)', date("F"));
         $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
@@ -939,6 +963,9 @@ class Income_model extends CI_Model
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
+        }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
         }
         $this->db->where('day(date) <=', date("d"));
         // $this->db->where('monthname(date)', date("F"));
