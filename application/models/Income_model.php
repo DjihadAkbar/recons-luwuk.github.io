@@ -168,7 +168,7 @@ class Income_model extends CI_Model
                 GROUP BY entry_data.id_route) as entry_d';
             $textAkhir = 'entry_a.id_route = entry_d.id_route';
         
-        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
+        $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id, target, harbour_target.trip as target_trip,
                 SUM(
@@ -311,7 +311,7 @@ class Income_model extends CI_Model
                 GROUP BY entry_data.id_ferry) as entry_d';
             $textAkhir = 'entry_a.id_ferry = entry_d.id_ferry';
         
-        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
+        $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
                 SUM(
                 ((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_a.Gol1) + 
@@ -568,7 +568,7 @@ class Income_model extends CI_Model
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry, harbour,route,
+        $this->db->select('ofc_route,ferry, harbour,route,
                 COUNT(case when trip != 1 then 1 END) AS "Jumlah Trip", id_trip as "Jenis Operasi",
                 SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
@@ -618,7 +618,7 @@ class Income_model extends CI_Model
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry, harbour,route,
+        $this->db->select('ofc_route,ferry, harbour,route,
                 COUNT(case when trip != 1 then 1 END) AS "Jumlah Trip", id_trip as "Jenis Operasi",
                 SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
@@ -668,7 +668,7 @@ class Income_model extends CI_Model
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry, harbour,route,
+        $this->db->select('ofc_route,ferry, harbour,route,
                 COUNT(case when trip != 1 then 1 END) AS "Jumlah Trip", id_trip as "Jenis Operasi",
                 SUM(
                 (rate.Gol1 * entry_data.Gol1) + 
@@ -718,7 +718,7 @@ class Income_model extends CI_Model
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry,COUNT(case when trip != 1 then 1 END) AS trip,
+        $this->db->select('ofc_route,ferry,COUNT(case when trip != 1 then 1 END) AS trip,
         
         route AS rute,
         harbour,
@@ -795,7 +795,7 @@ class Income_model extends CI_Model
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry,COUNT(case when trip != 1 then 1 END) AS trip,
+        $this->db->select('ofc_route,ferry,COUNT(case when trip != 1 then 1 END) AS trip,
         
         route AS rute,
         harbour,
@@ -872,7 +872,7 @@ class Income_model extends CI_Model
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('ferry,COUNT(case when trip != 1 then 1 END) AS trip,
+        $this->db->select('ofc_route,ferry,COUNT(case when trip != 1 then 1 END) AS trip,
         
         route AS rute,
         harbour,
