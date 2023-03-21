@@ -74,7 +74,7 @@ function formatRupiah($angka)
                                                                                                                                                 <?php echo $value['ferry']; ?>
                                                                                                                                             </td>
                                                                                                                                             <td>
-                                                                                                                                                <?php echo $value['route']; ?>
+                                                                                                                                                <?php echo $value['ofc_route']; ?>
                                                                                                                                             </td>
                                                                                                                                             <td>
                                                                                                                                                 <?php echo $value['harbour']; ?>
@@ -1271,7 +1271,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                                                                                                 <?php echo $value['ferry']; ?>
                                                                                                                                             </td>
                                                                                                                                             <td rowspan="" style=" width:25%">
-                                                                                                                                                <?php echo $value['route']; ?>
+                                                                                                                                                <?php echo $value['ofc_route']; ?>
                                                                                                                                             </td>
 
                                                                                                                                             <td style=" width:20%">
@@ -1732,7 +1732,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     <?php echo $value['ferry']; ?>
                                                 </td>
                                                 <td rowspan="" style=" width:25%">
-                                                    <?php echo $value['route']; ?>
+                                                    <?php echo $value['ofc_route']; ?>
                                                 </td>
 
                                                 <td style=" width:20%">
