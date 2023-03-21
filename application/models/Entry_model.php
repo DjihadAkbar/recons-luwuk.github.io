@@ -18,7 +18,7 @@ class Entry_model extends CI_Model
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
 
-        $this->db->select('*,entry_data.id as id_entry');
+        $this->db->select('*,trips.trip as trip,day(date) as day,year(date) as year,entry_data.id as id_entry');
         $this->db->join('routes', 'routes.id = entry_data.id_route');
         $this->db->join('ferry', 'entry_data.id_ferry = ferry.id');
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');

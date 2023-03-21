@@ -26,13 +26,18 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col"> # </th>
+                                    <th scope="col">Hari </th>
+                                    <th scope="col">Tanggal </th>[
+                                    <th scope="col">Bulan </th>
+                                    <th scope="col">Tahun </th>
                                     <th scope="col">Minggu </th>
-                                    <th scope="col">Tanggal Operasi </th>
                                     <th scope="col">Waktu Keberangkatan </th>
                                     <th scope="col">Nama Kapal </th>
                                     <th scope="col">Lintasan </th>
                                     <th scope="col">Pelabuhan Asal </th>
-                                    <th scope="col">Jenis Trip </th>
+                                    <th scope="col">HSO </th>
+                                    <th scope="col">HO </th>
+                                    <th scope="col">Jenis Trip </th>]
                                     <th scope="col">Dewasa Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
@@ -133,22 +138,40 @@
                                     <th scope="row">
                                                 <?php echo $no++; ?>
                                             </th>
-                                            <td>
-                                                <?php echo $value['week']; ?>
-                                            </td>
-                                            <td>
-                                                <?php
+                                            <td scope="col"> <?php                                             
                                                 $original_date = $value['date'];
-
-                                                // Creating timestamp from given date
-                                                $timestamp = strtotime($original_date);
-
-                                                // Creating new date format from that timestamp
-                                                $new_date = date("d-m-Y", $timestamp);
-                                                echo $new_date;
-
+                                                echo getHari($original_date);
+                                                ?></td>
+                                            <td scope="col"><?php 
+                                                $original_date = $value['day'];
+                                                echo $original_date;
+                                                ?> 
+                                            </td>
+                                            <td scope="col"><?php 
+                                                $original_date = $value['date'];
+                                                echo getBulan($original_date);
                                                 ?>
                                             </td>
+                                            <td scope="col"><?php 
+                                                $original_date = $value['year'];
+                                                echo $original_date;
+                                                ?> 
+                                            <th>
+                                                <?php echo $value['week']; ?>
+                                            </th>
+                                            <!-- // <td>
+                                            //     <?php
+                                            //     $original_date = $value['date'];
+
+                                            //     // Creating timestamp from given date
+                                            //     $timestamp = strtotime($original_date);
+
+                                            //     // Creating new date format from that timestamp
+                                            //     $new_date = date("d-m-Y", $timestamp);
+                                            //     echo $new_date;
+
+                                            //     ?>
+                                            // </td> -->
                                             <td>
                                                 <?php echo $value['time']; ?>
                                             </td>
@@ -162,7 +185,13 @@
                                                 <?php echo $value['harbour']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['id_trip']; ?>
+                                                <?php echo $value['HSO']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['trip']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['trip']; ?>
                                             </td>
                                             <td>
                                                 <?php echo $value['DewasaEksekutif']; ?>
@@ -423,12 +452,17 @@
                             <tfoot class="thead-dark">
                                 <tr>
                                     <th scope="col"> # </th>
+                                    <th scope="col">Hari </th>
+                                    <th scope="col">Tanggal </th>
+                                    <th scope="col">Bulan </th>
+                                    <th scope="col">Tahun </th>
                                     <th scope="col">Minggu </th>
-                                    <th scope="col">Tanggal Operasi </th>
                                     <th scope="col">Waktu Keberangkatan </th>
                                     <th scope="col">Nama Kapal </th>
                                     <th scope="col">Lintasan </th>
                                     <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">HSO </th>
+                                    <th scope="col">HO </th>
                                     <th scope="col">Jenis Trip </th>
                                     <th scope="col">Dewasa Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
