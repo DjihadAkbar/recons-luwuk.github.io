@@ -35,7 +35,7 @@ function formatRupiah($angka)
                     ?>
                     <h5 class="card-header d-flex justify-content-between align-items-center">
                         
-                        <?php echo "Lintasan ( " . $dailyTrip . " Trip )"; ?>
+                        <?php echo "Lintasan"; ?>
                     </h5>
 
                     <div class="card-body">
@@ -134,7 +134,7 @@ function formatRupiah($angka)
                     }
                     ?>
                     <h5 class="card-header d-flex justify-content-between align-items-center">
-                        <?php echo "Kapal ( " . $dailyTrip . " Trip )"; ?>
+                        <?php echo "Kapal"; ?>
 
                     </h5>
 
@@ -207,7 +207,7 @@ function formatRupiah($angka)
                     }
                     ?>
                     <h5 class="card-header d-flex justify-content-between align-items-center">
-                        <?php echo "Pelabuhan ( " . $dailyTrip . " Trip )"; ?>
+                        <?php echo "Pelabuhan"; ?>
 
                     </h5>
 
