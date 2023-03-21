@@ -112,6 +112,9 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+            $this->db->where('ferry', $pelabuhan);
+        }
         $this->db->group_by('entry_data.id');
         $this->db->order_by('entry_data.id DESC');
         return $this->db->get('entry_data')->result_array();
