@@ -245,7 +245,7 @@ class Income_model extends CI_Model
 
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
-        $this->db->join('harbour_target', 'entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month');
+        $this->db->join('harbour_target', 'entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month AND year(entry_a.date) = harbour_target.year');
         $this->db->join('harbours', 'harbours.id_harbours = entry_a.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_a.date >= rate.start_date and entry_a.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_a.id_trip');
