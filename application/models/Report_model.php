@@ -2,6 +2,21 @@
 
 class Report_model extends CI_Model
 {
+    public function supervisorName(){
+        if ($this->session->userdata('logged_in'))
+            $pelabuhan = $this->session->userdata['pelabuhan'];
+
+        $this->db->select('*');
+        $this->db->where('region', $pelabuhan);
+        $this->db->where('position','SUPERVISOR');
+        return $this->db->get('employee')->result_array();
+    }
+    public function employee(){
+        $this->db->select('*');
+        return $this->db->get('employee')->result_array();
+    }
+
+
     public function report1()
     {
         if ($this->session->userdata('logged_in'))

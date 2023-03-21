@@ -5,13 +5,17 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\Style\Border;
 use PhpOffice\PhpSpreadsheet\Style\Color;
+
 class Report extends CI_Controller
 {
+
+    public $employee;
     
     public function __construct()
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->employee = $this->Report_model->employee();
     }
     public function index()
     {
@@ -55,6 +59,8 @@ class Report extends CI_Controller
     $lintasanReport = $this->input->post('lintasan_report');
     $tanggalAwalReport = $this->input->post('tanggal_awal');
     $jamReport = $this->input->post('jam');
+    $supervisor = $this->Report_model->supervisorName();
+
 
 
     $spreadsheet = new Spreadsheet();
@@ -182,16 +188,23 @@ class Report extends CI_Controller
     $sheet->setCellValue('B33', 'Jumlah Barang');
     $sheet->setCellValue('B34', 'Jumlah');
     $sheet->setCellValue('B35', 'Terbilang');
-
-    $sheet->setCellValue('B37', 'Manager Usaha');
-    $sheet->setCellValue('B41', 'Nama');
-    $sheet->setCellValue('B42', 'NIK');
-    $sheet->setCellValue('E37', 'Manager Usaha');
-    $sheet->setCellValue('E41', 'Nama');
-    $sheet->setCellValue('E42', 'NIK');
-    $sheet->setCellValue('I37', 'Manager Usaha');
-    $sheet->setCellValue('I41', 'Nama');
-    $sheet->setCellValue('I42', 'NIK');
+    foreach($this->employee as $row){
+        if($row['position'] == "MANAGER USAHA"){
+            $sheet->setCellValue('B37', 'MANAGER USAHA');
+            $sheet->setCellValue('B41', $row['name']);
+            $sheet->setCellValue('B42', 'NIK '.$row['id_num']);
+        }
+        if($row['position'] == "KASIR"){
+            $sheet->setCellValue('E37', 'KASIR');
+            $sheet->setCellValue('E41', $row['name']);
+            $sheet->setCellValue('E42', 'NIK '.$row['id_num']);
+        }
+    }
+    foreach($supervisor as $row){
+        $sheet->setCellValue('I37', $row['position']);
+        $sheet->setCellValue('I41', $row['name']);
+        $sheet->setCellValue('I42', 'NIK '.$row['id_num']);
+    }
 
 
     for($col = 'A'; $col !== 'K'; $col++){
@@ -436,7 +449,7 @@ class Report extends CI_Controller
         $kapalReport = $this->input->post('nama_kapal');
         $lintasanReport = $this->input->post('lintasan_report');
         $tanggalAwalReport = $this->input->post('tanggal_awal');
-    
+        $supervisor = $this->Report_model->supervisorName();
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
@@ -540,7 +553,9 @@ class Report extends CI_Controller
         $sheet->setCellValue('D40', 'Sub Jumlah');
         $sheet->setCellValue('D41', 'Jumlah');
         $sheet->setCellValue('G43', 'Dibuat Oleh');
-        $sheet->setCellValue('G47', 'Andi Mujahidin');
+        foreach($supervisor as $row){
+            $sheet->setCellValue('G47', $row['name']);
+        }
 
 
         for($col = 'A'; $col !== 'K'; $col++){

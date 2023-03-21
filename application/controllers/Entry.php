@@ -273,7 +273,6 @@ class Entry extends CI_Controller
             'Suplesi2Dewasa' => $this->input->post('Suplesi2Dewasa'),
             'Suplesi2Anak' => $this->input->post('Suplesi2Anak'),
             'Carter' => $this->input->post('Carter'),
-            'Hewan' => $this->input->post('Hewan'),
             'ANGKPOS' => $this->input->post('ANGKPOS'),
             'BBM' => $this->input->post('BBM'),
             'BARTON' => $this->input->post('BARTON'),
