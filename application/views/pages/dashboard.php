@@ -621,82 +621,82 @@ function formatRupiah($angka)
                                                     <?php echo $value['harbour']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan I']); ?>
+                                                    <?php echo $value['Golongan I']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan II']); ?>
+                                                    <?php echo $value['Golongan II']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan III']); ?>
+                                                    <?php echo $value['Golongan III']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan IV - Penumpang']); ?>
+                                                    <?php echo $value['Golongan IV - Penumpang']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan IV - Barang']); ?>
+                                                    <?php echo $value['Golongan IV - Barang']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan V - Penumpang']); ?>
+                                                    <?php echo $value['Golongan V - Penumpang']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan V - Barang']); ?>
+                                                    <?php echo $value['Golongan V - Barang']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan VI - Penumpang']); ?>
+                                                    <?php echo $value['Golongan VI - Penumpang']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan VI - Barang']); ?>
+                                                    <?php echo $value['Golongan VI - Barang']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan VII']); ?>
+                                                    <?php echo $value['Golongan VII']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan VIII']); ?>
+                                                    <?php echo $value['Golongan VIII']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Golongan IX']); ?>
+                                                    <?php echo $value['Golongan IX']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Dewasa Eksekutif']); ?>
+                                                    <?php echo $value['Dewasa Eksekutif']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Bayi Eksekutif']); ?>
+                                                    <?php echo $value['Bayi Eksekutif']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Dewasa Bisnis']); ?>
+                                                    <?php echo $value['Dewasa Bisnis']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Bayi Bisnis']); ?>
+                                                    <?php echo $value['Bayi Bisnis']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Dewasa Ekonomi']); ?>
+                                                    <?php echo $value['Dewasa Ekonomi']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Bayi Ekonomi']); ?>
+                                                    <?php echo $value['Bayi Ekonomi']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Suplesi Ekonomi I Dewasa']); ?>
+                                                    <?php echo $value['Suplesi Ekonomi I Dewasa']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Suplesi Ekonomi I Anak']); ?>
+                                                    <?php echo $value['Suplesi Ekonomi I Anak']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Suplesi Ekonomi II Dewasa']); ?>
+                                                    <?php echo $value['Suplesi Ekonomi II Dewasa']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Suplesi Ekonomi II Anak']); ?>
+                                                    <?php echo $value['Suplesi Ekonomi II Anak']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Hewan']); ?>
+                                                    <?php echo $value['Hewan']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Gayor']); ?>
+                                                    <?php echo $value['Gayor']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Carter']); ?>
+                                                    <?php echo $value['Carter']; ?>
                                                 </td>
                                                 <td>
-                                                    <?php echo formatRupiah($value['Barang Curah']); ?>
+                                                    <?php echo $value['Barang Curah']; ?>
                                                 </td>
                                                 <td style=" width:15%">
                                                     <?php echo "" . $value['trip'] . " Trip"; ?>

@@ -27,7 +27,7 @@
                                 <tr>
                                     <th scope="col"> # </th>
                                     <th scope="col">Hari </th>
-                                    <th scope="col">Tanggal </th>[
+                                    <th scope="col">Tanggal </th>
                                     <th scope="col">Bulan </th>
                                     <th scope="col">Tahun </th>
                                     <th scope="col">Minggu </th>
@@ -37,7 +37,7 @@
                                     <th scope="col">Pelabuhan Asal </th>
                                     <th scope="col">HSO </th>
                                     <th scope="col">HO </th>
-                                    <th scope="col">Jenis Trip </th>]
+                                    <th scope="col">Jenis Trip </th>
                                     <th scope="col">Dewasa Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
@@ -556,13 +556,11 @@
                                 </tr>
                             </tfoot>
                         </table>
-
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>  
 </div>
 
 
