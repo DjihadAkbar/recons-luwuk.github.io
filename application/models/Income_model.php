@@ -742,85 +742,85 @@ class Income_model extends CI_Model
         $this->db->select('ofc_route,ferry,COUNT(case when trip != 1 then 1 END) AS trip,
         route AS rute,
         harbour,
-        SUM(entry_data.Gol1) AS "Golongan I",
-        SUM(entry_data.Gol2) AS "Golongan II", 
-        SUM(entry_data.Gol3) AS "Golongan III", 
-        SUM(entry_data.Gol4Pen) AS "Golongan IV - Penumpang", 
-        SUM(entry_data.Gol4Bar) AS "Golongan IV - Barang", 
-        SUM(entry_data.Gol5Pen) AS "Golongan V - Penumpang", 
-        SUM(entry_data.Gol5Bar) AS "Golongan V - Barang", 
-        SUM(entry_data.Gol6Pen) AS "Golongan VI - Penumpang", 
-        SUM(entry_data.Gol6Bar) AS "Golongan VI - Barang", 
-        SUM(entry_data.Gol7) AS "Golongan VII", 
-        SUM(entry_data.Gol8) AS "Golongan VIII", 
-        SUM(entry_data.Gol9) AS "Golongan IX", 
-        SUM(entry_data.DewasaEksekutif) AS "Dewasa Eksekutif", 
-        SUM(entry_data.BayiEksekutif) AS "Bayi Eksekutif", 
-        SUM(entry_data.DewasaBisnis) AS "Dewasa Bisnis", 
-        SUM(entry_data.BayiBisnis) AS "Bayi Bisnis", 
-        SUM(entry_data.DewasaEkonomi) AS "Dewasa Ekonomi", 
-        SUM(entry_data.BayiEkonomi) AS "Bayi Ekonomi", 
-        SUM(entry_data.Suplesi1Dewasa) AS "Suplesi Ekonomi I Dewasa", 
-        SUM(entry_data.Suplesi1Anak) AS "Suplesi Ekonomi I Anak", 
-        SUM(entry_data.Suplesi2Dewasa) AS "Suplesi Ekonomi II Dewasa", 
-        SUM(entry_data.Suplesi2Anak) AS "Suplesi Ekonomi II Anak", 
-        SUM(entry_data.Hewan) AS "Hewan", 
-        SUM(entry_data.Gayor) AS "Gayor", 
-        SUM(entry_data.Carter) AS "Carter", 
-        SUM(entry_data.BarangPendapatan) AS "Barang Curah"');
-        // SUM((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_data.Gol1) AS "Golongan I",
-        // SUM((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW)* entry_data.Gol2) AS "Golongan II", 
-        // SUM((rate.Gol3 + rate.Gol3TJP + rate.Gol3IW)* entry_data.Gol3) AS "Golongan III", 
-        // SUM((rate.Gol4Pen + rate.Gol4PenTJP + rate.Gol4PenIW)* entry_data.Gol4Pen) AS "Golongan IV - Penumpang", 
-        // SUM((rate.Gol4Bar + rate.Gol4BarTJP + rate.Gol4BarIW)* entry_data.Gol4Bar) AS "Golongan IV - Barang", 
-        // SUM((rate.Gol5Pen + rate.Gol5PenTJP + rate.Gol5PenIW)* entry_data.Gol5Pen) AS "Golongan V - Penumpang", 
-        // SUM((rate.Gol5Bar + rate.Gol5BarTJP + rate.Gol5BarIW)* entry_data.Gol5Bar) AS "Golongan V - Barang", 
-        // SUM((rate.Gol6Pen + rate.Gol6PenTJP + rate.Gol6PenIW)* entry_data.Gol6Pen) AS "Golongan VI - Penumpang", 
-        // SUM((rate.Gol6Bar + rate.Gol6BarTJP + rate.Gol6BarIW)* entry_data.Gol6Bar) AS "Golongan VI - Barang", 
-        // SUM((rate.Gol7 + rate.Gol7TJP + rate.Gol7IW)* entry_data.Gol7) AS "Golongan VII", 
-        // SUM((rate.Gol8 + rate.Gol8TJP + rate.Gol8IW)* entry_data.Gol8) AS "Golongan VIII", 
-        // SUM((rate.Gol9 + rate.Gol9TJP + rate.Gol9IW)* entry_data.Gol9) AS "Golongan IX", 
-        // SUM((rate.DewasaEksekutif  + rate.DewasaEksekutifTJP + rate.DewasaEksekutifIW)* entry_data.DewasaEksekutif) AS "Dewasa Eksekutif", 
-        // SUM((rate.BayiEksekutif  + rate.BayiEksekutifTJP + rate.BayiEksekutifIW)* entry_data.BayiEksekutif) AS "Bayi Eksekutif", 
-        // SUM((rate.DewasaBisnis  + rate.DewasaBisnisTJP + rate.DewasaBisnisIW)* entry_data.DewasaBisnis) AS "Dewasa Bisnis", 
-        // SUM((rate.BayiBisnis  + rate.BayiBisnisTJP + rate.BayiBisnisIW)* entry_data.BayiBisnis) AS "Bayi Bisnis", 
-        // SUM((rate.DewasaEkonomi  + rate.DewasaEkonomiTJP + rate.DewasaEkonomiIW)* entry_data.DewasaEkonomi) AS "Dewasa Ekonomi", 
-        // SUM((rate.BayiEkonomi  + rate.BayiEkonomiTJP + rate.BayiEkonomiIW)* entry_data.BayiEkonomi) AS "Bayi Ekonomi", 
-        // SUM(rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) AS "Suplesi Ekonomi I Dewasa", 
-        // SUM(rate.Suplesi1Anak * entry_data.Suplesi1Anak) AS "Suplesi Ekonomi I Anak", 
-        // SUM(rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) AS "Suplesi Ekonomi II Dewasa", 
-        // SUM(rate.Suplesi2Anak * entry_data.Suplesi2Anak) AS "Suplesi Ekonomi II Anak", 
-        // SUM(rate.Hewan * entry_data.Hewan) AS "Hewan", 
-        // SUM(rate.Gayor * entry_data.Gayor) AS "Gayor", 
-        // SUM(rate.Carter * entry_data.Carter) AS "Carter", 
-        // SUM(rate.BarCur * entry_data.BarangPendapatan) AS "Barang Curah", 
-        // SUM((rate.Gol1 * entry_data.Gol1) + 
-        //                 (rate.Gol2 * entry_data.Gol2) +
-        //                 (rate.Gol3 * entry_data.Gol3) +
-        //                 (rate.Gol4Pen * entry_data.Gol4Pen) +
-        //                 (rate.Gol4Bar * entry_data.Gol4Bar) +
-        //                 (rate.Gol5Pen * entry_data.Gol5Pen) +
-        //                 (rate.Gol5Bar * entry_data.Gol5Bar) +
-        //                 (rate.Gol6Pen * entry_data.Gol6Pen) +
-        //                 (rate.Gol6Bar * entry_data.Gol6Bar) +
-        //                 (rate.Gol7 * entry_data.Gol7) +
-        //                 (rate.Gol8 * entry_data.Gol8) +
-        //                 (rate.Gol9 * entry_data.Gol9) +
-        //                 (rate.DewasaEksekutif * entry_data.DewasaEksekutif) +
-        //                 (rate.BayiEksekutif * entry_data.BayiEksekutif) +
-        //                 (rate.DewasaBisnis * entry_data.DewasaBisnis) +
-        //                 (rate.BayiBisnis * entry_data.BayiBisnis) +
-        //                 (rate.DewasaEkonomi * entry_data.DewasaEkonomi) +
-        //                 (rate.BayiEkonomi * entry_data.BayiEkonomi) +
-        //                 (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) +
-        //                 (rate.Suplesi1Anak * entry_data.Suplesi1Anak) +
-        //                 (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) +
-        //                 (rate.Suplesi2Anak * entry_data.Suplesi2Anak) +
-        //                 (rate.Hewan * entry_data.Hewan) +
-        //                 (rate.Gayor * entry_data.Gayor) +
-        //                 (rate.Carter * entry_data.Carter) +
-        //                 (rate.BarCur * entry_data.BarangPendapatan))
-        //                 AS total
+        SUM(entry_data.Gol1) AS "Jumlah Golongan I",
+        SUM(entry_data.Gol2) AS "Jumlah Golongan II", 
+        SUM(entry_data.Gol3) AS "Jumlah Golongan III", 
+        SUM(entry_data.Gol4Pen) AS "Jumlah Golongan IV - Penumpang", 
+        SUM(entry_data.Gol4Bar) AS "Jumlah Golongan IV - Barang", 
+        SUM(entry_data.Gol5Pen) AS "Jumlah Golongan V - Penumpang", 
+        SUM(entry_data.Gol5Bar) AS "Jumlah Golongan V - Barang", 
+        SUM(entry_data.Gol6Pen) AS "Jumlah Golongan VI - Penumpang", 
+        SUM(entry_data.Gol6Bar) AS "Jumlah Golongan VI - Barang", 
+        SUM(entry_data.Gol7) AS "Jumlah Golongan VII", 
+        SUM(entry_data.Gol8) AS "Jumlah Golongan VIII", 
+        SUM(entry_data.Gol9) AS "Jumlah Golongan IX", 
+        SUM(entry_data.DewasaEksekutif) AS "Jumlah Dewasa Eksekutif", 
+        SUM(entry_data.BayiEksekutif) AS "Jumlah Bayi Eksekutif", 
+        SUM(entry_data.DewasaBisnis) AS "Jumlah Dewasa Bisnis", 
+        SUM(entry_data.BayiBisnis) AS "Jumlah Bayi Bisnis", 
+        SUM(entry_data.DewasaEkonomi) AS "Jumlah Dewasa Ekonomi", 
+        SUM(entry_data.BayiEkonomi) AS "Jumlah Bayi Ekonomi", 
+        SUM(entry_data.Suplesi1Dewasa) AS "Jumlah Suplesi Ekonomi I Dewasa", 
+        SUM(entry_data.Suplesi1Anak) AS "Jumlah Suplesi Ekonomi I Anak", 
+        SUM(entry_data.Suplesi2Dewasa) AS "Jumlah Suplesi Ekonomi II Dewasa", 
+        SUM(entry_data.Suplesi2Anak) AS "Jumlah Suplesi Ekonomi II Anak", 
+        SUM(entry_data.Hewan) AS "Jumlah Hewan", 
+        SUM(entry_data.Gayor) AS "Jumlah Gayor", 
+        SUM(entry_data.Carter) AS "Jumlah Carter", 
+        SUM(entry_data.BarangPendapatan) AS "Jumlah Barang Curah",
+        SUM((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_data.Gol1) AS "Golongan I",
+        SUM((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW)* entry_data.Gol2) AS "Golongan II", 
+        SUM((rate.Gol3 + rate.Gol3TJP + rate.Gol3IW)* entry_data.Gol3) AS "Golongan III", 
+        SUM((rate.Gol4Pen + rate.Gol4PenTJP + rate.Gol4PenIW)* entry_data.Gol4Pen) AS "Golongan IV - Penumpang", 
+        SUM((rate.Gol4Bar + rate.Gol4BarTJP + rate.Gol4BarIW)* entry_data.Gol4Bar) AS "Golongan IV - Barang", 
+        SUM((rate.Gol5Pen + rate.Gol5PenTJP + rate.Gol5PenIW)* entry_data.Gol5Pen) AS "Golongan V - Penumpang", 
+        SUM((rate.Gol5Bar + rate.Gol5BarTJP + rate.Gol5BarIW)* entry_data.Gol5Bar) AS "Golongan V - Barang", 
+        SUM((rate.Gol6Pen + rate.Gol6PenTJP + rate.Gol6PenIW)* entry_data.Gol6Pen) AS "Golongan VI - Penumpang", 
+        SUM((rate.Gol6Bar + rate.Gol6BarTJP + rate.Gol6BarIW)* entry_data.Gol6Bar) AS "Golongan VI - Barang", 
+        SUM((rate.Gol7 + rate.Gol7TJP + rate.Gol7IW)* entry_data.Gol7) AS "Golongan VII", 
+        SUM((rate.Gol8 + rate.Gol8TJP + rate.Gol8IW)* entry_data.Gol8) AS "Golongan VIII", 
+        SUM((rate.Gol9 + rate.Gol9TJP + rate.Gol9IW)* entry_data.Gol9) AS "Golongan IX", 
+        SUM((rate.DewasaEksekutif  + rate.DewasaEksekutifTJP + rate.DewasaEksekutifIW)* entry_data.DewasaEksekutif) AS "Dewasa Eksekutif", 
+        SUM((rate.BayiEksekutif  + rate.BayiEksekutifTJP + rate.BayiEksekutifIW)* entry_data.BayiEksekutif) AS "Bayi Eksekutif", 
+        SUM((rate.DewasaBisnis  + rate.DewasaBisnisTJP + rate.DewasaBisnisIW)* entry_data.DewasaBisnis) AS "Dewasa Bisnis", 
+        SUM((rate.BayiBisnis  + rate.BayiBisnisTJP + rate.BayiBisnisIW)* entry_data.BayiBisnis) AS "Bayi Bisnis", 
+        SUM((rate.DewasaEkonomi  + rate.DewasaEkonomiTJP + rate.DewasaEkonomiIW)* entry_data.DewasaEkonomi) AS "Dewasa Ekonomi", 
+        SUM((rate.BayiEkonomi  + rate.BayiEkonomiTJP + rate.BayiEkonomiIW)* entry_data.BayiEkonomi) AS "Bayi Ekonomi", 
+        SUM(rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) AS "Suplesi Ekonomi I Dewasa", 
+        SUM(rate.Suplesi1Anak * entry_data.Suplesi1Anak) AS "Suplesi Ekonomi I Anak", 
+        SUM(rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) AS "Suplesi Ekonomi II Dewasa", 
+        SUM(rate.Suplesi2Anak * entry_data.Suplesi2Anak) AS "Suplesi Ekonomi II Anak", 
+        SUM(rate.Hewan * entry_data.Hewan) AS "Hewan", 
+        SUM(rate.Gayor * entry_data.Gayor) AS "Gayor", 
+        SUM(rate.Carter * entry_data.Carter) AS "Carter", 
+        SUM(rate.BarCur * entry_data.BarangPendapatan) AS "Barang Curah", 
+        SUM((rate.Gol1 * entry_data.Gol1) + 
+                        (rate.Gol2 * entry_data.Gol2) +
+                        (rate.Gol3 * entry_data.Gol3) +
+                        (rate.Gol4Pen * entry_data.Gol4Pen) +
+                        (rate.Gol4Bar * entry_data.Gol4Bar) +
+                        (rate.Gol5Pen * entry_data.Gol5Pen) +
+                        (rate.Gol5Bar * entry_data.Gol5Bar) +
+                        (rate.Gol6Pen * entry_data.Gol6Pen) +
+                        (rate.Gol6Bar * entry_data.Gol6Bar) +
+                        (rate.Gol7 * entry_data.Gol7) +
+                        (rate.Gol8 * entry_data.Gol8) +
+                        (rate.Gol9 * entry_data.Gol9) +
+                        (rate.DewasaEksekutif * entry_data.DewasaEksekutif) +
+                        (rate.BayiEksekutif * entry_data.BayiEksekutif) +
+                        (rate.DewasaBisnis * entry_data.DewasaBisnis) +
+                        (rate.BayiBisnis * entry_data.BayiBisnis) +
+                        (rate.DewasaEkonomi * entry_data.DewasaEkonomi) +
+                        (rate.BayiEkonomi * entry_data.BayiEkonomi) +
+                        (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) +
+                        (rate.Suplesi1Anak * entry_data.Suplesi1Anak) +
+                        (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) +
+                        (rate.Suplesi2Anak * entry_data.Suplesi2Anak) +
+                        (rate.Hewan * entry_data.Hewan) +
+                        (rate.Gayor * entry_data.Gayor) +
+                        (rate.Carter * entry_data.Carter) +
+                        (rate.BarCur * entry_data.BarangPendapatan))
+                        AS total');
         $this->db->join('ferry', 'entry_data.id_ferry = ferry.id');
         $this->db->join('routes', 'entry_data.id_route = routes.id');
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
@@ -848,6 +848,32 @@ class Income_model extends CI_Model
         
         route AS rute,
         harbour,
+        SUM(entry_data.Gol1) AS "Jumlah Golongan I",
+        SUM(entry_data.Gol2) AS "Jumlah Golongan II", 
+        SUM(entry_data.Gol3) AS "Jumlah Golongan III", 
+        SUM(entry_data.Gol4Pen) AS "Jumlah Golongan IV - Penumpang", 
+        SUM(entry_data.Gol4Bar) AS "Jumlah Golongan IV - Barang", 
+        SUM(entry_data.Gol5Pen) AS "Jumlah Golongan V - Penumpang", 
+        SUM(entry_data.Gol5Bar) AS "Jumlah Golongan V - Barang", 
+        SUM(entry_data.Gol6Pen) AS "Jumlah Golongan VI - Penumpang", 
+        SUM(entry_data.Gol6Bar) AS "Jumlah Golongan VI - Barang", 
+        SUM(entry_data.Gol7) AS "Jumlah Golongan VII", 
+        SUM(entry_data.Gol8) AS "Jumlah Golongan VIII", 
+        SUM(entry_data.Gol9) AS "Jumlah Golongan IX", 
+        SUM(entry_data.DewasaEksekutif) AS "Jumlah Dewasa Eksekutif", 
+        SUM(entry_data.BayiEksekutif) AS "Jumlah Bayi Eksekutif", 
+        SUM(entry_data.DewasaBisnis) AS "Jumlah Dewasa Bisnis", 
+        SUM(entry_data.BayiBisnis) AS "Jumlah Bayi Bisnis", 
+        SUM(entry_data.DewasaEkonomi) AS "Jumlah Dewasa Ekonomi", 
+        SUM(entry_data.BayiEkonomi) AS "Jumlah Bayi Ekonomi", 
+        SUM(entry_data.Suplesi1Dewasa) AS "Jumlah Suplesi Ekonomi I Dewasa", 
+        SUM(entry_data.Suplesi1Anak) AS "Jumlah Suplesi Ekonomi I Anak", 
+        SUM(entry_data.Suplesi2Dewasa) AS "Jumlah Suplesi Ekonomi II Dewasa", 
+        SUM(entry_data.Suplesi2Anak) AS "Jumlah Suplesi Ekonomi II Anak", 
+        SUM(entry_data.Hewan) AS "Jumlah Hewan", 
+        SUM(entry_data.Gayor) AS "Jumlah Gayor", 
+        SUM(entry_data.Carter) AS "Jumlah Carter", 
+        SUM(entry_data.BarangPendapatan) AS "Jumlah Barang Curah",
         SUM((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_data.Gol1) AS "Golongan I",
         SUM((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW)* entry_data.Gol2) AS "Golongan II", 
         SUM((rate.Gol3 + rate.Gol3TJP + rate.Gol3IW)* entry_data.Gol3) AS "Golongan III", 
@@ -928,6 +954,32 @@ class Income_model extends CI_Model
         
         route AS rute,
         harbour,
+        SUM(entry_data.Gol1) AS "Jumlah Golongan I",
+        SUM(entry_data.Gol2) AS "Jumlah Golongan II", 
+        SUM(entry_data.Gol3) AS "Jumlah Golongan III", 
+        SUM(entry_data.Gol4Pen) AS "Jumlah Golongan IV - Penumpang", 
+        SUM(entry_data.Gol4Bar) AS "Jumlah Golongan IV - Barang", 
+        SUM(entry_data.Gol5Pen) AS "Jumlah Golongan V - Penumpang", 
+        SUM(entry_data.Gol5Bar) AS "Jumlah Golongan V - Barang", 
+        SUM(entry_data.Gol6Pen) AS "Jumlah Golongan VI - Penumpang", 
+        SUM(entry_data.Gol6Bar) AS "Jumlah Golongan VI - Barang", 
+        SUM(entry_data.Gol7) AS "Jumlah Golongan VII", 
+        SUM(entry_data.Gol8) AS "Jumlah Golongan VIII", 
+        SUM(entry_data.Gol9) AS "Jumlah Golongan IX", 
+        SUM(entry_data.DewasaEksekutif) AS "Jumlah Dewasa Eksekutif", 
+        SUM(entry_data.BayiEksekutif) AS "Jumlah Bayi Eksekutif", 
+        SUM(entry_data.DewasaBisnis) AS "Jumlah Dewasa Bisnis", 
+        SUM(entry_data.BayiBisnis) AS "Jumlah Bayi Bisnis", 
+        SUM(entry_data.DewasaEkonomi) AS "Jumlah Dewasa Ekonomi", 
+        SUM(entry_data.BayiEkonomi) AS "Jumlah Bayi Ekonomi", 
+        SUM(entry_data.Suplesi1Dewasa) AS "Jumlah Suplesi Ekonomi I Dewasa", 
+        SUM(entry_data.Suplesi1Anak) AS "Jumlah Suplesi Ekonomi I Anak", 
+        SUM(entry_data.Suplesi2Dewasa) AS "Jumlah Suplesi Ekonomi II Dewasa", 
+        SUM(entry_data.Suplesi2Anak) AS "Jumlah Suplesi Ekonomi II Anak", 
+        SUM(entry_data.Hewan) AS "Jumlah Hewan", 
+        SUM(entry_data.Gayor) AS "Jumlah Gayor", 
+        SUM(entry_data.Carter) AS "Jumlah Carter", 
+        SUM(entry_data.BarangPendapatan) AS "Jumlah Barang Curah",
         SUM((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_data.Gol1) AS "Golongan I",
         SUM((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW)* entry_data.Gol2) AS "Golongan II", 
         SUM((rate.Gol3 + rate.Gol3TJP + rate.Gol3IW)* entry_data.Gol3) AS "Golongan III", 
