@@ -8,7 +8,7 @@ if (!$this->session->userdata('logged_in'))
 
 <div class="dashboard">
     <nav id="sidebar" class="bg-dark">
-        <img id="logo-asdp" class="mb-4 mr-4 ml-5 mt-4" src="<?php echo base_url('assets/images/Logo_ASDP.png'); ?>" alt="">
+        <img id="logo-asdp" class="mb-4 mr-4 ml-5 mt-4" src="<?php echo base_url('assets/images/logo_asdp_primary.png'); ?>" alt="">
         <ul class="menu">
             <li class="<?php
             echo menuAktif('dashboard');
