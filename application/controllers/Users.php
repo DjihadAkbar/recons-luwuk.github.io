@@ -73,7 +73,7 @@ class Users extends CI_Controller
         }
 
         $this->form_validation->set_rules('pelabuhan', 'Pelabuhan', 'required');
-        $this->form_validation->set_rules('type', 'Type', 'required');
+        // $this->form_validation->set_rules('type', 'Type', 'required');
         $this->form_validation->set_rules('name', 'Name', 'required');
         $this->form_validation->set_rules('username', 'Username', 'required|is_unique[users.username]');
         $this->form_validation->set_rules('password', 'Password', 'required|min_length[6]');
@@ -86,7 +86,7 @@ class Users extends CI_Controller
         } else {
             $dataInput = [
                 'harbours' => $this->input->post('pelabuhan'),
-                'type' => $this->input->post('type'),
+                // 'type' => $this->input->post('type'),
                 'name' => $this->input->post('name'),
                 'username' => $this->input->post('username'),
                 'password' => $this->password->hash($this->input->post('password')),

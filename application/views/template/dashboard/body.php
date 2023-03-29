@@ -15,6 +15,9 @@ if (!$this->session->userdata('logged_in'))
             ?>">
                 <?php echo anchor('dashboard', 'Dashboard') ?>
             </li>
+            <?php 
+            if($this->session->userdata['type'] != ''){
+            ?>
             <!-- <li class="<?php
             echo menuAktif('machine');
             ?>">
@@ -97,6 +100,9 @@ if (!$this->session->userdata('logged_in'))
             ?>">
                 <?php echo anchor('dashboard/account', 'Account') ?>
             </li>
+            <?php 
+            }
+            ?>
             <li class="<?php
             echo menuAktif('Logout');
             ?>">

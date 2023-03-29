@@ -115,7 +115,6 @@
 </head>
 
 <body>
-
     <div class="container-fluid mb-5 mt-3" style="padding-top:15px;">
         <div class="row">
             <div class="col-8">
@@ -136,7 +135,6 @@
                             <label for="pelabuhan" class="col-4"> Pelabuhan </label>
                             <div class="col">
                                 <?php
-
                                 $options = array(
                                     '' => 'No Selected',
                                     'LUWUK' => 'Luwuk',
@@ -161,7 +159,7 @@
                                 ?>
                             </div>
                         </div>
-                        <div class="form-group row">
+                        <!-- <div class="form-group row">
                             <label for="type" class="col-4"> Type </label>
                             <div class="col">
 
@@ -176,7 +174,7 @@
                                 echo form_error('type');
                                 ?>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="form-group row ">
                             <label for="name" class="col-4">
                                 Nama

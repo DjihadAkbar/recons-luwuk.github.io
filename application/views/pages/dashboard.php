@@ -11,10 +11,13 @@ function formatRupiah($angka)
     return $formatRupiah;
 }
 
+if($this->session->userdata['type'] != ''){
+    
 ?>
 
+
 <div id="accordion">
-<div class="card">
+    <div class="card">
         <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
             <button style="text-decoration:none; display: block; color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -29,7 +32,6 @@ function formatRupiah($angka)
                     foreach ($incomeDaily as $key => $value) {
                         ?>
                                                                                     <?php $dailyTrip += $value['Jumlah Trip']; ?>
-                            
                                                                                     <?php
                     }
                     ?>
@@ -2670,3 +2672,18 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
 
 
 
+<?php
+
+} elseif($this->session->userdata['type'] == '') {
+
+?>
+
+<p>
+    Laporkan Ke Admin Bahwa Telah membuat Akun
+</p>
+
+<?php 
+
+}
+
+?>

@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('Asia/Ujung_Pandang');
 class Master extends CI_Controller
 {
     public function __construct()
@@ -248,6 +248,7 @@ class Master extends CI_Controller
         $data['title'] = 'Tarif';
         $data['contentView'] = "pages/master/tarif";
         $data['tarif'] = $this->Master_model->rate();
+        $data['aprovedTarif'] = $this->Master_model->aprovedTarif();
 
         $this->load->view('template/dashboard/body', $data);
         // echo "DAta akan disimpan disini";
@@ -265,6 +266,9 @@ class Master extends CI_Controller
         $data['trip'] = $this->Entry_model->trip();
         $data['editDataTarif'] = $this->Master_model->editDataTarif($_GET['id']);
         $this->load->view('template/dashboard/body', $data);
+    }
+    public function aproveTarif(){
+        $data['editDataTarif'] = $this->Master_model->editDataTarif($_GET['id']);
     }
 
     public function prosesEditTarif(){
@@ -287,6 +291,8 @@ class Master extends CI_Controller
             'start_date' => $this->input->post('edit_tanggal_berlaku'),
             // 'rate_type' => $this->input->post('jenis_tarif'),
             'rate_type' => $valueTarif,
+            'uploader' => $this->session->userdata['name'],
+            'act' => 'EDIT',
             'id_route' => $this->input->post('lintasan'),
             'Gol1' => $this->input->post('Gol1'),
             'Gol2' => $this->input->post('Gol2'),
@@ -409,7 +415,56 @@ class Master extends CI_Controller
     }
 
 
-
+    public function approveTarif(){
+        $dataAprove = [
+            'aprove_date' => date("Y-m-d H:i:s"),
+            'aprove_person' => $this->session->userdata['name'],
+            'aprove_status' => 'Y',
+            
+        ];
+        $dataRate = [
+            'is_displaying' => 'Y',
+            'is_aproved' => 'Y',
+        ];
+        $this->Master_model->updateAproveTarif($dataAprove, $dataRate, $_GET['id']);
+        redirect('dashboard/master/tarif');
+    }
+    
+    public function disapproveTarif(){
+        $dataAprove = [
+            'aprove_date' => date("Y-m-d H:i:s"),
+            'aprove_person' => $this->session->userdata['name'],
+            'aprove_status' => 'N',
+            
+        ];
+        $this->Master_model->updateDisaproveTarif($dataAprove, $_GET['id']);
+        redirect('dashboard/master/tarif');
+    }
+    public function approveEditTarif(){
+        $dataAprove = [
+            'aprove_date' => date("Y-m-d H:i:s"),
+            'aprove_person' => $this->session->userdata['name'],
+            'aprove_status' => 'Y',
+            
+        ];
+        $dataRate = [
+            'is_displaying' => 'Y',
+            'is_aproved' => 'Y',
+        ];
+        $this->Master_model->updateAproveEditTarif($dataAprove, $_GET['id'], $_GET['id_rate']);
+        redirect('dashboard/master/tarif');
+    }
+    
+    public function disapproveEditTarif(){
+        $dataAprove = [
+            'aprove_date' => date("Y-m-d H:i:s"),
+            'aprove_person' => $this->session->userdata['name'],
+            'aprove_status' => 'N',
+            
+        ];
+        $this->Master_model->updateDisaproveEditTarif($dataAprove, $_GET['id'], $_GET['id_rate']);
+        redirect('dashboard/master/tarif');
+    }
 
 
     public function tambahTarif()
@@ -448,6 +503,10 @@ class Master extends CI_Controller
         $dataInput = [
             'start_date' => $this->input->post('tanggal_berangkat'),
             // 'rate_type' => $this->input->post('jenis_tarif'),
+            'post_person' => $this->session->userdata['name'],
+            // 'uploader' => $this->session->userdata['name'],
+            'act' => 'UPLOAD',
+            'aprove_status' => 'P',
             'rate_type' => $valueTarif,
             'id_route' => $this->input->post('lintasan'),
             'Gol1' => $this->input->post('Gol1'),

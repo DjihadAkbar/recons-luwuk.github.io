@@ -829,7 +829,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date) <=', date("d"));
