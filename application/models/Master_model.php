@@ -141,11 +141,7 @@ class Master_model extends CI_Model
     //Update data aprove yang telah disetujui
     public function updateAproveTarif($dataAprove, $dataRate, $id){
         
-        $this->db->where('aproval_rate.id', $id);
-        $this->db->update('aproval_rate', $dataAprove);
-
-
-        $this->db->query('INSERT rate (is_displaying, is_aproved, uploader, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
+            $this->db->query('INSERT rate (is_displaying, is_aproved, uploader, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
         Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
         Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
         Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
@@ -163,6 +159,9 @@ class Master_model extends CI_Model
         Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk
         FROM aproval_rate
         WHERE aproval_rate.id ='.$id);
+
+        $this->db->where('aproval_rate.id', $id);
+        $this->db->update('aproval_rate', $dataAprove);
         
     }
 
