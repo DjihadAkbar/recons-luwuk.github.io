@@ -5,6 +5,10 @@ html, body {
     background-image: url("KMP CENGKIH AFO.jpg");
 }
 
+.logoIcon {
+    width: 50%;
+}
+
 
 .container {
     position: absolute;

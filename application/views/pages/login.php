@@ -7,7 +7,7 @@
     <title>
         <?php echo $title; ?>
     </title>
-    <link rel="icon" href="<?php echo base_url('assets/images/TitleBarLogo_ASDP.png'); ?>">
+    <link rel="icon" href="<?php echo base_url('assets/images/16x16.png'); ?>">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -48,7 +48,7 @@
                     <?php echo $this->session->flashdata('pesan'); ?>
                 </div>
             <?php endif; ?>
-            <img class="bd-placeholder-img-lg mb-4" src="<?php echo base_url('assets/images/Logo_ASDP.png'); ?>" alt="">
+            <img class="bd-placeholder-img-lg mb-4 logoIcon" src="<?php echo base_url('assets/images/Logo_asdp_primary.png'); ?>" alt="">
             <?php
             echo form_open(base_url('login/prosesLogin'), ['class' => 'form-luwuk']);
             ?>
