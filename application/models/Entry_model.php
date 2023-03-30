@@ -26,7 +26,8 @@ class Entry_model extends CI_Model
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-        $this->db->order_by('entry_data.id DESC');
+        // $this->db->order_by('entry_data.id DESC');
+        $this->db->order_by('year(date) DESC, month(date) DESC, day(date) DESC');
         return $this->db->get('entry_data')->result_array();
     }
 

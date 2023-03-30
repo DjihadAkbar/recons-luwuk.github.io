@@ -53,6 +53,14 @@ $(document).ready(function(){
         $("#form-report").attr("action","report/" + $(this).val()); 
     })
 
+    //Auto Count Jumlah Produksi bersdasarkan nomor seri awal dan akhir
+    $('.input-produksi').change(function(){
+        $produksi = $(this).attr("name").split(/(?=[A-Z])/);
+        $saldoAwal = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_start").val());
+        $saldoAkhir = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_end").val());
+        $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
+    })
+
     $('#pelabuhan_asal_report').change(function(){
         var $pelabuhan = $(this).val();
         $('#lintasan_report option').each(function(){

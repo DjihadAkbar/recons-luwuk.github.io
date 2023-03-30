@@ -93,15 +93,15 @@
                     <?php echo $row['produksi']; ?>
                 </label>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control"
+                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control input-produksi"
                     id="<?php echo $row['id_production']."Serial_start"; ?>" placeholder="<?php echo "Saldo Awal "?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control"
+                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control input-produksi"
                     id="<?php echo $row['id_production']."Serial_end"; ?>" placeholder="<?php echo "Saldo Akhir "?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
+                    <input  onchange="OnSelectionChange()" type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
                     id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
                 </div>
             </div>
