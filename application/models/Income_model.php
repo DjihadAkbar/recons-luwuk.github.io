@@ -117,6 +117,7 @@ class Income_model extends CI_Model
         }
         $this->db->group_by('entry_data.id');
         $this->db->order_by('entry_data.id DESC');
+        $this->db->order_by('year(entry_data.date) DESC, MONTH(entry_data.date) DESC, DAY(entry_data.date) DESC');
         return $this->db->get('entry_data')->result_array();
     }
 
