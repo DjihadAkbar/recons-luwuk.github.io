@@ -622,7 +622,8 @@ class Income_model extends CI_Model
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('day(date)', date("d-1"));
+        // $this->db->where('day(date)', date("d"));
+        $this->db->where('day(date)', 30);
         $this->db->where('MONTHname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         // $this->db->where('entry_data.id_trip', 'REGULER');
