@@ -123,7 +123,7 @@ class Income_model extends CI_Model
 
     public function incomePerRoute()
     {
-        $lastMonth = date("F", strtotime('-2 month'));
+        $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -259,7 +259,7 @@ class Income_model extends CI_Model
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month') ));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date), route');
@@ -269,7 +269,7 @@ class Income_model extends CI_Model
 
     public function incomePerShip()
     {
-        $lastMonth = date("F", strtotime('-2 month'));
+        $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -295,7 +295,7 @@ class Income_model extends CI_Model
                 ((rate.DewasaEkonomi   + rate.DewasaEkonomiTJP + rate.DewasaEkonomiIW) * entry_data.DewasaEkonomi) +
                 ((rate.BayiEkonomi     + rate.BayiEkonomiTJP + rate.BayiEkonomiIW) * entry_data.BayiEkonomi) +
                 ((rate.Suplesi1Dewasa) * entry_data.Suplesi1Dewasa) +
-                ((rate.Suplesi1Anak) * entry_data.Suplesi1Anak) +
+                ((rate.Suplesi1Anak) * entr_data.Suplesi1Anak) +
                 ((rate.Suplesi2Dewasa) * entry_data.Suplesi2Dewasa) +
                 ((rate.Suplesi2Anak) * entry_data.Suplesi2Anak) +
                 ((rate.Hewan) * entry_data.Hewan) +
@@ -414,7 +414,7 @@ class Income_model extends CI_Model
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         $this->db->group_by(' month(entry_a.date),ferry');
         $this->db->order_by('ferry');
@@ -423,7 +423,7 @@ class Income_model extends CI_Model
 
     public function incomePerHarbour()
     {
-        $lastMonth = date("F", strtotime('-2 month'));
+        $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -570,7 +570,7 @@ class Income_model extends CI_Model
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         $this->db->group_by(' month(entry_a.date),harbour');
         $this->db->order_by('harbour');
@@ -622,8 +622,7 @@ class Income_model extends CI_Model
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        // $this->db->where('day(date)', date("d"));
-        $this->db->where('day(date)', 30);
+        $this->db->where('day(date)', date("d"));
         $this->db->where('MONTHname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         // $this->db->where('entry_data.id_trip', 'REGULER');
@@ -1048,7 +1047,7 @@ class Income_model extends CI_Model
         }
         $this->db->where('day(date) <=', date("d"));
         // $this->db->where('monthname(date)', date("F"));
-        $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         $this->db->group_by(' month(date), harbour');
         return $this->db->get('entry_data')->result_array();
