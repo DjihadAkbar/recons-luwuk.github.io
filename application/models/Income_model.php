@@ -623,7 +623,7 @@ class Income_model extends CI_Model
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
-        $this->db->where('MONTHname(date)', date("F", strtotime('-2 month')));
+        $this->db->where('MONTHname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         // $this->db->where('entry_data.id_trip', 'REGULER');
         $this->db->group_by('ferry, route');
@@ -676,7 +676,7 @@ class Income_model extends CI_Model
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
-        $this->db->where('MONTHname(date)', date("F", strtotime('-2 month')));
+        $this->db->where('MONTHname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         // $this->db->where('entry_data.id_trip', 'REGULER');
         $this->db->group_by(' ferry');
@@ -729,7 +729,7 @@ class Income_model extends CI_Model
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
-        $this->db->where('MONTHname(date)', date("F", strtotime('-2 month')));
+        $this->db->where('MONTHname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         // $this->db->where('entry_data.id_trip', 'REGULER');
         $this->db->group_by(' harbour');
@@ -834,8 +834,8 @@ class Income_model extends CI_Model
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date) <=', date("d"));
-        // $this->db->where('monthname(date)', date("F"));
-        $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
+        $this->db->where('monthname(date)', date("F"));
+        // $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
         $this->db->where('year(date)', date("Y"));
         $this->db->group_by(' month(date), ferry,route');
         return $this->db->get('entry_data')->result_array();
