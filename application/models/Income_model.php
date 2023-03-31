@@ -295,7 +295,7 @@ class Income_model extends CI_Model
                 ((rate.DewasaEkonomi   + rate.DewasaEkonomiTJP + rate.DewasaEkonomiIW) * entry_data.DewasaEkonomi) +
                 ((rate.BayiEkonomi     + rate.BayiEkonomiTJP + rate.BayiEkonomiIW) * entry_data.BayiEkonomi) +
                 ((rate.Suplesi1Dewasa) * entry_data.Suplesi1Dewasa) +
-                ((rate.Suplesi1Anak) * entr_data.Suplesi1Anak) +
+                ((rate.Suplesi1Anak) * entry_data.Suplesi1Anak) +
                 ((rate.Suplesi2Dewasa) * entry_data.Suplesi2Dewasa) +
                 ((rate.Suplesi2Anak) * entry_data.Suplesi2Anak) +
                 ((rate.Hewan) * entry_data.Hewan) +
