@@ -319,7 +319,7 @@ class Income_model extends CI_Model
             $textAkhir = 'entry_a.id_ferry = entry_d.id_ferry';
         
         $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
-        COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
+        COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id, target, harbour_target.trip as target_trip,
                 SUM(
                 ((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_a.Gol1) + 
                 ((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW) * entry_a.Gol2) +
@@ -394,13 +394,13 @@ class Income_model extends CI_Model
                         FROM harbour_target
                         where entry_a.id_ferry = harbour_target.id_ferry
                         GROUP BY entry_a.id_ferry
-                    ) as target_trip,
+                    ) as target_trip2,
                     (
                         SELECT sum(target)
                         FROM harbour_target
                         where entry_a.id_ferry = harbour_target.id_ferry
                         GROUP BY entry_a.id_ferry
-                    ) as target');
+                    ) as target2');
         $this->db->join($textDepan.$textTengah.$textBelakang,$textAkhir);
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
