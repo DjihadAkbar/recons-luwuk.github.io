@@ -169,7 +169,7 @@ class Income_model extends CI_Model
                     $textTengah =' WHERE ';
                 }
                 $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
-                GROUP BY entry_data.id_route) as entry_dd';
+                GROUP BY entry_data.id_route) as entry_d';
             $textAkhir = 'entry_a.id_route = entry_d.id_route';
         
         $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
