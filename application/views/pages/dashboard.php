@@ -1196,7 +1196,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                 // if (getBulan($monthname) != null) {
                 //     echo "Perbandingan Realisasi " . getBulan($monthname) . " " . date("Y") . " & RKA " . getBulan($monthname) . " " . date("Y");
                 // } else {
-                    echo "Perbandingan Realisasi " . getBulan(date("F")) . " " . date("Y") . " & RKA " . getBulan(date("F")) . " " . date("Y");
+                    echo "Perbandingan Realisasi " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y") . " & RKA " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y");
                 // }
                 ?>
             </button>
@@ -1651,7 +1651,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                 // if (getBulan($monthname) != null) {
                 //     echo "Perbandingan Realisasi Lintasan " . getBulan($monthname) . " " . date("Y") - 1 . " & Realisasi " . getBulan($monthname) . " " . date("Y");
                 // } else {
-                    echo "Perbandingan Realisasi Lintasan " . getBulan(date("F")) . " " . date("Y") - 1 . " & Realisasi " . getBulan(date("F")) . " " . date("Y");
+                    echo "Perbandingan Realisasi Lintasan " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y") - 1 . " & Realisasi " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y");
                 // }
                 ?>
             </button>
