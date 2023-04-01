@@ -392,13 +392,13 @@ class Income_model extends CI_Model
                     (
                         SELECT sum(trip)
                         FROM harbour_target
-                        where entry_a.id_ferry = harbour_target.id_ferry
+                        where entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month  AND year(entry_a.date) = harbour_target.year
                         GROUP BY entry_a.id_ferry
                     ) as target_trip,
                     (
                         SELECT sum(target)
                         FROM harbour_target
-                        where entry_a.id_ferry = harbour_target.id_ferry
+                        where entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month  AND year(entry_a.date) = harbour_target.year
                         GROUP BY entry_a.id_ferry
                     ) as target');
         $this->db->join($textDepan.$textTengah.$textBelakang,$textAkhir);
