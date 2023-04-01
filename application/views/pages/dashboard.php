@@ -1235,10 +1235,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Realisasi " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "RKA " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "RKA " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1384,10 +1384,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Kapal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Kapal " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Kapal " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "RKA Kapal " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "RKA Kapal " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1524,10 +1524,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Pelabuhan " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Pelabuhan " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "RKA Pelabuhan " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "RKA Pelabuhan " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1693,10 +1693,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Lintasan " . getBulan($monthname) . " " . date("Y") - 1; ?>
+                                            <?php echo "Realisasi Lintasan " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y") - 1; ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Lintasan " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Lintasan " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -1853,10 +1853,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                         </th>
                                         
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Kapal " . getBulan($monthname) . " " . date("Y") - 1; ?>
+                                            <?php echo "Realisasi Kapal " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y") - 1; ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Kapal " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Kapal " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
@@ -2005,10 +2005,10 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                             Pelabuhan Asal
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Pelabuhan " . getBulan($monthname) . " " . date("Y") - 1; ?>
+                                            <?php echo "Realisasi Pelabuhan " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y") - 1; ?>
                                         </th>
                                         <th colspan="2" class="text-center">
-                                            <?php echo "Realisasi Pelabuhan " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Realisasi Pelabuhan " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y"); ?>
                                         </th>
                                         <th colspan="2" class="text-center">Persentase Pencapaian</th>
                                     </tr>
