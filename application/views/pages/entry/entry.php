@@ -114,7 +114,7 @@
                 JUMLAH BARANG CURAH
             </label>
             <div class="col">
-            <input type="number" class="form-control" name="BarangPendapatan" id="barang_volume" placeholder="0" min="0"
+            <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
             </div>
         </div>
