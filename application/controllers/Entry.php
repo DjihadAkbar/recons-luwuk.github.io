@@ -112,7 +112,7 @@ class Entry extends CI_Controller
             'BBM' => $this->input->post('BBM'),
             'BARTON' => $this->input->post('BARTON'),
             'BarangVolume' => $this->input->post('barang_volume'),
-            'BarangPendapatan' => $this->input->post('barang_pendapatan'),
+            'BarangPendapatan' => $this->input->post('Barang_Pendapatan'),
             'Gol1Serial_start' => $this->input->post('Gol1Serial_start'),
             'Gol2Serial_start' => $this->input->post('Gol2Serial_start'),
             'Gol3Serial_start' => $this->input->post('Gol3Serial_start'),
@@ -139,7 +139,7 @@ class Entry extends CI_Controller
             'ANGKPOSSerial_start' => $this->input->post('ANGKPOSSerial_start'),
             'BBMSerial_start' => $this->input->post('BBMSerial_start'),
             'BARTONSerial_start' => $this->input->post('BARTONSerial_start'),
-            'BarangPendapatanSerial_start' => $this->input->post('barang_pendapatan_serial_start'),
+            'BarangPendapatanSerial_start' => $this->input->post('BarangPendapatanSerial_start'),
             'Gol1Serial_end' => $this->input->post('Gol1Serial_end'),
             'Gol2Serial_end' => $this->input->post('Gol2Serial_end'),
             'Gol3Serial_end' => $this->input->post('Gol3Serial_end'),
@@ -166,7 +166,7 @@ class Entry extends CI_Controller
             'ANGKPOSSerial_end' => $this->input->post('ANGKPOSSerial_end'),
             'BBMSerial_end' => $this->input->post('BBMSerial_end'),
             'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
-            'BarangPendapatanSerial_end' => $this->input->post('barang_pendapatan_serial_end'),
+            'BarangPendapatanSerial_end' => $this->input->post('BarangPendapatanSerial_end'),
         ];
         $this->Entry_model->editData($dataInput, $_GET['id']);
         redirect('dashboard/entry');
@@ -277,7 +277,7 @@ class Entry extends CI_Controller
             'BBM' => $this->input->post('BBM'),
             'BARTON' => $this->input->post('BARTON'),
             'BarangVolume' => $this->input->post('barang_volume'),
-            'BarangPendapatan' => $this->input->post('barang_pendapatan'),
+            'BarangPendapatan' => $this->input->post('Barang_Pendapatan'),
             'Gol1Serial_start' => $this->input->post('Gol1Serial_start'),
             'Gol2Serial_start' => $this->input->post('Gol2Serial_start'),
             'Gol3Serial_start' => $this->input->post('Gol3Serial_start'),
@@ -304,7 +304,7 @@ class Entry extends CI_Controller
             'ANGKPOSSerial_start' => $this->input->post('ANGKPOSSerial_start'),
             'BBMSerial_start' => $this->input->post('BBMSerial_start'),
             'BARTONSerial_start' => $this->input->post('BARTONSerial_start'),
-            'BarangPendapatanSerial_start' => $this->input->post('barang_pendapatan_serial_start'),
+            'BarangPendapatanSerial_start' => $this->input->post('BarangPendapatanSerial_start'),
             'Gol1Serial_end' => $this->input->post('Gol1Serial_end'),
             'Gol2Serial_end' => $this->input->post('Gol2Serial_end'),
             'Gol3Serial_end' => $this->input->post('Gol3Serial_end'),
@@ -331,7 +331,7 @@ class Entry extends CI_Controller
             'ANGKPOSSerial_end' => $this->input->post('ANGKPOSSerial_end'),
             'BBMSerial_end' => $this->input->post('BBMSerial_end'),
             'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
-            'BarangPendapatanSerial_end' => $this->input->post('barang_pendapatan_serial_end'),
+            'BarangPendapatanSerial_end' => $this->input->post('BarangPendapatanSerial_end'),
         ];
         $this->User_model->entry($dataInput);
         redirect('dashboard/entry');
