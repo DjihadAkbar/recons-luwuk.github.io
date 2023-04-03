@@ -56,6 +56,9 @@ $(document).ready(function(){
     //Auto Count Jumlah Produksi bersdasarkan nomor seri awal dan akhir
     $('.input-produksi').change(function(){
         $produksi = $(this).attr("name").split(/(?=[A-Z])/);
+        if($produksi[1] == "Serial_start" || $produksi[1] == "Serial_end"){
+            $produksi[1] = '';
+        }
         $saldoAwal = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_start").val());
         $saldoAkhir = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_end").val());
         $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));

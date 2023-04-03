@@ -114,24 +114,24 @@
                 JUMLAH BARANG CURAH
             </label>
             <div class="col">
-                <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0" min="0"
+            <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan" placeholder="0" min="0"
                     placeholder="Jumlah Volume">
             </div>
         </div>
         <div class="form-group row ">
-            <label for="barang_pendapatan" class="col-4 label-wrap">
+            <label for="BarangPendapatan" class="col-4 label-wrap">
                 BARANG PENDAPATAN (CURAH)
             </label>
             <div class="col">
-                    <input type="number" name="barang_pendapatan_serial_start" class="form-control"
-                    id="barang_pendapatan_serial_start" placeholder="<?php echo "Saldo Awal "?>" min="0">
+                    <input type="number" name="BarangPendapatanSerial_start" class="form-control input-produksi"
+                    id="BarangPendapatanSerial_start" placeholder="<?php echo "Saldo Awal "?>" min="0">
             </div>
             <div class="col">
-                <input type="number" name="barang_pendapatan_serial_end" class="form-control"
-                id="barang_pendapatan_serial_end" placeholder="<?php echo "Saldo Akhir "?>" min="0">
+                <input type="number" name="BarangPendapatanSerial_end" class="form-control input-produksi"
+                id="BarangPendapatanSerial_end" placeholder="<?php echo "Saldo Akhir "?>" min="0">
             </div>
             <div class="col">
-                <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
+                <input type="number" class="form-control" name="Barang_Pendapatan" id="Barang_Pendapatan"
                     placeholder="5000000" min="0" >
             </div>
         </div>
