@@ -63,8 +63,9 @@ $(document).ready(function(){
         $saldoAkhir = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_end").val());
         if($produksi[0] == "BarangPendapatan"){
             $('#'+"barang_volume"+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
-        } 
-        $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
+        } else {
+            $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
+        }
     })
 
     $('#pelabuhan_asal_report').change(function(){
