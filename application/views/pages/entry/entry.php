@@ -131,7 +131,7 @@
                 id="BarangPendapatanSerial_end" placeholder="<?php echo "Saldo Akhir "?>" min="0">
             </div>
             <div class="col">
-                <input type="number" class="form-control" name="Barang_Pendapatan" id="Barang_Pendapatan"
+                <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan"
                     placeholder="5000000" min="0" >
             </div>
         </div>
