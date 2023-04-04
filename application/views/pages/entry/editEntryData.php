@@ -215,19 +215,19 @@ foreach($editData as $row){
             </div>
         </div>
         <div class="form-group row ">
-            <label for="barang_pendapatan" class="col-4 label-wrap">
+            <label for="BarangPendapatan" class="col-4 label-wrap">
                 Barang Pendapatan (BARANG CURAH)
             </label>
             <div class="col">
-                    <input type="number" name="barang_pendapatan_seri_awal" class="form-control"
-                    id="barang_pendapatan_seri_awal" value="<?php echo $dataBarangPendapatanSeriAwal; ?>" min="0">
+                    <input type="number" name="BarangPendapatanSerial_start" class="form-control"
+                    id="BarangPendapatanSerial_start" value="<?php echo $dataBarangPendapatanSeriAwal; ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="barang_pendapatan_seri_awal" class="form-control"
-                    id="barang_pendapatan_seri_awal" value=<?php echo $dataBarangPendapatanSeriAkhir; ?> min="0">
+                    <input type="number" name="BarangPendapatanSerial_end" class="form-control"
+                    id="BarangPendapatanSerial_end" value=<?php echo $dataBarangPendapatanSeriAkhir; ?> min="0">
                 </div>
             <div class="col">
-                <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
+                <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan"
                     placeholder="500000" value=<?php echo $dataBarangPendapatan; ?> min="0" placeholder="Jumlah Volume">
             </div>
         </div>
