@@ -109,15 +109,7 @@
         }
         ?>
         <!-- Akhir Input Jumlah Produksi -->
-        <div class="form-group row ">
-            <label for="barang_volume" class="col-4 label-wrap">
-                JUMLAH BARANG CURAH
-            </label>
-            <div class="col">
-            <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0" min="0"
-                    placeholder="Jumlah Volume">
-            </div>
-        </div>
+        
         <div class="form-group row ">
             <label for="BarangPendapatan" class="col-4 label-wrap">
                 BARANG PENDAPATAN (CURAH)
@@ -132,7 +124,16 @@
             </div>
             <div class="col">
                 <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan"
-                    placeholder="5000000" min="0" >
+                    placeholder="0" min="0" >
+            </div>
+        </div>
+        <div class="form-group row ">
+            <label for="barang_volume" class="col-4 label-wrap">
+                PRODUKSI BARANG CURAH
+            </label>
+            <div class="col">
+            <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="5000000" min="0"
+                    placeholder="Jumlah Volume">
             </div>
         </div>
         <?php

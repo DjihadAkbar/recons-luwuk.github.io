@@ -206,15 +206,6 @@ foreach($editData as $row){
         <!-- Akhir Input Jumlah Produksi -->
 
         <div class="form-group row ">
-            <label for="barang_volume" class="col-4 label-wrap">
-                JUMLAH BARANG CURAH
-            </label>
-            <div class="col">
-                <input type="number" class="form-control" name="barang_volume" id="barang_volume" value=<?php echo $dataBarangVolume;?> min="0"
-                    placeholder="Jumlah Volume">
-            </div>
-        </div>
-        <div class="form-group row ">
             <label for="BarangPendapatan" class="col-4 label-wrap">
                 Barang Pendapatan (BARANG CURAH)
             </label>
@@ -228,7 +219,17 @@ foreach($editData as $row){
                 </div>
             <div class="col">
                 <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan"
-                    placeholder="500000" value=<?php echo $dataBarangPendapatan; ?> min="0" placeholder="Jumlah Volume">
+                    placeholder="0" value=<?php echo $dataBarangVolume; ?> min="0" placeholder="Jumlah Volume">
+            </div>
+        </div>
+        
+        <div class="form-group row ">
+            <label for="barang_volume" class="col-4 label-wrap">
+                PENDAPATAN BARANG CURAH
+            </label>
+            <div class="col">
+                <input type="number" class="form-control" name="barang_volume" id="barang_volume" value=<?php echo $dataBarangPendapatan;?> min="0"
+                    placeholder="5000000">
             </div>
         </div>
         <?php
