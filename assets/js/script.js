@@ -64,21 +64,22 @@ $(document).ready(function(){
             $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
     })
 
-    $('#pelabuhan_asal_report').change(function(){
-        var $pelabuhan = $(this).val();
-        $('#lintasan_report option').each(function(){
-            var $lintasanAsal = $(this);
-            var $arr = ($lintasanAsal.val()).split('-');
-            if($arr[0] != $pelabuhan){
-                $lintasanAsal.hide();
-            } else {
-                $lintasanAsal.show();
-            }     
-        });
+    //Auto FIlter Pelabuhan di report
+    // $('#pelabuhan_asal_report').change(function(){
+    //     var $pelabuhan = $(this).val();
+    //     $('#lintasan_report option').each(function(){
+    //         var $lintasanAsal = $(this);
+    //         var $arr = ($lintasanAsal.val()).split('-');
+    //         if($arr[0] != $pelabuhan){
+    //             $lintasanAsal.hide();
+    //         } else {
+    //             $lintasanAsal.show();
+    //         }     
+    //     });
         
 
-        // $("#lintasan option[value='"+$(this).val+"']").remove();
-    })
+    //     // $("#lintasan option[value='"+$(this).val+"']").remove();
+    // })
 
 });
 
