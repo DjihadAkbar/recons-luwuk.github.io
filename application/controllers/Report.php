@@ -715,10 +715,10 @@ class Report extends CI_Controller
                 $sheet->setCellValue('H40', '=SUM(H36:H39)');
                 
             //Total Baris
-            $sheet->setCellValue('E41', '=(E16+E30+E34+E40)');
-            $sheet->setCellValue('F41', '=(F16+F30+F34+F40)');
-            $sheet->setCellValue('G41', '=(G16+G30+G34+G40)');
-            $sheet->setCellValue('H41', '=(H16+H30+H34+H40)');
+            $sheet->setCellValue('E41', '=E16+E30+E34+E40');
+            $sheet->setCellValue('F41', '=F16+F30+F34+F40');
+            $sheet->setCellValue('G41', '=G16+G30+G34+G40');
+            $sheet->setCellValue('H41', '=H16+H30+H34+H40');
                 
             
             
