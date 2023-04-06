@@ -602,7 +602,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('F13', $record['Bayi Bisnis']);
             $sheet->setCellValue('F14', $record['Dewasa Ekonomi']);
             $sheet->setCellValue('F15', $record['Bayi Ekonomi']);
-            $sheet->setCellValue('F16', '=SUM(F10:F15)')->getStyle('F16')->getFont()->setBold(true);
+            $sheet->setCellValue('F16', number_format((int)'=SUM(F10:F15)'))->getStyle('F16')->getFont()->setBold(true);
             
             // // Pendapatan Asuransi
             $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah DewasaEksekutif']);
