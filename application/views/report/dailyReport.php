@@ -72,11 +72,11 @@
                 </div>
             </div>
             <div class="form-group col">
-                <label for="tanggal_awal" class="label-wrap  ml-2"> TANGGAL AWAL </label>
+                <label for="tanggal_berangkat" class="label-wrap  ml-2"> TANGGAL AWAL </label>
                 
                 <div class="col">
-                    <input class="form-control" type="date" id="tanggal_awal" name="tanggal_awal" value="2022-11-01"
-                    min="2022-11-01" max="2023-12-31">
+                    <input class="form-control" type="date" id="tanggal_berangkat" name="tanggal_berangkat" value="2022-11-01"
+                    min="2022-11-01" >
                 </div>
             </div>
             <!-- <div class="form-group col">
