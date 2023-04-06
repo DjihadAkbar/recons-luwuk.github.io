@@ -581,7 +581,6 @@ class Report extends CI_Controller
         $styleArrayOutline = [ 'borders' => [ 'outline' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,], ]]; 
         $sheet->getStyle('C42:H48')->applyFromArray($styleArrayOutline);
         $sheet->getPageSetup()->setPrintArea('A1:J42',\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::SETPRINTRANGE_INSERT);
-        $sheet->getStyle('A1:J42')->getNumberFormat()->setFormatCode('#.###.###.###');
         // $sheet->setBreak('A1:J42',\PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);
 
         $rowEntry = 8;
