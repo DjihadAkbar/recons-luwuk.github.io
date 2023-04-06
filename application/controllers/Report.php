@@ -522,7 +522,7 @@ class Report extends CI_Controller
         $sheet->setCellValue('E7', $lintasanReport)->getStyle('E7')->getFont()->setBold(true);
         $sheet->setCellValue('E8', 'Produksi')->getStyle('E8')->getFont()->setBold(true);
         $sheet->setCellValue('F8', 'Pendapatan')->getStyle('F8')->getFont()->setBold(true);
-        $sheet->setCellValue('G8', 'Asuransi');->getStyle('G8')->getFont()->setBold(true)
+        $sheet->setCellValue('G8', 'Asuransi')->getStyle('G8')->getFont()->setBold(true);
         $sheet->setCellValue('H8', 'Total')->getStyle('H8')->getFont()->setBold(true);
         $sheet->setCellValue('C9', 'I')->getStyle('C9')->getFont()->setBold(true);
         $sheet->setCellValue('C17', 'II')->getStyle('C17')->getFont()->setBold(true);
