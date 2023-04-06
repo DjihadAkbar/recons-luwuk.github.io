@@ -494,10 +494,13 @@ class Report extends CI_Controller
         // sheet peratama
         $sheet->setTitle($title);
         $sheet->mergeCells('C3:H4')->getStyle('C3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('C3:H4')->getStyle('C3')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('D5:F5')->getStyle('D5')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
         $sheet->mergeCells('D6:F6')->getStyle('D6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
         $sheet->mergeCells('C7:C8')->getStyle('C7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('C7:C8')->getStyle('C7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('D7:D8')->getStyle('D7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('D7:D8')->getStyle('D7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('E7:H7')->getStyle('E7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $sheet->mergeCells('C9:C16')->getStyle('C9')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $sheet->mergeCells('C17:C30')->getStyle('C17')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
@@ -506,16 +509,16 @@ class Report extends CI_Controller
 
         $sheet->setCellValue('C3', $title);
         $sheet->getStyle('C3')->getFont()->setBold(true);
-        $sheet->setCellValue('C5', 'Cabang');
+        $sheet->setCellValue('C5', 'Cabang')->getStyle('C5')->getFont()->setBold(true);
         $sheet->setCellValue('D5', 'LUWUK');
-        $sheet->setCellValue('C6', 'Lintasan');
+        $sheet->setCellValue('C6', 'Lintasan')->getStyle('C6')->getFont()->setBold(true);
         $sheet->setCellValue('D6', $lintasanReport);
-        $sheet->setCellValue('G5', 'Tanggal');
+        $sheet->setCellValue('G5', 'Tanggal')->getStyle('G5')->getFont()->setBold(true);
         $sheet->setCellValue('H5', $tanggalAwalReport);
-        $sheet->setCellValue('G6', 'Kapal');
+        $sheet->setCellValue('G6', 'Kapal')->getStyle('G6')->getFont()->setBold(true);
         $sheet->setCellValue('H6', $kapalReport);
-        $sheet->setCellValue('C7', 'No');
-        $sheet->setCellValue('D7', 'Nama Produksi');
+        $sheet->setCellValue('C7', 'No')->getStyle('C7')->getFont()->setBold(true);
+        $sheet->setCellValue('D7', 'Nama Produksi')->getStyle('D7')->getFont()->setBold(true);
         $sheet->setCellValue('E7', $lintasanReport);
         $sheet->setCellValue('E8', 'Produksi');
         $sheet->setCellValue('F8', 'Pendapatan');
