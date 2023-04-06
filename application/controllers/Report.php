@@ -448,7 +448,7 @@ class Report extends CI_Controller
         $title = 'Laporan Pendapatan Harian';
         $kapalReport = $this->input->post('nama_kapal');
         $lintasanReport = $this->input->post('lintasan_report');
-        $tanggalAwalReport = $this->input->post('tanggal_awal');
+        $tanggalAwalReport = $this->input->post('tanggal_berangkat');
         $supervisor = $this->Report_model->supervisorName();
 
         $spreadsheet = new Spreadsheet();
