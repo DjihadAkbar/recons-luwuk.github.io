@@ -519,16 +519,16 @@ class Report extends CI_Controller
         $sheet->setCellValue('H6', $kapalReport);
         $sheet->setCellValue('C7', 'No')->getStyle('C7')->getFont()->setBold(true);
         $sheet->setCellValue('D7', 'Nama Produksi')->getStyle('D7')->getFont()->setBold(true);
-        $sheet->setCellValue('E7', $lintasanReport);
-        $sheet->setCellValue('E8', 'Produksi');
-        $sheet->setCellValue('F8', 'Pendapatan');
-        $sheet->setCellValue('G8', 'Asuransi');
-        $sheet->setCellValue('H8', 'Total');
-        $sheet->setCellValue('C9', 'I');
-        $sheet->setCellValue('C17', 'II');
-        $sheet->setCellValue('C31', 'III');
-        $sheet->setCellValue('C35', 'IV');
-        $sheet->setCellValue('D9', 'Penumpang');
+        $sheet->setCellValue('E7', $lintasanReport)->getStyle('E7')->getFont()->setBold(true);
+        $sheet->setCellValue('E8', 'Produksi')->getStyle('E8')->getFont()->setBold(true);
+        $sheet->setCellValue('F8', 'Pendapatan')->getStyle('F8')->getFont()->setBold(true);
+        $sheet->setCellValue('G8', 'Asuransi');->getStyle('G8')->getFont()->setBold(true)
+        $sheet->setCellValue('H8', 'Total')->getStyle('H8')->getFont()->setBold(true);
+        $sheet->setCellValue('C9', 'I')->getStyle('C9')->getFont()->setBold(true);
+        $sheet->setCellValue('C17', 'II')->getStyle('C17')->getFont()->setBold(true);
+        $sheet->setCellValue('C31', 'III')->getStyle('C31')->getFont()->setBold(true);
+        $sheet->setCellValue('C35', 'IV')->getStyle('C35')->getFont()->setBold(true);
+        $sheet->setCellValue('D9', 'Penumpang')->getStyle('D9')->getFont()->setBold(true);
         $sheet->setCellValue('D10', 'Eksekutif Dewasa');
         $sheet->setCellValue('D11', 'Eksekutif Anak');
         $sheet->setCellValue('D12', 'Bisnis Dewasa');
@@ -536,7 +536,7 @@ class Report extends CI_Controller
         $sheet->setCellValue('D14', 'Ekonomi Dewasa');
         $sheet->setCellValue('D15', 'Ekonomi Anak');
         $sheet->setCellValue('D16', 'Sub Jumlah');
-        $sheet->setCellValue('D17', 'Kendaraan');
+        $sheet->setCellValue('D17', 'Kendaraan')->getStyle('D17')->getFont()->setBold(true);
         $sheet->setCellValue('D18', 'Golongan I');
         $sheet->setCellValue('D19', 'Golongan II');
         $sheet->setCellValue('D20', 'Golongan III');
@@ -549,21 +549,21 @@ class Report extends CI_Controller
         $sheet->setCellValue('D27', 'Golongan VII');
         $sheet->setCellValue('D28', 'Golongan VIII');
         $sheet->setCellValue('D29', 'Golongan IX');
-        $sheet->setCellValue('D30', 'Sub Jumlah');
-        $sheet->setCellValue('D31', 'Barang');
+        $sheet->setCellValue('D30', 'Sub Jumlah')->getStyle('D30')->getFont()->setBold(true);
+        $sheet->setCellValue('D31', 'Barang')->getStyle('D31')->getFont()->setBold(true);
         $sheet->setCellValue('D32', 'Curah (Ton)/M3');
         $sheet->setCellValue('D33', 'Curah (M3)');
-        $sheet->setCellValue('D34', 'Sub Jumlah');
-        $sheet->setCellValue('D35', 'Suplesi');
+        $sheet->setCellValue('D34', 'Sub Jumlah')->getStyle('D34')->getFont()->setBold(true);
+        $sheet->setCellValue('D35', 'Suplesi')->getStyle('D35')->getFont()->setBold(true);
         $sheet->setCellValue('D36', 'Ek. Ke Bisnis I DWS');
         $sheet->setCellValue('D37', 'Ek. Ke Bisnis I ANK');
         $sheet->setCellValue('D38', 'Ek. Ke Bisnis II DWS');
         $sheet->setCellValue('D39', 'Ek. Ke Bisnis II ANK');
-        $sheet->setCellValue('D40', 'Sub Jumlah');
-        $sheet->setCellValue('D41', 'Jumlah');
-        $sheet->setCellValue('G43', 'Dibuat Oleh');
+        $sheet->setCellValue('D40', 'Sub Jumlah')->getStyle('D40')->getFont()->setBold(true);
+        $sheet->setCellValue('D41', 'Jumlah')->getStyle('D41')->getFont()->setBold(true);
+        $sheet->setCellValue('G43', 'Dibuat Oleh')->getStyle('G43')->getFont()->setBold(true);
         foreach($supervisor as $row){
-            $sheet->setCellValue('G47', $row['name']);
+            $sheet->setCellValue('G47', $row['name'])->getStyle('G47')->getFont()->setBold(true);
         }
 
 
@@ -589,7 +589,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('E13', $record['Jumlah BayiBisnis']);
             $sheet->setCellValue('E14', $record['Jumlah DewasaEkonomi']);
             $sheet->setCellValue('E15', $record['Jumlah BayiEkonomi']);
-            $sheet->setCellValue('E16', '=SUM(E10:E15)');
+            $sheet->setCellValue('E16', '=SUM(E10:E15)')->getStyle('E16')->getFont()->setBold(true);
             
             // // Pendapatan Pelayaran
             $sheet->setCellValue('F10', $record['Dewasa Eksekutif']);
@@ -598,7 +598,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('F13', $record['Bayi Bisnis']);
             $sheet->setCellValue('F14', $record['Dewasa Ekonomi']);
             $sheet->setCellValue('F15', $record['Bayi Ekonomi']);
-            $sheet->setCellValue('F16', '=SUM(F10:F15)');
+            $sheet->setCellValue('F16', '=SUM(F10:F15)')->getStyle('F16')->getFont()->setBold(true);
             
             // // Pendapatan Asuransi
             $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah DewasaEksekutif']);
@@ -607,7 +607,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('G13', $record['BayiBisnisTJP'] * $record['Jumlah BayiBisnis']);
             $sheet->setCellValue('G14', $record['DewasaEkonomiTJP'] * $record['Jumlah DewasaEkonomi'] );
             $sheet->setCellValue('G15', $record['BayiEkonomiTJP'] * $record['Jumlah BayiEkonomi']);
-            $sheet->setCellValue('G16', '=SUM(G10:G15)');
+            $sheet->setCellValue('G16', '=SUM(G10:G15)')->getStyle('G16')->getFont()->setBold(true);
             
             // Total Penumpang
             $sheet->setCellValue('H10', '=F10 + G10');
@@ -616,7 +616,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('H13', '=F13 + G13');
             $sheet->setCellValue('H14', '=F14 + G14');
             $sheet->setCellValue('H15', '=F15 + G15');
-            $sheet->setCellValue('H16', '=SUM(H10:H15)');
+            $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
 
             // Tarif Pelayaran
             $sheet->setCellValue('F18', $record['Golongan ']);
@@ -631,7 +631,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('F27', $record['Golongan 7']);
             $sheet->setCellValue('F28', $record['Golongan 8']);
             $sheet->setCellValue('F29', $record['Golongan 9']);
-            $sheet->setCellValue('F30', '=SUM(F18:F29)');
+            $sheet->setCellValue('F30', '=SUM(F18:F29)')->getStyle('F30')->getFont()->setBold(true);
             
             // // Jumlah Produksi
             $sheet->setCellValue('E18', $record['Jumlah Gol1']);
@@ -646,7 +646,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('E27', $record['Jumlah Gol7']);
             $sheet->setCellValue('E28', $record['Jumlah Gol8']);
             $sheet->setCellValue('E29', $record['Jumlah Gol9']);
-            $sheet->setCellValue('E30', '=SUM(E18:E29)');
+            $sheet->setCellValue('E30', '=SUM(E18:E29)')->getStyle('E30')->getFont()->setBold(true);
             
             // Pendapatan Asuransi
             $sheet->setCellValue('G18', $record['Jumlah Gol1'] * $record['Gol1TJP']);
@@ -661,7 +661,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('G27', $record['Jumlah Gol7'] * $record['Gol7TJP']);
             $sheet->setCellValue('G28', $record['Jumlah Gol8'] * $record['Go81TJP']);
             $sheet->setCellValue('G29', $record['Jumlah Gol9'] * $record['Go91TJP']);
-            $sheet->setCellValue('G30', '=SUM(G18:G29)');
+            $sheet->setCellValue('G30', '=SUM(G18:G29)')->getStyle('G30')->getFont()->setBold(true);
             
             // Jumlah
             $sheet->setCellValue('H18', '=F18 + G18');
@@ -676,12 +676,12 @@ class Report extends CI_Controller
             $sheet->setCellValue('H27', '=F27 + G27');
             $sheet->setCellValue('H28', '=F28 + G28');
             $sheet->setCellValue('H29', '=F29 + G29');
-            $sheet->setCellValue('H30', '=SUM(H18:H29)');
+            $sheet->setCellValue('H30', '=SUM(H18:H29)')->getStyle('H30')->getFont()->setBold(true);
 
             // Barang
                 // Jumlah Produksi
                 $sheet->setCellValue('E32', $record['Jumlah BarangVolume']);
-                $sheet->setCellValue('E34', '=SUM(E32)');
+                $sheet->setCellValue('E34', '=SUM(E32)')->getStyle('E34')->getFont()->setBold(true);
                 
                 // Pendapatan Asuransi
                 // $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah BarangVolume']);
@@ -689,11 +689,11 @@ class Report extends CI_Controller
                 
                 // Pendapatan Pelayaran
                 $sheet->setCellValue('F32', $record['Barang Pendapatan']);
-                $sheet->setCellValue('F34', '=SUM(F32)');
+                $sheet->setCellValue('F34', '=SUM(F32)')->getStyle('F34')->getFont()->setBold(true);
 
                 // Total Penumpang
                 $sheet->setCellValue('H32', '=F32 + G32');
-                $sheet->setCellValue('H34', '=SUM(H32)');
+                $sheet->setCellValue('H34', '=SUM(H32)')->getStyle('H34')->getFont()->setBold(true);
 
             //Suplesi
                 //Jumlah Produksi
@@ -701,27 +701,27 @@ class Report extends CI_Controller
                 $sheet->setCellValue('E37', $record['Jumlah Suplesi1Anak']);
                 $sheet->setCellValue('E38', $record['Jumlah Suplesi2Dewasa']);
                 $sheet->setCellValue('E39', $record['Jumlah Suplesi2Anak']);
-                $sheet->setCellValue('E40', '=SUM(E36:E39)');
+                $sheet->setCellValue('E40', '=SUM(E36:E39)')->getStyle('E40')->getFont()->setBold(true);
                 
                 //Pendapatan Pelayaran
                 $sheet->setCellValue('F36', $record['Suplesi1 Dewasa']);
                 $sheet->setCellValue('F37', $record['Suplesi1 Anak']);
                 $sheet->setCellValue('F38', $record['Suplesi2 Dewasa']);
                 $sheet->setCellValue('F39', $record['Suplesi2 Anak']);
-                $sheet->setCellValue('F40', '=SUM(F36:F39)');
+                $sheet->setCellValue('F40', '=SUM(F36:F39)')->getStyle('F40')->getFont()->setBold(true);
 
                 // Pendapatan Asuransi
                 $sheet->setCellValue('H36', $record['Suplesi1 Dewasa']);
                 $sheet->setCellValue('H37', $record['Suplesi1 Anak']);
                 $sheet->setCellValue('H38', $record['Suplesi2 Dewasa']);
                 $sheet->setCellValue('H39', $record['Suplesi2 Anak']);
-                $sheet->setCellValue('H40', '=SUM(H36:H39)');
+                $sheet->setCellValue('H40', '=SUM(H36:H39)')->getStyle('H40')->getFont()->setBold(true);
                 
             //Total Baris
-            $sheet->setCellValue('E41', '=E16+E30+E34+E40');
-            $sheet->setCellValue('F41', '=F16+F30+F34+F40');
-            $sheet->setCellValue('G41', '=G16+G30+G34+G40');
-            $sheet->setCellValue('H41', '=H16+H30+H34+H40');
+            $sheet->setCellValue('E41', '=E16+E30+E34+E40')->getStyle('E41')->getFont()->setBold(true);
+            $sheet->setCellValue('F41', '=F16+F30+F34+F40')->getStyle('F41')->getFont()->setBold(true);
+            $sheet->setCellValue('G41', '=G16+G30+G34+G40')->getStyle('G41')->getFont()->setBold(true);
+            $sheet->setCellValue('H41', '=H16+H30+H34+H40')->getStyle('H41')->getFont()->setBold(true);
         }
 
 
