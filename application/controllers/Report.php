@@ -505,6 +505,7 @@ class Report extends CI_Controller
         $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
 
         $sheet->setCellValue('C3', $title);
+        $sheet->getStyle('C3')->getFont()->setBold(true);
         $sheet->setCellValue('C5', 'Cabang');
         $sheet->setCellValue('D5', 'LUWUK');
         $sheet->setCellValue('C6', 'Lintasan');
@@ -686,7 +687,7 @@ class Report extends CI_Controller
                 // Pendapatan Pelayaran
                 $sheet->setCellValue('F32', $record['Barang Pendapatan']);
                 $sheet->setCellValue('F34', '=SUM(F32)');
-           
+
                 // Total Penumpang
                 $sheet->setCellValue('H32', '=F32 + G32');
                 $sheet->setCellValue('H34', '=SUM(H32)');
