@@ -123,7 +123,7 @@ class Income_model extends CI_Model
 
     public function incomePerRoute()
     {
-        $lastMonth = date("F");
+        $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -259,7 +259,7 @@ class Income_model extends CI_Model
                 if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F" ));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month') ));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date), route');
