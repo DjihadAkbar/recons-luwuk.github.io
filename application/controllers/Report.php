@@ -503,9 +503,13 @@ class Report extends CI_Controller
         $sheet->mergeCells('D7:D8')->getStyle('D7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('E7:H7')->getStyle('E7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $sheet->mergeCells('C9:C16')->getStyle('C9')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('C9:C16')->getStyle('C9')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('C17:C30')->getStyle('C17')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('C17:C30')->getStyle('C17')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('C31:C34')->getStyle('C31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('C31:C34')->getStyle('C31')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
 
         $sheet->setCellValue('C3', $title);
         $sheet->getStyle('C3')->getFont()->setBold(true);
@@ -607,7 +611,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('G13', $record['BayiBisnisTJP'] * $record['Jumlah BayiBisnis']);
             $sheet->setCellValue('G14', $record['DewasaEkonomiTJP'] * $record['Jumlah DewasaEkonomi'] );
             $sheet->setCellValue('G15', $record['BayiEkonomiTJP'] * $record['Jumlah BayiEkonomi']);
-            $sheet->setCellValue('G16', '=SUM(G10:G15)')->getStyle('G16')->getFont()->setBold(true);
+            $sheet->setCellValue('G16', number_format('=SUM(G10:G15)'))->getStyle('G16')->getFont()->setBold(true);
             
             // Total Penumpang
             $sheet->setCellValue('H10', '=F10 + G10');
