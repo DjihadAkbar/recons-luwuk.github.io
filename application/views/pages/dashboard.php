@@ -278,8 +278,8 @@ if($this->session->userdata['type'] != ''){
             <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 <div style="white-space:normal"> 
                 <?php
-                // if (getBulan($monthname) != null) {
-                //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan($monthname)) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y");
+                // if (getBulan(date("F")) != null) {
+                //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                 // } else {
                     echo "Total Pendapatan Pertanggal 1  " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                 // }
@@ -319,7 +319,7 @@ if($this->session->userdata['type'] != ''){
                                             Pelabuhan Asal
                                         </th>
                                         <th scope="col">
-                                            <?php echo "Total Tanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
                                         </th>
                                         <th scope="col">
                                             Jumlah Trip
@@ -336,7 +336,7 @@ if($this->session->userdata['type'] != ''){
                                                                                                                                             </td>
 
                                                                                                                                             <td>
-                                                                                                                                                <?php echo $value['rute']; ?>
+                                                                                                                                                <?php echo $value['ofc_route']; ?>
                                                                                                                                             </td>
                                                                                                                                             <td>
                                                                                                                                                 <?php echo $value['harbour']; ?>
@@ -402,7 +402,7 @@ if($this->session->userdata['type'] != ''){
                                         </th>
                                         <th scope="col">
 
-                                            <?php echo "Total Tanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
                                         </th>
                                         <th scope="col">
                                             Jumlah Trip
@@ -472,7 +472,7 @@ if($this->session->userdata['type'] != ''){
                                         </th>
                                         <th scope="col">
 
-                                            <?php echo "Total Tanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y"); ?>
+                                            <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
                                         </th>
                                         <th scope="col">
                                             Jumlah Trip
@@ -527,8 +527,8 @@ if($this->session->userdata['type'] != ''){
             <h5 class="mb-0">
             <button style="text-decoration:none; display: block; color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                 <?php
-                // if (getBulan($monthname) != null) {
-                //     echo "Jumlah Produksi Pertanggal 1 " . getBulan($monthname) . " " . date("Y") . " s.d " . date("d") . " " . getBulan($monthname) . " " . date("Y");
+                // if (getBulan(date("F")) != null) {
+                //     echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                 // } else {
                     echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                 // }
@@ -617,7 +617,7 @@ if($this->session->userdata['type'] != ''){
                                                 </td>
 
                                                 <td>
-                                                    <?php echo $value['rute']; ?>
+                                                    <?php echo $value['ofc_route']; ?>
                                                 </td>
                                                 <td>
                                                     <?php echo $value['harbour']; ?>
@@ -1193,8 +1193,8 @@ if($this->session->userdata['type'] != ''){
     display: block;
 color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                 <?php
-                // if (getBulan($monthname) != null) {
-                //     echo "Perbandingan Realisasi " . getBulan($monthname) . " " . date("Y") . " & RKA " . getBulan($monthname) . " " . date("Y");
+                // if (getBulan(date("F")) != null) {
+                //     echo "Perbandingan Realisasi " . getBulan(date("F")) . " " . date("Y") . " & RKA " . getBulan(date("F")) . " " . date("Y");
                 // } else {
                     echo "Perbandingan Realisasi " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y") . " & RKA " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y");
                 // }
@@ -1648,8 +1648,8 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
     display: block;
 color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                 <?php
-                // if (getBulan($monthname) != null) {
-                //     echo "Perbandingan Realisasi Lintasan " . getBulan($monthname) . " " . date("Y") - 1 . " & Realisasi " . getBulan($monthname) . " " . date("Y");
+                // if (getBulan(date("F")) != null) {
+                //     echo "Perbandingan Realisasi Lintasan " . getBulan(date("F")) . " " . date("Y") - 1 . " & Realisasi " . getBulan(date("F")) . " " . date("Y");
                 // } else {
                     echo "Perbandingan Realisasi Lintasan " . getBulan(date("F",strtotime('-1 month'))) . " " . date("Y") - 1 . " & Realisasi " . getBulan(date("F", strtotime('-1 month'))) . " " . date("Y");
                 // }
