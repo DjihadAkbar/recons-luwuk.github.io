@@ -457,7 +457,8 @@ class Report extends CI_Controller
         $entryData = mysqli_query($koneksi,"
             SELECT *,dayname(date), 
             entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi', entry_data.BarangVolume AS 'Jumlah BarangVolume', entry_data.BarangPendapatan AS 'Jumlah BarangPendapatan',
-            entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9', 
+            entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9',
+            entry_data.Suplesi1Dewasa as 'Jumlah Suplesi1Dewasa', entry_data.Suplesi2Dewasa as 'Jumlah Suplesi2Dewasa', entry_data.Suplesi1Anak as 'Jumlah Suplesi1Anak', entry_data.Suplesi2Anak as 'Jumlah Suplesi2Anak'
             (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
             (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
             (rate.DewasaBisnis * entry_data.DewasaBisnis) as 'Dewasa Bisnis',
@@ -478,6 +479,10 @@ class Report extends CI_Controller
             (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
             entry_data.BarangPendapatan as 'Barang Pendapatan',
             entry_data.BarangVolume as 'Entry Barang Volume'
+            (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) as 'Suplesi1 Dewasa',
+            (rate.Suplesi1Anak * entry_data.Suplesi1Anak) as 'Suplesi1 Anak',
+            (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) as 'Suplesi2 Dewasa',
+            (rate.Suplesi2Anak * entry_data.Suplesi2Anak) as 'Suplesi2 Anak',
             FROM entry_data
             JOIN ferry ON ferry.id = entry_data.id_ferry
             JOIN routes ON routes.id = entry_data.id_route
@@ -670,21 +675,53 @@ class Report extends CI_Controller
             $sheet->setCellValue('H30', '=SUM(H18:H29)');
 
             // Barang
-            // Jumlah Produksi
-            $sheet->setCellValue('E32', $record['Jumlah BarangVolume']);
-            $sheet->setCellValue('E34', '=SUM(E32)');
+                // Jumlah Produksi
+                $sheet->setCellValue('E32', $record['Jumlah BarangVolume']);
+                $sheet->setCellValue('E34', '=SUM(E32)');
+                
+                // Pendapatan Asuransi
+                // $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah BarangVolume']);
+                // $sheet->setCellValue('G16', '=SUM(G10:G15)');
+                
+                // Pendapatan Pelayaran
+                $sheet->setCellValue('F32', $record['Barang Pendapatan']);
+                $sheet->setCellValue('F34', '=SUM(F32)');
+
+                // Total Penumpang
+                $sheet->setCellValue('H32', '=F32 + G32');
+                $sheet->setCellValue('H34', '=SUM(H32)');
+
+
+            //Suplesi
+                //Jumlah Produksi
+                $sheet->setCellValue('E36', $record['Jumlah Suplesi1Dewasa']);
+                $sheet->setCellValue('E37', $record['Jumlah Suplesi1Anak']);
+                $sheet->setCellValue('E38', $record['Jumlah Suplesi2Dewasa']);
+                $sheet->setCellValue('E39', $record['Jumlah Suplesi2Anak']);
+                $sheet->setCellValue('E40', '=SUM(E36:E39)');
+                
+                //Pendapatan Pelayaran
+                $sheet->setCellValue('F36', $record['Suplesi1 Dewasa']);
+                $sheet->setCellValue('F37', $record['Suplesi1 Anak']);
+                $sheet->setCellValue('F38', $record['Suplesi2 Dewasa']);
+                $sheet->setCellValue('F39', $record['Suplesi2 Anak']);
+                $sheet->setCellValue('F40', '=SUM(F36:F39)');
+
+                // Pendapatan Asuransi
+                $sheet->setCellValue('H36', $record['Suplesi1 Dewasa']);
+                $sheet->setCellValue('H37', $record['Suplesi1 Anak']);
+                $sheet->setCellValue('H38', $record['Suplesi2 Dewasa']);
+                $sheet->setCellValue('H39', $record['Suplesi2 Anak']);
+                $sheet->setCellValue('H40', '=SUM(H36:H39)');
+                
+            //Total Baris
+            $sheet->setCellValue('E41', '=(E16+E30+E34+E40)');
+            $sheet->setCellValue('F41', '=(F16+F30+F34+F40)');
+            $sheet->setCellValue('G41', '=(G16+G30+G34+G40)');
+            $sheet->setCellValue('H41', '=(H16+H30+H34+H40)');
+                
             
-            // // Pendapatan Pelayaran
-            $sheet->setCellValue('F32', $record['Barang Pendapatan']);
-            $sheet->setCellValue('F34', '=SUM(F32)');
             
-            // // Pendapatan Asuransi
-            // $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah BarangVolume']);
-            // $sheet->setCellValue('G16', '=SUM(G10:G15)');
-            
-            // Total Penumpang
-            $sheet->setCellValue('H32', '=F32 + G32');
-            $sheet->setCellValue('H34', '=SUM(H32)');
         }
 
 
