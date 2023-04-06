@@ -602,7 +602,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('F13', $record['Bayi Bisnis']);
             $sheet->setCellValue('F14', $record['Dewasa Ekonomi']);
             $sheet->setCellValue('F15', $record['Bayi Ekonomi']);
-            $sheet->setCellValue('F16', number_format((int)'=SUM(F10:F15)'))->getStyle('F16')->getFont()->setBold(true);
+            $sheet->setCellValue('F16', '=SUM(F10:F15)')->getStyle('F16')->getFont()->setBold(true);
             
             // // Pendapatan Asuransi
             $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah DewasaEksekutif']);
@@ -611,7 +611,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('G13', $record['BayiBisnisTJP'] * $record['Jumlah BayiBisnis']);
             $sheet->setCellValue('G14', $record['DewasaEkonomiTJP'] * $record['Jumlah DewasaEkonomi'] );
             $sheet->setCellValue('G15', $record['BayiEkonomiTJP'] * $record['Jumlah BayiEkonomi']);
-            $sheet->setCellValue('G16', number_format((int)'=SUM(G10:G15)'))->getStyle('G16')->getFont()->setBold(true);
+            $sheet->setCellValue('G16', '=SUM(G10:G15)')->getStyle('G16')->getFont()->setBold(true);
             
             // Total Penumpang
             $sheet->setCellValue('H10', '=F10 + G10');
