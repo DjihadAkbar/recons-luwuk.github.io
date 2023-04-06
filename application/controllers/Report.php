@@ -692,36 +692,8 @@ class Report extends CI_Controller
                 $sheet->setCellValue('H34', '=SUM(H32)');
 
 
-            //Suplesi
-                //Jumlah Produksi
-                $sheet->setCellValue('E36', $record['Jumlah Suplesi1Dewasa']);
-                $sheet->setCellValue('E37', $record['Jumlah Suplesi1Anak']);
-                $sheet->setCellValue('E38', $record['Jumlah Suplesi2Dewasa']);
-                $sheet->setCellValue('E39', $record['Jumlah Suplesi2Anak']);
-                $sheet->setCellValue('E40', '=SUM(E36:E39)');
-                
-                //Pendapatan Pelayaran
-                $sheet->setCellValue('F36', $record['Suplesi1 Dewasa']);
-                $sheet->setCellValue('F37', $record['Suplesi1 Anak']);
-                $sheet->setCellValue('F38', $record['Suplesi2 Dewasa']);
-                $sheet->setCellValue('F39', $record['Suplesi2 Anak']);
-                $sheet->setCellValue('F40', '=SUM(F36:F39)');
-
-                // Pendapatan Asuransi
-                $sheet->setCellValue('H36', $record['Suplesi1 Dewasa']);
-                $sheet->setCellValue('H37', $record['Suplesi1 Anak']);
-                $sheet->setCellValue('H38', $record['Suplesi2 Dewasa']);
-                $sheet->setCellValue('H39', $record['Suplesi2 Anak']);
-                $sheet->setCellValue('H40', '=SUM(H36:H39)');
-                
-            //Total Baris
-            $sheet->setCellValue('E41', '=E16+E30+E34+E40');
-            $sheet->setCellValue('F41', '=F16+F30+F34+F40');
-            $sheet->setCellValue('G41', '=G16+G30+G34+G40');
-            $sheet->setCellValue('H41', '=H16+H30+H34+H40');
-                
             
-            
+                
         }
 
 
