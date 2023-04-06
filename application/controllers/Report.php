@@ -478,7 +478,7 @@ class Report extends CI_Controller
             (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
             (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
             entry_data.BarangPendapatan as 'Barang Pendapatan',
-            entry_data.BarangVolume as 'Entry Barang Volume'
+            entry_data.BarangVolume as 'Entry Barang Volume',
             (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) as 'Suplesi1 Dewasa',
             (rate.Suplesi1Anak * entry_data.Suplesi1Anak) as 'Suplesi1 Anak',
             (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) as 'Suplesi2 Dewasa',
