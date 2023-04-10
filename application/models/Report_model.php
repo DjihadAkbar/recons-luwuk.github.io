@@ -9,9 +9,7 @@ class Report_model extends CI_Model
         $this->db->select('*');
         $this->db->where('region', $pelabuhan);
         $this->db->where('position','SUPERVISOR');
-        $query = $this->db->get('employee')->result_array();
-        header("Content-type: " . $query['qr_type']);
-        return $query;
+        return $this->db->get('employee')->result_array();
     }
     public function employee(){
         $this->db->select('*');
