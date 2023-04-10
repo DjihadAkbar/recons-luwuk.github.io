@@ -2,6 +2,8 @@
     <div class="card-header d-flex justify-content-between align-items-center " id="headingOne" >
         
         <?php
+        // isi qrcode yang ingin dibuat. akan muncul saat di scan
+
         echo form_open(base_url('dashboard/report/'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
             ?>
         <div class="form-group row">

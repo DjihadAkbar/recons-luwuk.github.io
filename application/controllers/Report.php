@@ -15,8 +15,22 @@ class Report extends CI_Controller
     {
         parent::__construct();
         $this->load->helper('url');
+        $this->load->library('ciqrcode');
         $this->employee = $this->Report_model->employee();
     }
+    function qr($kodeqr)
+{
+    if($kodeqr){
+        $filename = 'assets/images/signatureQR/'.$kodeqr;
+        if (!file_exists($filename)) { 
+                $params['data'] = $kodeqr;
+                $params['level'] = 'H';
+                $params['size'] = 10;
+                $params['savename'] = FCPATH.'assets/images/signatureQR/'.$kodeqr.".png";
+                return  $this->ciqrcode->generate($params);
+        }
+    }
+}
     public function index()
     {
         $data['title'] = 'Export Report';
@@ -27,6 +41,7 @@ class Report extends CI_Controller
         $data['pelabuhan'] = $this->Master_model->pelabuhan();
         $data['kapal'] = $this->Master_model->kapal_spv();
         $data['tarif'] = $this->Master_model->tarif();
+        // $this->qr('www.recons-luwuk.com/pegawai/id?=4');
 
         $this->load->view('template/dashboard/body', $data);
     }
@@ -132,7 +147,7 @@ class Report extends CI_Controller
     $sheet->mergeCells('B38:B40')->getStyle('B38')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
     $sheet->mergeCells('E38:E40')->getStyle('E38')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
     $sheet->mergeCells('I38:I40')->getStyle('I38')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-
+    
     $sheet->setCellValue('A1', $title);
     $sheet->setCellValue('A2', 'Hari');
     $sheet->setCellValue('A3', 'Tanggal');
@@ -510,7 +525,9 @@ class Report extends CI_Controller
         $sheet->mergeCells('C31:C34')->getStyle('C31')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
         $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
         $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
-
+        $sheet->mergeCells('G44:G46')->getStyle('G44')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+        $sheet->mergeCells('G44:G46')->getStyle('G44')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+    
         $sheet->setCellValue('C3', $title);
         $sheet->getStyle('C3')->getFont()->setBold(true);
         $sheet->setCellValue('C5', 'Cabang')->getStyle('C5')->getFont()->setBold(true);
@@ -567,6 +584,7 @@ class Report extends CI_Controller
         $sheet->setCellValue('D41', 'Jumlah')->getStyle('D41')->getFont()->setBold(true);
         $sheet->setCellValue('G43', 'Dibuat Oleh')->getStyle('G43')->getFont()->setBold(true);
         foreach($supervisor as $row){
+            $sheet->setCellValue('G44', $row['signature_qr'])->getStyle('G44')->getFont()->setBold(true);
             $sheet->setCellValue('G47', $row['name'])->getStyle('G47')->getFont()->setBold(true);
         }
 
