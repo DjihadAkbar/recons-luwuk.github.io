@@ -763,11 +763,14 @@ class Report extends CI_Controller
     $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
     
 
-    ob_start();
         // $writer = new Xlsx($spreadsheet);
         // header('Content-Type: application/vnd.ms-excel');
         // header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".xlsx").'"');
-        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf($spreadsheet);
+        $class = \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf::class;
+\PhpOffice\PhpSpreadsheet\IOFactory::registerWriter('Pdf', $class);
+$writer = setImagesRoot($_SERVER['DOCUMENT_ROOT'] . '/img/');
+$writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Pdf');
+$writer = new \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf($spreadsheet);
         header('Content-Type: application/pdf');
         header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".pdf").'"');
         ob_end_clean();
