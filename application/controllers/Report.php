@@ -764,10 +764,11 @@ class Report extends CI_Controller
     
 
         // $writer = new Xlsx($spreadsheet);
+        // header('Content-Type: application/vnd.ms-excel');
+        // header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".xlsx").'"');
         $writer = new \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf($spreadsheet);
         header('Content-Type: application/pdf');
-        // header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".xlsx").'"');
+        header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".pdf").'"');
         ob_end_clean();
         $writer->save('php://output');
         exit();
