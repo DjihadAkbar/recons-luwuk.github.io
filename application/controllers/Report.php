@@ -768,7 +768,6 @@ class Report extends CI_Controller
         // header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".xlsx").'"');
         $class = \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf::class;
 \PhpOffice\PhpSpreadsheet\IOFactory::registerWriter('Pdf', $class);
-$writer = setImagesRoot($_SERVER['DOCUMENT_ROOT'] . '/img/');
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Pdf');
 $writer = new \PhpOffice\PhpSpreadsheet\Writer\Pdf\Mpdf($spreadsheet);
         header('Content-Type: application/pdf');
