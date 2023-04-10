@@ -584,7 +584,7 @@ class Report extends CI_Controller
         $sheet->setCellValue('D41', 'Jumlah')->getStyle('D41')->getFont()->setBold(true);
         $sheet->setCellValue('G43', 'Dibuat Oleh')->getStyle('G43')->getFont()->setBold(true);
         foreach($supervisor as $row){
-            $sheet->setCellValue('G44', $row['signature_qr'])->getStyle('G44')->getFont()->setBold(true);
+            // $sheet->setCellValue('G44', $row['signature_qr'])->getStyle('G44')->getFont()->setBold(true);
             $sheet->setCellValue('G47', $row['name'])->getStyle('G47')->getFont()->setBold(true);
         }
 
