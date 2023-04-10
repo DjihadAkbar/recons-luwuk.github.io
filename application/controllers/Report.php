@@ -763,6 +763,7 @@ class Report extends CI_Controller
     $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
     
 
+    ob_start();
         // $writer = new Xlsx($spreadsheet);
         // header('Content-Type: application/vnd.ms-excel');
         // header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".xlsx").'"');
