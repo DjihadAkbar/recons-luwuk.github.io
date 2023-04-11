@@ -18,19 +18,20 @@ class Report extends CI_Controller
         $this->load->library('ciqrcode');
         $this->employee = $this->Report_model->employee();
     }
+    //Bikin Code QR Ke Folder signatureQR
     function qr($kodeqr)
-{
-    if($kodeqr){
-        $filename = 'assets/images/signatureQR/'.$kodeqr;
-        if (!file_exists($filename)) { 
-                $params['data'] = $kodeqr;
-                $params['level'] = 'H';
-                $params['size'] = 10;
-                $params['savename'] = FCPATH.'assets/images/signatureQR/'.$kodeqr.".png";
-                return  $this->ciqrcode->generate($params);
+    {
+        if($kodeqr){
+            $filename = 'assets/images/signatureQR/'.$kodeqr;
+            if (!file_exists($filename)) { 
+                    $params['data'] = $kodeqr;
+                    $params['level'] = 'H';
+                    $params['size'] = 10;
+                    $params['savename'] = FCPATH.'assets/images/signatureQR/'.$kodeqr.".png";
+                    return  $this->ciqrcode->generate($params);
+            }
         }
     }
-}
     public function index()
     {
         $data['title'] = 'Export Report';
@@ -623,12 +624,12 @@ class Report extends CI_Controller
             $sheet->setCellValue('F16', '=SUM(F10:F15)')->getStyle('F16')->getFont()->setBold(true);
             
             // // Pendapatan Asuransi
-            $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah DewasaEksekutif']);
-            $sheet->setCellValue('G11', $record['BayiEksekutifTJP'] * $record['Jumlah BayiEksekutif']);
-            $sheet->setCellValue('G12', $record['DewasaBisnisTJP'] * $record['Jumlah DewasaBisnis']);
-            $sheet->setCellValue('G13', $record['BayiBisnisTJP'] * $record['Jumlah BayiBisnis']);
-            $sheet->setCellValue('G14', $record['DewasaEkonomiTJP'] * $record['Jumlah DewasaEkonomi'] );
-            $sheet->setCellValue('G15', $record['BayiEkonomiTJP'] * $record['Jumlah BayiEkonomi']);
+            $sheet->setCellValue('G10', ($record['DewasaEksekutifTJP'] + $record['DewasaEksekutifIW']) * $record['Jumlah DewasaEksekutif']);
+            $sheet->setCellValue('G11', ($record['BayiEksekutifTJP'] + $record['BayiEksekutifIW']) * $record['Jumlah BayiEksekutif']);
+            $sheet->setCellValue('G12', ($record['DewasaBisnisTJP'] + $record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
+            $sheet->setCellValue('G13', ($record['BayiBisnisTJP'] + $record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
+            $sheet->setCellValue('G14', ($record['DewasaEkonomiTJP'] + $record['DewasaEkonomiIW'] ) * $record['Jumlah DewasaEkonomi'] );
+            $sheet->setCellValue('G15', ($record['BayiEkonomiTJP'] + $record['BayiEkonomiIW'] ) * $record['Jumlah BayiEkonomi']);
             $sheet->setCellValue('G16', '=SUM(G10:G15)')->getStyle('G16')->getFont()->setBold(true);
             
             // Total Penumpang
@@ -671,18 +672,18 @@ class Report extends CI_Controller
             $sheet->setCellValue('E30', '=SUM(E18:E29)')->getStyle('E30')->getFont()->setBold(true);
             
             // Pendapatan Asuransi
-            $sheet->setCellValue('G18', $record['Jumlah Gol1'] * $record['Gol1TJP']);
-            $sheet->setCellValue('G19', $record['Jumlah Gol2'] * $record['Gol2TJP']);
-            $sheet->setCellValue('G20', $record['Jumlah Gol3'] * $record['Gol3TJP']);
-            $sheet->setCellValue('G21', $record['Jumlah Gol4Pen'] * $record['Gol4PenTJP']);
-            $sheet->setCellValue('G22', $record['Jumlah Gol4Bar'] * $record['Gol4BarTJP']);
-            $sheet->setCellValue('G23', $record['Jumlah Gol5Pen'] * $record['Gol5PenTJP']);
-            $sheet->setCellValue('G24', $record['Jumlah Gol5Bar'] * $record['Gol5BarTJP']);
-            $sheet->setCellValue('G25', $record['Jumlah Gol6Pen'] * $record['Gol6PenTJP']);
-            $sheet->setCellValue('G26', $record['Jumlah Gol6Bar'] * $record['Gol6BarTJP']);
-            $sheet->setCellValue('G27', $record['Jumlah Gol7'] * $record['Gol7TJP']);
-            $sheet->setCellValue('G28', $record['Jumlah Gol8'] * $record['Go81TJP']);
-            $sheet->setCellValue('G29', $record['Jumlah Gol9'] * $record['Go91TJP']);
+            $sheet->setCellValue('G18', $record['Jumlah Gol1'] * ( $record['Gol1TJP'] + $record['Gol1IW'] ));
+            $sheet->setCellValue('G19', $record['Jumlah Gol2'] * ( $record['Gol2TJP'] + $record['Gol2IW'] ));
+            $sheet->setCellValue('G20', $record['Jumlah Gol3'] * ( $record['Gol3TJP'] + $record['Gol3IW'] ));
+            $sheet->setCellValue('G21', $record['Jumlah Gol4Pen'] * ( $record['Gol4PenTJP'] + $record['Gol4PenIW'] ));
+            $sheet->setCellValue('G22', $record['Jumlah Gol4Bar'] * ( $record['Gol4BarTJP'] + $record['Gol4BarIW'] ));
+            $sheet->setCellValue('G23', $record['Jumlah Gol5Pen'] * ( $record['Gol5PenTJP'] + $record['Gol5PenIW'] ));
+            $sheet->setCellValue('G24', $record['Jumlah Gol5Bar'] * ( $record['Gol5BarTJP'] + $record['Gol5BarIW'] ));
+            $sheet->setCellValue('G25', $record['Jumlah Gol6Pen'] * ( $record['Gol6PenTJP'] + $record['Gol6PenIW'] ));
+            $sheet->setCellValue('G26', $record['Jumlah Gol6Bar'] * ( $record['Gol6BarTJP'] + $record['Gol6BarIW'] ));
+            $sheet->setCellValue('G27', $record['Jumlah Gol7'] * ( $record['Gol7TJP'] + $record['Gol7IW'] ));
+            $sheet->setCellValue('G28', $record['Jumlah Gol8'] * ( $record['Go81TJP'] + $record['Gol8IW'] ));
+            $sheet->setCellValue('G29', $record['Jumlah Gol9'] * ( $record['Go91TJP'] + $record['Gol9IW'] ));
             $sheet->setCellValue('G30', '=SUM(G18:G29)')->getStyle('G30')->getFont()->setBold(true);
             
             // Jumlah
