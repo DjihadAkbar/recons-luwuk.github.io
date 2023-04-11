@@ -682,8 +682,8 @@ class Report extends CI_Controller
             $sheet->setCellValue('G25', $record['Jumlah Gol6Pen'] * ( $record['Gol6PenTJP'] + $record['Gol6PenIW'] ));
             $sheet->setCellValue('G26', $record['Jumlah Gol6Bar'] * ( $record['Gol6BarTJP'] + $record['Gol6BarIW'] ));
             $sheet->setCellValue('G27', $record['Jumlah Gol7'] * ( $record['Gol7TJP'] + $record['Gol7IW'] ));
-            $sheet->setCellValue('G28', $record['Jumlah Gol8'] * ( $record['Go81TJP'] + $record['Gol8IW'] ));
-            $sheet->setCellValue('G29', $record['Jumlah Gol9'] * ( $record['Go91TJP'] + $record['Gol9IW'] ));
+            $sheet->setCellValue('G28', $record['Jumlah Gol8'] * ( $record['Gol8TJP'] + $record['Gol8IW'] ));
+            $sheet->setCellValue('G29', $record['Jumlah Gol9'] * ( $record['Gol9TJP'] + $record['Gol9IW'] ));
             $sheet->setCellValue('G30', '=SUM(G18:G29)')->getStyle('G30')->getFont()->setBold(true);
             
             // Jumlah
