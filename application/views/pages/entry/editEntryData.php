@@ -418,7 +418,7 @@ foreach($editData as $row){
             <div class="col">
                 <textarea class="form-control" id="catatan" name="catatan" rows="3" placeholder="(Opsional) Kendala Pelayaran / Catatan Permasalahan Pendapatan"></textarea>
             </div>
-        </div>
+        </div>  
         <?php
         echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
         echo form_close();

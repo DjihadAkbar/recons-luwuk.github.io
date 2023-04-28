@@ -190,7 +190,7 @@ class Entry extends CI_Controller
             'BBMSerial_end' => $this->input->post('BBMSerial_end'),
             'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
             'BarangPendapatanSerial_end' => $this->input->post('BarangPendapatanSerial_end'),
-            'Catatan' => $this->input->post('Catatan'),
+            'Catatan' => $this->input->post('catatan'),
         ];
         $this->Entry_model->editData($dataInput, $_GET['id']);
         redirect('dashboard/entry');
@@ -464,7 +464,7 @@ class Entry extends CI_Controller
             'BBM3Serial_end' => $this->input->post('BBM3Serial_end'),
             'BARTON3Serial_end' => $this->input->post('BARTON3Serial_end'),
             'BarangPendapatan3Serial_end' => $this->input->post('BarangPendapatan3Serial_end'),
-            'Catatan' => $this->input->post('Catatan'),
+            'Catatan' => $this->input->post('catatan'),
         ];
         $this->User_model->entry($dataInput);
         redirect('dashboard/entry');
