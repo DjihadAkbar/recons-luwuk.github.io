@@ -754,11 +754,6 @@ class Report extends CI_Controller
             $sheet->setCellValue('H41', '=H16+H30+H34+H40')->getStyle('H41')->getFont()->setBold(true);
         }
 
-
-    // $sheet->getStyle('C10:J16')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_EUR);
-    // $sheet->getStyle('C18:J30')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
-    // $sheet->getStyle('C32:J34')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
-
     $styleArray = array(
         'allBorders' => array(
             'outline' => array(
@@ -769,10 +764,38 @@ class Report extends CI_Controller
     );
 
     $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-    // $spreadsheet->createSheet();
     
     //=========================== Sheet 2 =============================
-
+        $entryData2 = mysqli_query($koneksi,"
+        SELECT *,dayname(date), 
+        entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi',
+        entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9', 
+        (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
+        (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
+        (rate.DewasaBisnis * entry_data.DewasaBisnis) as 'Dewasa Bisnis',
+        (rate.BayiBisnis * entry_data.BayiBisnis) as 'Bayi Bisnis',
+        (rate.DewasaEkonomi * entry_data.DewasaEkonomi) as 'Dewasa Ekonomi',
+        (rate.BayiEkonomi * entry_data.BayiEkonomi) as 'Bayi Ekonomi',
+        (rate.Gol1 * entry_data.Gol1) as 'Golongan 1',
+        (rate.Gol2 * entry_data.Gol2) as 'Golongan 2',
+        (rate.Gol3 * entry_data.Gol3) as 'Golongan 3',
+        (rate.Gol4Pen * entry_data.Gol4Pen) as 'Golongan 4 Penumpang',
+        (rate.Gol4Bar * entry_data.Gol4Bar) as 'Golongan 4 Barang',
+        (rate.Gol5Pen * entry_data.Gol5Pen) as 'Golongan 5 Penumpang',
+        (rate.Gol5Bar * entry_data.Gol5Bar) as 'Golongan 5 Barang',
+        (rate.Gol6Pen * entry_data.Gol6Pen) as 'Golongan 6 Penumpang',
+        (rate.Gol6Bar * entry_data.Gol6Bar) as 'Golongan 6 Barang',
+        (rate.Gol7 * entry_data.Gol7) as 'Golongan 7',
+        (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
+        (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
+        entry_data.BarangVolume as 'Entry Barang Volume'
+        FROM entry_data
+        JOIN ferry ON ferry.id = entry_data.id_ferry
+        JOIN routes ON routes.id = entry_data.id_route
+        JOIN harbours on harbours.id_harbours = entry_data.id_harbour
+        JOIN rate ON rate.id_route = routes.id and entry_data.date >= rate.start_date and rate.rate_type = entry_data.rate_type
+        WHERE date='{$tanggalAwalReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
+    ");
     $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
     $spreadsheet->addSheet($myWorkSheet, 1);
     $titleSheet2 = 'Bukti Penyetoran';
@@ -911,8 +934,9 @@ class Report extends CI_Controller
     // $myWorkSheet->setBreak('A1:J42',\PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);
 
 
-    while($record = mysqli_fetch_array($entryData))
+    while($record = mysqli_fetch_array($entryData2))
     {
+
         if(!$record['time']){
             $myWorkSheet->setCellValue('E6', $jamReport);
         } else {
