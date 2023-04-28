@@ -971,14 +971,14 @@ class Report extends CI_Controller
         $myWorkSheet->setCellValue('E10', $record['DewasaEksekutifSerial_start']."\n".$record['DewasaEksekutif2Serial_start']."\n".$record['DewasaEksekutif3Serial_start']);
         $myWorkSheet->setCellValue('E11', $record['BayiEksekutifSerial_start']."\n".$record['BayiEksekutif2Serial_start']."\n".$record['BayiEksekutif3Serial_start']);
         $myWorkSheet->setCellValue('E12', $record['DewasaBisnisSerial_start']."\n".$record['DewasaBisnis2Serial_start']."\n".$record['DewasaBisnis3Serial_start']);
-        $myWorkSheet->setCellValue('E13', $record['BayiBisnisSerialStart']."\n".$record['BayiBisnis2SerialStart']."\n".$record['BayiBisnis3SerialStart']);
+        $myWorkSheet->setCellValue('E13', $record['BayiBisnisSerial_start']."\n".$record['BayiBisnis2Serial_start']."\n".$record['BayiBisnis3Serial_start']);
         $myWorkSheet->setCellValue('E14', $record['DewasaEkonomiSerial_start']."\n".$record['DewasaEkonomi2Serial_start']."\n".$record['DewasaEkonomi3Serial_start']);
         $myWorkSheet->setCellValue('E15', $record['BayiEkonomiSerial_start']."\n".$record['BayiEkonomi2Serial_start']."\n".$record['BayiEkonomi3Serial_start']);
         // Nomor Seri Akhir
         $myWorkSheet->setCellValue('F10', $record['DewasaEksekutifSerial_end']."\n".$record['DewasaEksekutif2Serial_end']."\n".$record['DewasaEksekutif3Serial_end']);
         $myWorkSheet->setCellValue('F11', $record['BayiEksekutifSerial_end']."\n".$record['BayiEksekutif2Serial_end']."\n".$record['BayiEksekutif3Serial_end']);
         $myWorkSheet->setCellValue('F12', $record['DewasaBisnisSerial_end']."\n".$record['DewasaBisnis2Serial_end']."\n".$record['DewasaBisnis3Serial_end']);
-        $myWorkSheet->setCellValue('F13', $record['BayiBisnisSerialStart']."\n".$record['BayiBisnis2SerialStart']."\n".$record['BayiBisnis3SerialStart']);
+        $myWorkSheet->setCellValue('F13', $record['BayiBisnisSerial_start']."\n".$record['BayiBisnis2Serial_start']."\n".$record['BayiBisnis3Serial_start']);
         $myWorkSheet->setCellValue('F14', $record['DewasaEkonomiSerial_end']."\n".$record['DewasaEkonomi2Serial_end']."\n".$record['DewasaEkonomi3Serial_end']);
         $myWorkSheet->setCellValue('F15', $record['BayiEkonomiSerial_end']."\n".$record['BayiEkonomi2Serial_end']."\n".$record['BayiEkonomi3Serial_end']);
         
