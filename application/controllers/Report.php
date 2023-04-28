@@ -952,12 +952,12 @@ class Report extends CI_Controller
         $myWorkSheet->setCellValue('C15', $record['BayiEkonomi']);
         
         // Tarif Asuransi
-        $myWorkSheet->setCellValue('D10', $record['DewasaEksekutifTJP']);
-        $myWorkSheet->setCellValue('D11', $record['BayiEksekutifTJP']);
-        $myWorkSheet->setCellValue('D12', $record['DewasaBisnisTJP']);
-        $myWorkSheet->setCellValue('D13', $record['BayiBisnisTJP']);
-        $myWorkSheet->setCellValue('D14', $record['DewasaEkonomiTJP']);
-        $myWorkSheet->setCellValue('D15', $record['BayiEkonomiTJP']);
+        $myWorkSheet->setCellValue('D10', $record['DewasaEksekutifTJP']+$record['DewasaEksekutifIW']);
+        $myWorkSheet->setCellValue('D11', $record['BayiEksekutifTJP']+$record['BayiEksekutifIW']);
+        $myWorkSheet->setCellValue('D12', $record['DewasaBisnisTJP']+$record['DewasaBisnisIW']);
+        $myWorkSheet->setCellValue('D13', $record['BayiBisnisTJP']+$record['BayiBisnisIW']);
+        $myWorkSheet->setCellValue('D14', $record['DewasaEkonomiTJP']+$record['DewasaEkonomiIW']);
+        $myWorkSheet->setCellValue('D15', $record['BayiEkonomiTJP']+$record['BayiEkonomiIW']);
     
         // Jumlah
         $myWorkSheet->setCellValue('G10', $record['Jumlah DewasaEksekutif']);
@@ -1024,18 +1024,18 @@ class Report extends CI_Controller
         $myWorkSheet->setCellValue('C29', $record['Gol9']);
         
         // Tarif Asuransi
-        $myWorkSheet->setCellValue('D18', $record['Gol1TJP']);
-        $myWorkSheet->setCellValue('D19', $record['Gol2TJP']);
-        $myWorkSheet->setCellValue('D20', $record['Gol3TJP']);
-        $myWorkSheet->setCellValue('D21', $record['Gol4PenTJP']);
-        $myWorkSheet->setCellValue('D22', $record['Gol4BarTJP']);
-        $myWorkSheet->setCellValue('D23', $record['Gol5PenTJP']);
-        $myWorkSheet->setCellValue('D24', $record['Gol5BarTJP']);
-        $myWorkSheet->setCellValue('D25', $record['Gol6PenTJP']);
-        $myWorkSheet->setCellValue('D26', $record['Gol6BarTJP']);
-        $myWorkSheet->setCellValue('D27', $record['Gol7TJP']);
-        $myWorkSheet->setCellValue('D28', $record['Gol8TJP']);
-        $myWorkSheet->setCellValue('D29', $record['Gol9TJP']);
+        $myWorkSheet->setCellValue('D18', $record['Gol1TJP']+$record['Gol1IW']);
+        $myWorkSheet->setCellValue('D19', $record['Gol2TJP']+$record['Gol2IW']);
+        $myWorkSheet->setCellValue('D20', $record['Gol3TJP']+$record['Gol3IW']);
+        $myWorkSheet->setCellValue('D21', $record['Gol4PenTJP']+$record['Gol4PenIW']);
+        $myWorkSheet->setCellValue('D22', $record['Gol4BarTJP']+$record['Gol4BarIW']);
+        $myWorkSheet->setCellValue('D23', $record['Gol5PenTJP']+$record['Gol5PenIW']);
+        $myWorkSheet->setCellValue('D24', $record['Gol5BarTJP']+$record['Gol5BarIW']);
+        $myWorkSheet->setCellValue('D25', $record['Gol6PenTJP']+$record['Gol6PenIW']);
+        $myWorkSheet->setCellValue('D26', $record['Gol6BarTJP']+$record['Gol6BarIW']);
+        $myWorkSheet->setCellValue('D27', $record['Gol7TJP']+$record['Gol7IW']);
+        $myWorkSheet->setCellValue('D28', $record['Gol8TJP']+$record['Gol8IW']);
+        $myWorkSheet->setCellValue('D29', $record['Gol9TJP']+$record['Gol9IW']);
         // Nomor Seri Awal
         $myWorkSheet->setCellValue('E18', $record['Gol1Serial_start']."\n".$record['Gol12Serial_start']."\n".$record['Gol13Serial_start']);
         $myWorkSheet->setCellValue('E19', $record['Gol2Serial_start']."\n".$record['Gol22Serial_start']."\n".$record['Gol23Serial_start']);
