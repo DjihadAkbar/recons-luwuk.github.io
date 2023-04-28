@@ -14,14 +14,33 @@ class Entry_model extends CI_Model
         return $this->db->get('daily_income')->result_array();
     }
 
+    public function entryDestination(){
+        $pelabuhan = $this->session->userdata['pelabuhan'];
+
+        $this->db->select('*, harbours.harbour as harbours,trips.trip as trip,day(date) as day,year(date) as year,entry_data.id as id_entry,  b.harbour as destination_harbour');
+        $this->db->join('routes', 'routes.id = entry_data.id_route');
+        $this->db->join('ferry', 'entry_data.id_ferry = ferry.id');
+        $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
+        $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
+        $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->where('departure_time', '00:00:00');
+        if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $this->db->where('b.harbour', $pelabuhan);
+        }
+        // $this->db->order_by('entry_data.id DESC');
+        $this->db->order_by('year(date) DESC, month(date) DESC, day(date) DESC');
+        return $this->db->get('entry_data')->result_array();
+    }
+
     public function entryData()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
 
-        $this->db->select('*,trips.trip as trip,day(date) as day,year(date) as year,entry_data.id as id_entry');
+        $this->db->select('*, harbours.harbour as harbour,trips.trip as trip,day(date) as day,year(date) as year,entry_data.id as id_entry, b.harbour as destination_harbour');
         $this->db->join('routes', 'routes.id = entry_data.id_route');
         $this->db->join('ferry', 'entry_data.id_ferry = ferry.id');
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
+        $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
@@ -31,6 +50,22 @@ class Entry_model extends CI_Model
         return $this->db->get('entry_data')->result_array();
     }
 
+    public function editEntryDestination($id){
+        $pelabuhan = $this->session->userdata['pelabuhan'];
+        $this->db->select('*,  harbours.harbour as harbours, b.harbour as destination_harbour');
+        $this->db->join('routes', 'routes.id = entry_data.id_route');
+        $this->db->join('ferry', 'entry_data.id_ferry = ferry.id');
+        $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
+        $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
+        $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->where('entry_data.id', $id);
+        if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $this->db->where('routes.spv', 'b.harbour');
+        }
+        
+        $this->db->order_by('date DESC', 'ferry ASC');
+        return $this->db->get('entry_data')->result_array();
+    }
     public function editEntryData($id){
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('*');
@@ -196,6 +231,7 @@ class Entry_model extends CI_Model
         }
         return $this->db->get('harbours')->result_array();
     }
+    
     public function users()
     {
         $query = $this->db->select('*')->get('users');

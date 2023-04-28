@@ -16,6 +16,8 @@ class Report_model extends CI_Model
         return $this->db->get('employee')->result_array();
     }
 
+    
+
 
     public function report1()
     {

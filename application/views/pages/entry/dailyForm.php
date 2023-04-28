@@ -21,7 +21,7 @@
             <div class="card-body p-4">
                 <div class="row">
                     <div class="wrapper" style="overflow-x: auto;">
-                        <table id="table-data" class="table table-striped table-data"
+                        <table  class="table table-striped table-data"
                             style="display: block; max-width: -moz-fit-content; max-width: fit-content; margin: 0 auto; font-size:80%;">
                             <thead class="thead-dark">
                                 <tr>
@@ -32,99 +32,205 @@
                                     <th scope="col">Tahun </th>
                                     <th scope="col">Minggu </th>
                                     <th scope="col">Waktu Keberangkatan </th>
+                                    <th scope="col">Waktu Tiba </th>
                                     <th scope="col">Nama Kapal </th>
                                     <th scope="col">Lintasan </th>
                                     <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">Pelabuhan Tujuan </th>
                                     <th scope="col">HSO </th>
                                     <th scope="col">HO </th>
                                     <th scope="col">Jenis Trip </th>
                                     <th scope="col">Dewasa Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Bayi Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Dewasa Bisnis </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Bayi Bisnis </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Dewasa Ekonomi </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Bayi Ekonomi </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 1 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 2 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 3 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 4 - Penumpang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 4 - Barang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 5 - Penumpang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 5 - Barang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 6 - Penumpang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 6 - Barang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 7 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 8 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 9 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi I Dewasa
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi I Anak
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi II Dewasa
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi II Anak
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Hewan </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Gayor </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Carter </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Barang Volume </th>
                                     <th scope="col">Barang Curah </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                 </tr>
@@ -176,6 +282,9 @@
                                                 <?php echo $value['time']; ?>
                                             </td>
                                             <td>
+                                                <?php echo $value['departure_time']; ?>
+                                            </td>
+                                            <td>
                                                 <?php echo $value['ferry']; ?>
                                             </td>
                                             <td>
@@ -183,6 +292,9 @@
                                             </td>
                                             <td>
                                                 <?php echo $value['harbour']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['destination_harbour']; ?>
                                             </td>
                                             <td>
                                                 <?php echo $value['HSO']; ?>
@@ -193,9 +305,9 @@
                                             <td>
                                                 <?php echo $value['trip']; ?>
                                             </td>
-                                            <td>
+                                            <th>
                                                 <?php echo $value['DewasaEksekutif']; ?>
-                                            </td>
+                                            </th>
                                             <td>
                                                 <?php echo $value['DewasaEksekutifSerial_start']; ?>
                                             </td>
@@ -203,8 +315,20 @@
                                                 <?php echo $value['DewasaEksekutifSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['BayiEksekutif']; ?>
+                                                <?php echo $value['DewasaEksekutif2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['BayiEksekutif']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['BayiEksekutifSerial_start']; ?>
                                             </td>
@@ -212,8 +336,20 @@
                                                 <?php echo $value['BayiEksekutifSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['DewasaBisnis']; ?>
+                                                <?php echo $value['BayiEksekutif2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['DewasaBisnis']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['DewasaBisnisSerial_start']; ?>
                                             </td>
@@ -221,8 +357,20 @@
                                                 <?php echo $value['DewasaBisnisSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['BayiBisnis']; ?>
+                                                <?php echo $value['DewasaBisnis2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['BayiBisnis']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['BayiBisnisSerial_start']; ?>
                                             </td>
@@ -230,8 +378,20 @@
                                                 <?php echo $value['BayiBisnisSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['DewasaEkonomi']; ?>
+                                                <?php echo $value['BayiBisnis2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['DewasaEkonomi']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['DewasaEkonomiSerial_start']; ?>
                                             </td>
@@ -239,8 +399,20 @@
                                                 <?php echo $value['DewasaEkonomiSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['BayiEkonomi']; ?>
+                                                <?php echo $value['DewasaEkonomi2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['BayiEkonomi']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['BayiEkonomiSerial_start']; ?>
                                             </td>
@@ -248,8 +420,20 @@
                                                 <?php echo $value['BayiEkonomiSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol1']; ?>
+                                                <?php echo $value['BayiEkonomi2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol1']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol1Serial_start']; ?>
                                             </td>
@@ -257,8 +441,20 @@
                                                 <?php echo $value['Gol1Serial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol2']; ?>
+                                                <?php echo $value['Gol12Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol12Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol13Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol13Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol2']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol2Serial_start']; ?>
                                             </td>
@@ -266,8 +462,20 @@
                                                 <?php echo $value['Gol2Serial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol3']; ?>
+                                                <?php echo $value['Gol22Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol22Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol23Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol23Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol3']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol3Serial_start']; ?>
                                             </td>
@@ -275,8 +483,20 @@
                                                 <?php echo $value['Gol3Serial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol4Pen']; ?>
+                                                <?php echo $value['Gol32Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol32Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol33Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol33Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol4Pen']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol4PenSerial_start']; ?>
                                             </td>
@@ -284,8 +504,20 @@
                                                 <?php echo $value['Gol4PenSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol4Bar']; ?>
+                                                <?php echo $value['Gol4Pen2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol4Bar']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol4BarSerial_start']; ?>
                                             </td>
@@ -293,8 +525,20 @@
                                                 <?php echo $value['Gol4BarSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol5Pen']; ?>
+                                                <?php echo $value['Gol4Bar2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol5Pen']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol5PenSerial_start']; ?>
                                             </td>
@@ -302,8 +546,20 @@
                                                 <?php echo $value['Gol5PenSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol5Bar']; ?>
+                                                <?php echo $value['Gol5Pen2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol5Bar']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol5BarSerial_start']; ?>
                                             </td>
@@ -311,8 +567,20 @@
                                                 <?php echo $value['Gol5BarSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol6Pen']; ?>
+                                                <?php echo $value['Gol5Bar2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol6Pen']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol6PenSerial_start']; ?>
                                             </td>
@@ -320,8 +588,20 @@
                                                 <?php echo $value['Gol6PenSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol6Bar']; ?>
+                                                <?php echo $value['Gol6Pen2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol6Bar']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol6BarSerial_start']; ?>
                                             </td>
@@ -329,8 +609,20 @@
                                                 <?php echo $value['Gol6BarSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol7']; ?>
+                                                <?php echo $value['Gol6Bar2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol7']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol7Serial_start']; ?>
                                             </td>
@@ -338,8 +630,20 @@
                                                 <?php echo $value['Gol7Serial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol8']; ?>
+                                                <?php echo $value['Gol72Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol72Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol73Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol73Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol8']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol8Serial_start']; ?>
                                             </td>
@@ -347,8 +651,20 @@
                                                 <?php echo $value['Gol8Serial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gol9']; ?>
+                                                <?php echo $value['Gol82Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol82Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol83Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol83Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gol9']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Gol9Serial_start']; ?>
                                             </td>
@@ -356,8 +672,20 @@
                                                 <?php echo $value['Gol9Serial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Suplesi1Dewasa']; ?>
+                                                <?php echo $value['Gol92Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gol92Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol93Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol93Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Suplesi1Dewasa']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Suplesi1DewasaSerial_start']; ?>
                                             </td>
@@ -365,8 +693,20 @@
                                                 <?php echo $value['Suplesi1DewasaSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Suplesi1Anak']; ?>
+                                                <?php echo $value['Suplesi1Dewasa2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Suplesi1Anak']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Suplesi1AnakSerial_start']; ?>
                                             </td>
@@ -374,8 +714,20 @@
                                                 <?php echo $value['Suplesi1AnakSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Suplesi2Dewasa']; ?>
+                                                <?php echo $value['Suplesi1Anak2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Suplesi2Dewasa']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Suplesi2DewasaSerial_start']; ?>
                                             </td>
@@ -383,8 +735,20 @@
                                                 <?php echo $value['Suplesi2DewasaSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Suplesi2Anak']; ?>
+                                                <?php echo $value['Suplesi2Dewasa2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Suplesi2Anak']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['Suplesi2AnakSerial_start']; ?>
                                             </td>
@@ -392,8 +756,20 @@
                                                 <?php echo $value['Suplesi2AnakSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Hewan']; ?>
+                                                <?php echo $value['Suplesi2Anak2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Hewan']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['HewanSerial_start']; ?>
                                             </td>
@@ -401,8 +777,20 @@
                                                 <?php echo $value['HewanSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Gayor']; ?>
+                                                <?php echo $value['Hewan2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Hewan2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Gayor']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['GayorSerial_start']; ?>
                                             </td>
@@ -410,8 +798,20 @@
                                                 <?php echo $value['GayorSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['Carter']; ?>
+                                                <?php echo $value['Gayor2Serial_start']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Gayor2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['Carter']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['CarterSerial_start']; ?>
                                             </td>
@@ -419,16 +819,40 @@
                                                 <?php echo $value['CarterSerial_end']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['BarangVolume']; ?>
+                                                <?php echo $value['Carter2Serial_start']; ?>
                                             </td>
                                             <td>
-                                                <?php echo $value['BarangPendapatan']; ?>
+                                                <?php echo $value['Carter2Serial_end']; ?>
                                             </td>
+                                            <td>
+                                                <?php echo $value['Carter3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter3Serial_end']; ?>
+                                            </td>
+                                            <th>
+                                                <?php echo $value['BarangVolume']; ?>
+                                            </th>
+                                            <th>
+                                                <?php echo $value['BarangPendapatan']; ?>
+                                            </th>
                                             <td>
                                                 <?php echo $value['BarangPendapatanSerial_start']; ?>
                                             </td>
                                             <td>
                                                 <?php echo $value['BarangPendapatanSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan3Serial_end']; ?>
                                             </td>
 
                                             <td>
@@ -458,99 +882,205 @@
                                     <th scope="col">Tahun </th>
                                     <th scope="col">Minggu </th>
                                     <th scope="col">Waktu Keberangkatan </th>
+                                    <th scope="col">Waktu Tiba </th>
                                     <th scope="col">Nama Kapal </th>
                                     <th scope="col">Lintasan </th>
                                     <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">Pelabuhan Tujuan </th>
                                     <th scope="col">HSO </th>
                                     <th scope="col">HO </th>
                                     <th scope="col">Jenis Trip </th>
                                     <th scope="col">Dewasa Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Bayi Eksekutif </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Dewasa Bisnis </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Bayi Bisnis </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Dewasa Ekonomi </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Bayi Ekonomi </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 1 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 2 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 3 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 4 - Penumpang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 4 - Barang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 5 - Penumpang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 5 - Barang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 6 - Penumpang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 6 - Barang </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 7 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 8 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Golongan 9 </th>
                                         <th scope="col">Nomor Seri Awal </th>
                                         <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi I Dewasa
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi I Anak
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi II Dewasa
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">
                                         Suplesi Ekonomi II Anak
                                     </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Hewan </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Gayor </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Carter </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Barang Volume </th>
                                     <th scope="col">Barang Curah </th>
                                     <th scope="col">Nomor Seri Awal </th>
                                     <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                 </tr>
@@ -560,7 +1090,1085 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
+
+
+    <!-- <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center text-center" id="headingTwo" >
+            <h5 class="mb-0">
+                <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <div style="white-space:normal"> 
+                    Tambahkan Waktu Tiba
+                    </div>
+                </button>
+            </h5>
+        </div>
+        
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body p-4">
+                <div class="row">
+                    <div class="wrapper" style="overflow-x: auto;">
+                        <table class="table table-striped table-data"
+                            style="display: block; max-width: -moz-fit-content; max-width: fit-content; margin: 0 auto; font-size:80%;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col"> # </th>
+                                    <th scope="col">Hari </th>
+                                    <th scope="col">Tanggal </th>
+                                    <th scope="col">Bulan </th>
+                                    <th scope="col">Tahun </th>
+                                    <th scope="col">Minggu </th>
+                                    <th scope="col">Waktu Keberangkatan </th>
+                                    <th scope="col">Waktu Tiba </th>
+                                    <th scope="col">Nama Kapal </th>
+                                    <th scope="col">Lintasan </th>
+                                    <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">Pelabuhan Tujuan </th>
+                                    <th scope="col">HSO </th>
+                                    <th scope="col">HO </th>
+                                    <th scope="col">Jenis Trip </th>
+                                    <th scope="col">Dewasa Eksekutif </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Bayi Eksekutif </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Dewasa Bisnis </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Bayi Bisnis </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Dewasa Ekonomi </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Bayi Ekonomi </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 1 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 2 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 3 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 4 - Penumpang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 4 - Barang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 5 - Penumpang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 5 - Barang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 6 - Penumpang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 6 - Barang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 7 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 8 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 9 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi I Dewasa
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi I Anak
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi II Dewasa
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi II Anak
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Hewan </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Gayor </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Carter </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Barang Volume </th>
+                                    <th scope="col">Barang Curah </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Action </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $no = 1;
+                                foreach ($entry_destination as $key => $value) {
+                                    ?>
+                                <tr>
+                                    <th scope="row">
+                                                <?php echo $no++; ?>
+                                            </th>
+                                            <td scope="col"> <?php                                             
+                                                $original_date = $value['date'];
+                                                echo getHari($original_date);
+                                                ?></td>
+                                            <td scope="col"><?php 
+                                                $original_date = $value['day'];
+                                                echo $original_date;
+                                                ?> 
+                                            </td>
+                                            <td scope="col"><?php 
+                                                $original_date = $value['date'];
+                                                echo getBulan($original_date);
+                                                ?>
+                                            </td>
+                                            <td scope="col"><?php 
+                                                $original_date = $value['year'];
+                                                echo $original_date;
+                                                ?> 
+                                            <th>
+                                                <?php echo $value['week']; ?>
+                                            </th>
+                                            <!-- // <td>
+                                            //     <?php
+                                            //     $original_date = $value['date'];
+
+                                            //     // Creating timestamp from given date
+                                            //     $timestamp = strtotime($original_date);
+
+                                            //     // Creating new date format from that timestamp
+                                            //     $new_date = date("d-m-Y", $timestamp);
+                                            //     echo $new_date;
+
+                                            //     ?>
+                                            // </td> -->
+                                            <td>
+                                                <?php echo $value['time']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['departure_time']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['ferry']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['ofc_route']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['harbours']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['destination_harbour']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['HSO']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['trip']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['trip']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutifSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutifSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEksekutif3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutifSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutifSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEksekutif3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnisSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnisSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaBisnis3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnisSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnisSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiBisnis3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomiSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomiSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['DewasaEkonomi3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomiSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomiSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BayiEkonomi3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol1']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol1Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol1Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol12Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol12Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol13Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol13Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol2']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol22Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol22Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol23Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol23Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol3']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol32Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol32Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol33Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol33Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4PenSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4PenSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Pen3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4BarSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4BarSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol4Bar3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5PenSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5PenSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Pen3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5BarSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5BarSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol5Bar3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6PenSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6PenSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Pen3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6BarSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6BarSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol6Bar3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol7']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol7Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol7Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol72Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol72Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol73Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol73Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol8']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol8Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol8Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol82Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol82Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol83Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol83Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol9']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol9Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol9Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol92Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol92Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol93Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gol93Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1DewasaSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1DewasaSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Dewasa3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1AnakSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1AnakSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi1Anak3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2DewasaSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2DewasaSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Dewasa3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2AnakSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2AnakSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Suplesi2Anak3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['HewanSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['HewanSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Hewan3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['GayorSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['GayorSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Gayor3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['CarterSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['CarterSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['Carter3Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangVolume']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatanSerial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatanSerial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan2Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan2Serial_end']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan3Serial_start']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $value['BarangPendapatan3Serial_end']; ?>
+                                            </td>
+
+                                            <td>
+                                                <div class="akses-button">
+                                                    <a class="btn btn-warning text-dark" href="entry/editEntryDestination?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
+                                                </div>
+                                            </td>
+                                            
+                                        </tr>
+                                    <?php
+                                }
+                                ?>
+                            <tbody>
+                            <tfoot class="thead-dark">
+                                <tr>
+                                    <th scope="col"> # </th>
+                                    <th scope="col">Hari </th>
+                                    <th scope="col">Tanggal </th>
+                                    <th scope="col">Bulan </th>
+                                    <th scope="col">Tahun </th>
+                                    <th scope="col">Minggu </th>
+                                    <th scope="col">Waktu Keberangkatan </th>
+                                    <th scope="col">Waktu Tiba </th>
+                                    <th scope="col">Nama Kapal </th>
+                                    <th scope="col">Lintasan </th>
+                                    <th scope="col">Pelabuhan Asal </th>
+                                    <th scope="col">Pelabuhan Tujuan </th>
+                                    <th scope="col">HSO </th>
+                                    <th scope="col">HO </th>
+                                    <th scope="col">Jenis Trip </th>
+                                    <th scope="col">Dewasa Eksekutif </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Bayi Eksekutif </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Dewasa Bisnis </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Bayi Bisnis </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Dewasa Ekonomi </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Bayi Ekonomi </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 1 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 2 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 3 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 4 - Penumpang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 4 - Barang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 5 - Penumpang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 5 - Barang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 6 - Penumpang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 6 - Barang </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 7 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 8 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Golongan 9 </th>
+                                        <th scope="col">Nomor Seri Awal </th>
+                                        <th scope="col">Nomor Seri Akhir </th>
+                                        <th scope="col">Nomor Seri Awal 2</th>
+                                        <th scope="col">Nomor Seri Akhir 2</th>
+                                        <th scope="col">Nomor Seri Awal 3</th>
+                                        <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi I Dewasa
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi I Anak
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi II Dewasa
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi II Anak
+                                    </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Hewan </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Gayor </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Carter </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Barang Volume </th>
+                                    <th scope="col">Barang Curah </th>
+                                    <th scope="col">Nomor Seri Awal </th>
+                                    <th scope="col">Nomor Seri Akhir </th>
+                                    <th scope="col">Nomor Seri Awal 2</th>
+                                    <th scope="col">Nomor Seri Akhir 2</th>
+                                    <th scope="col">Nomor Seri Awal 3</th>
+                                    <th scope="col">Nomor Seri Akhir 3</th>
+                                    <th scope="col">Action </th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    -->
 </div>
 
 

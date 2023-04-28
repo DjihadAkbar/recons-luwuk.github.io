@@ -465,10 +465,17 @@ class Report extends CI_Controller
         $kapalReport = $this->input->post('nama_kapal');
         $lintasanReport = $this->input->post('lintasan_report');
         $tanggalAwalReport = $this->input->post('tanggal_berangkat');
+        $tanggalAkhirReport = $this->input->post('tanggal_akhir');
         $supervisor = $this->Report_model->supervisorName();
+        $tripReport = $this->input->post('trip');
+        $pelabuhanReport = $this->input->post('pelabuhan_asal_report');
+        $jamReport = $this->input->post('jam');
+
+
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
+        
 
         $entryData = mysqli_query($koneksi,"
             SELECT *,dayname(date), 
@@ -762,6 +769,383 @@ class Report extends CI_Controller
     );
 
     $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
+    // $spreadsheet->createSheet();
+    
+    //=========================== Sheet 2 =============================
+
+    $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
+    $spreadsheet->addSheet($myWorkSheet, 1);
+    $titleSheet2 = 'Bukti Penyetoran';
+    // sheet peratama
+    $myWorkSheet->setTitle($titleSheet2);
+    $myWorkSheet->mergeCells('A1:J1')->getStyle('A1')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('A2:D2')->getStyle('A2')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+    $myWorkSheet->mergeCells('A3:D3')->getStyle('A3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+    $myWorkSheet->mergeCells('A4:D4')->getStyle('A4')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+    $myWorkSheet->mergeCells('A5:D5')->getStyle('A5')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+    $myWorkSheet->mergeCells('A6:D6')->getStyle('A6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_RIGHT);
+    $myWorkSheet->mergeCells('E2:J2')->getStyle('E2')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+    $myWorkSheet->mergeCells('E3:J3')->getStyle('E3')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+    $myWorkSheet->mergeCells('E4:J4')->getStyle('E4')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+    $myWorkSheet->mergeCells('E5:J5')->getStyle('E5')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+    $myWorkSheet->mergeCells('E6:J6')->getStyle('E6')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_LEFT);
+    $myWorkSheet->mergeCells('A7:A8')->getStyle('A7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+    $myWorkSheet->mergeCells('B7:B8')->getStyle('B7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+    $myWorkSheet->mergeCells('C7:D7')->getStyle('C7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('E7:F7')->getStyle('E7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('G7:G8')->getStyle('G7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+    $myWorkSheet->mergeCells('J7:J8')->getStyle('J7')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+    $myWorkSheet->mergeCells('H7:I7')->getStyle('H7')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('B9:J9')->getStyle('B9')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('B17:J17')->getStyle('B17')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('B31:J31')->getStyle('B31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('C16:F16')->getStyle('B31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('C30:F30')->getStyle('B31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('C33:F33')->getStyle('B31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('C34:F34')->getStyle('B31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('C35:J35')->getStyle('B31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+
+    $myWorkSheet->mergeCells('A9:A16')->getStyle('A9')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('A17:A30')->getStyle('A17')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('A31:A34')->getStyle('A31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('B38:B40')->getStyle('B38')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('E38:E40')->getStyle('E38')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    $myWorkSheet->mergeCells('I38:I40')->getStyle('I38')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+    
+    $myWorkSheet->setCellValue('A1', $titleSheet2);
+    $myWorkSheet->setCellValue('A2', 'Hari');
+    $myWorkSheet->setCellValue('A3', 'Tanggal');
+    $myWorkSheet->setCellValue('A4', 'Pelabuhan');
+    $myWorkSheet->setCellValue('A5', 'Lintas');
+    $myWorkSheet->setCellValue('A6', 'Jam Pemberangkatan');
+    $myWorkSheet->setCellValue('E2', getHari($tanggalAwalReport));
+    $myWorkSheet->setCellValue('E3', $tanggalAwalReport);
+    $myWorkSheet->setCellValue('E4', $pelabuhanReport);
+    $myWorkSheet->setCellValue('E5', $lintasanReport);
+    $myWorkSheet->setCellValue('C7', 'Tarif');
+    $myWorkSheet->setCellValue('E7', 'Nomor Seri Terjual');
+    $myWorkSheet->setCellValue('H7', 'Pendapatan');
+    $myWorkSheet->setCellValue('A7', 'No');
+    $myWorkSheet->setCellValue('B7', 'Jenis Tiket');
+    $myWorkSheet->setCellValue('C8', 'Pelayaran');
+    $myWorkSheet->setCellValue('D8', 'Asuransi');
+    $myWorkSheet->setCellValue('E8', 'Awal');
+    $myWorkSheet->setCellValue('F8', 'Akhir');
+    $myWorkSheet->setCellValue('G7', 'Jumlah');
+    $myWorkSheet->setCellValue('H8', 'Pelayaran');
+    $myWorkSheet->setCellValue('I8', 'Asuransi');
+    $myWorkSheet->setCellValue('J7', 'Jumlah');
+    $myWorkSheet->setCellValue('A9', 'I');
+    $myWorkSheet->setCellValue('B9', 'Tiket Penumpang');
+    $myWorkSheet->setCellValue('B10', 'Dewasa Eksekutif')->getStyle('B10')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B11', 'Anak Eksekutif')->getStyle('B11')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B12', 'Dewasa Bisnis')->getStyle('B12')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B13', 'Anak Bisnis')->getStyle('B13')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B14', 'Dewasa Ekonomi')->getStyle('B14')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B15', 'Anak Ekonomi')->getStyle('B15')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B16', 'Jumlah Penumpang');
+
+    $myWorkSheet->setCellValue('A17', 'II');
+    $myWorkSheet->setCellValue('B17', 'Tiket Kendaraan');
+    $myWorkSheet->setCellValue('B18', 'Golongan I')->getStyle('B18')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B19', 'Golongan II')->getStyle('B19')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B20', 'Golongan III')->getStyle('B20')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B21', 'Golongan IV Penumpang')->getStyle('B21')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B22', 'Golongan IV Barang')->getStyle('B22')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B23', 'Golongan V Penumpang')->getStyle('B23')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B24', 'Golongan V Barang')->getStyle('B24')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B25', 'Golongan VI Penumpang')->getStyle('B25')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B26', 'Golongan VI Barang')->getStyle('B26')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B27', 'Golongan VII')->getStyle('B27')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B28', 'Golongan VIII')->getStyle('B28')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B29', 'Golongan IX')->getStyle('B29')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B30', 'Jumlah Kendaraan');
+
+    $myWorkSheet->setCellValue('A31', 'III');
+    $myWorkSheet->setCellValue('B31', 'Barang');
+    $myWorkSheet->setCellValue('B32', 'Barang Curah')->getStyle('B32')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);;
+    $myWorkSheet->setCellValue('B33', 'Jumlah Barang');
+    $myWorkSheet->setCellValue('B34', 'Jumlah');
+    $myWorkSheet->setCellValue('B35', 'Terbilang');
+    foreach($this->employee as $row){
+        if($row['position'] == "MANAGER USAHA"){
+            $myWorkSheet->setCellValue('B37', 'MANAGER USAHA');
+            $myWorkSheet->setCellValue('B41', $row['name']);
+            $myWorkSheet->setCellValue('B42', 'NIK '.$row['id_num']);
+        }
+        if($row['position'] == "KASIR"){
+            $myWorkSheet->setCellValue('E37', 'KASIR');
+            $myWorkSheet->setCellValue('E41', $row['name']);
+            $myWorkSheet->setCellValue('E42', 'NIK '.$row['id_num']);
+        }
+    }
+    foreach($supervisor as $row){
+        $myWorkSheet->setCellValue('I37', $row['position']);
+        $myWorkSheet->setCellValue('I41', $row['name']);
+        $myWorkSheet->setCellValue('I42', 'NIK '.$row['id_num']);
+    }
+
+
+    for($col = 'A'; $col !== 'K'; $col++){
+        $myWorkSheet->getColumnDimension($col)->setAutoSize(true);
+    }
+    $myWorkSheet->getStyle('C35')->getAlignment()->setWrapText(true);
+    //Tiket Penumpang
+    for($row = 10; $row !== 16; $row++)
+        $myWorkSheet->getRowDimension($row)->setRowHeight(45);
+    
+    //Tiket Penumpang
+    for($row = 18; $row !== 30; $row++)
+        $myWorkSheet->getRowDimension($row)->setRowHeight(45);
+    
+    //Tiket Penumpang
+    for($row = 32; $row !== 33; $row++)
+        $myWorkSheet->getRowDimension($row)->setRowHeight(45);
+    
+
+    $styleArray = [ 'borders' => [ 'allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,], ]]; 
+    $myWorkSheet->getStyle('A1:J35')->applyFromArray($styleArray);
+    $styleArrayOutline = [ 'borders' => [ 'outline' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,], ]]; 
+    $myWorkSheet->getStyle('A36:J45')->applyFromArray($styleArrayOutline);
+    $myWorkSheet->getPageSetup()->setPrintArea('A1:J42',\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::SETPRINTRANGE_INSERT);
+    // $myWorkSheet->setBreak('A1:J42',\PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);
+
+
+    while($record = mysqli_fetch_array($entryData))
+    {
+        if(!$record['time']){
+            $myWorkSheet->setCellValue('E6', $jamReport);
+        } else {
+            $myWorkSheet->setCellValue('E6', $record['time']);
+        }
+
+        // Tarif Pelayaran
+        $myWorkSheet->setCellValue('C10', $record['DewasaEksekutif']);
+        $myWorkSheet->setCellValue('C11', $record['BayiEksekutif']);
+        $myWorkSheet->setCellValue('C12', $record['DewasaBisnis']);
+        $myWorkSheet->setCellValue('C13', $record['BayiBisnis']);
+        $myWorkSheet->setCellValue('C14', $record['DewasaEkonomi']);
+        $myWorkSheet->setCellValue('C15', $record['BayiEkonomi']);
+        
+        // Tarif Asuransi
+        $myWorkSheet->setCellValue('D10', $record['DewasaEksekutifTJP']);
+        $myWorkSheet->setCellValue('D11', $record['BayiEksekutifTJP']);
+        $myWorkSheet->setCellValue('D12', $record['DewasaBisnisTJP']);
+        $myWorkSheet->setCellValue('D13', $record['BayiBisnisTJP']);
+        $myWorkSheet->setCellValue('D14', $record['DewasaEkonomiTJP']);
+        $myWorkSheet->setCellValue('D15', $record['BayiEkonomiTJP']);
+    
+        // Jumlah
+        $myWorkSheet->setCellValue('G10', $record['Jumlah DewasaEksekutif']);
+        $myWorkSheet->setCellValue('G11', $record['Jumlah BayiEksekutif']);
+        $myWorkSheet->setCellValue('G12', $record['Jumlah DewasaBisnis']);
+        $myWorkSheet->setCellValue('G13', $record['Jumlah BayiBisnis']);
+        $myWorkSheet->setCellValue('G14', $record['Jumlah DewasaEkonomi']);
+        $myWorkSheet->setCellValue('G15', $record['Jumlah BayiEkonomi']);
+        $myWorkSheet->setCellValue('G16', '=SUM(G10:G15)');
+        // Nomor Seri Awal
+        $myWorkSheet->setCellValue('E10', $record['DewasaEksekutifSerial_start']."\n".$record['DewasaEksekutif2Serial_start']."\n".$record['DewasaEksekutif3Serial_start']);
+        $myWorkSheet->setCellValue('E11', $record['BayiEksekutifSerial_start']."\n".$record['BayiEksekutif2Serial_start']."\n".$record['BayiEksekutif3Serial_start']);
+        $myWorkSheet->setCellValue('E12', $record['DewasaBisnisSerial_start']."\n".$record['DewasaBisnis2Serial_start']."\n".$record['DewasaBisnis3Serial_start']);
+        $myWorkSheet->setCellValue('E13', $record['BayiBisnisSerialStart']."\n".$record['BayiBisnis2SerialStart']."\n".$record['BayiBisnis3SerialStart']);
+        $myWorkSheet->setCellValue('E14', $record['DewasaEkonomiSerial_start']."\n".$record['DewasaEkonomi2Serial_start']."\n".$record['DewasaEkonomi3Serial_start']);
+        $myWorkSheet->setCellValue('E15', $record['BayiEkonomiSerial_start']."\n".$record['BayiEkonomi2Serial_start']."\n".$record['BayiEkonomi3Serial_start']);
+        // Nomor Seri Akhir
+        $myWorkSheet->setCellValue('F10', $record['DewasaEksekutifSerial_end']."\n".$record['DewasaEksekutif2Serial_end']."\n".$record['DewasaEksekutif3Serial_end']);
+        $myWorkSheet->setCellValue('F11', $record['BayiEksekutifSerial_end']."\n".$record['BayiEksekutif2Serial_end']."\n".$record['BayiEksekutif3Serial_end']);
+        $myWorkSheet->setCellValue('F12', $record['DewasaBisnisSerial_end']."\n".$record['DewasaBisnis2Serial_end']."\n".$record['DewasaBisnis3Serial_end']);
+        $myWorkSheet->setCellValue('F13', $record['BayiBisnisSerialStart']."\n".$record['BayiBisnis2SerialStart']."\n".$record['BayiBisnis3SerialStart']);
+        $myWorkSheet->setCellValue('F14', $record['DewasaEkonomiSerial_end']."\n".$record['DewasaEkonomi2Serial_end']."\n".$record['DewasaEkonomi3Serial_end']);
+        $myWorkSheet->setCellValue('F15', $record['BayiEkonomiSerial_end']."\n".$record['BayiEkonomi2Serial_end']."\n".$record['BayiEkonomi3Serial_end']);
+        
+        // Pendapatan Pelayaran
+        $myWorkSheet->setCellValue('H10', $record['Dewasa Eksekutif']);
+        $myWorkSheet->setCellValue('H11', $record['Bayi Eksekutif']);
+        $myWorkSheet->setCellValue('H12', $record['Dewasa Bisnis']);
+        $myWorkSheet->setCellValue('H13', $record['Bayi Bisnis']);
+        $myWorkSheet->setCellValue('H14', $record['Dewasa Ekonomi']);
+        $myWorkSheet->setCellValue('H15', $record['Bayi Ekonomi']);
+        $myWorkSheet->setCellValue('H16', '=SUM(H10:H15)');
+        
+        // Pendapatan Asuransi
+        $myWorkSheet->setCellValue('I10', '=D10 * G10');
+        $myWorkSheet->setCellValue('I11', '=D11 * G11');
+        $myWorkSheet->setCellValue('I12', '=D12 * G12');
+        $myWorkSheet->setCellValue('I13', '=D13 * G13');
+        $myWorkSheet->setCellValue('I14', '=D14 * G14');
+        $myWorkSheet->setCellValue('I15', '=D15 * G15');
+        $myWorkSheet->setCellValue('I16', '=SUM(I10:I15)');
+        
+        // Jumlah
+        $myWorkSheet->setCellValue('J10', '=H10 + I10');
+        $myWorkSheet->setCellValue('J11', '=H11 + I11');
+        $myWorkSheet->setCellValue('J12', '=H12 + I12');
+        $myWorkSheet->setCellValue('J13', '=H13 + I13');
+        $myWorkSheet->setCellValue('J14', '=H14 + I14');
+        $myWorkSheet->setCellValue('J15', '=H15 + I15');
+        $myWorkSheet->setCellValue('J16', '=SUM(J10:J15)');
+
+        // Nomor Seri Pelayaran
+        $myWorkSheet->setCellValue('C18', $record['Gol1']);
+        $myWorkSheet->setCellValue('C19', $record['Gol2']);
+        $myWorkSheet->setCellValue('C20', $record['Gol3']);
+        $myWorkSheet->setCellValue('C21', $record['Gol4Pen']);
+        $myWorkSheet->setCellValue('C22', $record['Gol4Bar']);
+        $myWorkSheet->setCellValue('C23', $record['Gol5Pen']);
+        $myWorkSheet->setCellValue('C24', $record['Gol5Bar']);
+        $myWorkSheet->setCellValue('C25', $record['Gol6Pen']);
+        $myWorkSheet->setCellValue('C26', $record['Gol6Bar']);
+        $myWorkSheet->setCellValue('C27', $record['Gol7']);
+        $myWorkSheet->setCellValue('C28', $record['Gol8']);
+        $myWorkSheet->setCellValue('C29', $record['Gol9']);
+        
+        // Tarif Asuransi
+        $myWorkSheet->setCellValue('D18', $record['Gol1TJP']);
+        $myWorkSheet->setCellValue('D19', $record['Gol2TJP']);
+        $myWorkSheet->setCellValue('D20', $record['Gol3TJP']);
+        $myWorkSheet->setCellValue('D21', $record['Gol4PenTJP']);
+        $myWorkSheet->setCellValue('D22', $record['Gol4BarTJP']);
+        $myWorkSheet->setCellValue('D23', $record['Gol5PenTJP']);
+        $myWorkSheet->setCellValue('D24', $record['Gol5BarTJP']);
+        $myWorkSheet->setCellValue('D25', $record['Gol6PenTJP']);
+        $myWorkSheet->setCellValue('D26', $record['Gol6BarTJP']);
+        $myWorkSheet->setCellValue('D27', $record['Gol7TJP']);
+        $myWorkSheet->setCellValue('D28', $record['Gol8TJP']);
+        $myWorkSheet->setCellValue('D29', $record['Gol9TJP']);
+        // Nomor Seri Awal
+        $myWorkSheet->setCellValue('E18', $record['Gol1Serial_start']."\n".$record['Gol12Serial_start']."\n".$record['Gol13Serial_start']);
+        $myWorkSheet->setCellValue('E19', $record['Gol2Serial_start']."\n".$record['Gol22Serial_start']."\n".$record['Gol23Serial_start']);
+        $myWorkSheet->setCellValue('E20', $record['Gol3Serial_start']."\n".$record['Gol32Serial_start']."\n".$record['Gol33Serial_start']);
+        $myWorkSheet->setCellValue('E21', $record['Gol4PenSerial_start']."\n".$record['Gol4Pen2Serial_start']."\n".$record['Gol4Pen3Serial_start']);
+        $myWorkSheet->setCellValue('E22', $record['Gol4BarSerial_start']."\n".$record['Gol4Bar2Serial_start']."\n".$record['Gol4Bar3Serial_start']);
+        $myWorkSheet->setCellValue('E23', $record['Gol5PenSerial_start']."\n".$record['Gol5Pen2Serial_start']."\n".$record['Gol5Pen3Serial_start']);
+        $myWorkSheet->setCellValue('E24', $record['Gol5BarSerial_start']."\n".$record['Gol5Bar2Serial_start']."\n".$record['Gol5Bar3Serial_start']);
+        $myWorkSheet->setCellValue('E25', $record['Gol6PenSerial_start']."\n".$record['Gol6Pen2Serial_start']."\n".$record['Gol6Pen3Serial_start']);
+        $myWorkSheet->setCellValue('E26', $record['Gol6BarSerial_start']."\n".$record['Gol6Bar2Serial_start']."\n".$record['Gol6Bar3Serial_start']);
+        $myWorkSheet->setCellValue('E27', $record['Gol7Serial_start']."\n".$record['Gol72Serial_start']."\n".$record['Gol73Serial_start']);
+        $myWorkSheet->setCellValue('E28', $record['Gol8Serial_start']."\n".$record['Gol82Serial_start']."\n".$record['Gol83Serial_start']);
+        $myWorkSheet->setCellValue('E29', $record['Gol9Serial_start']."\n".$record['Gol92Serial_start']."\n".$record['Gol93Serial_start']);
+        // Nomor Seri Akhir
+        $myWorkSheet->setCellValue('F18', $record['Gol1Serial_end']."\n".$record['Gol12Serial_end']."\n".$record['Gol13Serial_end']);
+        $myWorkSheet->setCellValue('F19', $record['Gol2Serial_end']."\n".$record['Gol22Serial_end']."\n".$record['Gol23Serial_end']);
+        $myWorkSheet->setCellValue('F20', $record['Gol3Serial_end']."\n".$record['Gol32Serial_end']."\n".$record['Gol33Serial_end']);
+        $myWorkSheet->setCellValue('F21', $record['Gol4PenSerial_end']."\n".$record['Gol4Pen2Serial_end']."\n".$record['Gol4Pen3Serial_end']);
+        $myWorkSheet->setCellValue('F22', $record['Gol4BarSerial_end']."\n".$record['Gol4Bar2Serial_end']."\n".$record['Gol4Bar3Serial_end']);
+        $myWorkSheet->setCellValue('F23', $record['Gol5PenSerial_end']."\n".$record['Gol5Pen2Serial_end']."\n".$record['Gol5Pen3Serial_end']);
+        $myWorkSheet->setCellValue('F24', $record['Gol5BarSerial_end']."\n".$record['Gol5Bar2Serial_end']."\n".$record['Gol5Bar3Serial_end']);
+        $myWorkSheet->setCellValue('F25', $record['Gol6PenSerial_end']."\n".$record['Gol6Pen2Serial_end']."\n".$record['Gol6Pen3Serial_end']);
+        $myWorkSheet->setCellValue('F26', $record['Gol6BarSerial_end']."\n".$record['Gol6Bar2Serial_end']."\n".$record['Gol6Bar3Serial_end']);
+        $myWorkSheet->setCellValue('F27', $record['Gol7Serial_end']."\n".$record['Gol72Serial_end']."\n".$record['Gol73Serial_end']);
+        $myWorkSheet->setCellValue('F28', $record['Gol8Serial_end']."\n".$record['Gol82Serial_end']."\n".$record['Gol83Serial_end']);
+        $myWorkSheet->setCellValue('F29', $record['Gol9Serial_end']."\n".$record['Gol92Serial_end']."\n".$record['Gol93Serial_end']);
+        
+    
+        // Pendapatan Pelayaran
+        $myWorkSheet->setCellValue('H18', '=C18 * G18');
+        $myWorkSheet->setCellValue('H19', '=C19 * G19');
+        $myWorkSheet->setCellValue('H20', '=C20 * G20');
+        $myWorkSheet->setCellValue('H21', '=C21 * G21');
+        $myWorkSheet->setCellValue('H22', '=C22 * G22');
+        $myWorkSheet->setCellValue('H23', '=C23 * G23');
+        $myWorkSheet->setCellValue('H24', '=C24 * G24');
+        $myWorkSheet->setCellValue('H25', '=C25 * G25');
+        $myWorkSheet->setCellValue('H26', '=C26 * G26');
+        $myWorkSheet->setCellValue('H27', '=C27 * G27');
+        $myWorkSheet->setCellValue('H28', '=C28 * G28');
+        $myWorkSheet->setCellValue('H29', '=C29 * G29');
+        $myWorkSheet->setCellValue('H30', '=SUM(H18:H29)');
+        
+        // Jumlah
+        $myWorkSheet->setCellValue('G18', $record['Jumlah Gol1']);
+        $myWorkSheet->setCellValue('G19', $record['Jumlah Gol2']);
+        $myWorkSheet->setCellValue('G20', $record['Jumlah Gol3']);
+        $myWorkSheet->setCellValue('G21', $record['Jumlah Gol4Pen']);
+        $myWorkSheet->setCellValue('G22', $record['Jumlah Gol4Bar']);
+        $myWorkSheet->setCellValue('G23', $record['Jumlah Gol5Pen']);
+        $myWorkSheet->setCellValue('G24', $record['Jumlah Gol5Bar']);
+        $myWorkSheet->setCellValue('G25', $record['Jumlah Gol6Pen']);
+        $myWorkSheet->setCellValue('G26', $record['Jumlah Gol6Bar']);
+        $myWorkSheet->setCellValue('G27', $record['Jumlah Gol7']);
+        $myWorkSheet->setCellValue('G28', $record['Jumlah Gol8']);
+        $myWorkSheet->setCellValue('G29', $record['Jumlah Gol9']);
+        $myWorkSheet->setCellValue('G30', '=SUM(G18:G29)');
+        
+        // Pendapatan Asuransi
+        $myWorkSheet->setCellValue('I18', '=D18 * G18');
+        $myWorkSheet->setCellValue('I19', '=D19 * G19');
+        $myWorkSheet->setCellValue('I20', '=D20 * G20');
+        $myWorkSheet->setCellValue('I21', '=D21 * G21');
+        $myWorkSheet->setCellValue('I22', '=D22 * G22');
+        $myWorkSheet->setCellValue('I23', '=D23 * G23');
+        $myWorkSheet->setCellValue('I24', '=D24 * G24');
+        $myWorkSheet->setCellValue('I25', '=D25 * G25');
+        $myWorkSheet->setCellValue('I26', '=D26 * G26');
+        $myWorkSheet->setCellValue('I27', '=D27 * G27');
+        $myWorkSheet->setCellValue('I28', '=D28 * G28');
+        $myWorkSheet->setCellValue('I29', '=D29 * G29');
+        $myWorkSheet->setCellValue('I30', '=SUM(I18:I29)');
+        
+        // Jumlah
+        $myWorkSheet->setCellValue('J18', '=H18 + I18');
+        $myWorkSheet->setCellValue('J19', '=H19 + I19');
+        $myWorkSheet->setCellValue('J20', '=H20 + I20');
+        $myWorkSheet->setCellValue('J21', '=H21 + I21');
+        $myWorkSheet->setCellValue('J22', '=H22 + I22');
+        $myWorkSheet->setCellValue('J23', '=H23 + I23');
+        $myWorkSheet->setCellValue('J24', '=H24 + I24');
+        $myWorkSheet->setCellValue('J25', '=H25 + I25');
+        $myWorkSheet->setCellValue('J26', '=H26 + I26');
+        $myWorkSheet->setCellValue('J27', '=H27 + I27');
+        $myWorkSheet->setCellValue('J28', '=H28 + I28');
+        $myWorkSheet->setCellValue('J29', '=H29 + I29');
+        $myWorkSheet->setCellValue('J30', '=SUM(J18:J29)');
+
+        //Nomor Seri awal
+        $myWorkSheet->setCellValue('E32', $record['BarangPendapatanSerial_start']."\n".$record['BarangPendapatan2Serial_start']."\n".$record['BarangPendapatan3Serial_start']);
+        //Nomor Seri Akhir
+        $myWorkSheet->setCellValue('F32', $record['BarangPendapatanSerial_end']."\n".$record['BarangPendapatan2Serial_end']."\n".$record['BarangPendapatan3Serial_end']);
+        // Jumlah
+        $myWorkSheet->setCellValue('G32', $record['Entry Barang Volume']);
+        
+        $Curah = 0;
+        if($record['Entry Barang Volume'] != 0)
+            $record['BarangPendapatan']/$record['Entry Barang Volume'];
+
+        //Pendapatan Pelayaran
+        $myWorkSheet->setCellValue('H32', $Curah);    
+        //Asuransi Pendapatan
+        $myWorkSheet->setCellValue('I32', 0);
+        //Jumlah Pendapatan
+        $myWorkSheet->setCellValue('J32', $record['BarangPendapatan']);
+
+        //Jumlah Barang
+        $myWorkSheet->setCellValue('G33', '=G32');
+        $myWorkSheet->setCellValue('H33', '=H32');
+        $myWorkSheet->setCellValue('I33', '=I32');
+        $myWorkSheet->setCellValue('J33', '=J32');
+        
+        //Jumlah Total
+        $myWorkSheet->setCellValue('G34', '=G16 + G30 + G33');
+        $myWorkSheet->setCellValue('H34', '=H16 + H30 + H33');
+        $myWorkSheet->setCellValue('I34', '=I16 + I30 + I33');
+        $myWorkSheet->setCellValue('J34', '=J16 + J30 + J33');
+        
+        $myWorkSheet->setCellValue('C35', strtoupper(terbilang($myWorkSheet->getCell('J34')->getCalculatedValue())));
+    }
+
+
+    // $myWorkSheet->getStyle('C10:J16')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_EUR);
+    // $myWorkSheet->getStyle('C18:J30')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
+    // $myWorkSheet->getStyle('C32:J34')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
+
+    $styleArray = array(
+        'allBorders' => array(
+            'outline' => array(
+                'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
+                'color' => array('argb' => 'FFFF0000'),
+            ),
+        ),
+    );
     
 
         $writer = new Xlsx($spreadsheet);
@@ -770,5 +1154,12 @@ class Report extends CI_Controller
         ob_end_clean();
         $writer->save('php://output');
         exit();
+    }
+    public function sap(){
+
+    }
+
+    public function asuransi(){
+        
     }
 }

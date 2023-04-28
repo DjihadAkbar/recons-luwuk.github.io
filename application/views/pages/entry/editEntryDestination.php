@@ -23,8 +23,7 @@ $produksiSerialStart3 = 0;
 $produksiSerialEnd = 0;
 $produksiSerialEnd2 = 0;
 $produksiSerialEnd3 =0 ;
-
-foreach($editData as $row){
+foreach($editDataDestination as $row){
     $dataKapal = $row['id_ferry']; 
     $dataLintasan = $row['id_route']; 
     $dataPelabuhan = $row['id_harbour']; 
@@ -50,15 +49,15 @@ foreach($editData as $row){
     </div>
     <div class="card-body">
         <?php
-        echo form_open(base_url('dashboard/entry/prosesEditEntryData?id=').$_GET['id'] , ['class' => 'form-entry']);
+        echo form_open(base_url('dashboard/entry/prosesEditEntryDestination?id=').$_GET['id'] , ['class' => 'form-entry']);
         ?>
         <div class="form-group row">
             <label for="nama_kapal" class="col-4 label-wrap"> Nama Kapal </label>
             <div class="col">
-                <select class="form-control" name="nama_kapal" id="nama_kapal" required>
+                <select class="form-control" name="nama_kapal" id="nama_kapal" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?> required>
                     <option value="">No Selected</option>
                     <?php foreach ($kapal_spv as $row): ?>
-                        <?php if($row['id_ferry'] == $dataKapal) {?>
+                        <?php  if($row['id_ferry'] == $dataKapal) {?>
                         <option value="<?php echo $row['id_ferry'];?>" selected>
                             <?php echo $row['kapal']; ?>
                         </option>
@@ -80,7 +79,7 @@ foreach($editData as $row){
         <div class="form-group row">
             <label for="lintasan" class="col-4 label-wrap"> Lintasan </label>
             <div class="col">
-                <select class="form-control" name="lintasan" id="lintasan" required>
+                <select class="form-control" name="lintasan" id="lintasan" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?> required>
                     <option value="">No Selected</option>
                     <?php foreach ($lintasan as $row): ?>
                         <?php if($row['id'] == $dataLintasan) {?>
@@ -104,7 +103,7 @@ foreach($editData as $row){
         <div class="form-group row">
             <label for="trip" class="col-4 label-wrap"> Trip </label>
             <div class="col">
-                <select class="form-control" name="trip" id="trip" required>
+                <select class="form-control" name="trip" id="trip" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?> required>
                     <option value="">No Selected</option>
                     <?php foreach ($trip as $row): ?>
                     <?php if(!str_contains($row['id'], 'OFF')) {?>
@@ -130,7 +129,7 @@ foreach($editData as $row){
         <div class="form-group row">
             <label for="pelabuhan_asal" class="col-4 label-wrap"> Pelabuhan Asal </label>
             <div class="col">
-                <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" required>
+                <select class="form-control" name="pelabuhan_asal" id="pelabuhan_asal" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?> required>
                     <option value="">No Selected</option>
                     <?php foreach ($pelabuhan as $row): ?>
                         
@@ -158,20 +157,20 @@ foreach($editData as $row){
 
             <div class="col-8">
                 <input class="form-control" type="date" id="edit_tanggal_berangkat" name="edit_tanggal_berangkat"
-                value=<?php echo $dataTanggal;?> min="2022-11-01">
+                value=<?php echo $dataTanggal;?> min="2022-11-01" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>>
             </div>
         </div>
         <div class="form-group row">
             <label for="edit_waktu_berangkat" class="col-4 label-wrap"> Waktu Berangkat </label>
             <div class="col">
-                <input class="form-control" type="time" id="edit_waktu_berangkat" name="edit_waktu_berangkat" value=<?php echo $dataWaktu;?>>
+                <input class="form-control" type="time" id="edit_waktu_berangkat" name="edit_waktu_berangkat" value=<?php echo $dataWaktu;?> <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>>
             </div>
         </div>
         
         <div class="form-group row">
             <label for="edit_waktu_tiba" class="col-4 label-wrap"> Waktu Tiba </label>
             <div class="col">
-                <input class="form-control" type="time" id="edit_waktu_tiba" name="edit_waktu_tiba" value=<?php echo $dataWaktuTiba;?> <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>>
+                <input class="form-control" type="time" id="edit_waktu_tiba" name="edit_waktu_tiba" value=<?php echo $dataWaktuTiba;?> >
             </div>
         </div>
         
@@ -184,7 +183,7 @@ foreach($editData as $row){
         $serialStart3 = 0;
         $serialEnd3 = 0;
         foreach ($produksi as $row) { 
-            foreach($editData as $baris){
+            foreach($editDataDestination as $baris){
                 foreach($baris as $key => $baris){
                     if($key == $row['id_production']){
             ?>
@@ -193,10 +192,10 @@ foreach($editData as $row){
                     <?php echo $row['produksi']; ?>
                 </label>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control input-produksi"
+                    <input type="number" name="<?php echo $row['id_production']."Serial_start"; ?>" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="<?php echo $row['id_production']."Serial_start"; ?>" 
                     value="<?php
-                            foreach($editData as $baris){
+                            foreach($editDataDestination as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."Serial_start"){
                                         echo $baris;
@@ -207,9 +206,9 @@ foreach($editData as $row){
                         ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control input-produksi"
+                    <input type="number" name="<?php echo $row['id_production']."Serial_end"; ?>" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="<?php echo $row['id_production']."Serial_end"; ?>" value="<?php
-                            foreach($editData as $baris){
+                            foreach($editDataDestination as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."Serial_end"){
                                         echo $baris;
@@ -220,7 +219,7 @@ foreach($editData as $row){
                         ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
+                    <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                         id="<?php echo $row['id_production']; ?>" value=
                         <?php
                             if($serialEnd1 != 0 && $serialStart1 != 0){
@@ -228,7 +227,7 @@ foreach($editData as $row){
                             } else {
                                  echo 0;
                             }
-                            // foreach($editData as $baris){
+                            // foreach($editDataDestination as $baris){
                             //     foreach($baris as $key => $baris){
                             //         if($key == $row['id_production']){
                             //             // echo $baris;
@@ -244,10 +243,10 @@ foreach($editData as $row){
                     &#8203
                 </label>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."2Serial_start"; ?>" class="form-control input-produksi"
+                    <input type="number" name="<?php echo $row['id_production']."2Serial_start"; ?>" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="<?php echo $row['id_production']."2Serial_start"; ?>" 
                     value="<?php
-                            foreach($editData as $baris){
+                            foreach($editDataDestination as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."2Serial_start"){
                                         echo $baris;
@@ -258,9 +257,9 @@ foreach($editData as $row){
                         ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."2Serial_end"; ?>" class="form-control input-produksi"
+                    <input type="number" name="<?php echo $row['id_production']."2Serial_end"; ?>" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="<?php echo $row['id_production']."2Serial_end"; ?>" value="<?php
-                            foreach($editData as $baris){
+                            foreach($editDataDestination as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."2Serial_end"){
                                         echo $baris;
@@ -271,7 +270,7 @@ foreach($editData as $row){
                         ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."2"; ?>" class="form-control "
+                    <input type="number" name="<?php echo $row['id_production']."2"; ?>" class="form-control " <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                         id="<?php echo $row['id_production']."2"; ?>" value=
                         <?php
                             if($serialEnd2 != 0 && $serialStart2 != 0){
@@ -279,7 +278,7 @@ foreach($editData as $row){
                         } else {
                             echo 0;
                        }
-                            // foreach($editData as $baris){
+                            // foreach($editDataDestination as $baris){
                             //     foreach($baris as $key => $baris){
                             //         if($key == $row['id_production']."2"){
                             //             // echo $baris;
@@ -297,10 +296,10 @@ foreach($editData as $row){
                     &#8203
                 </label>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."3Serial_start"; ?>" class="form-control input-produksi"
+                    <input type="number" name="<?php echo $row['id_production']."3Serial_start"; ?>" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="<?php echo $row['id_production']."3Serial_start"; ?>" 
                     value="<?php
-                            foreach($editData as $baris){
+                            foreach($editDataDestination as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."3Serial_start"){
                                         echo $baris;
@@ -311,9 +310,9 @@ foreach($editData as $row){
                         ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."3Serial_end"; ?>" class="form-control input-produksi"
+                    <input type="number" name="<?php echo $row['id_production']."3Serial_end"; ?>" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="<?php echo $row['id_production']."3Serial_end"; ?>" value="<?php
-                            foreach($editData as $baris){
+                            foreach($editDataDestination as $baris){
                                 foreach($baris as $key => $baris){
                                     if($key == $row['id_production']."3Serial_end"){
                                         echo $baris;
@@ -324,7 +323,7 @@ foreach($editData as $row){
                         ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="<?php echo $row['id_production']."3"; ?>" class="form-control "
+                    <input type="number" name="<?php echo $row['id_production']."3"; ?>" class="form-control " <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                         id="<?php echo $row['id_production']."3"; ?>" value=
                         <?php
                                 if($serialEnd3 != 0 && $serialStart3 != 0){
@@ -332,7 +331,7 @@ foreach($editData as $row){
                                 } else {
                                     echo 0;
                                }
-                            // foreach($editData as $baris){
+                            // foreach($editDataDestination as $baris){
                             //     foreach($baris as $key => $baris){
                             //         if($key == $row['id_production']."3"){
                             //             // echo $baris;
@@ -356,15 +355,15 @@ foreach($editData as $row){
                 PRODUKSI BARANG CURAH
             </label>
             <div class="col">
-                    <input type="number" name="BarangPendapatanSerial_start" class="form-control input-produksi"
+                    <input type="number" name="BarangPendapatanSerial_start" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="BarangPendapatanSerial_start" value="<?php echo $dataBarangPendapatanSeriAwal; ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="BarangPendapatanSerial_end" class="form-control input-produksi"
+                    <input type="number" name="BarangPendapatanSerial_end" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="BarangPendapatanSerial_end" value=<?php echo $dataBarangPendapatanSeriAkhir; ?> min="0">
                 </div>
             <div class="col">
-                <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan"
+                <input type="number" class="form-control" name="BarangPendapatan" id="BarangPendapatan" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     placeholder="0" value=<?php if($dataBarangPendapatanSeriAkhir2 != 0 && $dataBarangPendapatanSeriAwal2 !=  0) echo ((int) $dataBarangPendapatanSeriAkhir - (int) $dataBarangPendapatanSeriAwal + 1)  ; ?> min="0" placeholder="Jumlah Volume">
             </div>
         </div>
@@ -373,15 +372,15 @@ foreach($editData as $row){
             &#8203
             </label>
             <div class="col">
-                    <input type="number" name="BarangPendapatan2Serial_start" class="form-control input-produksi"
+                    <input type="number" name="BarangPendapatan2Serial_start" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="BarangPendapatan2Serial_start" value="<?php echo $dataBarangPendapatanSeriAwal2; ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="BarangPendapatan2Serial_end" class="form-control input-produksi"
+                    <input type="number" name="BarangPendapatan2Serial_end" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="BarangPendapatan2Serial_end" value=<?php echo $dataBarangPendapatanSeriAkhir2; ?> min="0">
                 </div>
             <div class="col">
-                <input type="number" class="form-control" name="BarangPendapatan2" id="BarangPendapatan2"
+                <input type="number" class="form-control" name="BarangPendapatan2" id="BarangPendapatan2" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     placeholder="0" value=<?php if($dataBarangPendapatanSeriAkhir2 != 0 && $dataBarangPendapatanSeriAwal2 !=  0) echo ((int) $dataBarangPendapatanSeriAkhir2 - (int) $dataBarangPendapatanSeriAwal2 + 1); ?> min="0" placeholder="Jumlah Volume">
             </div>
         </div>
@@ -390,15 +389,15 @@ foreach($editData as $row){
             &#8203
             </label>
             <div class="col">
-                    <input type="number" name="BarangPendapatan3Serial_start" class="form-control input-produksi"
+                    <input type="number" name="BarangPendapatan3Serial_start" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="BarangPendapatan3Serial_start" value="<?php echo $dataBarangPendapatanSeriAwal3; ?>" min="0">
                 </div>
                 <div class="col">
-                    <input type="number" name="BarangPendapatan3Serial_end" class="form-control input-produksi"
+                    <input type="number" name="BarangPendapatan3Serial_end" class="form-control input-produksi" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     id="BarangPendapatan3Serial_end" value=<?php echo $dataBarangPendapatanSeriAkhir3; ?> min="0">
                 </div>
             <div class="col">
-                <input type="number" class="form-control" name="Barang3Pendapatan" id="Barang3Pendapatan"
+                <input type="number" class="form-control" name="Barang3Pendapatan" id="Barang3Pendapatan" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     placeholder="0" value=<?php if($dataBarangPendapatanSeriAkhir3 != 0 && $dataBarangPendapatanSeriAwal3 !=  0) echo ((int) $dataBarangPendapatanSeriAkhir3 - (int) $dataBarangPendapatanSeriAwal3 + 1); ?> min="0" placeholder="Jumlah Volume">
             </div>
         </div>
@@ -407,7 +406,7 @@ foreach($editData as $row){
                 PENDAPATAN BARANG CURAH
             </label>
             <div class="col">
-                <input type="number" class="form-control" name="barang_volume" id="barang_volume" value=<?php echo $dataBarangPendapatan;?> min="0"
+                <input type="number" class="form-control" name="barang_volume" id="barang_volume" value=<?php echo $dataBarangPendapatan;?> min="0" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>
                     placeholder="5000000">
             </div>
         </div>
@@ -416,7 +415,7 @@ foreach($editData as $row){
                 CATATAN OPERASIONAL 
             </label>
             <div class="col">
-                <textarea class="form-control" id="catatan" name="catatan" rows="3" placeholder="(Opsional) Kendala Pelayaran / Catatan Permasalahan Pendapatan"></textarea>
+                <textarea class="form-control" id="catatan" name="catatan" rows="3" placeholder="(Opsional) Kendala Pelayaran / Catatan Permasalahan Pendapatan" <?php if($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba){?>disabled <?php }?>></textarea>
             </div>
         </div>
         <?php

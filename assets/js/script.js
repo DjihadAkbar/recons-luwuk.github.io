@@ -61,8 +61,20 @@ $(document).ready(function(){
         }
         $saldoAwal = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_start").val());
         $saldoAkhir = parseInt($('#'+$produksi[0]+$produksi[1]+"Serial_end").val());
-            $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
+        $('#'+$produksi[0]+$produksi[1]).attr("value",($saldoAkhir - $saldoAwal + 1));
     })
+
+    $('.button-collapse').click(function(){
+        if($(this).attr("aria-expanded") == 'true'){
+            $(this).text("-");
+        } else {
+            $(this).text("+");
+        }
+    })
+
+
+
+    $()
 
     //Auto FIlter Pelabuhan di report
     // $('#pelabuhan_asal_report').change(function(){

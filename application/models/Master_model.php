@@ -130,12 +130,21 @@ class Master_model extends CI_Model
     
     //Menampilkan Tarif yang diupload ataupun diedit
     public function aprovedTarif(){
-        $this->db->select('*,aproval_rate.id as id_apr');
+        $this->db->select('*,aproval_rate.id as id_apr,count(IF(aprove_status = "P",1,NULL)) as count_pending');
         $this->db->join('routes', 'routes.id = aproval_rate.id_route');
         $this->db->order_by('post_date', 'DESC');
-
+    
         
         return $this->db->get('aproval_rate')->result_array();    
+    }
+    
+    public function countPendingTarif(){
+        $this->db->select('count(aprove_status) as count_pending');
+        $this->db->where('aprove_status','P');
+    
+        
+        return $this->db->get('aproval_rate')->result_array();    
+
     }
 
     //Update data aprove yang telah disetujui

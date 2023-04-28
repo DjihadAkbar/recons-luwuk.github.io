@@ -310,13 +310,7 @@ if($this->session->userdata['type'] != ''){
                                 <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">
-                                            Kapal
-                                        </th>
-                                        <th scope="col">
                                             Lintasan
-                                        </th>
-                                        <th scope="col">
-                                            Pelabuhan Asal
                                         </th>
                                         <th scope="col">
                                             <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
@@ -331,15 +325,9 @@ if($this->session->userdata['type'] != ''){
                                     foreach ($totalDaily as $key => $value) {
                                         ?>
                                                                                                                                         <tr>
-                                                                                                                                            <td rowspan="1">
-                                                                                                                                                <?php echo $value['ferry']; ?>
-                                                                                                                                            </td>
 
                                                                                                                                             <td>
                                                                                                                                                 <?php echo $value['ofc_route']; ?>
-                                                                                                                                            </td>
-                                                                                                                                            <td>
-                                                                                                                                                <?php echo $value['harbour']; ?>
                                                                                                                                             </td>
                                                                                                                                             <td>
                                                                                                                                                 <?php
@@ -357,12 +345,6 @@ if($this->session->userdata['type'] != ''){
                                 </tbody>
                                 <tfoot class="thead-dark">
                                     <tr>
-                                        <th scope="col">
-
-                                        </th>
-                                        <th scope="col">
-
-                                        </th>
                                         <th scope="col">
 
                                         </th>

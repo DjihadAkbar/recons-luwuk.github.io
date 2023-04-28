@@ -7,7 +7,7 @@ $ifEdit = 'Edit';?>
             <h5 class="mb-0">
                 <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div style="white-space:normal"> 
-                    Persetujuan Pengajuan Tarif
+                    Persetujuan Pengajuan Tarif <span class="badge badge-danger"><?php foreach ($countPendingTarif as $key => $value) { $value['count_pending']; } ?></span>
                     </div>
                 </button>
             </h5>

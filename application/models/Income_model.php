@@ -13,7 +13,6 @@ class Income_model extends CI_Model
         $this->db->join('ferry', 'routes.id_ferry = ferry.id');
         $this->db->group_by('monthname(date), route');
         return $this->db->get('daily_income')->result_array();
-
     }
     public function entryData($data)
     {
@@ -27,7 +26,6 @@ class Income_model extends CI_Model
         $this->db->order_by('date DESC', 'ferry ASC');
         return $this->db->get('entry_data')->result_array();
     }
-
     public function perProduksiBulanan()
     {
         $this->db->select('monthname(DATE) AS bulan, production, SUM(transport * total) AS pendapatan_penyebrangan, SUM(tjp * total) AS tjp_total, SUM(iw * total) AS iw_total, SUM((transport+tjp+iw) * total) AS pendapatan_total,
@@ -41,9 +39,8 @@ class Income_model extends CI_Model
         $this->db->group_by('monthname(date), production');
         $this->db->order_by('monthname(date), productions.id');
         return $this->db->get('daily_income')->result_array();
-
     }
-
+    
     public function pendapatan()
     {
         if ($this->session->userdata('logged_in'))
