@@ -1,0 +1,1 @@
+<?php echo $namaOrang . ' '; ?> merupakan Lorem ipsum dolor sit amet.

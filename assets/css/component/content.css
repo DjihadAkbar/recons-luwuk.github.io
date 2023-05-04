@@ -1,0 +1,100 @@
+#content {
+    position: absolute;
+    right: 0px;
+    top: 0;
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    transition: all 0.3s;
+    z-index: 0;
+}
+
+#content.layarPenuh{
+    width: 100%;
+}
+
+@media screen and (max-width: 767px) { 
+    #content {
+    position: absolute;
+    left : 200px;
+    top: 0;
+    min-height: 100vh;
+    width: 300px;
+    transition: all 0.3s;
+    z-index: 0;
+    } 
+    #content.layarPenuh{
+        width: 100%;
+        left: 0;
+    }
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.logo-dashboard {
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 5px;
+    margin-left: 10px;
+    color: black;
+}
+
+.navbar {
+    padding: 15px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+    margin-bottom: 25px;
+    z-index: 1;
+}
+
+#sidebarCollapse {
+    box-shadow: none;
+}
+
+.topnav-right {
+    float: right;
+}
+
+.profile-card {
+    position: absolute;
+    top: 100%;
+    right: 10%;
+}
+
+.label-wrap {
+    padding:5px; font-weight:bold; float:left; width:150px;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: all 0.3s;
+    z-index: 1;
+}
+
+#content.sticky {
+    padding-top : 98px;
+}
+
+.modal-backdrop {
+    display: none;
+}
+
+.account-user {
+    right: 0;
+    position: fixed;
+    margin-right: 20px;
+    z-index:1;
+}
+
+.tambah-data {
+    margin-right: 0;
+    margin-top: auto;
+
+
+
+
+
+

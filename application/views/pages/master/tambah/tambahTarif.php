@@ -1,0 +1,190 @@
+<div class="card ">
+    <div class="card-header">
+        Tambah Tarif
+    </div>
+    <div class="card-body">
+        <?php
+        echo form_open(base_url('dashboard/master/tarif/prosesTambahTarif'), ['class' => 'form-entry']);
+        ?>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class="form-group row">
+                <label for="lintasan" class="col-4 label-wrap"> LINTASAN </label>
+                <div class="col">
+                    <select class="form-control" name="lintasan" id="lintasan" required>
+                        <option value="">No Selected</option>
+                        <?php foreach ($lintasan as $row): ?>
+                            <option value="<?php echo $row['id']; ?>">
+                                <?php echo $row['lintasan']; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php
+                    echo form_error('lintasan');
+                    ?>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="tanggal_berangkat" class="col-4 label-wrap"> TANGGAL BERLAKU </label>
+                
+                <div class="col">
+                    <input class="form-control" type="date" id="tanggal_berangkat" name="tanggal_berangkat" value="2022-11-01"
+                    min="2022-11-01">
+                </div>
+            </div>
+        </li>
+
+        <li class="list-group-item tarif-utama">
+            <!-- Input Jumlah Produksi -->
+            <?php $no = ""; foreach ($produksi as $row) { ?>
+                <div class="form-group row">
+                    <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                        <?php echo $row['produksi']; ?>
+                    </label>
+                    <div class="col">
+                        <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control"
+                            id="<?php echo $row['id_production']; ?>" placeholder="0" min="0">
+                    </div>
+                </div>
+                <?php
+            }
+            ?>
+            <div class="form-group row ">
+                <label for="barang_volume" class="col-4 label-wrap">
+                    BARANG VOLUME
+                </label>
+                <div class="col">
+                    <input type="number" class="form-control" name="barang_volume" id="barang_volume" placeholder="0"
+                        min="0" placeholder="Jumlah Volume">
+                </div>
+            </div>
+            <div class="form-group row ">
+                <label for="barang_pendapatan" class="col-4 label-wrap">
+                    BARANG PENDAPATAN (CURAH)
+                </label>
+                <div class="col">
+                    <input type="number" class="form-control" name="barang_pendapatan" id="barang_pendapatan"
+                        placeholder="0" min="0" placeholder="Jumlah Volume">
+                </div>
+            </div>
+        </li>
+
+            <li class="list-group-item tjp">
+
+                    <!-- Input Jumlah Produksi -->
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " TJP"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "TJP"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "TJP"; ?>" placeholder="0" min="0" >
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item iw">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " IW"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "IW"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "IW"; ?>" placeholder="0" min="0" >
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item dermaga">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " DERMAGA"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "Dermaga"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "Dermaga"; ?>" placeholder="0" min="0" >
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item terminal">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " TERMINAL"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "Terminal"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "Terminal"; ?>" placeholder="0" min="0" >
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
+            <!-- Input Jumlah Produksi -->
+            <li class="list-group-item terminal">
+
+                    <?php $no = "";
+                    foreach ($produksi as $row) {
+                        if ($row['type'] == 'KENDARAAN' or $row['type'] == 'PENUMPANG') {
+                            ?>
+                            <div class="form-group row ">
+                                <label for="<?php echo $row['produksi']; ?>" class="col-4 label-wrap">
+                                    <?php echo $row['produksi'] . " PAS MASUK"; ?>
+                                </label>
+                                <div class="col">
+                                    <input type="number" name="<?php echo $row['id_production'] . "PasMasuk"; ?>" class="form-control"
+                                        id="<?php echo $row['id_production'] . "PasMasuk"; ?>" placeholder="0" min="0" >
+                                </div>
+                            </div>
+                            <?php
+                        }
+                    }
+                    ?>
+            </li>
+            <!-- Akhir Input Jumlah Produksi -->
+        </ul>
+
+
+
+        <?php
+        echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
+        echo form_close();
+        ?>
+    </div>
+</div>
