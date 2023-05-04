@@ -98,7 +98,6 @@
                 <div class="col">
                     <select onchange="OnSelectionChange()" class="form-control" name="jenis_laporan" id="jenis_laporan" required>
                         <option value="" disabled Selected>No Selected</option>
-<<<<<<< HEAD
                         <?php if($this->session->userdata['type'] == 'ADMIN') {?>
                             <option value="dailyReport">
                                 Laporan Pendapatan harian
@@ -127,15 +126,6 @@
                         <option value="rekapAsuransi">
                             Rekap Asuransi
                         </option>
-=======
-                        <?php if($this->session->userdata['jabatan'] == 'SUPERVISOR' || $this->session->userdata['type'] == 'ADMIN') {?>
-                            <option value="dailyReport">
-                                Laporan Pendapatan harian
-                            </option>
-                            <option value="buktiPenyetoran">
-                                Bukti Penyetoran
-                            </option>
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
                         <?php }?>
                     </select>
                     <?php

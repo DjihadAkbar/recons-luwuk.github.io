@@ -118,11 +118,8 @@ $route['dashboard/report/buktiPenyetoran'] = 'report/buktiPenyetoran';
 $route['dashboard/report/downloadBuktiPenyetoran'] = 'report/downloadBuktiPenyetoran';
 $route['dashboard/report/dailyReport'] = 'report/dailyReport';
 $route['dashboard/report/downloadDailyReport'] = 'report/downloadDailyReport';
-<<<<<<< HEAD
 $route['dashboard/report/rekapAsuransi'] = 'report/rekapAsuransi';
 $route['dashboard/report/downloadRekapAsuransi'] = 'report/downloadRekapAsuransi';
-=======
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 
 //Admin
 $route['dashboard/admin/accountSettings'] = 'admin/accountSettings';

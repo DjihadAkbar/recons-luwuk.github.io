@@ -191,10 +191,7 @@ class Entry extends CI_Controller
             'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
             'BarangPendapatanSerial_end' => $this->input->post('BarangPendapatanSerial_end'),
             'Catatan' => $this->input->post('catatan'),
-<<<<<<< HEAD
             'BuktiSetoran' => $this->input->post('bukti-setoran'),
-=======
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
         ];
         $this->Entry_model->editData($dataInput, $_GET['id']);
         redirect('dashboard/entry');
