@@ -471,7 +471,6 @@ class Report extends CI_Controller
         $pelabuhanReport = $this->input->post('pelabuhan_asal_report');
         $jamReport = $this->input->post('jam');
 
-<<<<<<< HEAD
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
 
@@ -506,53 +505,12 @@ class Report extends CI_Controller
             sum((rate.Suplesi1Anak * entry_data.Suplesi1Anak)) as 'Suplesi1 Anak',
             sum((rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa)) as 'Suplesi2 Dewasa',
             sum((rate.Suplesi2Anak * entry_data.Suplesi2Anak)) as 'Suplesi2 Anak'
-=======
-
-
-        $spreadsheet = new Spreadsheet();
-        $sheet = $spreadsheet->getActiveSheet();
-        
-
-        $entryData = mysqli_query($koneksi,"
-            SELECT *,dayname(date), 
-            entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi', entry_data.BarangVolume AS 'Jumlah BarangVolume', entry_data.BarangPendapatan AS 'Jumlah BarangPendapatan',
-            entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9',
-            entry_data.Suplesi1Dewasa as 'Jumlah Suplesi1Dewasa', entry_data.Suplesi2Dewasa as 'Jumlah Suplesi2Dewasa', entry_data.Suplesi1Anak as 'Jumlah Suplesi1Anak', entry_data.Suplesi2Anak as 'Jumlah Suplesi2Anak',
-            (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
-            (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
-            (rate.DewasaBisnis * entry_data.DewasaBisnis) as 'Dewasa Bisnis',
-            (rate.BayiBisnis * entry_data.BayiBisnis) as 'Bayi Bisnis',
-            (rate.DewasaEkonomi * entry_data.DewasaEkonomi) as 'Dewasa Ekonomi',
-            (rate.BayiEkonomi * entry_data.BayiEkonomi) as 'Bayi Ekonomi',
-            (rate.Gol1 * entry_data.Gol1) as 'Golongan 1',
-            (rate.Gol2 * entry_data.Gol2) as 'Golongan 2',
-            (rate.Gol3 * entry_data.Gol3) as 'Golongan 3',
-            (rate.Gol4Pen * entry_data.Gol4Pen) as 'Golongan 4 Penumpang',
-            (rate.Gol4Bar * entry_data.Gol4Bar) as 'Golongan 4 Barang',
-            (rate.Gol5Pen * entry_data.Gol5Pen) as 'Golongan 5 Penumpang',
-            (rate.Gol5Bar * entry_data.Gol5Bar) as 'Golongan 5 Barang',
-            (rate.Gol6Pen * entry_data.Gol6Pen) as 'Golongan 6 Penumpang',
-            (rate.Gol6Bar * entry_data.Gol6Bar) as 'Golongan 6 Barang',
-            (rate.Gol7 * entry_data.Gol7) as 'Golongan 7',
-            (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
-            (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
-            entry_data.BarangPendapatan as 'Barang Pendapatan',
-            entry_data.BarangVolume as 'Entry Barang Volume',
-            (rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa) as 'Suplesi1 Dewasa',
-            (rate.Suplesi1Anak * entry_data.Suplesi1Anak) as 'Suplesi1 Anak',
-            (rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa) as 'Suplesi2 Dewasa',
-            (rate.Suplesi2Anak * entry_data.Suplesi2Anak) as 'Suplesi2 Anak'
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
             FROM entry_data
             JOIN ferry ON ferry.id = entry_data.id_ferry
             JOIN routes ON routes.id = entry_data.id_route
             JOIN harbours on harbours.id_harbours = entry_data.id_harbour
             JOIN rate ON rate.id_route = routes.id and entry_data.date >= rate.start_date and rate.rate_type = entry_data.rate_type
-<<<<<<< HEAD
             WHERE date>='{$tanggalAwalReport}' and date <='{$tanggalAkhirReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
-=======
-            WHERE date='{$tanggalAwalReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
         ");
 
         // sheet peratama
@@ -584,15 +542,11 @@ class Report extends CI_Controller
         $sheet->setCellValue('C6', 'Lintasan')->getStyle('C6')->getFont()->setBold(true);
         $sheet->setCellValue('D6', $lintasanReport);
         $sheet->setCellValue('G5', 'Tanggal')->getStyle('G5')->getFont()->setBold(true);
-<<<<<<< HEAD
         if($tanggalAwalReport == $tanggalAkhirReport){
             $sheet->setCellValue('H5', $tanggalAwalReport);
         } else {
             $sheet->setCellValue('H5', $tanggalAwalReport." s/d ".$tanggalAkhirReport);
         }
-=======
-        $sheet->setCellValue('H5', $tanggalAwalReport);
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
         $sheet->setCellValue('G6', 'Kapal')->getStyle('G6')->getFont()->setBold(true);
         $sheet->setCellValue('H6', $kapalReport);
         $sheet->setCellValue('C7', 'No')->getStyle('C7')->getFont()->setBold(true);
@@ -698,11 +652,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
 
             // Tarif Pelayaran
-<<<<<<< HEAD
             $sheet->setCellValue('F18', $record['Golongan 1']);
-=======
-            $sheet->setCellValue('F18', $record['Golongan ']);
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
             $sheet->setCellValue('F19', $record['Golongan 2']);
             $sheet->setCellValue('F20', $record['Golongan 3']);
             $sheet->setCellValue('F21', $record['Golongan 4 Penumpang']);
@@ -819,7 +769,6 @@ class Report extends CI_Controller
     $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
     
     //=========================== Sheet 2 =============================
-<<<<<<< HEAD
     $entryData2 = mysqli_query($koneksi,"
         SELECT *,dayname(date), 
         sum(entry_data.DewasaEksekutif) AS 'Jumlah DewasaEksekutif', sum(entry_data.BayiEksekutif ) AS 'Jumlah BayiEksekutif', sum(entry_data.DewasaBisnis) AS 'Jumlah DewasaBisnis', sum(entry_data.BayiBisnis) AS 'Jumlah BayiBisnis', sum(entry_data.DewasaEkonomi) AS 'Jumlah DewasaEkonomi', sum(entry_data.BayiEkonomi) AS 'Jumlah BayiEkonomi', sum(entry_data.BarangVolume) AS 'Jumlah BarangVolume', sum(entry_data.BarangPendapatan) AS 'Jumlah BarangPendapatan',
@@ -850,41 +799,12 @@ class Report extends CI_Controller
             sum((rate.Suplesi1Anak * entry_data.Suplesi1Anak)) as 'Suplesi1 Anak',
             sum((rate.Suplesi2Dewasa * entry_data.Suplesi2Dewasa)) as 'Suplesi2 Dewasa',
             sum((rate.Suplesi2Anak * entry_data.Suplesi2Anak)) as 'Suplesi2 Anak'
-=======
-        $entryData2 = mysqli_query($koneksi,"
-        SELECT *,dayname(date), 
-        entry_data.DewasaEksekutif AS 'Jumlah DewasaEksekutif', entry_data.BayiEksekutif  AS 'Jumlah BayiEksekutif', entry_data.DewasaBisnis AS 'Jumlah DewasaBisnis', entry_data.BayiBisnis AS 'Jumlah BayiBisnis', entry_data.DewasaEkonomi AS 'Jumlah DewasaEkonomi', entry_data.BayiEkonomi AS 'Jumlah BayiEkonomi',
-        entry_data.Gol1 as 'Jumlah Gol1', entry_data.Gol2 as 'Jumlah Gol2', entry_data.Gol3 as 'Jumlah Gol3', entry_data.Gol4Pen as 'Jumlah Gol4Pen', entry_data.Gol4Bar as 'Jumlah Gol4Bar', entry_data.Gol5Pen as 'Jumlah Gol5Pen',entry_data.Gol5Bar as 'Jumlah Gol5Bar',entry_data.Gol6Pen as 'Jumlah Gol6Pen',entry_data.Gol6Bar as 'Jumlah Gol6Bar',entry_data.Gol7 as 'Jumlah Gol7',entry_data.Gol8 as 'Jumlah Gol8',entry_data.Gol9 as 'Jumlah Gol9', 
-        (rate.DewasaEksekutif * entry_data.DewasaEksekutif) as 'Dewasa Eksekutif',
-        (rate.BayiEksekutif * entry_data.BayiEksekutif) as 'Bayi Eksekutif',
-        (rate.DewasaBisnis * entry_data.DewasaBisnis) as 'Dewasa Bisnis',
-        (rate.BayiBisnis * entry_data.BayiBisnis) as 'Bayi Bisnis',
-        (rate.DewasaEkonomi * entry_data.DewasaEkonomi) as 'Dewasa Ekonomi',
-        (rate.BayiEkonomi * entry_data.BayiEkonomi) as 'Bayi Ekonomi',
-        (rate.Gol1 * entry_data.Gol1) as 'Golongan 1',
-        (rate.Gol2 * entry_data.Gol2) as 'Golongan 2',
-        (rate.Gol3 * entry_data.Gol3) as 'Golongan 3',
-        (rate.Gol4Pen * entry_data.Gol4Pen) as 'Golongan 4 Penumpang',
-        (rate.Gol4Bar * entry_data.Gol4Bar) as 'Golongan 4 Barang',
-        (rate.Gol5Pen * entry_data.Gol5Pen) as 'Golongan 5 Penumpang',
-        (rate.Gol5Bar * entry_data.Gol5Bar) as 'Golongan 5 Barang',
-        (rate.Gol6Pen * entry_data.Gol6Pen) as 'Golongan 6 Penumpang',
-        (rate.Gol6Bar * entry_data.Gol6Bar) as 'Golongan 6 Barang',
-        (rate.Gol7 * entry_data.Gol7) as 'Golongan 7',
-        (rate.Gol8 * entry_data.Gol8) as 'Golongan 8',
-        (rate.Gol9 * entry_data.Gol9) as 'Golongan 9',
-        entry_data.BarangVolume as 'Entry Barang Volume'
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
         FROM entry_data
         JOIN ferry ON ferry.id = entry_data.id_ferry
         JOIN routes ON routes.id = entry_data.id_route
         JOIN harbours on harbours.id_harbours = entry_data.id_harbour
         JOIN rate ON rate.id_route = routes.id and entry_data.date >= rate.start_date and rate.rate_type = entry_data.rate_type
-<<<<<<< HEAD
         WHERE date >='{$tanggalAwalReport}' and date <='{$tanggalAkhirReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
-=======
-        WHERE date='{$tanggalAwalReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
     ");
     $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
     $spreadsheet->addSheet($myWorkSheet, 1);
@@ -931,7 +851,6 @@ class Report extends CI_Controller
     $myWorkSheet->setCellValue('A4', 'Pelabuhan');
     $myWorkSheet->setCellValue('A5', 'Lintas');
     $myWorkSheet->setCellValue('A6', 'Jam Pemberangkatan');
-<<<<<<< HEAD
     if($tanggalAwalReport == $tanggalAkhirReport){
         $myWorkSheet->setCellValue('E2', getHari($tanggalAwalReport));
     } elseif(getBulan($tanggalAwalReport) == getBulan($tanggalAkhirReport)){
@@ -945,10 +864,6 @@ class Report extends CI_Controller
     } else {
         $myWorkSheet->setCellValue('E3', $tanggalAwalReport." s/d ".$tanggalAkhirReport);   
     }
-=======
-    $myWorkSheet->setCellValue('E2', getHari($tanggalAwalReport));
-    $myWorkSheet->setCellValue('E3', $tanggalAwalReport);
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
     $myWorkSheet->setCellValue('E4', $pelabuhanReport);
     $myWorkSheet->setCellValue('E5', $lintasanReport);
     $myWorkSheet->setCellValue('C7', 'Tarif');
@@ -1280,16 +1195,11 @@ class Report extends CI_Controller
 
         $writer = new Xlsx($spreadsheet);
         header('Content-Type: application/vnd.ms-excel');
-<<<<<<< HEAD
         header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport." S/D ".$tanggalAkhirReport.".xlsx").'"');
-=======
-        header('Content-Disposition: attachment; filename="'. urlencode($title." ".$lintasanReport." ".$tanggalAwalReport.".xlsx").'"');
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
         ob_end_clean();
         $writer->save('php://output');
         exit();
     }
-<<<<<<< HEAD
 
     public function rekapAsuransi (){
         $data['title'] = 'Rekap Administrasi Asuransi';
@@ -1764,17 +1674,9 @@ class Report extends CI_Controller
         exit();
     }   
 
-=======
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
     public function sap(){
 
     }
 
-<<<<<<< HEAD
     
-=======
-    public function asuransi(){
-        
-    }
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 }
