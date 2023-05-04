@@ -1211,22 +1211,6 @@ class Report extends CI_Controller
         $data['pelabuhan'] = $this->Master_model->pelabuhan();
         $data['kapal'] = $this->Master_model->kapal_spv();
         $data['tarif'] = $this->Master_model->tarif();
-
-        $listLintasan = [];
-
-        foreach($this->Master_model->lintasanSpv() as $row){
-            array_push($listLintasan,$row['lintasan']);
-        }
-        foreach($this->Master_model->kapal() as $row){
-            array_push($listLintasan,$row['kapal']);
-        }
-        
-            
-        foreach($listLintasan as $lintasan){
-            If(str_contains($lintasan,'-')){
-                echo("GABUNGAN".$lintasan);
-            }
-        }
         
         $this->load->view('template/dashboard/body', $data);
         // redirect('index');
