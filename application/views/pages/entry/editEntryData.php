@@ -8,7 +8,10 @@ $dataTanggal = '';
 $dataWaktu = ''; 
 $dataWaktuTiba = ''; 
 $dataTarif = '';
+<<<<<<< HEAD
 $dataGambar = '';
+=======
+>>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 $dataBarangPendapatanSeriAwal = '';
 $dataBarangPendapatanSeriAkhir = '';
 $dataBarangPendapatanSeriAwal2 = '';
@@ -42,7 +45,10 @@ foreach($editData as $row){
     $dataBarangPendapatanSeriAkhir3 = $row['BarangPendapatan3Serial_end'];
     $dataBarangPendapatan = $row['BarangPendapatan'];
     $dataBarangVolume = $row['BarangVolume'];
+<<<<<<< HEAD
     $dataGambar = $row['BuktiSetoran'];
+=======
+>>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 }
 
 ?>
@@ -415,6 +421,7 @@ foreach($editData as $row){
         </div>
         <div class="form-group row ">
             <label for="barang_volume" class="col-4 label-wrap">
+<<<<<<< HEAD
                 LAMPIRAN BUKTI SETORAN 
             </label>
             <div class="col">
@@ -428,6 +435,8 @@ foreach($editData as $row){
         </div>  
         <div class="form-group row ">
             <label for="barang_volume" class="col-4 label-wrap">
+=======
+>>>>>>> ac529ab6ce9452b844389607085401db5948f94d
                 CATATAN OPERASIONAL 
             </label>
             <div class="col">

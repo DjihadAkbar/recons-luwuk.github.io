@@ -79,14 +79,22 @@
                     min="2022-11-01" >
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="form-group col">
+=======
+            <!-- <div class="form-group col">
+>>>>>>> ac529ab6ce9452b844389607085401db5948f94d
                 <label for="tanggal_akhir" class="label-wrap  ml-2"> TANGGAL AKHIR </label>
                 
                 <div class="col">
                     <input class="form-control" type="date" id="tanggal_akhir" name="tanggal_akhir" value="2022-11-01"
                     min="2022-11-01" max="2023-12-31">
                 </div>
+<<<<<<< HEAD
             </div>
+=======
+            </div> -->
+>>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 
             <div class="form-group col">
                 <label for="trip" class="label-wrap  ml-2" style="display:inline-block;">&#8203;  </label>

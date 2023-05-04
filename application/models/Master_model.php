@@ -276,6 +276,7 @@ class Master_model extends CI_Model
         }
         return $this->db->get('harbours')->result_array();
     }
+<<<<<<< HEAD
     public function lintasanSpv(){
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('route as lintasan');
@@ -284,6 +285,9 @@ class Master_model extends CI_Model
 
         return $query;
     }
+=======
+
+>>>>>>> ac529ab6ce9452b844389607085401db5948f94d
     public function lintasanWIthId($id)
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
