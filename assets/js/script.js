@@ -72,7 +72,6 @@ $(document).ready(function(){
         }
     })
 
-<<<<<<< HEAD
     $(document).on("keydown", ":input:not(textarea)", function(event) {
         // return event.key != "Enter";
         if (event.key === "Enter") {
@@ -91,12 +90,6 @@ $(document).ready(function(){
 
 
     
-=======
-
-
-    $()
-
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
     //Auto FIlter Pelabuhan di report
     // $('#pelabuhan_asal_report').change(function(){
     //     var $pelabuhan = $(this).val();
