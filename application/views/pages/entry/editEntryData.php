@@ -8,10 +8,7 @@ $dataTanggal = '';
 $dataWaktu = ''; 
 $dataWaktuTiba = ''; 
 $dataTarif = '';
-<<<<<<< HEAD
 $dataGambar = '';
-=======
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 $dataBarangPendapatanSeriAwal = '';
 $dataBarangPendapatanSeriAkhir = '';
 $dataBarangPendapatanSeriAwal2 = '';
@@ -45,10 +42,7 @@ foreach($editData as $row){
     $dataBarangPendapatanSeriAkhir3 = $row['BarangPendapatan3Serial_end'];
     $dataBarangPendapatan = $row['BarangPendapatan'];
     $dataBarangVolume = $row['BarangVolume'];
-<<<<<<< HEAD
     $dataGambar = $row['BuktiSetoran'];
-=======
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
 }
 
 ?>

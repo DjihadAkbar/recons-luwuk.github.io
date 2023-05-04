@@ -278,10 +278,7 @@ if (!$this->session->userdata('logged_in'))
         
 
     document.getElementById("tanggal_berangkat").valueAsDate = new Date();
-<<<<<<< HEAD
     document.getElementById("tanggal_akhir").valueAsDate = new Date();
-=======
->>>>>>> ac529ab6ce9452b844389607085401db5948f94d
     });
 </script>
 <?php $this->load->view('template/dashboard/footer'); ?>
