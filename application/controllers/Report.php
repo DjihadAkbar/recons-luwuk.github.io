@@ -769,6 +769,7 @@ class Report extends CI_Controller
         );
 
         $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
+        $spreadsheet->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
 
         //=========================== Sheet 2 =============================
         $entryData2 = mysqli_query($koneksi, "
@@ -1179,8 +1180,6 @@ class Report extends CI_Controller
             $myWorkSheet->setCellValue('C35', strtoupper(terbilang($myWorkSheet->getCell('J34')->getCalculatedValue())));
         }
 
-        $sheet->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
-        $myWorkSheet->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
 
         // $myWorkSheet->getStyle('C10:J16')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_ACCOUNTING_EUR);
         // $myWorkSheet->getStyle('C18:J30')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
@@ -1654,7 +1653,7 @@ class Report extends CI_Controller
             );
 
             $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-            $sheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
+            $spreadsheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
 
             $no++;
         }
