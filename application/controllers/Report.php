@@ -1307,8 +1307,8 @@ class Report extends CI_Controller
             $sheet->mergeCells('C17:C30')->getStyle('C17')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('C31:C34')->getStyle('C31')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             $sheet->mergeCells('C31:C34')->getStyle('C31')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
-            $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
+            // $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            // $sheet->mergeCells('C35:C40')->getStyle('C35')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('G43:G44')->getStyle('G43')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('G43:G44')->getStyle('G43')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             $sheet->mergeCells('J43:J44')->getStyle('J43')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
@@ -1354,7 +1354,7 @@ class Report extends CI_Controller
             $sheet->setCellValue('C9', 'I')->getStyle('C9')->getFont()->setBold(true);
             $sheet->setCellValue('C17', 'II')->getStyle('C17')->getFont()->setBold(true);
             $sheet->setCellValue('C31', 'III')->getStyle('C31')->getFont()->setBold(true);
-            $sheet->setCellValue('C35', 'IV')->getStyle('C35')->getFont()->setBold(true);
+            // $sheet->setCellValue('C35', 'IV')->getStyle('C35')->getFont()->setBold(true);
             $sheet->setCellValue('D9', 'Penumpang')->getStyle('D9')->getFont()->setBold(true);
             $sheet->setCellValue('D10', 'Eksekutif Dewasa');
             $sheet->setCellValue('D11', 'Eksekutif Anak');
@@ -1381,43 +1381,43 @@ class Report extends CI_Controller
             $sheet->setCellValue('D32', 'Curah (Ton)/M3');
             $sheet->setCellValue('D33', 'Curah (M3)');
             $sheet->setCellValue('D34', 'Sub Jumlah')->getStyle('D34')->getFont()->setBold(true);
-            $sheet->setCellValue('D35', 'Suplesi')->getStyle('D35')->getFont()->setBold(true);
-            $sheet->setCellValue('D36', 'Ek. Ke Bisnis I DWS');
-            $sheet->setCellValue('D37', 'Ek. Ke Bisnis I ANK');
-            $sheet->setCellValue('D38', 'Ek. Ke Bisnis II DWS');
-            $sheet->setCellValue('D39', 'Ek. Ke Bisnis II ANK');
-            $sheet->setCellValue('D40', 'Sub Jumlah')->getStyle('D40')->getFont()->setBold(true);
-            $sheet->setCellValue('D41', 'Jumlah')->getStyle('D41')->getFont()->setBold(true);
-            $sheet->setCellValue('G43', 'Jasa Administrasi')->getStyle('G43')->getFont()->setBold(true);
-            $sheet->setCellValue('H43', '13.75%')->getStyle('H43')->getFont()->setBold(true);
-            $sheet->setCellValue('I43', '15.40%')->getStyle('I43')->getFont()->setBold(true);
-            $sheet->setCellValue('G46', 'Besaran Penyetoran Asuransi')->getStyle('G46')->getFont()->setBold(true);
-            $sheet->getStyle('G46')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
-            $sheet->setCellValue('G47', '(Jumlah Total - Jasa Administrasi)')->getStyle('G47')->getFont()->setBold(true);
+            // $sheet->setCellValue('D35', 'Suplesi')->getStyle('D35')->getFont()->setBold(true);
+            // $sheet->setCellValue('D36', 'Ek. Ke Bisnis I DWS');
+            // $sheet->setCellValue('D37', 'Ek. Ke Bisnis I ANK');
+            // $sheet->setCellValue('D38', 'Ek. Ke Bisnis II DWS');
+            // $sheet->setCellValue('D39', 'Ek. Ke Bisnis II ANK');
+            // $sheet->setCellValue('D40', 'Sub Jumlah')->getStyle('D40')->getFont()->setBold(true);
+            $sheet->setCellValue('D35', 'Jumlah')->getStyle('D35')->getFont()->setBold(true);
+            $sheet->setCellValue('G37', 'Jasa Administrasi')->getStyle('G37')->getFont()->setBold(true);
+            $sheet->setCellValue('H37', '13.75%')->getStyle('H37')->getFont()->setBold(true);
+            $sheet->setCellValue('I37', '15.40%')->getStyle('I37')->getFont()->setBold(true);
+            $sheet->setCellValue('G40', 'Besaran Penyetoran Asuransi')->getStyle('G40')->getFont()->setBold(true);
+            $sheet->getStyle('G40')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->setCellValue('G41', '(Jumlah Total - Jasa Administrasi)')->getStyle('G41')->getFont()->setBold(true);
             $sheet->getStyle('G47')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             if ($bulanReport == 12) {
-                $sheet->setCellValue('H50', 'Luwuk, ' . ucwords($bulan[1]) . " " . $tahunReport + 1)->getStyle('G50')->getFont()->setBold(true);
+                $sheet->setCellValue('H44', 'Luwuk,    ' . ucwords($bulan[1]) . " " . $tahunReport + 1)->getStyle('H44')->getFont()->setBold(true);
             } else {
-                $sheet->setCellValue('H50', 'Luwuk, ' . ucwords($bulan[$bulanReport + 1]) . " " . $tahunReport)->getStyle('G50')->getFont()->setBold(true);
+                $sheet->setCellValue('H44', 'Luwuk, ' . ucwords($bulan[$bulanReport + 1]) . " " . $tahunReport)->getStyle('H44')->getFont()->setBold(true);
             }
-            $sheet->setCellValue('C52', 'Menyetujui,');
-            $sheet->setCellValue('C53', 'General Manager');
-            $sheet->setCellValue('F52', 'Mengetahui,');
-            $sheet->setCellValue('F53', 'Manager Keuangan, SDM & SCM');
-            $sheet->setCellValue('H52', 'Membuat,');
-            $sheet->setCellValue('H53', 'Staf Keuangan');
+            $sheet->setCellValue('C46', 'Menyetujui,');
+            $sheet->setCellValue('C47', 'General Manager');
+            $sheet->setCellValue('F46', 'Mengetahui,');
+            $sheet->setCellValue('F47', 'Manager Keuangan, SDM & SCM');
+            $sheet->setCellValue('H46', 'Membuat,');
+            $sheet->setCellValue('H47', 'Staf Keuangan');
             foreach ($this->employee as $row) {
                 if ($row['position'] == "GENERAL MANAGER") {
-                    $sheet->setCellValue('C58', $row['name']);
-                    $sheet->setCellValue('C59', 'NIK ' . $row['id_num']);
+                    $sheet->setCellValue('C52', $row['name']);
+                    $sheet->setCellValue('C53', 'NIK ' . $row['id_num']);
                 }
                 if ($row['position'] == "MANAGER KEUANGAN") {
-                    $sheet->setCellValue('F58', $row['name']);
-                    $sheet->setCellValue('F59', 'NIK ' . $row['id_num']);
+                    $sheet->setCellValue('F52', $row['name']);
+                    $sheet->setCellValue('F53', 'NIK ' . $row['id_num']);
                 }
                 if ($row['position'] == "STAF KEUANGAN") {
-                    $sheet->setCellValue('H58', $row['name']);
-                    $sheet->setCellValue('H59', 'NIK ' . $row['id_num']);
+                    $sheet->setCellValue('H52', $row['name']);
+                    $sheet->setCellValue('H53', 'NIK ' . $row['id_num']);
                 }
             }
 
@@ -1425,18 +1425,19 @@ class Report extends CI_Controller
             for ($col = 'A'; $col !== 'K'; $col++) {
                 $sheet->getColumnDimension($col)->setAutoSize(true);
             }
-            $sheet->getStyle('C35')->getAlignment()->setWrapText(true);
             $sheet->getStyle('C3')->getAlignment()->setWrapText(true);
 
             $styleArray = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
-            $sheet->getStyle('C3:J41')->applyFromArray($styleArray);
+            $sheet->getStyle('C3:J35')->applyFromArray($styleArray);
+
             $styleArrayPersentase = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
-            $sheet->getStyle('G43:J44')->applyFromArray($styleArrayPersentase);
+            $sheet->getStyle('G37:J37')->applyFromArray($styleArrayPersentase);
             $styleArrayBesaran = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
-            $sheet->getStyle('G46:J47')->applyFromArray($styleArrayBesaran);
+            $sheet->getStyle('G40:J40')->applyFromArray($styleArrayBesaran);
             $styleArrayOutline = ['borders' => ['outline' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
-            $sheet->getStyle('C42:J61')->applyFromArray($styleArrayOutline);
-            $sheet->getPageSetup()->setPrintArea('A1:J42', \PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::SETPRINTRANGE_INSERT);
+            $sheet->getStyle('C36:J55')->applyFromArray($styleArrayOutline);
+
+            // $sheet->getPageSetup()->setPrintArea('A1:J42', \PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::SETPRINTRANGE_INSERT);
             // $sheet->setBreak('A1:J42',\PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::BREAK_ROW);
 
             while ($record = mysqli_fetch_array($entryData)) {
@@ -1603,63 +1604,63 @@ class Report extends CI_Controller
 
                 //Suplesi
                 //Jumlah Produksi
-                $sheet->setCellValue('E36', $record['Jumlah Suplesi1Dewasa']);
-                $sheet->setCellValue('E37', $record['Jumlah Suplesi1Anak']);
-                $sheet->setCellValue('E38', $record['Jumlah Suplesi2Dewasa']);
-                $sheet->setCellValue('E39', $record['Jumlah Suplesi2Anak']);
-                $sheet->setCellValue('E40', '=SUM(E36:E39)')->getStyle('E40')->getFont()->setBold(true);
+                // $sheet->setCellValue('E36', $record['Jumlah Suplesi1Dewasa']);
+                // $sheet->setCellValue('E37', $record['Jumlah Suplesi1Anak']);
+                // $sheet->setCellValue('E38', $record['Jumlah Suplesi2Dewasa']);
+                // $sheet->setCellValue('E39', $record['Jumlah Suplesi2Anak']);
+                // $sheet->setCellValue('E40', '=SUM(E36:E39)')->getStyle('E40')->getFont()->setBold(true);
 
-                //Pendapatan Pelayaran
-                $sheet->setCellValue('F36', $record['Suplesi1 Dewasa']);
-                $sheet->setCellValue('F37', $record['Suplesi1 Anak']);
-                $sheet->setCellValue('F38', $record['Suplesi2 Dewasa']);
-                $sheet->setCellValue('F39', $record['Suplesi2 Anak']);
-                $sheet->setCellValue('F40', '=SUM(F36:F39)')->getStyle('F40')->getFont()->setBold(true);
+                // //Pendapatan Pelayaran
+                // $sheet->setCellValue('F36', $record['Suplesi1 Dewasa']);
+                // $sheet->setCellValue('F37', $record['Suplesi1 Anak']);
+                // $sheet->setCellValue('F38', $record['Suplesi2 Dewasa']);
+                // $sheet->setCellValue('F39', $record['Suplesi2 Anak']);
+                // $sheet->setCellValue('F40', '=SUM(F36:F39)')->getStyle('F40')->getFont()->setBold(true);
 
-                // Pendapatan Asuransi
-                $sheet->setCellValue('H36', $record['Suplesi1 Dewasa']);
-                $sheet->setCellValue('H37', $record['Suplesi1 Anak']);
-                $sheet->setCellValue('H38', $record['Suplesi2 Dewasa']);
-                $sheet->setCellValue('H39', $record['Suplesi2 Anak']);
-                $sheet->setCellValue('H40', '=SUM(H36:H39)')->getStyle('H40')->getFont()->setBold(true);
+                // // Pendapatan Asuransi
+                // $sheet->setCellValue('H36', $record['Suplesi1 Dewasa']);
+                // $sheet->setCellValue('H37', $record['Suplesi1 Anak']);
+                // $sheet->setCellValue('H38', $record['Suplesi2 Dewasa']);
+                // $sheet->setCellValue('H39', $record['Suplesi2 Anak']);
+                // $sheet->setCellValue('H40', '=SUM(H36:H39)')->getStyle('H40')->getFont()->setBold(true);
 
 
 
                 //Total Baris
-                $sheet->setCellValue('E41', '=E16+E30+E34+E40')->getStyle('E41')->getFont()->setBold(true);
-                $sheet->setCellValue('F41', '=F16+F30+F34+F40')->getStyle('F41')->getFont()->setBold(true);
-                $sheet->setCellValue('G41', '=G16+G30+G34+G40')->getStyle('G41')->getFont()->setBold(true);
-                $sheet->setCellValue('H41', '=H16+H30+H34+H40')->getStyle('H41')->getFont()->setBold(true);
-                $sheet->setCellValue('I41', '=I16+I30+I34+I40')->getStyle('I41')->getFont()->setBold(true);
-                $sheet->setCellValue('J41', '=J16+J30+J34+J40')->getStyle('J41')->getFont()->setBold(true);
+                $sheet->setCellValue('E35', '=E16+E30+E34')->getStyle('E35')->getFont()->setBold(true);
+                $sheet->setCellValue('F35', '=F16+F30+F34')->getStyle('F35')->getFont()->setBold(true);
+                $sheet->setCellValue('G35', '=G16+G30+G34')->getStyle('G35')->getFont()->setBold(true);
+                $sheet->setCellValue('H35', '=H16+H30+H34')->getStyle('H35')->getFont()->setBold(true);
+                $sheet->setCellValue('I35', '=I16+I30+I34')->getStyle('I35')->getFont()->setBold(true);
+                $sheet->setCellValue('J35', '=J16+J30+J34')->getStyle('J35')->getFont()->setBold(true);
 
-                $sheet->setCellValue('H44', '=ROUND((H41*H43),0)')->getStyle('H44')->getFont()->setBold(true);
-                $sheet->setCellValue('I44', '=ROUND((I41*I43),0)')->getStyle('I44')->getFont()->setBold(true);
-                $sheet->setCellValue('J43', '=H44+I44')->getStyle('J43')->getFont()->setBold(true);
+                $sheet->setCellValue('H38', '=ROUND((H35*H37),0)')->getStyle('H38')->getFont()->setBold(true);
+                $sheet->setCellValue('I38', '=ROUND((I35*I37),0)')->getStyle('I38')->getFont()->setBold(true);
+                $sheet->setCellValue('J37', '=H38+I38')->getStyle('J43')->getFont()->setBold(true);
 
-                $sheet->setCellValue('H46', '=+H41 - H44')->getStyle('H46')->getFont()->setBold(true);
-                $sheet->setCellValue('I46', '=+I41 - I44')->getStyle('I46')->getFont()->setBold(true);
-                $sheet->setCellValue('J46', '=+H46 + I46')->getStyle('J46')->getFont()->setBold(true);
+                $sheet->setCellValue('H40', '=+H35 - H38')->getStyle('H40')->getFont()->setBold(true);
+                $sheet->setCellValue('I40', '=+I35 - I38')->getStyle('I40')->getFont()->setBold(true);
+                $sheet->setCellValue('J40', '=+H40 + I40')->getStyle('J40')->getFont()->setBold(true);
             }
 
-            $styleArray = array(
-                'allBorders' => array(
-                    'outline' => array(
-                        'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
-                        'color' => array('argb' => 'FFFF0000'),
-                    ),
-                ),
-            );
+            // $styleArray = array(
+            //     'allBorders' => array(
+            //         'outline' => array(
+            //             'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
+            //             'color' => array('argb' => 'FFFF0000'),
+            //         ),
+            //     ),
+            // );
 
-            $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-            $sheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
+            // $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
+            $sheet->getActiveSheet()->getStyle('E10:J40')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
 
             $no++;
         }
 
         $writer = new Xlsx($spreadsheet);
         header('Content-Type: application/vnd.ms-excel');
-        header('Content-Disposition: attachment; filename="' . urlencode($title . " " . $bulanReport . " " . $tahunReport . " " . $lintasanReport . ".xlsx") . '"');
+        header('Content-Disposition: attachment; filename="' . urlencode($title . " " . $bulanReport . " " . $tahunReport . ".xlsx") . '"');
         ob_end_clean();
         $writer->save('php://output');
         exit();
