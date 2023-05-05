@@ -769,7 +769,6 @@ class Report extends CI_Controller
         );
 
         $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-        $spreadsheet->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
 
         //=========================== Sheet 2 =============================
         $entryData2 = mysqli_query($koneksi, "
@@ -1634,8 +1633,8 @@ class Report extends CI_Controller
                 $sheet->setCellValue('I41', '=I16+I30+I34+I40')->getStyle('I41')->getFont()->setBold(true);
                 $sheet->setCellValue('J41', '=J16+J30+J34+J40')->getStyle('J41')->getFont()->setBold(true);
 
-                $sheet->setCellValue('H44', '=+(H41*13,75)/100')->getStyle('H44')->getFont()->setBold(true);
-                $sheet->setCellValue('I44', '=+(I41*15,40)/100')->getStyle('I44')->getFont()->setBold(true);
+                $sheet->setCellValue('H44', '=ROUND((H41*H43),2)')->getStyle('H44')->getFont()->setBold(true);
+                $sheet->setCellValue('I44', '=ROUND((I41*I43),2)')->getStyle('I44')->getFont()->setBold(true);
                 $sheet->setCellValue('J43', '=H44+I44')->getStyle('J43')->getFont()->setBold(true);
 
                 $sheet->setCellValue('H46', '=+H41 - H44')->getStyle('H46')->getFont()->setBold(true);
@@ -1653,7 +1652,7 @@ class Report extends CI_Controller
             );
 
             $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-            $spreadsheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
+            $sheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;#.##0');
 
             $no++;
         }
