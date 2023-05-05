@@ -1424,9 +1424,6 @@ class Report extends CI_Controller
 
             for ($col = 'A'; $col !== 'K'; $col++) {
                 $sheet->getColumnDimension($col)->setAutoSize(true);
-                for ($i = 0; $i <= 50; $i++) {
-                    $spreadsheet->getActiveSheet()->getStyle($col . "" . $i)->getNumberFormat()->setFormatCode('[Black][>=0]#.##0;[Red][<0]#.##0;#.##0');
-                }
             }
             $sheet->getStyle('C35')->getAlignment()->setWrapText(true);
             $sheet->getStyle('C3')->getAlignment()->setWrapText(true);
@@ -1655,7 +1652,7 @@ class Report extends CI_Controller
             );
 
             $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-            $spreadsheet->getActiveSheet()->getStyle('H15')->getNumberFormat()->setFormatCode('[Blue][>=3000]#,##0;[Red][<0]#,##0;#,##0');
+            $sheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Blue][>=3000]#,##0;[Red][<0]#,##0;#,##0');
 
             $no++;
         }
