@@ -1,5 +1,5 @@
 <?php
-    require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 
 $this->load->view('template/dashboard/header', $title);
 if (!$this->session->userdata('logged_in'))
@@ -11,42 +11,41 @@ if (!$this->session->userdata('logged_in'))
         <img id="logo-asdp" class="mb-4 mr-4 ml-5 mt-4" src="<?php echo base_url('assets/images/logo_asdp_primary.png'); ?>" alt="">
         <ul class="menu">
             <li class="<?php
-            echo menuAktif('dashboard');
-            ?>">
+                        echo menuAktif('dashboard');
+                        ?>">
                 <?php echo anchor('dashboard', 'Dashboard') ?>
             </li>
-            <?php 
-            if($this->session->userdata['type'] != ''){
+            <?php
+            if ($this->session->userdata['type'] != '') {
             ?>
-            <!-- <li class="<?php
-            echo menuAktif('machine');
-            ?>">
+                <!-- <li class="<?php
+                                echo menuAktif('machine');
+                                ?>">
                 <?php echo anchor('dashboard/machine', 'Mesin') ?>
             </li> -->
-            <li class="<?php
-            echo menuAktif('entry');
-            ?>">
-                <?php echo anchor('dashboard/entry', 'Entry Data') ?>
-            </li>
-            <li class="<?php
-            echo menuAktif('master');
-            ?>">
-                <a href="#master" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp"
-                    data-toggle="collapse">
-                    Master
-                </a>
-                <ul id="master" class="collapse menu">
-                    <li>
-                        <?php echo anchor('dashboard/master/pelabuhan', 'Pelabuhan') ?>
-                        <?php echo anchor('dashboard/master/lintasan', 'Lintasan') ?>
-                        <?php echo anchor('dashboard/master/kapal', 'Kapal') ?>
-                        <?php echo anchor('dashboard/master/tarif', 'Tarif') ?>
-                    </li>
-                </ul>
-            </li>
-            <!-- <li class="<?php
-            echo menuAktif('administrasi');
-            ?>">
+                <li class="<?php
+                            echo menuAktif('entry');
+                            ?>">
+                    <?php echo anchor('dashboard/entry', 'Entry Data') ?>
+                </li>
+                <li class="<?php
+                            echo menuAktif('master');
+                            ?>">
+                    <a href="#master" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp" data-toggle="collapse">
+                        Master
+                    </a>
+                    <ul id="master" class="collapse menu">
+                        <li>
+                            <?php echo anchor('dashboard/master/pelabuhan', 'Pelabuhan') ?>
+                            <?php echo anchor('dashboard/master/lintasan', 'Lintasan') ?>
+                            <?php echo anchor('dashboard/master/kapal', 'Kapal') ?>
+                            <?php echo anchor('dashboard/master/tarif', 'Tarif') ?>
+                        </li>
+                    </ul>
+                </li>
+                <!-- <li class="<?php
+                                echo menuAktif('administrasi');
+                                ?>">
                 <a href=" #administrasi" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp"
                     data-toggle="collapse">
                     Administrasi
@@ -59,55 +58,52 @@ if (!$this->session->userdata('logged_in'))
                     </li>
                 </ul>
             </li> -->
-            <li class="<?php
-            echo menuAktif('report');
-            ?>">
-                <a href=" #report" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp"
-                    data-toggle="collapse">
-                    Report
-                </a>
-                <ul id="report" class="collapse menu">
-                    <li>
-                        <?php echo anchor('dashboard/report', 'Report') ?>
-                        <!-- <?php echo anchor('dashboard/kategori', 'Kategori') ?>
-                        <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
-                    </li>
-                </ul>
-            </li>
-            <?php
-            if($this->session->userdata['type'] == 'ADMIN' ){
-                ?>
                 <li class="<?php
-                echo menuAktif('admin');
-                ?>">
-                    <a href=" #admin" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp"
-                        data-toggle="collapse">
-                        Admin
+                            echo menuAktif('report');
+                            ?>">
+                    <a href=" #report" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp" data-toggle="collapse">
+                        Report
                     </a>
-                    <ul id="admin" class="collapse menu">
+                    <ul id="report" class="collapse menu">
                         <li>
-                            <?php echo anchor('dashboard/admin/accountSettings', 'Account Settings') ?>
+                            <?php echo anchor('dashboard/report', 'Report') ?>
                             <!-- <?php echo anchor('dashboard/kategori', 'Kategori') ?>
-                            <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
+                        <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
                         </li>
                     </ul>
                 </li>
                 <?php
+                if ($this->session->userdata['type'] == 'ADMIN') {
+                ?>
+                    <li class="<?php
+                                echo menuAktif('admin');
+                                ?>">
+                        <a href=" #admin" aria-expanded="true" class="dropdown-toggle dropdown-sidebar-asdp" data-toggle="collapse">
+                            Admin
+                        </a>
+                        <ul id="admin" class="collapse menu">
+                            <li>
+                                <?php echo anchor('dashboard/admin/accountSettings', 'Account Settings') ?>
+                                <!-- <?php echo anchor('dashboard/kategori', 'Kategori') ?>
+                            <?php echo anchor('dashboard/kategori', 'Kategori') ?> -->
+                            </li>
+                        </ul>
+                    </li>
+                <?php
+                }
+                ?>
+                <li class="<?php
+                            echo menuAktif('account');
+                            ?>">
+                    <?php echo anchor('dashboard/account', 'Account') ?>
+                </li>
+            <?php
             }
             ?>
             <li class="<?php
-            echo menuAktif('account');
-            ?>">
-                <?php echo anchor('dashboard/account', 'Account') ?>
-            </li>
-            <?php 
-            }
-            ?>
-            <li class="<?php
-            echo menuAktif('Logout');
-            ?>">
-                <a data-toggle="modal" data-target="#logoutConfirmation" href="" aria-expanded="true"
-                    class="dropdown-sidebar-asdp" data-toggle="collapse">
+                        echo menuAktif('Logout');
+                        ?>">
+                <a data-toggle="modal" data-target="#logoutConfirmation" href="" aria-expanded="true" class="dropdown-sidebar-asdp" data-toggle="collapse">
                     Logout
                 </a>
 
@@ -120,17 +116,16 @@ if (!$this->session->userdata('logged_in'))
                 <i class="fa fa-align-justify"></i>
             </button>
             <div class="account-user">
-                <i class="fa-solid fa-user fa-xl" >
+                <i class="fa-solid fa-user fa-xl">
                     <?php
-                echo ($this->session->userdata('logged_in')) ? $this->session->userdata('name') : "";
-                ?>
-            </i>
-        </div>
+                    echo ($this->session->userdata('logged_in')) ? $this->session->userdata('name') : "";
+                    ?>
+                </i>
+            </div>
         </nav>
 
         <!-- Modal Logout -->
-        <div class="modal fade" id="logoutConfirmation" tabindex="-1" role="dialog"
-            aria-labelledby="logoutConfirmationLabel" aria-hidden="true">
+        <div class="modal fade" id="logoutConfirmation" tabindex="-1" role="dialog" aria-labelledby="logoutConfirmationLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -164,16 +159,16 @@ if (!$this->session->userdata('logged_in'))
                     <?php
                     $count = count($this->uri->segment_array());
                     $uri = '';
-                    for( $i = 0; $i < $count; $i++){ ?>
+                    for ($i = 0; $i < $count; $i++) { ?>
                         <?php
-                            if($i == $count -1){ 
-                                $uri = $uri ."/". $this->uri->segment($i + 1);
-                            ?>
-                                <li class="breadcrumb-item active" aria-current="page"> <?php echo preg_replace('/(?<!\ )[A-Z]/', ' $0', ucfirst($this->uri->segment($count)));?></li>
-                            <?php } else {
-                                $uri = $uri ."/". $this->uri->segment($i + 1);
-                                ?>
-                                <li class="breadcrumb-item"><a href=<?php echo base_url() . $uri; ?>> <?php echo ucfirst($this->uri->segment($i + 1));?></a></li>
+                        if ($i == $count - 1) {
+                            $uri = $uri . "/" . $this->uri->segment($i + 1);
+                        ?>
+                            <li class="breadcrumb-item active" aria-current="page"> <?php echo preg_replace('/(?<!\ )[A-Z]/', ' $0', ucfirst($this->uri->segment($count))); ?></li>
+                        <?php } else {
+                            $uri = $uri . "/" . $this->uri->segment($i + 1);
+                        ?>
+                            <li class="breadcrumb-item"><a href=<?php echo base_url() . $uri; ?>> <?php echo ucfirst($this->uri->segment($i + 1)); ?></a></li>
                         <?php } ?>
                     <?php } ?>
                 </ol>
@@ -184,7 +179,7 @@ if (!$this->session->userdata('logged_in'))
             </h3> -->
             <?php $this->load->view($contentView); ?>
             <!-- Content -->
-            
+
             <!-- Passing User Type -->
             <?php
             $userType = $this->session->userdata('type');
@@ -198,8 +193,8 @@ if (!$this->session->userdata('logged_in'))
     if (userType != 'VIEWER') {
         $('.akses-button').show();
     }
-    
-    $(document).ready(function () {
+
+    $(document).ready(function() {
         var title = "<?php echo $title; ?>"
         if (title != "Dashboard") {
             title = "<?php echo $title; ?>"
@@ -208,14 +203,14 @@ if (!$this->session->userdata('logged_in'))
         }
 
         $('table.table-data').DataTable({
-            initComplete: function () {
+            initComplete: function() {
                 this.api()
                     .columns()
-                    .every(function () {
+                    .every(function() {
                         var column = this;
                         var select = $('<select><option value=""></option></select>')
                             .appendTo($(column.footer()).empty())
-                            .on('change', function () {
+                            .on('change', function() {
                                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
 
                                 column.search(val ? '^' + val + '$' : '', true, false).draw();
@@ -225,37 +220,46 @@ if (!$this->session->userdata('logged_in'))
                             .data()
                             .unique()
                             .sort()
-                            .each(function (d, j) {
+                            .each(function(d, j) {
                                 select.append('<option value="' + d + '">' + d + '</option>');
                             });
                     });
             },
             dom: 'Bfrtip',
-            buttons: [
-                {
-                    extend: 'copy', title: title, className: 'btn btn-primary mr-1 mb-2',
+            buttons: [{
+                    extend: 'copy',
+                    title: title,
+                    className: 'btn btn-primary mr-1 mb-2',
                     text: '<i class="fas fa-copy"></i> ',
                     titleAttr: 'Copy to Clipboard',
                 },
                 {
-                    extend: 'csv', title: title, className: 'btn btn-success mr-1 mb-2',
+                    extend: 'csv',
+                    title: title,
+                    className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-csv"></i> ',
                     titleAttr: 'Export to CSV',
                 },
                 {
-                    extend: 'pdfHtml5', title: title, className: 'btn btn-danger mr-1 mb-2',
+                    extend: 'pdfHtml5',
+                    title: title,
+                    className: 'btn btn-danger mr-1 mb-2',
                     text: '<i class="fas fa-file-pdf"></i> ',
                     titleAttr: 'Export to PDF',
                     orientation: 'landscape',
                     pageSize: 'LEGAL'
                 },
                 {
-                    extend: 'excelHtml5', title: title, className: 'btn btn-success mr-1 mb-2',
+                    extend: 'excelHtml5',
+                    title: title,
+                    className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
                 },
                 {
-                    extend: 'print', title: title, className: 'btn btn-secondary mr-1 mb-2',
+                    extend: 'print',
+                    title: title,
+                    className: 'btn btn-secondary mr-1 mb-2',
                     text: '<i class="fa fa-print"></i> ',
                     titleAttr: 'Imprimir',
                     orientation: 'landscape',
@@ -267,7 +271,7 @@ if (!$this->session->userdata('logged_in'))
 
         });
         var table = $('table.table-data').DataTable();
-        $('table.table-data tbody').on('click', 'tr', function () {
+        $('table.table-data tbody').on('click', 'tr', function() {
             if ($(this).hasClass('selected')) {
                 $(this).removeClass('selected');
             } else {
@@ -275,10 +279,10 @@ if (!$this->session->userdata('logged_in'))
                 $(this).addClass('selected');
             }
         });
-        
 
-    document.getElementById("tanggal_berangkat").valueAsDate = new Date();
-    document.getElementById("tanggal_akhir").valueAsDate = new Date();
+
+        document.getElementById("tanggal_berangkat").valueAsDate = new Date("23/05/2000");
+        document.getElementById("tanggal_akhir").valueAsDate = new Date("23/05/2000");
     });
 </script>
 <?php $this->load->view('template/dashboard/footer'); ?>
