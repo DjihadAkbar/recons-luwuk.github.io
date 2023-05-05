@@ -281,8 +281,8 @@ if (!$this->session->userdata('logged_in'))
         });
 
 
-        document.getElementById("tanggal_berangkat").valueAsDate = new Date("23/05/2000");
-        document.getElementById("tanggal_akhir").valueAsDate = new Date("23/05/2000");
+        document.getElementById("tanggal_berangkat").valueAsDate = new Date();
+        document.getElementById("tanggal_akhir").valueAsDate = new Date();
     });
 </script>
 <?php $this->load->view('template/dashboard/footer'); ?>
