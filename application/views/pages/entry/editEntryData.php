@@ -384,18 +384,7 @@ foreach ($editData as $row) {
                 <input type="number" class="form-control" name="barang_volume" id="barang_volume" value=<?php echo $dataBarangPendapatan; ?> min="0" placeholder="5000000">
             </div>
         </div>
-        <div class="form-group row ">
-            <label for="barang_volume" class="col-4 label-wrap">
-                LAMPIRAN BUKTI SETORAN
-            </label>
-            <div class="col">
-                <div class="mb-3">
-                    <label for="formFile" class="form-label"> <a href="">Tampilkan Bukti Setoran</a> : <?php echo $dataGambar; ?> </label>
 
-                    <input id="bukti-setoran" name="bukti-setoran" class="form-control" type="file" id="formFile">
-                </div>
-            </div>
-        </div>
         <div class="form-group row ">
             <label for="barang_volume" class="col-4 label-wrap">
                 CATATAN OPERASIONAL
@@ -410,3 +399,16 @@ foreach ($editData as $row) {
         ?>
     </div>
 </div>
+
+<!-- <div class="form-group row ">
+            <label for="barang_volume" class="col-4 label-wrap">
+                LAMPIRAN BUKTI SETORAN
+            </label>
+            <div class="col">
+                <div class="mb-3">
+                    <label for="formFile" class="form-label"> <a href="">Tampilkan Bukti Setoran</a> : <?php echo $dataGambar; ?> </label>
+
+                    <input id="bukti-setoran" name="bukti-setoran" class="form-control" type="file" id="formFile">
+                </div>
+            </div>
+        </div> -->
