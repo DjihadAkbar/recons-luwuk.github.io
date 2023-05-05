@@ -1652,7 +1652,7 @@ class Report extends CI_Controller
             );
 
             $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-            $sheet->getStyle('A1:A3')->getNumberFormat()->setFormatCode('#,##0.00');
+            $spreadsheet->getActiveSheet()->getStyle('A1:K1')->getNumberFormat()->setFormatCode('[Blue][>=3000]$#,##0;[Red][<0]$#,##0;$#,##0');
 
             $no++;
         }
