@@ -1312,6 +1312,7 @@ class Report extends CI_Controller
             $sheet->mergeCells('G37:G38')->getStyle('G37')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('G37:G38')->getStyle('G37')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             $sheet->mergeCells('J37:J38')->getStyle('J37')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
+            $sheet->mergeCells('J37:J38')->getStyle('J37')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('H40:H41')->getStyle('H40')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('I40:I41')->getStyle('I40')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
             $sheet->mergeCells('J40:J41')->getStyle('J40')->getAlignment()->setVertical(\PhpOffice\PhpSpreadsheet\Style\Alignment::VERTICAL_CENTER);
@@ -1394,9 +1395,10 @@ class Report extends CI_Controller
             $sheet->setCellValue('G40', 'Besaran Penyetoran Asuransi')->getStyle('G40')->getFont()->setBold(true);
             $sheet->getStyle('G40')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             $sheet->setCellValue('G41', '(Jumlah Total - Jasa Administrasi)')->getStyle('G41')->getFont()->setBold(true);
+            $sheet->getStyle('G41')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             $sheet->getStyle('G47')->getAlignment()->setHorizontal(\PhpOffice\PhpSpreadsheet\Style\Alignment::HORIZONTAL_CENTER);
             if ($bulanReport == 12) {
-                $sheet->setCellValue('H44', 'Luwuk,    ' . ucwords($bulan[1]) . " " . $tahunReport + 1)->getStyle('H44')->getFont()->setBold(true);
+                $sheet->setCellValue('H44', 'Luwuk,' . " " . " " . ucwords($bulan[1]) . " " . $tahunReport + 1)->getStyle('H44')->getFont()->setBold(true);
             } else {
                 $sheet->setCellValue('H44', 'Luwuk, ' . ucwords($bulan[$bulanReport + 1]) . " " . $tahunReport)->getStyle('H44')->getFont()->setBold(true);
             }
@@ -1432,8 +1434,10 @@ class Report extends CI_Controller
 
             $styleArrayPersentase = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
             $sheet->getStyle('G37:J37')->applyFromArray($styleArrayPersentase);
+
             $styleArrayBesaran = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
             $sheet->getStyle('G40:J40')->applyFromArray($styleArrayBesaran);
+
             $styleArrayOutline = ['borders' => ['outline' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
             $sheet->getStyle('C36:J55')->applyFromArray($styleArrayOutline);
 
@@ -1643,16 +1647,16 @@ class Report extends CI_Controller
                 $sheet->setCellValue('J40', '=+H40 + I40')->getStyle('J40')->getFont()->setBold(true);
             }
 
-            // $styleArray = array(
-            //     'allBorders' => array(
-            //         'outline' => array(
-            //             'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
-            //             'color' => array('argb' => 'FFFF0000'),
-            //         ),
-            //     ),
-            // );
+            $styleArray = array(
+                'allBorders' => array(
+                    'outline' => array(
+                        'style' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THICK,
+                        'color' => array('argb' => 'FFFF0000'),
+                    ),
+                ),
+            );
 
-            // $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
+            $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
             $sheet->getStyle('E10:J40')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
 
             $no++;
