@@ -20,7 +20,8 @@ class Entry extends CI_Controller
         $this->load->view('template/dashboard/body', $data);
     }
 
-    public function editEntryData(){
+    public function editEntryData()
+    {
         $data['title'] = 'Edit Data';
         $data['contentView'] = 'pages/entry/editEntryData';
         $data['produksi'] = $this->Entry_model->produksi();
@@ -30,10 +31,11 @@ class Entry extends CI_Controller
         $data['kapal_spv'] = $this->Entry_model->kapal_spv();
         $data['tarif'] = $this->Entry_model->tarif();
         $data['trip'] = $this->Entry_model->trip();
-        $data['editData'] = $this->Entry_model->editEntryData($_GET['id']);        
+        $data['editData'] = $this->Entry_model->editEntryData($_GET['id']);
         $this->load->view('template/dashboard/body', $data);
     }
-    public function editEntryDestination(){
+    public function editEntryDestination()
+    {
         $data['title'] = 'Edit Data Destination';
         $data['contentView'] = 'pages/entry/editEntryDestination';
         $data['produksi'] = $this->Entry_model->produksi();
@@ -43,11 +45,12 @@ class Entry extends CI_Controller
         $data['kapal_spv'] = $this->Entry_model->kapal_spv();
         $data['tarif'] = $this->Entry_model->tarif();
         $data['trip'] = $this->Entry_model->trip();
-        $data['editDataDestination'] = $this->Entry_model->editEntryDestination($_GET['id']);        
+        $data['editDataDestination'] = $this->Entry_model->editEntryDestination($_GET['id']);
         $this->load->view('template/dashboard/body', $data);
     }
 
-    public function prosesEditEntryDestination(){
+    public function prosesEditEntryDestination()
+    {
         $dataInput = [
             'departure_time' => $this->input->post('edit_waktu_tiba'),
         ];
@@ -55,14 +58,15 @@ class Entry extends CI_Controller
         redirect('dashboard/entry');
     }
 
-    public function prosesEditEntryData(){
+    public function prosesEditEntryData()
+    {
         //AutoWeek
         $valueWeek = 0;
-        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 7) $valueWeek = 'W1';
-        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 7 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 14) $valueWeek = 'W2';
-        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 14 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 21) $valueWeek = 'W3';
-        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 21 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 28) $valueWeek = 'W4';
-        if((int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] > 28 && (int)explode('-',$this->input->post('edit_tanggal_berangkat'))[2] <= 31) $valueWeek = 'W5';
+        if ((int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] <= 7) $valueWeek = 'W1';
+        if ((int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] > 7 && (int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] <= 14) $valueWeek = 'W2';
+        if ((int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] > 14 && (int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] <= 21) $valueWeek = 'W3';
+        if ((int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] > 21 && (int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] <= 28) $valueWeek = 'W4';
+        if ((int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] > 28 && (int)explode('-', $this->input->post('edit_tanggal_berangkat'))[2] <= 31) $valueWeek = 'W5';
 
         $tahun = 0;
         $bulan = 0;
@@ -73,8 +77,8 @@ class Entry extends CI_Controller
         // foreach($pelabuhan as $key => $value){
         //     $namaPelabuhan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['pelabuhan']))));
         // }
-        foreach($lintasan as $key => $value){
-            $namaLintasan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
+        foreach ($lintasan as $key => $value) {
+            $namaLintasan = str_replace(' ', '', ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
             // $setelahExplode = explode('-',$value['lintasan']);
             // if(ucwords(strtolower($setelahExplode[0])) == $namaPelabuhan){
             //     $namaLintasan = $namaPelabuhan.ucwords(strtolower($setelahExplode[1]));
@@ -84,15 +88,15 @@ class Entry extends CI_Controller
         }
         $valueTarif = '';
         foreach ($tarif as $key => $value) {
-            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $namaLintasan){
-                if(substr($value['tarif'], -2) >= $tahun){
+            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $namaLintasan) {
+                if (substr($value['tarif'], -2) >= $tahun) {
                     $tahun = substr($value['tarif'], -2);
                 }
             }
         }
         foreach ($tarif as $key => $value) {
-            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $namaLintasan){
-                if($tahun == substr($value['tarif'], -2) && substr($value['tarif'],-4, -2) >= $bulan){
+            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $namaLintasan) {
+                if ($tahun == substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan) {
                     $valueTarif = $value['tarif'];
                 }
             }
@@ -134,7 +138,7 @@ class Entry extends CI_Controller
             'ANGKPOS' => (int) $this->input->post('ANGKPOS') + (int) $this->input->post('ANGKPOS2') + (int) $this->input->post('ANGKPOS3'),
             'BBM' => (int) $this->input->post('BBM') + (int) $this->input->post('BBM2') + (int) $this->input->post('BBM3'),
             'BARTON' => (int) $this->input->post('BARTON') + (int) $this->input->post('BARTON2') + (int) $this->input->post('BARTON3'),
-            'BarangVolume' => (int) $this->input->post('BarangPendapatan') + (int)  $this->input->post('BarangPendapatan2') +(int)  $this->input->post('BarangPendapatan3'),
+            'BarangVolume' => (int) $this->input->post('BarangPendapatan') + (int)  $this->input->post('BarangPendapatan2') + (int)  $this->input->post('BarangPendapatan3'),
             'BarangPendapatan' => $this->input->post('barang_volume'),
             'Gol1Serial_start' => $this->input->post('Gol1Serial_start'),
             'Gol2Serial_start' => $this->input->post('Gol2Serial_start'),
@@ -191,7 +195,7 @@ class Entry extends CI_Controller
             'BARTONSerial_end' => $this->input->post('BARTONSerial_end'),
             'BarangPendapatanSerial_end' => $this->input->post('BarangPendapatanSerial_end'),
             'Catatan' => $this->input->post('catatan'),
-            'BuktiSetoran' => $this->input->post('bukti-setoran'),
+            // 'BuktiSetoran' => $this->input->post('bukti-setoran'),
         ];
         $this->Entry_model->editData($dataInput, $_GET['id']);
         redirect('dashboard/entry');
@@ -207,10 +211,11 @@ class Entry extends CI_Controller
         $data['kapal'] = $this->Entry_model->kapal();
         $data['kapal_spv'] = $this->Entry_model->kapal_spv();
         $data['tarif'] = $this->Entry_model->tarif();
-        
+
         $this->load->view('template/dashboard/body', $data);
     }
-    public function deleteEntryData(){
+    public function deleteEntryData()
+    {
         $this->Entry_model->deleteEntryData($_GET['id']);
         redirect('dashboard/entry');
     }
@@ -218,11 +223,11 @@ class Entry extends CI_Controller
     {
         //AutoWeek
         $valueWeek = 0;
-        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 7) $valueWeek = 'W1';
-        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 7 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 14) $valueWeek = 'W2';
-        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 14 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 21) $valueWeek = 'W3';
-        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 21 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 28) $valueWeek = 'W4';
-        if((int)explode('-',$this->input->post('tanggal_berangkat'))[2] > 28 && (int)explode('-',$this->input->post('tanggal_berangkat'))[2] <= 31) $valueWeek = 'W5';
+        if ((int)explode('-', $this->input->post('tanggal_berangkat'))[2] <= 7) $valueWeek = 'W1';
+        if ((int)explode('-', $this->input->post('tanggal_berangkat'))[2] > 7 && (int)explode('-', $this->input->post('tanggal_berangkat'))[2] <= 14) $valueWeek = 'W2';
+        if ((int)explode('-', $this->input->post('tanggal_berangkat'))[2] > 14 && (int)explode('-', $this->input->post('tanggal_berangkat'))[2] <= 21) $valueWeek = 'W3';
+        if ((int)explode('-', $this->input->post('tanggal_berangkat'))[2] > 21 && (int)explode('-', $this->input->post('tanggal_berangkat'))[2] <= 28) $valueWeek = 'W4';
+        if ((int)explode('-', $this->input->post('tanggal_berangkat'))[2] > 28 && (int)explode('-', $this->input->post('tanggal_berangkat'))[2] <= 31) $valueWeek = 'W5';
 
         //Auto JenisTarif
         $tahun = 0;
@@ -234,8 +239,8 @@ class Entry extends CI_Controller
         // foreach($pelabuhan as $key => $value){
         //     $namaPelabuhan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['pelabuhan']))));
         // }
-        foreach($lintasan as $key => $value){
-            $data['namaLintasan'] = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
+        foreach ($lintasan as $key => $value) {
+            $data['namaLintasan'] = str_replace(' ', '', ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
             // $setelahExplode = explode('-',$value['lintasan']);
             // if(ucwords(strtolower($setelahExplode[0])) == $namaPelabuhan){
             //     $data['namaLintasan'] = $namaPelabuhan.ucwords(strtolower($setelahExplode[1]));
@@ -245,21 +250,21 @@ class Entry extends CI_Controller
         }
         $valueTarif = '';
         foreach ($tarif as $key => $value) {
-            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $data['namaLintasan']){
-                if(substr($value['tarif'], -2) >= $tahun){
+            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
+                if (substr($value['tarif'], -2) >= $tahun) {
                     $tahun = substr($value['tarif'], -2);
                 }
             }
         }
         foreach ($tarif as $key => $value) {
-            if(substr($value['tarif'], 0,strlen($value['tarif']) - 4 ) == $data['namaLintasan']){
-                if($tahun == substr($value['tarif'], -2) && substr($value['tarif'],-4, -2) >= $bulan){
+            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
+                if ($tahun == substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan) {
                     $valueTarif = $value['tarif'];
-                    $data['tarif'] = $valueTarif ;
+                    $data['tarif'] = $valueTarif;
                 }
             }
         }
-        
+
 
         $data['title'] = 'Entry Data';
         $data['contentView'] = 'pages/entry/testEntry';
