@@ -42,7 +42,7 @@ foreach ($editData as $row) {
     $dataBarangPendapatanSeriAkhir3 = $row['BarangPendapatan3Serial_end'];
     $dataBarangPendapatan = $row['BarangPendapatan'];
     $dataBarangVolume = $row['BarangVolume'];
-    $dataGambar = $row['BuktiSetoran'];
+    // $dataGambar = $row['BuktiSetoran'];
 }
 
 ?>
