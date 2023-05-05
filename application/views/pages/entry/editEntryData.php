@@ -195,27 +195,27 @@ foreach ($editData as $row) {
                             </label>
                             <div class="col">
                                 <input type="number" name="<?php echo $row['id_production'] . "Serial_start"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "Serial_start"; ?>" value="<?php
+                                                                                                                                                                                                                        foreach ($editData as $baris) {
+                                                                                                                                                                                                                            foreach ($baris as $key => $baris) {
+                                                                                                                                                                                                                                if ($key == $row['id_production'] . "Serial_start") {
+                                                                                                                                                                                                                                    echo $baris;
+                                                                                                                                                                                                                                    $serialStart1 = $baris;
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                        }
+                                                                                                                                                                                                                        ?>" min="0">
+                            </div>
+                            <div class="col">
+                                <input type="number" name="<?php echo $row['id_production'] . "Serial_end"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "Serial_end"; ?>" value="<?php
                                                                                                                                                                                                                     foreach ($editData as $baris) {
                                                                                                                                                                                                                         foreach ($baris as $key => $baris) {
-                                                                                                                                                                                                                            if ($key == $row['id_production'] . "Serial_start") {
+                                                                                                                                                                                                                            if ($key == $row['id_production'] . "Serial_end") {
                                                                                                                                                                                                                                 echo $baris;
-                                                                                                                                                                                                                                $serialStart1 = $baris;
+                                                                                                                                                                                                                                $serialEnd1 = $baris;
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
                                                                                                                                                                                                                     }
                                                                                                                                                                                                                     ?>" min="0">
-                            </div>
-                            <div class="col">
-                                <input type="number" name="<?php echo $row['id_production'] . "Serial_end"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "Serial_end"; ?>" value="<?php
-                                                                                                                                                                                                                foreach ($editData as $baris) {
-                                                                                                                                                                                                                    foreach ($baris as $key => $baris) {
-                                                                                                                                                                                                                        if ($key == $row['id_production'] . "Serial_end") {
-                                                                                                                                                                                                                            echo $baris;
-                                                                                                                                                                                                                            $serialEnd1 = $baris;
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                }
-                                                                                                                                                                                                                ?>" min="0">
                             </div>
                             <div class="col">
                                 <input type="number" name="<?php echo $row['id_production']; ?>" class="form-control" id="<?php echo $row['id_production']; ?>" value=<?php
@@ -240,45 +240,45 @@ foreach ($editData as $row) {
                             </label>
                             <div class="col">
                                 <input type="number" name="<?php echo $row['id_production'] . "2Serial_start"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "2Serial_start"; ?>" value="<?php
+                                                                                                                                                                                                                            foreach ($editData as $baris) {
+                                                                                                                                                                                                                                foreach ($baris as $key => $baris) {
+                                                                                                                                                                                                                                    if ($key == $row['id_production'] . "2Serial_start") {
+                                                                                                                                                                                                                                        echo $baris;
+                                                                                                                                                                                                                                        $serialStart2 = $baris;
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            ?>" min="0">
+                            </div>
+                            <div class="col">
+                                <input type="number" name="<?php echo $row['id_production'] . "2Serial_end"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "2Serial_end"; ?>" value="<?php
                                                                                                                                                                                                                         foreach ($editData as $baris) {
                                                                                                                                                                                                                             foreach ($baris as $key => $baris) {
-                                                                                                                                                                                                                                if ($key == $row['id_production'] . "2Serial_start") {
+                                                                                                                                                                                                                                if ($key == $row['id_production'] . "2Serial_end") {
                                                                                                                                                                                                                                     echo $baris;
-                                                                                                                                                                                                                                    $serialStart2 = $baris;
+                                                                                                                                                                                                                                    $serialEnd2 = $baris;
                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
                                                                                                                                                                                                                         ?>" min="0">
                             </div>
                             <div class="col">
-                                <input type="number" name="<?php echo $row['id_production'] . "2Serial_end"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "2Serial_end"; ?>" value="<?php
-                                                                                                                                                                                                                    foreach ($editData as $baris) {
-                                                                                                                                                                                                                        foreach ($baris as $key => $baris) {
-                                                                                                                                                                                                                            if ($key == $row['id_production'] . "2Serial_end") {
-                                                                                                                                                                                                                                echo $baris;
-                                                                                                                                                                                                                                $serialEnd2 = $baris;
-                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                    ?>" min="0">
-                            </div>
-                            <div class="col">
                                 <input type="number" name="<?php echo $row['id_production'] . "2"; ?>" class="form-control " id="<?php echo $row['id_production'] . "2"; ?>" value=<?php
-                                                                                                                                                                                if ($serialEnd2 != 0 && $serialStart2 != 0) {
-                                                                                                                                                                                    echo ($serialEnd2 - $serialStart2) + 1;
-                                                                                                                                                                                } else {
-                                                                                                                                                                                    echo 0;
-                                                                                                                                                                                }
-                                                                                                                                                                                // foreach($editData as $baris){
-                                                                                                                                                                                //     foreach($baris as $key => $baris){
-                                                                                                                                                                                //         if($key == $row['id_production']."2"){
-                                                                                                                                                                                //             // echo $baris;
+                                                                                                                                                                                    if ($serialEnd2 != 0 && $serialStart2 != 0) {
+                                                                                                                                                                                        echo ($serialEnd2 - $serialStart2) + 1;
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        echo 0;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    // foreach($editData as $baris){
+                                                                                                                                                                                    //     foreach($baris as $key => $baris){
+                                                                                                                                                                                    //         if($key == $row['id_production']."2"){
+                                                                                                                                                                                    //             // echo $baris;
 
 
-                                                                                                                                                                                //         }
-                                                                                                                                                                                //     }
-                                                                                                                                                                                // }
-                                                                                                                                                                                ?> min="0">
+                                                                                                                                                                                    //         }
+                                                                                                                                                                                    //     }
+                                                                                                                                                                                    // }
+                                                                                                                                                                                    ?> min="0">
                             </div>
                         </div>
                         <div class="form-group row ">
@@ -287,43 +287,43 @@ foreach ($editData as $row) {
                             </label>
                             <div class="col">
                                 <input type="number" name="<?php echo $row['id_production'] . "3Serial_start"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "3Serial_start"; ?>" value="<?php
+                                                                                                                                                                                                                            foreach ($editData as $baris) {
+                                                                                                                                                                                                                                foreach ($baris as $key => $baris) {
+                                                                                                                                                                                                                                    if ($key == $row['id_production'] . "3Serial_start") {
+                                                                                                                                                                                                                                        echo $baris;
+                                                                                                                                                                                                                                        $serialStart3 = $baris;
+                                                                                                                                                                                                                                    }
+                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                            ?>" min="0">
+                            </div>
+                            <div class="col">
+                                <input type="number" name="<?php echo $row['id_production'] . "3Serial_end"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "3Serial_end"; ?>" value="<?php
                                                                                                                                                                                                                         foreach ($editData as $baris) {
                                                                                                                                                                                                                             foreach ($baris as $key => $baris) {
-                                                                                                                                                                                                                                if ($key == $row['id_production'] . "3Serial_start") {
+                                                                                                                                                                                                                                if ($key == $row['id_production'] . "3Serial_end") {
                                                                                                                                                                                                                                     echo $baris;
-                                                                                                                                                                                                                                    $serialStart3 = $baris;
+                                                                                                                                                                                                                                    $serialEnd3 = $baris;
                                                                                                                                                                                                                                 }
                                                                                                                                                                                                                             }
                                                                                                                                                                                                                         }
                                                                                                                                                                                                                         ?>" min="0">
                             </div>
                             <div class="col">
-                                <input type="number" name="<?php echo $row['id_production'] . "3Serial_end"; ?>" class="form-control input-produksi" id="<?php echo $row['id_production'] . "3Serial_end"; ?>" value="<?php
-                                                                                                                                                                                                                    foreach ($editData as $baris) {
-                                                                                                                                                                                                                        foreach ($baris as $key => $baris) {
-                                                                                                                                                                                                                            if ($key == $row['id_production'] . "3Serial_end") {
-                                                                                                                                                                                                                                echo $baris;
-                                                                                                                                                                                                                                $serialEnd3 = $baris;
-                                                                                                                                                                                                                            }
-                                                                                                                                                                                                                        }
-                                                                                                                                                                                                                    }
-                                                                                                                                                                                                                    ?>" min="0">
-                            </div>
-                            <div class="col">
                                 <input type="number" name="<?php echo $row['id_production'] . "3"; ?>" class="form-control " id="<?php echo $row['id_production'] . "3"; ?>" value=<?php
-                                                                                                                                                                                if ($serialEnd3 != 0 && $serialStart3 != 0) {
-                                                                                                                                                                                    echo ($serialEnd3 - $serialStart3) + 1;
-                                                                                                                                                                                } else {
-                                                                                                                                                                                    echo 0;
-                                                                                                                                                                                }
-                                                                                                                                                                                // foreach($editData as $baris){
-                                                                                                                                                                                //     foreach($baris as $key => $baris){
-                                                                                                                                                                                //         if($key == $row['id_production']."3"){
-                                                                                                                                                                                //             // echo $baris;
-                                                                                                                                                                                //         }
-                                                                                                                                                                                //     }
-                                                                                                                                                                                // }
-                                                                                                                                                                                ?> min="0">
+                                                                                                                                                                                    if ($serialEnd3 != 0 && $serialStart3 != 0) {
+                                                                                                                                                                                        echo ($serialEnd3 - $serialStart3) + 1;
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        echo 0;
+                                                                                                                                                                                    }
+                                                                                                                                                                                    // foreach($editData as $baris){
+                                                                                                                                                                                    //     foreach($baris as $key => $baris){
+                                                                                                                                                                                    //         if($key == $row['id_production']."3"){
+                                                                                                                                                                                    //             // echo $baris;
+                                                                                                                                                                                    //         }
+                                                                                                                                                                                    //     }
+                                                                                                                                                                                    // }
+                                                                                                                                                                                    ?> min="0">
                             </div>
                         </div>
         <?php
@@ -392,8 +392,6 @@ foreach ($editData as $row) {
                 <div class="mb-3">
                     <label for="formFile" class="form-label"> <a href="">Tampilkan Bukti Setoran</a> : <?php echo $dataGambar; ?> </label>
 
-                    <?php header('Content-Type: image/jpeg');
-                    echo '<div class="caption"><h3><img src="data:image/jpg;base64,' . base64_encode($dataGambar) . '"/>' . $dataGambar . '</h3></div>'; ?>
                     <input id="bukti-setoran" name="bukti-setoran" class="form-control" type="file" id="formFile">
                 </div>
             </div>
