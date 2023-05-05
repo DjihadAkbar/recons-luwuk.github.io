@@ -476,7 +476,7 @@ class Report extends CI_Controller
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
-        $sheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
+        $spreadsheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
 
         $entryData = mysqli_query($koneksi, "
             SELECT *,dayname(date), 
@@ -810,7 +810,6 @@ class Report extends CI_Controller
     ");
         $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
         $spreadsheet->addSheet($myWorkSheet, 1);
-        $myWorkSheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
         $titleSheet2 = 'Bukti Penyetoran';
         // sheet peratama
         $myWorkSheet->setTitle($titleSheet2);
