@@ -1657,7 +1657,7 @@ class Report extends CI_Controller
             );
 
             $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
-            $sheet->getStyle('E10:J40')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
+            $sheet->getActiveSheet()->getStyle('E10:J40')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
 
             $no++;
         }
