@@ -1425,7 +1425,7 @@ class Report extends CI_Controller
             for ($col = 'A'; $col !== 'K'; $col++) {
                 $sheet->getColumnDimension($col)->setAutoSize(true);
                 for ($i = 0; $i <= 50; $i++) {
-                    $spreadsheet->getActiveSheet()->getStyle($col . $i)->getNumberFormat()->setFormatCode('[Black][>=0]#.##0;[Red][<0]#.##0;#.##0');
+                    $spreadsheet->getActiveSheet()->getStyle($col . "" . $i)->getNumberFormat()->setFormatCode('[Black][>=0]#.##0;[Red][<0]#.##0;#.##0');
                 }
             }
             $sheet->getStyle('C35')->getAlignment()->setWrapText(true);
