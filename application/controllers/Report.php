@@ -1633,8 +1633,8 @@ class Report extends CI_Controller
                 $sheet->setCellValue('I41', '=I16+I30+I34+I40')->getStyle('I41')->getFont()->setBold(true);
                 $sheet->setCellValue('J41', '=J16+J30+J34+J40')->getStyle('J41')->getFont()->setBold(true);
 
-                $sheet->setCellValue('H44', '=+(H41*H43)/100')->getStyle('H44')->getFont()->setBold(true);
-                $sheet->setCellValue('I44', '=+(I41*I43)/100' . '*100')->getStyle('I44')->getFont()->setBold(true);
+                $sheet->setCellValue('H44', ceil('=+(H41*13,75)/100'))->getStyle('H44')->getFont()->setBold(true);
+                $sheet->setCellValue('I44', ceil('=+(I41*15,40)/100'))->getStyle('I44')->getFont()->setBold(true);
                 $sheet->setCellValue('J43', '=H44+I44')->getStyle('J43')->getFont()->setBold(true);
 
                 $sheet->setCellValue('H46', '=+H41 - H44')->getStyle('H46')->getFont()->setBold(true);
