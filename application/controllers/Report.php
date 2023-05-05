@@ -1652,6 +1652,7 @@ class Report extends CI_Controller
             );
 
             $sheet = $sheet->getStyle('A1:J45')->applyFromArray($styleArray);
+            $sheet->getStyle('A1:A3')->getNumberFormat()->setFormatCode('#,##0.00');
 
             $no++;
         }
