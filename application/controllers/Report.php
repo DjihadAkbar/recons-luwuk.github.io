@@ -476,7 +476,7 @@ class Report extends CI_Controller
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
-
+        $sheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
 
         $entryData = mysqli_query($koneksi, "
             SELECT *,dayname(date), 
@@ -810,6 +810,7 @@ class Report extends CI_Controller
     ");
         $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
         $spreadsheet->addSheet($myWorkSheet, 1);
+        $myWorkSheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;');
         $titleSheet2 = 'Bukti Penyetoran';
         // sheet peratama
         $myWorkSheet->setTitle($titleSheet2);
@@ -1633,8 +1634,8 @@ class Report extends CI_Controller
                 $sheet->setCellValue('I41', '=I16+I30+I34+I40')->getStyle('I41')->getFont()->setBold(true);
                 $sheet->setCellValue('J41', '=J16+J30+J34+J40')->getStyle('J41')->getFont()->setBold(true);
 
-                $sheet->setCellValue('H44', '=ROUNDUP((H41*H43),0)')->getStyle('H44')->getFont()->setBold(true);
-                $sheet->setCellValue('I44', '=ROUNDUP((I41*I43),0)')->getStyle('I44')->getFont()->setBold(true);
+                $sheet->setCellValue('H44', '=ROUND((H41*H43),0)')->getStyle('H44')->getFont()->setBold(true);
+                $sheet->setCellValue('I44', '=ROUND((I41*I43),0)')->getStyle('I44')->getFont()->setBold(true);
                 $sheet->setCellValue('J43', '=H44+I44')->getStyle('J43')->getFont()->setBold(true);
 
                 $sheet->setCellValue('H46', '=+H41 - H44')->getStyle('H46')->getFont()->setBold(true);
