@@ -588,105 +588,40 @@ if ($this->session->userdata['type'] != '') {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                            foreach ($totalDaily as $key => $value) {
-                                            ?>
+                                            <?php foreach ($totalDaily as $key => $value) { ?>
                                                 <tr>
-                                                    <td rowspan="1">
-                                                        <?php echo $value['ferry']; ?>
-                                                    </td>
-
-                                                    <td>
-                                                        <?php echo $value['ofc_route']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['harbour']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan I']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan II']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan III']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan IV - Penumpang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan IV - Barang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan V - Penumpang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan V - Barang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VI - Penumpang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VI - Barang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VII']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VIII']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan IX']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Dewasa Eksekutif']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Bayi Eksekutif']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Dewasa Bisnis']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Bayi Bisnis']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Dewasa Ekonomi']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Bayi Ekonomi']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi I Dewasa']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi I Anak']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi II Dewasa']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi II Anak']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Hewan']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Gayor']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Carter']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Barang Curah']; ?>
-                                                    </td>
-                                                    <td style=" width:15%">
-                                                        <?php echo "" . $value['trip'] . " Trip"; ?>
-                                                    </td>
+                                                    <td rowspan="1"><?php echo $value['ferry']; ?></td>
+                                                    <td><?php echo $value['ofc_route']; ?></td>
+                                                    <td><?php echo $value['harbour']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan I']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan II']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan III']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan IV - Penumpang']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan IV - Barang']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan V - Penumpang']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan V - Barang']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan VI - Penumpang']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan VI - Barang']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan VII']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan VIII']; ?></td>
+                                                    <td><?php echo $value['Jumlah Golongan IX']; ?></td>
+                                                    <td><?php echo $value['Jumlah Dewasa Eksekutif']; ?></td>
+                                                    <td><?php echo $value['Jumlah Bayi Eksekutif']; ?></td>
+                                                    <td><?php echo $value['Jumlah Dewasa Bisnis']; ?></td>
+                                                    <td><?php echo $value['Jumlah Bayi Bisnis']; ?></td>
+                                                    <td><?php echo $value['Jumlah Dewasa Ekonomi']; ?></td>
+                                                    <td><?php echo $value['Jumlah Bayi Ekonomi']; ?></td>
+                                                    <td><?php echo $value['Jumlah Suplesi Ekonomi I Dewasa']; ?></td>
+                                                    <td><?php echo $value['Jumlah Suplesi Ekonomi I Anak']; ?></td>
+                                                    <td><?php echo $value['Jumlah Suplesi Ekonomi II Dewasa']; ?></td>
+                                                    <td><?php echo $value['Jumlah Suplesi Ekonomi II Anak']; ?></td>
+                                                    <td><?php echo $value['Jumlah Hewan']; ?></td>
+                                                    <td><?php echo $value['Jumlah Gayor']; ?></td>
+                                                    <td><?php echo $value['Jumlah Carter']; ?></td>
+                                                    <td><?php echo $value['Jumlah Barang Curah']; ?></td>
+                                                    <td style=" width:15%"><?php echo "" . $value['trip'] . " Trip"; ?></td>
                                                 </tr>
-                                            <?php
-                                            }
-                                            ?>
+                                            <?php } ?>
                                         <tbody>
                                         <tfoot class="thead-dark">
                                             <tr>
@@ -813,90 +748,34 @@ if ($this->session->userdata['type'] != '') {
                                             foreach ($totalDailyPerShip as $key => $value) {
                                             ?>
                                                 <tr>
-                                                    <td rowspan="1">
-                                                        <?php echo $value['ferry']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan I']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan II']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan III']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan IV - Penumpang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan IV - Barang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan V - Penumpang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan V - Barang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VI - Penumpang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VI - Barang']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VII']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan VIII']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Golongan IX']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Dewasa Eksekutif']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Bayi Eksekutif']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Dewasa Bisnis']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Bayi Bisnis']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Dewasa Ekonomi']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Bayi Ekonomi']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi I Dewasa']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi I Anak']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi II Dewasa']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Suplesi Ekonomi II Anak']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Hewan']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Gayor']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Carter']; ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php echo $value['Jumlah Barang Curah']; ?>
-                                                    </td>
-                                                    <td style=" width:15%">
-                                                        <?php echo "" . $value['trip'] . " Trip"; ?>
-                                                    </td>
+                                                    <td rowspan="1"> <?php echo $value['ferry']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan I']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan II']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan III']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan IV - Penumpang']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan IV - Barang']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan V - Penumpang']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan V - Barang']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan VI - Penumpang']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan VI - Barang']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan VII']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan VIII']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Golongan IX']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Dewasa Eksekutif']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Bayi Eksekutif']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Dewasa Bisnis']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Bayi Bisnis']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Dewasa Ekonomi']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Bayi Ekonomi']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Suplesi Ekonomi I Dewasa']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Suplesi Ekonomi I Anak']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Suplesi Ekonomi II Dewasa']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Suplesi Ekonomi II Anak']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Hewan']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Gayor']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Carter']; ?> </td>
+                                                    <td> <?php echo $value['Jumlah Barang Curah']; ?> </td>
+                                                    <td style=" width:15%"> <?php echo "" . $value['trip'] . " Trip"; ?> </td>
                                                 </tr>
                                             <?php
                                             }
@@ -904,47 +783,34 @@ if ($this->session->userdata['type'] != '') {
                                         <tbody>
                                         <tfoot class="thead-dark">
                                             <tr>
-                                                <th scope="col">
-                                                    Kapal
-                                                </th>
-                                                <th scope="col">Golongan 1 </th>
-                                                <th scope="col">Golongan 2 </th>
-                                                <th scope="col">Golongan 3 </th>
-                                                <th scope="col">Golongan 4 - Penumpang </th>
-                                                <th scope="col">Golongan 4 - Barang </th>
-                                                <th scope="col">Golongan 5 - Penumpang </th>
-                                                <th scope="col">Golongan 5 - Barang </th>
-                                                <th scope="col">Golongan 6 - Penumpang </th>
-                                                <th scope="col">Golongan 6 - Barang </th>
-                                                <th scope="col">Golongan 7 </th>
-                                                <th scope="col">Golongan 8 </th>
-                                                <th scope="col">Golongan 9 </th>
-                                                <th scope="col">Dewasa Eksekutif </th>
-                                                <th scope="col">Bayi Eksekutif </th>
-                                                <th scope="col">Dewasa Bisnis </th>
-                                                <th scope="col">Bayi Bisnis </th>
-                                                <th scope="col">Dewasa Ekonomi </th>
-                                                <th scope="col">Bayi Ekonomi </th>
-                                                <th scope="col">
-                                                    Suplesi Ekonomi I Dewasa
-                                                </th>
-                                                <th scope="col">
-                                                    Suplesi Ekonomi I Anak
-                                                </th>
-                                                <th scope="col">
-                                                    Suplesi Ekonomi II Dewasa
-                                                </th>
-                                                <th scope="col">
-                                                    Suplesi Ekonomi II Anak
-                                                </th>
-                                                <th scope="col">Hewan </th>
-                                                <th scope="col">Gayor </th>
-                                                <th scope="col">Carter </th>
-                                                <th scope="col">Barang Curah </th>
-
-                                                <th scope="col">
-                                                    Jumlah Trip
-                                                </th>
+                                                <th scope="col"> Kapal </th>
+                                                <th scope="col"> Golongan 1 </th>
+                                                <th scope="col"> Golongan 2 </th>
+                                                <th scope="col"> Golongan 3 </th>
+                                                <th scope="col"> Golongan 4 - Penumpang </th>
+                                                <th scope="col"> Golongan 4 - Barang </th>
+                                                <th scope="col"> Golongan 5 - Penumpang </th>
+                                                <th scope="col"> Golongan 5 - Barang </th>
+                                                <th scope="col"> Golongan 6 - Penumpang </th>
+                                                <th scope="col"> Golongan 6 - Barang </th>
+                                                <th scope="col"> Golongan 7 </th>
+                                                <th scope="col"> Golongan 8 </th>
+                                                <th scope="col"> Golongan 9 </th>
+                                                <th scope="col"> Dewasa Eksekutif </th>
+                                                <th scope="col"> Bayi Eksekutif </th>
+                                                <th scope="col"> Dewasa Bisnis </th>
+                                                <th scope="col"> Bayi Bisnis </th>
+                                                <th scope="col"> Dewasa Ekonomi </th>
+                                                <th scope="col"> Bayi Ekonomi </th>
+                                                <th scope="col"> Suplesi Ekonomi I Dewasa </th>
+                                                <th scope="col"> Suplesi Ekonomi I Anak </th>
+                                                <th scope="col"> Suplesi Ekonomi II Dewasa </th>
+                                                <th scope="col"> Suplesi Ekonomi II Anak </th>
+                                                <th scope="col"> Hewan </th>
+                                                <th scope="col"> Gayor </th>
+                                                <th scope="col"> Carter </th>
+                                                <th scope="col"> Barang Curah </th>
+                                                <th scope="col"> Jumlah Trip </th>
                                             </tr>
                                         </tfoot>
                                     </table>
