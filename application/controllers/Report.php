@@ -1487,8 +1487,7 @@ class Report extends CI_Controller
                 $sheet->setCellValue('H12', ($record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
                 $sheet->setCellValue('H13', ($record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
                 $sheet->setCellValue('H14', ($record['DewasaEkonomiIW']) * $record['Jumlah DewasaEkonomi']);
-                $sheet->setCellValue('H15', ($record['BayiEkseTJP']);
-                // $sheet->setCellValue('H15', ($record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
+                $sheet->setCellValue('H15', ($record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
                 $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
                 $sheet->setCellValue('I10', ($record['DewasaEksekutifTJP']) * $record['Jumlah DewasaEksekutif']);
@@ -1496,7 +1495,8 @@ class Report extends CI_Controller
                 $sheet->setCellValue('I12', ($record['DewasaBisnisTJP']) * $record['Jumlah DewasaBisnis']);
                 $sheet->setCellValue('I13', ($record['BayiBisnisTJP']) * $record['Jumlah BayiBisnis']);
                 $sheet->setCellValue('I14', ($record['DewasaEkonomiTJP']) * $record['Jumlah DewasaEkonomi']);
-                $sheet->setCellValue('I15', ($record['BayiEkonomiTJP']) * $record['Jumlah BayiEkonomi']);
+                $sheet->setCellValue('I15', ($record['BayiEkseTJP']));
+                // $sheet->setCellValue('I15', ($record['BayiEkonomiTJP']) * $record['Jumlah BayiEkonomi']);
                 $sheet->setCellValue('I16', '=SUM(I10:I15)')->getStyle('I16')->getFont()->setBold(true);
 
                 //Total
