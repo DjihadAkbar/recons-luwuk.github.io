@@ -1,13 +1,15 @@
-<?php 
+<?php
 $aproveStatus = '';
-$ifEdit = 'Edit';?>
+$ifEdit = 'Edit'; ?>
 <div id="accordion">
-<div class="card">
+    <!-- <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center text-center" id="headingOne" >
             <h5 class="mb-0">
                 <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                     <div style="white-space:normal"> 
-                    Persetujuan Pengajuan Tarif <span class="badge badge-danger"><?php foreach ($countPendingTarif as $key => $value) { $value['count_pending']; } ?></span>
+                    Persetujuan Pengajuan Tarif <span class="badge badge-danger"><?php foreach ($countPendingTarif as $key => $value) {
+                                                                                        $value['count_pending'];
+                                                                                    } ?></span>
                     </div>
                 </button>
             </h5>
@@ -26,8 +28,8 @@ $ifEdit = 'Edit';?>
                                     <th scope="col">Status Persetujuan </th>
                                     <th scope="col">Tanggal Persetujuan</th>
                                     <th scope="col">Yang Menyetujui</th>
-                                    <?php if($aproveStatus != 'Y') { ?>
-                                    <?php if($this->session->userdata['jabatan'] == 'MANAGER' || $this->session->userdata['jabatan'] == 'GM') { ?>
+                                    <?php if ($aproveStatus != 'Y') { ?>
+                                    <?php if ($this->session->userdata['jabatan'] == 'MANAGER' || $this->session->userdata['jabatan'] == 'GM') { ?>
                                     <th scope="col">Action </th>
                                     <th scope="col"> </th>
                                     <?php } ?>
@@ -164,10 +166,10 @@ $ifEdit = 'Edit';?>
                             <tbody>
                                 <?php
                                 $no = 1;
-                                
+
                                 foreach ($aprovedTarif as $key => $value) {
                                     $aproveStatus = $value['aprove_status'];
-                                    ?>
+                                ?>
                                     <tr>
                                         <th scope="row">
                                             <?php echo $no++; ?>
@@ -192,13 +194,13 @@ $ifEdit = 'Edit';?>
                                             <?php echo $value['post_person']; ?>
                                         </td>
                                         <td>
-                                            <?php if ($value['aprove_status'] == 'P'){
+                                            <?php if ($value['aprove_status'] == 'P') {
                                                 echo "PENDING";
-                                                } elseif($value['aprove_status'] == 'N') {
-                                                    echo "TIDAK DISETUJUI";
-                                                } else {
-                                                    echo "DISETUJUI";
-                                                }
+                                            } elseif ($value['aprove_status'] == 'N') {
+                                                echo "TIDAK DISETUJUI";
+                                            } else {
+                                                echo "DISETUJUI";
+                                            }
                                             ?>
                                         </td>
                                         <td>
@@ -207,16 +209,16 @@ $ifEdit = 'Edit';?>
                                         <td>
                                             <?php echo $value['aprove_person']; ?>
                                         </td>
-                                        <?php if($aproveStatus == 'P') { ?>
-                                            <?php if($this->session->userdata['jabatan'] == 'MANAGER' || $this->session->userdata['jabatan'] == 'GM') { ?>
+                                        <?php if ($aproveStatus == 'P') { ?>
+                                            <?php if ($this->session->userdata['jabatan'] == 'MANAGER' || $this->session->userdata['jabatan'] == 'GM') { ?>
                                                 <td>
-                                                    <a class="btn btn-primary text-light" href="tarif/approve<?php if($value['act'] == 'EDIT') echo $ifEdit; ?>Tarif?id=<?php echo $value['id_apr']; ?>&id_rate=<?php echo $value['post_id']; ?>"><?php echo "DISETUJUI" ?></a>
+                                                    <a class="btn btn-primary text-light" href="tarif/approve<?php if ($value['act'] == 'EDIT') echo $ifEdit; ?>Tarif?id=<?php echo $value['id_apr']; ?>&id_rate=<?php echo $value['post_id']; ?>"><?php echo "DISETUJUI" ?></a>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-danger text-light" href="tarif/disapprove<?php  if($value['act'] == 'EDIT')  echo $ifEdit; ?>Tarif?id=<?php echo $value['id_apr']; ?>&id_rate=<?php echo $value['post_id']; ?>"> <?php echo "TIDAK DISETUJUI" ?></a>
+                                                    <a class="btn btn-danger text-light" href="tarif/disapprove<?php if ($value['act'] == 'EDIT')  echo $ifEdit; ?>Tarif?id=<?php echo $value['id_apr']; ?>&id_rate=<?php echo $value['post_id']; ?>"> <?php echo "TIDAK DISETUJUI" ?></a>
                                                 </td>
                                             <?php } ?>
-                                        <?php } elseif($aproveStatus != 'P' && ($this->session->userdata['jabatan'] == 'MANAGER' || $this->session->userdata['jabatan'] == 'GM')) {?>
+                                        <?php } elseif ($aproveStatus != 'P' && ($this->session->userdata['jabatan'] == 'MANAGER' || $this->session->userdata['jabatan'] == 'GM')) { ?>
                                             <td></td>
                                             <td></td>
                                         <?php } ?>
@@ -591,20 +593,20 @@ $ifEdit = 'Edit';?>
                                     
                                     <?php
                                 }
-                                ?>
+                                    ?>
                             <tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="card">
-        <div class="card-header d-flex justify-content-between align-items-center text-center" id="headingTwo" >
+        <div class="card-header d-flex justify-content-between align-items-center text-center" id="headingTwo">
             <h5 class="mb-0">
                 <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <div style="white-space:normal"> 
-                    Tarif Lintasan
+                    <div style="white-space:normal">
+                        Tarif Lintasan
                     </div>
                 </button>
             </h5>
@@ -758,7 +760,7 @@ $ifEdit = 'Edit';?>
                                 <?php
                                 $no = 1;
                                 foreach ($tarif as $key => $value) {
-                                    ?>
+                                ?>
                                     <tr>
                                         <th scope="row">
                                             <?php echo $no++; ?>
@@ -1132,7 +1134,7 @@ $ifEdit = 'Edit';?>
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                            <a class="btn btn-warning text-dark" href="tarif/editDataTarif?id=<?php echo $value['id_rate']; ?>"><i class="fas fa-file-edit"></i></a>
+                                                <a class="btn btn-warning text-dark" href="tarif/editDataTarif?id=<?php echo $value['id_rate']; ?>"><i class="fas fa-file-edit"></i></a>
                                             </div>
                                         </td>
                                         <td>
@@ -1173,7 +1175,7 @@ $ifEdit = 'Edit';?>
                                         </div>
                                     </div>
                                     Modal Logout End -->
-                                    <?php
+                                <?php
                                 }
                                 ?>
                             <tbody>
@@ -1182,7 +1184,7 @@ $ifEdit = 'Edit';?>
                 </div>
             </div>
         </div>
-        
+
     </div>
 
 </div>
