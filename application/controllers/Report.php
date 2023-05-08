@@ -1439,10 +1439,10 @@ class Report extends CI_Controller
             $sheet->getStyle('C3:J35')->applyFromArray($styleArray);
 
             $styleArrayPersentase = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
-            $sheet->getStyle('G37:J37')->applyFromArray($styleArrayPersentase);
+            $sheet->getStyle('G38:J38')->applyFromArray($styleArrayPersentase);
 
             $styleArrayBesaran = ['borders' => ['allBorders' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
-            $sheet->getStyle('G40:J40')->applyFromArray($styleArrayBesaran);
+            $sheet->getStyle('G41:J41')->applyFromArray($styleArrayBesaran);
 
             $styleArrayOutline = ['borders' => ['outline' => ['borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,],]];
             $sheet->getStyle('C36:J55')->applyFromArray($styleArrayOutline);
