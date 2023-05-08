@@ -1272,12 +1272,6 @@ class Report extends CI_Controller
                 sum(entry_data.Gol1) as 'Jumlah Gol1', sum(entry_data.Gol2) as 'Jumlah Gol2', sum(entry_data.Gol3) as 'Jumlah Gol3', sum(entry_data.Gol4Pen) as 'Jumlah Gol4Pen', sum(entry_data.Gol4Bar) as 'Jumlah Gol4Bar', sum(entry_data.Gol5Pen) as 'Jumlah Gol5Pen',sum(entry_data.Gol5Bar) as 'Jumlah Gol5Bar',sum(entry_data.Gol6Pen) as 'Jumlah Gol6Pen',sum(entry_data.Gol6Bar) as 'Jumlah Gol6Bar',sum(entry_data.Gol7) as 'Jumlah Gol7',sum(entry_data.Gol8) as 'Jumlah Gol8',sum(entry_data.Gol9) as 'Jumlah Gol9',
                 sum(entry_data.Suplesi1Dewasa) as 'Jumlah Suplesi1Dewasa', sum(entry_data.Suplesi2Dewasa) as 'Jumlah Suplesi2Dewasa', sum(entry_data.Suplesi1Anak) as 'Jumlah Suplesi1Anak', sum(entry_data.Suplesi2Anak) as 'Jumlah Suplesi2Anak',
                 
-                sum(DISTINCT DewasaEksekutifTJP) AS 'DewasaEksekutifTJP', sum(DISTINCT BayiEksekutifTJP) AS 'BayiEksekutifTJP', sum(DISTINCT DewasaBisnisTJP) AS 'DewasaBisnisTJP', sum(DISTINCT BayiBisnisTJP) AS 'BayiBisnisTJP', sum(DISTINCT DewasaEkonomiTJP) AS 'DewasaEkonomiTJP', sum(DISTINCT BayiEkonomiTJP) AS 'BayiEkonomiTJP',
-                sum(DISTINCT Gol1TJP) as 'Gol1TJP', sum(DISTINCT Gol2TJP) as 'Gol2TJP', sum(DISTINCT Gol3TJP) as 'Gol3TJP', sum(DISTINCT Gol4PenTJP) as 'Gol4PenTJP', sum(DISTINCT Gol4BarTJP) as 'Gol4BarTJP', sum(DISTINCT Gol5PenTJP) as 'Gol5PenTJP',sum(DISTINCT Gol5BarTJP) as 'Gol5BarTJP',sum(DISTINCT Gol6PenTJP) as 'Gol6PenTJP',sum(DISTINCT Gol6BarTJP) as 'Gol6BarTJP',sum(DISTINCT Gol7TJP) as 'Gol7TJP',sum(DISTINCT Gol8TJP) as 'Gol8TJP',sum(DISTINCT Gol9TJP) as 'Gol9TJP',
-                
-                sum(DISTINCT DewasaEksekutifIW) AS 'DewasaEksekutifIW', sum(DISTINCT BayiEksekutifIW) AS 'BayiEksekutifIW', sum(DISTINCT DewasaBisnisIW) AS 'DewasaBisnisIW', sum(DISTINCT BayiBisnisIW) AS 'BayiBisnisIW', sum(DISTINCT DewasaEkonomiIW) AS 'DewasaEkonomiIW', sum(DISTINCT BayiEkonomiIW) AS 'BayiEkonomiIW',
-                sum(DISTINCT Gol1IW) as 'Gol1IW', sum(DISTINCT Gol2IW) as 'Gol2IW', sum(DISTINCT Gol3IW) as 'Gol3IW', sum(DISTINCT Gol4PenIW) as 'Gol4PenIW', sum(DISTINCT Gol4BarIW) as 'Gol4BarIW', sum(DISTINCT Gol5PenIW) as 'Gol5PenIW',sum(DISTINCT Gol5BarIW) as 'Gol5BarIW',sum(DISTINCT Gol6PenIW) as 'Gol6PenIW',sum(DISTINCT Gol6BarIW) as 'Gol6BarIW',sum(DISTINCT Gol7IW) as 'Gol7IW',sum(DISTINCT Gol8IW) as 'Gol8IW',sum(DISTINCT Gol9IW) as 'Gol9IW',
-                
                 entry_data.BarangPendapatan as 'Barang Pendapatan',
                 entry_data.BarangVolume as 'Entry Barang Volume',
                 sum((rate.Suplesi1Dewasa * entry_data.Suplesi1Dewasa)) as 'Suplesi1 Dewasa',
@@ -1478,13 +1472,21 @@ class Report extends CI_Controller
                 $sheet->setCellValue('G15', $record['BayiEkonomiTJP']);
                 $sheet->setCellValue('G16', '=SUM(G10:G15)')->getStyle('G16')->getFont()->setBold(true);
 
+                // // Total Penumpang
+                // $sheet->setCellValue('H10', '=F10 * E10');
+                // $sheet->setCellValue('H11', '=F11 * E11');
+                // $sheet->setCellValue('H12', '=F12 * E12');
+                // $sheet->setCellValue('H13', '=F13 * E13');
+                // $sheet->setCellValue('H14', '=F14 * E14');
+                // $sheet->setCellValue('H15', '=F15 * E15');
+                // $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
-                $sheet->setCellValue('H10', '=F10 * E10');
-                $sheet->setCellValue('H11', '=F11 * E11');
-                $sheet->setCellValue('H12', '=F12 * E12');
-                $sheet->setCellValue('H13', '=F13 * E13');
-                $sheet->setCellValue('H14', '=F14 * E14');
-                $sheet->setCellValue('H15', '=F15 * E15');
+                $sheet->setCellValue('H10', ($record['DewasaEksekutifTJP'] + $record['DewasaEksekutifIW']) * $record['Jumlah DewasaEksekutif']);
+                $sheet->setCellValue('H11', ($record['BayiEksekutifTJP'] + $record['BayiEksekutifIW']) * $record['Jumlah BayiEksekutif']);
+                $sheet->setCellValue('H12', ($record['DewasaBisnisTJP'] + $record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
+                $sheet->setCellValue('H13', ($record['BayiBisnisTJP'] + $record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
+                $sheet->setCellValue('H14', ($record['DewasaEkonomiTJP'] + $record['DewasaEkonomiIW']) * $record['Jumlah DewasaEkonomi']);
+                $sheet->setCellValue('H15', ($record['BayiEkonomiTJP'] + $record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
                 $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
                 $sheet->setCellValue('I10', '=G10 * E10');
