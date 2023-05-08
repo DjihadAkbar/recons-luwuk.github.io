@@ -1268,6 +1268,7 @@ class Report extends CI_Controller
                 $koneksi,
                 "
                 SELECT *,dayname(date), 
+                sum(entry_data.BayiEkonomi * rate.BayiEkonomiTJP) as 'BayiEkseTJP',
                 sum(entry_data.DewasaEksekutif) AS 'Jumlah DewasaEksekutif', sum(entry_data.BayiEksekutif ) AS 'Jumlah BayiEksekutif', sum(entry_data.DewasaBisnis) AS 'Jumlah DewasaBisnis', sum(entry_data.BayiBisnis) AS 'Jumlah BayiBisnis', sum(entry_data.DewasaEkonomi) AS 'Jumlah DewasaEkonomi', sum(entry_data.BayiEkonomi) AS 'Jumlah BayiEkonomi', sum(entry_data.BarangVolume) AS 'Jumlah BarangVolume', sum(entry_data.BarangPendapatan) AS 'Jumlah BarangPendapatan',
                 sum(entry_data.Gol1) as 'Jumlah Gol1', sum(entry_data.Gol2) as 'Jumlah Gol2', sum(entry_data.Gol3) as 'Jumlah Gol3', sum(entry_data.Gol4Pen) as 'Jumlah Gol4Pen', sum(entry_data.Gol4Bar) as 'Jumlah Gol4Bar', sum(entry_data.Gol5Pen) as 'Jumlah Gol5Pen',sum(entry_data.Gol5Bar) as 'Jumlah Gol5Bar',sum(entry_data.Gol6Pen) as 'Jumlah Gol6Pen',sum(entry_data.Gol6Bar) as 'Jumlah Gol6Bar',sum(entry_data.Gol7) as 'Jumlah Gol7',sum(entry_data.Gol8) as 'Jumlah Gol8',sum(entry_data.Gol9) as 'Jumlah Gol9',
                 sum(entry_data.Suplesi1Dewasa) as 'Jumlah Suplesi1Dewasa', sum(entry_data.Suplesi2Dewasa) as 'Jumlah Suplesi2Dewasa', sum(entry_data.Suplesi1Anak) as 'Jumlah Suplesi1Anak', sum(entry_data.Suplesi2Anak) as 'Jumlah Suplesi2Anak',
@@ -1486,7 +1487,8 @@ class Report extends CI_Controller
                 $sheet->setCellValue('H12', ($record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
                 $sheet->setCellValue('H13', ($record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
                 $sheet->setCellValue('H14', ($record['DewasaEkonomiIW']) * $record['Jumlah DewasaEkonomi']);
-                $sheet->setCellValue('H15', ($record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
+                $sheet->setCellValue('H15', ($record['BayiEkseTJP']);
+                // $sheet->setCellValue('H15', ($record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
                 $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
                 $sheet->setCellValue('I10', ($record['DewasaEksekutifTJP']) * $record['Jumlah DewasaEksekutif']);
