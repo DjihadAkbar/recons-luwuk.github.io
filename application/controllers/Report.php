@@ -1268,8 +1268,49 @@ class Report extends CI_Controller
                 $koneksi,
                 "
                 SELECT *,dayname(date), 
-                sum(entry_data.BayiEkonomi * rate.BayiEkonomiTJP) as 'BayiEkseTJP',
-                sum(entry_data.DewasaEksekutif) AS 'Jumlah DewasaEksekutif', sum(entry_data.BayiEksekutif ) AS 'Jumlah BayiEksekutif', sum(entry_data.DewasaBisnis) AS 'Jumlah DewasaBisnis', sum(entry_data.BayiBisnis) AS 'Jumlah BayiBisnis', sum(entry_data.DewasaEkonomi) AS 'Jumlah DewasaEkonomi', sum(entry_data.BayiEkonomi) AS 'Jumlah BayiEkonomi', sum(entry_data.BarangVolume) AS 'Jumlah BarangVolume', sum(entry_data.BarangPendapatan) AS 'Jumlah BarangPendapatan',
+                sum(entry_data.BayiEkonomi * rate.BayiEkonomiTJP) as 'BayiEkonomiJRP',
+                sum(entry_data.DewasaEksekutif * rate.DewasaEksekutifTJP) AS 'DewasaEksekutifJRP', 
+                sum(entry_data.BayiEksekutif  * rate.BayiEksekutifTJP) AS 'BayiEksekutifJRP', 
+                sum(entry_data.DewasaBisnis * rate.DewasaBisnisTJP) AS 'DewasaBisnisJRP', 
+                sum(entry_data.BayiBisnis * rate.BayiBisnisTJP) AS 'BayiBisnisJRP', 
+                sum(entry_data.DewasaEkonomi * rate.DewasaEkonomiTJP) AS 'DewasaEkonomiJRP', 
+                sum(entry_data.BayiEkonomi * rate.BayiEkonomiTJP) AS 'BayiEkonomiJRP',
+
+                sum(entry_data.Gol1 * rate.Gol1TJP ) as 'Gol1JRP', 
+                sum(entry_data.Gol2 * rate.Gol2TJP ) as 'Gol2JRP', 
+                sum(entry_data.Gol3 * rate.Gol3TJP ) as 'Gol3JRP', 
+                sum(entry_data.Gol4Pen * rate.Gol4PenTJP ) as 'Gol4PenJRP', 
+                sum(entry_data.Gol4Bar * rate.Gol4BarTJP ) as 'Gol4BarJRP', 
+                sum(entry_data.Gol5Pen * rate.Gol5PenTJP ) as 'Gol5PenJRP',
+                sum(entry_data.Gol5Bar * rate.Gol5BarTJP ) as 'Gol5BarJRP',
+                sum(entry_data.Gol6Pen * rate.Gol6PenTJP ) as 'Gol6PenJRP',
+                sum(entry_data.Gol6Bar * rate.Gol6BarTJP ) as 'Gol6BarJRP',
+                sum(entry_data.Gol7 * rate.Gol7TJP ) as 'Gol7JRP',
+                sum(entry_data.Gol8 * rate.Gol8TJP ) as 'Gol8JRP',
+                sum(entry_data.Gol9 * rate.Gol9TJP ) as 'Gol9JRP',
+                sum(entry_data.BayiEkonomi * rate.BayiEkonomiIW) as 'BayiEkonomiJR',
+                sum(entry_data.DewasaEksekutif * rate.DewasaEksekutifIW) AS 'DewasaEksekutifJR', 
+                sum(entry_data.BayiEksekutif  * rate.BayiEksekutifIW) AS 'BayiEksekutifJR', 
+                sum(entry_data.DewasaBisnis * rate.DewasaBisnisIW) AS 'DewasaBisnisJR', 
+                sum(entry_data.BayiBisnis * rate.BayiBisnisIW) AS 'BayiBisnisJR', 
+                sum(entry_data.DewasaEkonomi * rate.DewasaEkonomiIW) AS 'DewasaEkonomiJR', 
+                sum(entry_data.BayiEkonomi * rate.BayiEkonomiIW) AS 'BayiEkonomiJR',
+
+                sum(entry_data.Gol1 * rate.Gol1IW ) as 'Gol1JR', 
+                sum(entry_data.Gol2 * rate.Gol2IW ) as 'Gol2JR', 
+                sum(entry_data.Gol3 * rate.Gol3IW ) as 'Gol3JR', 
+                sum(entry_data.Gol4Pen * rate.Gol4PenIW ) as 'Gol4PenJR', 
+                sum(entry_data.Gol4Bar * rate.Gol4BarIW ) as 'Gol4BarJR', 
+                sum(entry_data.Gol5Pen * rate.Gol5PenIW ) as 'Gol5PenJR',
+                sum(entry_data.Gol5Bar * rate.Gol5BarIW ) as 'Gol5BarJR',
+                sum(entry_data.Gol6Pen * rate.Gol6PenIW ) as 'Gol6PenJR',
+                sum(entry_data.Gol6Bar * rate.Gol6BarIW ) as 'Gol6BarJR',
+                sum(entry_data.Gol7 * rate.Gol7IW ) as 'Gol7JR',
+                sum(entry_data.Gol8 * rate.Gol8IW ) as 'Gol8JR',
+                sum(entry_data.Gol9 * rate.Gol9IW ) as 'Gol9JR',
+
+
+                sum(entry_data.DewasaEksekutif) AS 'DewasaEksekutif', sum(entry_data.BayiEksekutif ) AS 'Jumlah BayiEksekutif', sum(entry_data.DewasaBisnis) AS 'Jumlah DewasaBisnis', sum(entry_data.BayiBisnis) AS 'Jumlah BayiBisnis', sum(entry_data.DewasaEkonomi) AS 'Jumlah DewasaEkonomi', sum(entry_data.BayiEkonomi) AS 'Jumlah BayiEkonomi', sum(entry_data.BarangVolume) AS 'Jumlah BarangVolume', sum(entry_data.BarangPendapatan) AS 'Jumlah BarangPendapatan',
                 sum(entry_data.Gol1) as 'Jumlah Gol1', sum(entry_data.Gol2) as 'Jumlah Gol2', sum(entry_data.Gol3) as 'Jumlah Gol3', sum(entry_data.Gol4Pen) as 'Jumlah Gol4Pen', sum(entry_data.Gol4Bar) as 'Jumlah Gol4Bar', sum(entry_data.Gol5Pen) as 'Jumlah Gol5Pen',sum(entry_data.Gol5Bar) as 'Jumlah Gol5Bar',sum(entry_data.Gol6Pen) as 'Jumlah Gol6Pen',sum(entry_data.Gol6Bar) as 'Jumlah Gol6Bar',sum(entry_data.Gol7) as 'Jumlah Gol7',sum(entry_data.Gol8) as 'Jumlah Gol8',sum(entry_data.Gol9) as 'Jumlah Gol9',
                 sum(entry_data.Suplesi1Dewasa) as 'Jumlah Suplesi1Dewasa', sum(entry_data.Suplesi2Dewasa) as 'Jumlah Suplesi2Dewasa', sum(entry_data.Suplesi1Anak) as 'Jumlah Suplesi1Anak', sum(entry_data.Suplesi2Anak) as 'Jumlah Suplesi2Anak',
                 
@@ -1482,21 +1523,20 @@ class Report extends CI_Controller
                 // $sheet->setCellValue('H15', '=F15 * E15');
                 // $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
-                $sheet->setCellValue('H10', ($record['DewasaEksekutifIW']) * $record['Jumlah DewasaEksekutif']);
-                $sheet->setCellValue('H11', ($record['BayiEksekutifIW']) * $record['Jumlah BayiEksekutif']);
-                $sheet->setCellValue('H12', ($record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
-                $sheet->setCellValue('H13', ($record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
-                $sheet->setCellValue('H14', ($record['DewasaEkonomiIW']) * $record['Jumlah DewasaEkonomi']);
-                $sheet->setCellValue('H15', ($record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
+                $sheet->setCellValue('H10', ($record['DewasaEksekutifJR']));
+                $sheet->setCellValue('H11', ($record['BayiEksekutifJR']));
+                $sheet->setCellValue('H12', ($record['DewasaBisnisJR']));
+                $sheet->setCellValue('H13', ($record['BayiBisnisJR']));
+                $sheet->setCellValue('H14', ($record['DewasaEkonomiJR']));
+                $sheet->setCellValue('H15', ($record['BayiEkonomiJR']));
                 $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
-                $sheet->setCellValue('I10', ($record['DewasaEksekutifTJP']) * $record['Jumlah DewasaEksekutif']);
-                $sheet->setCellValue('I11', ($record['BayiEksekutifTJP']) * $record['Jumlah BayiEksekutif']);
-                $sheet->setCellValue('I12', ($record['DewasaBisnisTJP']) * $record['Jumlah DewasaBisnis']);
-                $sheet->setCellValue('I13', ($record['BayiBisnisTJP']) * $record['Jumlah BayiBisnis']);
-                $sheet->setCellValue('I14', ($record['DewasaEkonomiTJP']) * $record['Jumlah DewasaEkonomi']);
-                $sheet->setCellValue('I15', ($record['BayiEkseTJP']));
-                // $sheet->setCellValue('I15', ($record['BayiEkonomiTJP']) * $record['Jumlah BayiEkonomi']);
+                $sheet->setCellValue('I10', ($record['DewasaEksekutifJRP']));
+                $sheet->setCellValue('I11', ($record['BayiEksekutifJRP']));
+                $sheet->setCellValue('I12', ($record['DewasaBisnisJRP']));
+                $sheet->setCellValue('I13', ($record['BayiBisnisJRP']));
+                $sheet->setCellValue('I14', ($record['DewasaEkonomiJRP']));
+                $sheet->setCellValue('I15', ($record['BayiEkonomiJRP']));
                 $sheet->setCellValue('I16', '=SUM(I10:I15)')->getStyle('I16')->getFont()->setBold(true);
 
                 //Total
@@ -1555,32 +1595,32 @@ class Report extends CI_Controller
                 $sheet->setCellValue('G30', '=SUM(G18:G29)')->getStyle('G30')->getFont()->setBold(true);
 
                 // Jumlah
-                $sheet->setCellValue('H18', '=F18 * E18');
-                $sheet->setCellValue('H19', '=F19 * E19');
-                $sheet->setCellValue('H20', '=F20 * E20');
-                $sheet->setCellValue('H21', '=F21 * E21');
-                $sheet->setCellValue('H22', '=F22 * E22');
-                $sheet->setCellValue('H23', '=F23 * E23');
-                $sheet->setCellValue('H24', '=F24 * E24');
-                $sheet->setCellValue('H25', '=F25 * E25');
-                $sheet->setCellValue('H26', '=F26 * E26');
-                $sheet->setCellValue('H27', '=F27 * E27');
-                $sheet->setCellValue('H28', '=F28 * E28');
-                $sheet->setCellValue('H29', '=F29 * E29');
+                $sheet->setCellValue('H18', $record['Gol1JR']);
+                $sheet->setCellValue('H19', $record['Gol2JR']);
+                $sheet->setCellValue('H20', $record['Gol3JR']);
+                $sheet->setCellValue('H21', $record['Gol4PenJR']);
+                $sheet->setCellValue('H22', $record['Gol4BarJR']);
+                $sheet->setCellValue('H23', $record['Gol5PenJR']);
+                $sheet->setCellValue('H24', $record['Gol5BarJR']);
+                $sheet->setCellValue('H25', $record['Gol6PenJR']);
+                $sheet->setCellValue('H26', $record['Gol6BarJR']);
+                $sheet->setCellValue('H27', $record['Gol7JR']);
+                $sheet->setCellValue('H28', $record['Gol8JR']);
+                $sheet->setCellValue('H29', $record['Gol9JR']);
                 $sheet->setCellValue('H30', '=SUM(H18:H29)')->getStyle('H30')->getFont()->setBold(true);
                 // Jumlah
-                $sheet->setCellValue('I18', '=E18 * G18');
-                $sheet->setCellValue('I19', '=E19 * G19');
-                $sheet->setCellValue('I20', '=E20 * G20');
-                $sheet->setCellValue('I21', '=E21 * G21');
-                $sheet->setCellValue('I22', '=E22 * G22');
-                $sheet->setCellValue('I23', '=E23 * G23');
-                $sheet->setCellValue('I24', '=E24 * G24');
-                $sheet->setCellValue('I25', '=E25 * G25');
-                $sheet->setCellValue('I26', '=E26 * G26');
-                $sheet->setCellValue('I27', '=E27 * G27');
-                $sheet->setCellValue('I28', '=E28 * G28');
-                $sheet->setCellValue('I29', '=E29 * G29');
+                $sheet->setCellValue('I18', $record['Gol1JRP']);
+                $sheet->setCellValue('I19', $record['Gol2JRP']);
+                $sheet->setCellValue('I20', $record['Gol3JRP']);
+                $sheet->setCellValue('I21', $record['Gol4PenJRP']);
+                $sheet->setCellValue('I22', $record['Gol4BarJRP']);
+                $sheet->setCellValue('I23', $record['Gol5PenJRP']);
+                $sheet->setCellValue('I24', $record['Gol5BarJRP']);
+                $sheet->setCellValue('I25', $record['Gol6PenJRP']);
+                $sheet->setCellValue('I26', $record['Gol6BarJRP']);
+                $sheet->setCellValue('I27', $record['Gol7JRP']);
+                $sheet->setCellValue('I28', $record['Gol8JRP']);
+                $sheet->setCellValue('I29', $record['Gol9JRP']);
                 $sheet->setCellValue('I30', '=SUM(I18:I29)')->getStyle('I30')->getFont()->setBold(true);
 
                 //Total
