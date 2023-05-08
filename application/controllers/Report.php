@@ -1481,20 +1481,20 @@ class Report extends CI_Controller
                 // $sheet->setCellValue('H15', '=F15 * E15');
                 // $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
-                $sheet->setCellValue('H10', ($record['DewasaEksekutifTJP'] + $record['DewasaEksekutifIW']) * $record['Jumlah DewasaEksekutif']);
-                $sheet->setCellValue('H11', ($record['BayiEksekutifTJP'] + $record['BayiEksekutifIW']) * $record['Jumlah BayiEksekutif']);
-                $sheet->setCellValue('H12', ($record['DewasaBisnisTJP'] + $record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
-                $sheet->setCellValue('H13', ($record['BayiBisnisTJP'] + $record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
-                $sheet->setCellValue('H14', ($record['DewasaEkonomiTJP'] + $record['DewasaEkonomiIW']) * $record['Jumlah DewasaEkonomi']);
-                $sheet->setCellValue('H15', ($record['BayiEkonomiTJP'] + $record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
+                $sheet->setCellValue('H10', ($record['DewasaEksekutifIW']) * $record['Jumlah DewasaEksekutif']);
+                $sheet->setCellValue('H11', ($record['BayiEksekutifIW']) * $record['Jumlah BayiEksekutif']);
+                $sheet->setCellValue('H12', ($record['DewasaBisnisIW']) * $record['Jumlah DewasaBisnis']);
+                $sheet->setCellValue('H13', ($record['BayiBisnisIW']) * $record['Jumlah BayiBisnis']);
+                $sheet->setCellValue('H14', ($record['DewasaEkonomiIW']) * $record['Jumlah DewasaEkonomi']);
+                $sheet->setCellValue('H15', ($record['BayiEkonomiIW']) * $record['Jumlah BayiEkonomi']);
                 $sheet->setCellValue('H16', '=SUM(H10:H15)')->getStyle('H16')->getFont()->setBold(true);
                 // Total Penumpang
-                $sheet->setCellValue('I10', '=G10 * E10');
-                $sheet->setCellValue('I11', '=G11 * E11');
-                $sheet->setCellValue('I12', '=G12 * E12');
-                $sheet->setCellValue('I13', '=G13 * E13');
-                $sheet->setCellValue('I14', '=G14 * E14');
-                $sheet->setCellValue('I15', '=G15 * E15');
+                $sheet->setCellValue('I10', ($record['DewasaEksekutifTJP']) * $record['Jumlah DewasaEksekutif']);
+                $sheet->setCellValue('I11', ($record['BayiEksekutifTJP']) * $record['Jumlah BayiEksekutif']);
+                $sheet->setCellValue('I12', ($record['DewasaBisnisTJP']) * $record['Jumlah DewasaBisnis']);
+                $sheet->setCellValue('I13', ($record['BayiBisnisTJP']) * $record['Jumlah BayiBisnis']);
+                $sheet->setCellValue('I14', ($record['DewasaEkonomiTJP']) * $record['Jumlah DewasaEkonomi']);
+                $sheet->setCellValue('I15', ($record['BayiEkonomiTJP']) * $record['Jumlah BayiEkonomi']);
                 $sheet->setCellValue('I16', '=SUM(I10:I15)')->getStyle('I16')->getFont()->setBold(true);
 
                 //Total
