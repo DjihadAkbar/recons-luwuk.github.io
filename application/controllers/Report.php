@@ -1263,7 +1263,7 @@ class Report extends CI_Controller
             } elseif (str_contains($lintasan, "SULTENG")) {
                 $batas = "AND NOT (route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG')";
             } elseif (str_contains($lintasan, "GABUNGAN GORONTALO")) {
-                $batas = "AND (route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG')";
+                $batas = "AND route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG'";
             } else {
                 $batas = "AND ROUTE = '{$lintasan}'";
             }
