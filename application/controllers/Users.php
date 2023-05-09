@@ -1,4 +1,5 @@
 <?php
+
 use PharIo\Manifest\Library;
 
 class Users extends CI_Controller
@@ -11,7 +12,8 @@ class Users extends CI_Controller
         $this->load->model('User_model');
     }
 
-    public function index(){
+    public function index()
+    {
         $data['title'] = "Revenue Controlling System - Luwuk";
         $this->load->view('landingPage', $data);
     }
@@ -26,7 +28,6 @@ class Users extends CI_Controller
         $data['kapal'] = $this->Daily_model->kapal();
         $this->load->view('template/home/header', $data);
         $this->load->view('entry_data', $data);
-
     }
 
     public function trip()
@@ -159,7 +160,7 @@ class Users extends CI_Controller
         $lastLogin = array('last_login' => date('Y-m-d h:i:sa'));
         $id = $this->session->userdata('user_id');
         $dataLogin = ['logged_in', 'user_id', 'username', 'name'];
-        
+
         $this->User_model->updateLastLogin($lastLogin, $id);
 
         $this->session->unset_userdata($dataLogin);

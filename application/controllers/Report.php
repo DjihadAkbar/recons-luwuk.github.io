@@ -1237,7 +1237,7 @@ class Report extends CI_Controller
         $pelabuhanReport = $this->input->post('pelabuhan_asal_report');
         $jamReport = $this->input->post('jam');
         $bulan = [1 => "JANUARI", "FEBURARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"];
-        $listLintasan = ["GABUNGAN"];
+        $listLintasan = ["GABUNGAN", "GORONTALO", "SULTENG"];
         foreach ($this->Master_model->lintasanSpv() as $row) {
             array_push($listLintasan, $row['lintasan']);
         }
@@ -1260,6 +1260,10 @@ class Report extends CI_Controller
                 $batas = "AND FERRY = '{$lintasan}'";
             } elseif (str_contains($lintasan, "GABUNGAN")) {
                 $batas = "";
+            } elseif (str_contains($lintasan, "SULTENG")) {
+                $batas = "AND NOT (route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG')";
+            } elseif (str_contains($lintasan, "GORONTALO")) {
+                $batas = "AND (route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG')";
             } else {
                 $batas = "AND ROUTE = '{$lintasan}'";
             }
@@ -1308,7 +1312,6 @@ class Report extends CI_Controller
                 sum(entry_data.Gol7 * rate.Gol7IW ) as 'Gol7JR',
                 sum(entry_data.Gol8 * rate.Gol8IW ) as 'Gol8JR',
                 sum(entry_data.Gol9 * rate.Gol9IW ) as 'Gol9JR',
-
 
                 sum(entry_data.DewasaEksekutif) AS 'Jumlah DewasaEksekutif', sum(entry_data.BayiEksekutif ) AS 'Jumlah BayiEksekutif', sum(entry_data.DewasaBisnis) AS 'Jumlah DewasaBisnis', sum(entry_data.BayiBisnis) AS 'Jumlah BayiBisnis', sum(entry_data.DewasaEkonomi) AS 'Jumlah DewasaEkonomi', sum(entry_data.BayiEkonomi) AS 'Jumlah BayiEkonomi', sum(entry_data.BarangVolume) AS 'Jumlah BarangVolume', sum(entry_data.BarangPendapatan) AS 'Jumlah BarangPendapatan',
                 sum(entry_data.Gol1) as 'Jumlah Gol1', sum(entry_data.Gol2) as 'Jumlah Gol2', sum(entry_data.Gol3) as 'Jumlah Gol3', sum(entry_data.Gol4Pen) as 'Jumlah Gol4Pen', sum(entry_data.Gol4Bar) as 'Jumlah Gol4Bar', sum(entry_data.Gol5Pen) as 'Jumlah Gol5Pen',sum(entry_data.Gol5Bar) as 'Jumlah Gol5Bar',sum(entry_data.Gol6Pen) as 'Jumlah Gol6Pen',sum(entry_data.Gol6Bar) as 'Jumlah Gol6Bar',sum(entry_data.Gol7) as 'Jumlah Gol7',sum(entry_data.Gol8) as 'Jumlah Gol8',sum(entry_data.Gol9) as 'Jumlah Gol9',
@@ -1651,10 +1654,12 @@ class Report extends CI_Controller
                 // Pendapatan Asuransi
                 // $sheet->setCellValue('G10', $record["DewasaEksekutifTJP"] * $record['Jumlah BarangVolume']);
                 // $sheet->setCellValue('G16', '=SUM(G10:G15)');
+                if (str_contains($lintasan, "-")) {
 
-                // Pendapatan Pelayaran
-                $sheet->setCellValue('F32', $record['Barang Pendapatan']);
-                $sheet->setCellValue('F34', '=SUM(F32)')->getStyle('F34')->getFont()->setBold(true);
+                    // Pendapatan Pelayaran
+                    $sheet->setCellValue('F32', $record['Barang Pendapatan']);
+                    $sheet->setCellValue('F34', '=SUM(F32)')->getStyle('F34')->getFont()->setBold(true);
+                }
 
                 // Total Penumpang
                 $sheet->setCellValue('H32', '=F32 + G32');
