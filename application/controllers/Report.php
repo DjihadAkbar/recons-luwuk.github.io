@@ -1237,7 +1237,7 @@ class Report extends CI_Controller
         $pelabuhanReport = $this->input->post('pelabuhan_asal_report');
         $jamReport = $this->input->post('jam');
         $bulan = [1 => "JANUARI", "FEBURARI", "MARET", "APRIL", "MEI", "JUNI", "JULI", "AGUSTUS", "SEPTEMBER", "OKTOBER", "NOVEMBER", "DESEMBER"];
-        $listLintasan = ["GABUNGAN", "GABUNGAN GORONTALO", "GABUNGAN SULTENG"];
+        $listLintasan = ["GABUNGAN", "GABUNG GORONTALO", "SULTENG"];
         foreach ($this->Master_model->lintasanSpv() as $row) {
             array_push($listLintasan, $row['lintasan']);
         }
@@ -1260,10 +1260,10 @@ class Report extends CI_Controller
                 $batas = "AND FERRY = '{$lintasan}'";
             } elseif (str_contains($lintasan, "GABUNGAN")) {
                 $batas = "";
-            } elseif (str_contains($lintasan, "GABUNGAN SULTENG")) {
+            } elseif (str_contains($lintasan, "SULTENG")) {
                 $batas = "AND NOT (route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG')";
-            } elseif (str_contains($lintasan, "GABUNGAN GORONTALO")) {
-                $batas = "AND route = 'GORONTALO-WAKAI' OR (route = 'GORONTALO-PAGIMANA') OR (route = 'MARISA-DOLONG')";
+            } elseif (str_contains($lintasan, "GABUNG GORONTALO")) {
+                $batas = "AND (route = 'GORONTALO-WAKAI' OR route = 'GORONTALO-PAGIMANA' OR route = 'MARISA-DOLONG')";
             } else {
                 $batas = "AND ROUTE = '{$lintasan}'";
             }
