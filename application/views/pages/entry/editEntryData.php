@@ -225,15 +225,15 @@ foreach ($editData as $row) {
                                 if ($serialEnd1 != 0 && $serialStart1 != 0) {
                                     echo ($serialEnd1 - $serialStart1) + 1;
                                 } else {
-                                    echo 0;
+                                    foreach ($editData as $baris) {
+                                        foreach ($baris as $key => $baris) {
+                                            if ($key == $row['id_production']) {
+                                                echo $baris;
+                                            }
+                                        }
+                                    }
+                                    // echo 0;
                                 }
-                                // foreach($editData as $baris){
-                                //     foreach($baris as $key => $baris){
-                                //         if($key == $row['id_production']){
-                                //             // echo $baris;
-                                //         }
-                                //     }
-                                // }
                                 ?>" min=" 0">
                             </div>
                         </div>
@@ -267,18 +267,15 @@ foreach ($editData as $row) {
                                 if ($serialEnd2 != 0 && $serialStart2 != 0) {
                                     echo ($serialEnd2 - $serialStart2) + 1;
                                 } else {
-                                    if (is_null($moon))
-                                        echo -1;
+                                    foreach ($editData as $baris) {
+                                        foreach ($baris as $key => $baris) {
+                                            if ($key == $row['id_production'] . "2") {
+                                                echo $baris;
+                                            }
+                                        }
+                                    }
+                                    // echo 0;
                                 }
-                                // foreach($editData as $baris){
-                                //     foreach($baris as $key => $baris){
-                                //         if($key == $row['id_production']."2"){
-                                //             // echo $baris;
-
-
-                                //         }
-                                //     }
-                                // }
                                 ?>" min="0">
                             </div>
                         </div>
@@ -311,20 +308,21 @@ foreach ($editData as $row) {
                                                                                                                                                                                                                         ?>" min="0">
                             </div>
                             <div class="col">
-                                <input type="number" name="<?php echo $row['id_production'] . "3"; ?>" class="form-control " id="<?php echo $row['id_production'] . "3"; ?>" value=<?php
-                                                                                                                                                                                    if ($serialEnd3 != 0 && $serialStart3 != 0) {
-                                                                                                                                                                                        echo ($serialEnd3 - $serialStart3) + 1;
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        echo 0;
-                                                                                                                                                                                    }
-                                                                                                                                                                                    // foreach($editData as $baris){
-                                                                                                                                                                                    //     foreach($baris as $key => $baris){
-                                                                                                                                                                                    //         if($key == $row['id_production']."3"){
-                                                                                                                                                                                    //             // echo $baris;
-                                                                                                                                                                                    //         }
-                                                                                                                                                                                    //     }
-                                                                                                                                                                                    // }
-                                                                                                                                                                                    ?> min="0">
+                                <input type="number" name="<?php echo $row['id_production'] . "3"; ?>" class="form-control " id="<?php echo $row['id_production'] . "3"; ?>" value="
+                                <?php
+                                if ($serialEnd3 != 0 && $serialStart3 != 0) {
+                                    echo ($serialEnd3 - $serialStart3) + 1;
+                                } else {
+                                    foreach ($editData as $baris) {
+                                        foreach ($baris as $key => $baris) {
+                                            if ($key == $row['id_production'] . "3") {
+                                                echo $baris;
+                                            }
+                                        }
+                                    }
+                                    // echo 0;
+                                }
+                                ?>" min="0">
                             </div>
                         </div>
         <?php
