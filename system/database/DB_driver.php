@@ -5,7 +5,7 @@
  *
  * An open source application development framework for PHP
  *
- * This content is released under the MIT License (MIT)
+* This content is released under the MIT License (MIT)
  *
  * Copyright (c) 2019 - 2022, CodeIgniter Foundation
  *
