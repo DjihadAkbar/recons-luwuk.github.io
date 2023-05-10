@@ -1193,7 +1193,7 @@ class Report extends CI_Controller
             ),
         );
 
-        $sheet->getStyle('E10:F32')->getAlignment()->setWrapText(true);
+        $myWorkSheet->getStyle('E10:F32')->getAlignment()->setWrapText(true);
 
 
 
