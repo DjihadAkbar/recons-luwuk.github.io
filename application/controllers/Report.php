@@ -1193,6 +1193,9 @@ class Report extends CI_Controller
             ),
         );
 
+        $sheet->getStyle('E10:F32')->getAlignment()->setWrapText(true);
+
+
 
         $writer = new Xlsx($spreadsheet);
         header('Content-Type: application/vnd.ms-excel');
