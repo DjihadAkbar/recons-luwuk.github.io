@@ -83,7 +83,7 @@ class Report extends CI_Controller
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
-        $sheet->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
+        $spreadsheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
 
         $entryData = mysqli_query($koneksi, "
             SELECT *,dayname(date), 
@@ -416,7 +416,7 @@ class Report extends CI_Controller
         WHERE date >='{$tanggalAwalReport}' and date <='{$tanggalAkhirReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
     ");
         $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
-        $myWorkSheet->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
+        $spreadsheet->getActiveSheet()->getStyle('A1:K60')->getNumberFormat()->setFormatCode('[Black][>=1000]#,##0;[Red][<0]#.##0;###');
 
         $spreadsheet->addSheet($myWorkSheet, 1);
         $titleSheet2 = 'Bukti Penyetoran';
