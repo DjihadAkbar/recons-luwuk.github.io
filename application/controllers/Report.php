@@ -936,7 +936,7 @@ class Report extends CI_Controller
             $myWorkSheet->getColumnDimension($col)->setAutoSize(true);
         }
         $myWorkSheet->getStyle('C35')->getAlignment()->setWrapText(true);
-        $myWorkSheet->getStyle('E10:F15')->getAlignment()->setWrapText(true);
+        // $myWorkSheet->getStyle('E10:F15')->getAlignment()->setWrapText(true);
         //Tiket Penumpang
         for ($row = 10; $row !== 16; $row++)
             $myWorkSheet->getRowDimension($row)->setRowHeight(45);
