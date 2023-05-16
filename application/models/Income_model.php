@@ -40,13 +40,13 @@ class Income_model extends CI_Model
         $this->db->order_by('monthname(date), productions.id');
         return $this->db->get('daily_income')->result_array();
     }
-    
+
     public function pendapatan()
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
 
-        $this->db->select('*,day(date) as day,year(date) as year,date,ferry, route AS rute,harbour,time, trips.trip as trip,
+        $this->db->select('*, b.harbour as destination_harbour,day(date) as day,year(date) as year,date,ferry, route AS rute,harbour,time, trips.trip as trip,
                 SUM((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_data.Gol1) AS "Golongan I",
                 SUM((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW)* entry_data.Gol2) AS "Golongan II", 
                 SUM((rate.Gol3 + rate.Gol3TJP + rate.Gol3IW)* entry_data.Gol3) AS "Golongan III", 
@@ -104,12 +104,13 @@ class Income_model extends CI_Model
         $this->db->join('ferry', 'entry_data.id_ferry = ferry.id');
         $this->db->join('routes', 'entry_data.id_route = routes.id');
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
+        $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->group_by('entry_data.id');
@@ -160,15 +161,15 @@ class Income_model extends CI_Model
                 JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                 JOIN trips on trips.id = entry_data.id_trip';
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-                    $textTengah = ' WHERE routes.spv = "'.$pelabuhan. '" AND ';
-                } else {
-                    $textTengah =' WHERE ';
-                }
-                $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $textTengah = ' WHERE routes.spv = "' . $pelabuhan . '" AND ';
+        } else {
+            $textTengah = ' WHERE ';
+        }
+        $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
                 GROUP BY entry_data.id_route) as entry_d';
-            $textAkhir = 'entry_a.id_route = entry_d.id_route';
-        
+        $textAkhir = 'entry_a.id_route = entry_d.id_route';
+
         $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id, target, harbour_target.trip as target_trip,
@@ -242,7 +243,7 @@ class Income_model extends CI_Model
                         WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = 2022 AND entry_a.id_route = entry_c.id_route and entry_a.id_ferry = entry_c.id_ferry
                         GROUP BY harbour,route 
                     ) as tripLastYear2');
-        $this->db->join($textDepan.$textTengah.$textBelakang,$textAkhir);
+        $this->db->join($textDepan . $textTengah . $textBelakang, $textAkhir);
 
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
@@ -253,10 +254,10 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month') ));
+        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date), route');
@@ -306,15 +307,15 @@ class Income_model extends CI_Model
                 JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                 JOIN trips on trips.id = entry_data.id_trip';
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-                    $textTengah = ' WHERE routes.spv = "'.$pelabuhan. '" AND ';
-                } else {
-                    $textTengah =' WHERE ';
-                }
-                $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $textTengah = ' WHERE routes.spv = "' . $pelabuhan . '" AND ';
+        } else {
+            $textTengah = ' WHERE ';
+        }
+        $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
                 GROUP BY entry_data.id_ferry) as entry_d';
-            $textAkhir = 'entry_a.id_ferry = entry_d.id_ferry';
-        
+        $textAkhir = 'entry_a.id_ferry = entry_d.id_ferry';
+
         $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id, 
                 SUM(
@@ -398,7 +399,7 @@ class Income_model extends CI_Model
                         where entry_a.id_ferry = harbour_target.id_ferry AND monthname(entry_a.date) = harbour_target.month  AND year(entry_a.date) = harbour_target.year
                         GROUP BY entry_a.id_ferry
                     ) as target');
-        $this->db->join($textDepan.$textTengah.$textBelakang,$textAkhir);
+        $this->db->join($textDepan . $textTengah . $textBelakang, $textAkhir);
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
         $this->db->join('harbour_target', 'entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month  AND year(entry_a.date) = harbour_target.year');
@@ -408,7 +409,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
@@ -460,16 +461,17 @@ class Income_model extends CI_Model
                 JOIN harbours ON harbours.id_harbours = entry_data.id_harbour
                 JOIN rate ON routes.id = rate.id_route AND entry_data.date >= rate.start_date AND entry_data.rate_type = rate.rate_type
                 JOIN trips on trips.id = entry_data.id_trip';
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-                    $textTengah = ' WHERE routes.spv = "'.$pelabuhan. '" AND ';
-                } else {
-                    $textTengah =' WHERE ';
-                }
-                $textBelakang = 'MONTHNAME(entry_data.DATE) = "'.$lastMonth.'" AND YEAR(entry_data.DATE) = "'.$lastYear.'"
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
+            $textTengah = ' WHERE routes.spv = "' . $pelabuhan . '" AND ';
+        } else {
+            $textTengah = ' WHERE ';
+        }
+        $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
                 GROUP BY entry_data.id_harbour
             ) as entry_d';
-            $textAkhir = 'entry_a.id_harbour = entry_d.id_harbour';
-        $this->db->select('ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date as date,harbour,entry_d.total as totalLastYear,  entry_d.trip as tripLastYear,
+        $textAkhir = 'entry_a.id_harbour = entry_d.id_harbour';
+        $this->db->select(
+            'ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date as date,harbour,entry_d.total as totalLastYear,  entry_d.trip as tripLastYear,
         COUNT(case when trips.trip != 1 then 1 END) as "Jumlah Trip", route, routes.id,
                 SUM(
                     ((rate.Gol1 + rate.Gol1Dermaga + rate.Gol1PasMasuk) * entry_a.Gol1) + 
@@ -554,7 +556,7 @@ class Income_model extends CI_Model
                         GROUP BY id_harbour
                     ) as target'
         );
-        $this->db->join($textDepan.$textTengah.$textBelakang,$textAkhir);
+        $this->db->join($textDepan . $textTengah . $textBelakang, $textAkhir);
         $this->db->join('routes', 'entry_a.id_route = routes.id');
         $this->db->join('ferry', 'entry_a.id_ferry = ferry.id');
         $this->db->join('harbour_target', 'entry_a.id_ferry = harbour_target.id_ferry AND entry_a.id_harbour = harbour_target.id_harbour AND entry_a.id_route = harbour_target.id_route AND monthname(entry_a.date) = harbour_target.month AND year(entry_a.date) = harbour_target.year');
@@ -564,7 +566,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
@@ -616,7 +618,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
@@ -669,7 +671,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
@@ -722,7 +724,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date)', date("d"));
@@ -933,7 +935,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date) <=', date("d"));
@@ -1039,7 +1041,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-                if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
+        if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
         $this->db->where('day(date) <=', date("d"));

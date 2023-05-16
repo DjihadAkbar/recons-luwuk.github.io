@@ -2003,9 +2003,11 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Nama Kapal </th>
                                                 <th scope="col">Lintasan </th>
                                                 <th scope="col">Pelabuhan Asal </th>
+                                                <th scope="col">Pelabuhan Tujuan </th>
                                                 <th scope="col">HSO </th>
                                                 <th scope="col">HO </th>
                                                 <th scope="col">Trip </th>
+                                                <th scope="col">Total </th>
                                                 <th scope="col">Dewasa Eksekutif </th>
                                                 <th scope="col">Nomor Seri Awal </th>
                                                 <th scope="col">Nomor Seri Akhir </th>
@@ -2092,7 +2094,6 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Barang Curah </th>
                                                 <th scope="col">Nomor Seri Awal </th>
                                                 <th scope="col">Nomor Seri Akhir </th>
-                                                <th scope="col">Total </th>
                                             </tr>
                                         </thead>
                                         <tbody>
