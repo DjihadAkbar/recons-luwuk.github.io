@@ -163,18 +163,18 @@ foreach ($editData as $row) {
             </div>
         </div>
         <div class="form-group row">
+            <label for="edit_waktu_tiba" class="col-4 label-wrap"> Waktu Tiba </label>
+            <div class="col">
+                <input class="form-control" type="time" id="edit_waktu_tiba" name="edit_waktu_tiba" value=<?php echo $dataWaktuTiba; ?>>
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="edit_waktu_berangkat" class="col-4 label-wrap"> Waktu Berangkat </label>
             <div class="col">
                 <input class="form-control" type="time" id="edit_waktu_berangkat" name="edit_waktu_berangkat" value=<?php echo $dataWaktu; ?>>
             </div>
         </div>
 
-        <div class="form-group row">
-            <label for="edit_waktu_tiba" class="col-4 label-wrap"> Waktu Tiba </label>
-            <div class="col">
-                <input class="form-control" type="time" id="edit_waktu_tiba" name="edit_waktu_tiba" value=<?php echo $dataWaktuTiba; ?> <?php if ($this->session->userdata['pelabuhan'] != $dataPelabuhanTiba) { ?>disabled <?php } ?>>
-            </div>
-        </div>
 
         <!-- Input Jumlah Produksi -->
         <?php $no = "";

@@ -274,6 +274,7 @@ class Entry extends CI_Controller
             'week' => $valueWeek,
             'date' => $this->input->post('tanggal_berangkat'),
             'time' => $this->input->post('waktu_berangkat'),
+            'departure_time' => $this->input->post('waktu_tiba'),
             'id_ferry' => $this->input->post('nama_kapal'),
             'rate_type' => $valueTarif,
             // 'id_route' => $dataIdLintasan,

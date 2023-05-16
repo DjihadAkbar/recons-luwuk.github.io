@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hari ini 15 Meii nahhh</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<!-- Load fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+
+        }
+        .judul-atas {
+            font-family: 'Dancing Script', cursive;
+            font: bold;
+            color: aliceblue;
+            text-shadow: 2px 2px #4a4a4b;
+        }
+        body {
+            background: #F4BCD3;
+
+            background-blend-mode: lighten;
+        }
+        
+        h3{
+        font-family: 'Josefin Slab', serif;
+        color:white;
+        text-align:center;
+        }
+
+            .box-canvas{
+            position: relative;
+            margin: auto;
+            display: block;
+            margin-bottom: 8%;
+            width: 230px;
+            height:600px;
+            animation: floatUp 5s infinite linear;
+            }
+
+            @keyframes floatUp {
+            0% {
+                transform: translateY(100vh);
+            }
+            
+            100% {
+                transform: translateY(-480px);
+            }
+            }
+
+            .red {
+            --balloon-color: var(--red);
+            --highlight-color: #FC9999;
+            --top-initial: 40px;
+            --left-initial: -500px;
+            --string-angle: -20deg;
+            }
+
+            .yellow {
+            --balloon-color: #F2F24B;
+            --highlight-color: #E5E570;
+            --top-initial: 130px;
+            --left-initial: -570px;
+            --string-angle: -8deg;
+            }
+
+            .green {
+            --balloon-color: var(--green);
+            --highlight-color: #BAD6D3;
+            --top-initial: 0;
+            --left-initial: 560px;
+            --string-angle: 1deg;
+            }
+
+            .blue {
+            --balloon-color: dodgerblue;
+            --highlight-color: #6AB5FC;
+            --left-initial: 500px;
+            --top-initial: 110px;
+            --string-angle: 10deg;
+            }
+
+            .orange {
+            --balloon-color: orange;
+            --highlight-color: #F9B94A;
+            --left-initial: 450px;
+            --top-initial: 50px;
+            --string-angle: 18deg;
+            }
+
+            .balloon-wrapper {
+            position: absolute;
+            left: var(--left-initial);
+            top: var(--top-initial);
+            width: 85px;
+            }
+
+            .string {
+            position: absolute;
+            top: 110px;
+            left: 42px;
+            transform: rotate(var(--string-angle));
+            transform-origin: top left;
+            width: 2px;
+            height: 250px;
+            background: #50535E;
+            }
+
+            .balloon {
+            position: absolute;
+            width: 85px;
+            height: 100px;
+            background: var(--balloon-color);
+            border-radius: 50%;
+            }
+
+            .balloon::before {
+            content: '';
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            width: 15px;
+            height: 35px;
+            box-shadow: 5px 0 0 var(--highlight-color);
+            border-radius: 50%;
+            transform: rotate(-30deg);
+            }
+
+            .balloon::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -15px;
+            width: 25px;
+            height: 20px;
+            background: var(--balloon-color);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+            }
+
+
+/* Card */
+/* Use shorthand for margin and padding */
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			main {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.curve {
+				position: absolute;
+				left: 0;
+				top: 0px;
+				right: 0;
+				height: 70px;
+				width: 155px;
+				background-color: #BE2724;
+				border-radius: 0 0 100px 100px;
+				border: 2px solid red;
+				z-index: 1000;
+				box-shadow: 0px 15px 15px -3px rgba(0, 0, 0, 0.1);
+				transition: transform 0.5s ease, top 0.5s ease, 0.5s ease;
+			}
+			.big-div:hover .curve {
+				transform: rotateX(160deg);
+				top: -65px;
+				z-index: -10;
+			}
+			.big-div:hover .card {
+				animation: pop-up 1.5s 1 forwards;
+			}
+			@keyframes pop-up {
+				0% {
+					bottom: 0px;
+				}
+				100% {
+					bottom: 190px;
+				}
+			}
+			.big-div {
+				position: absolute;
+				height: 200px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 160px;
+				border-radius: 3px;
+				background-color: red;
+			}
+			.card {
+				position: absolute;
+				font-size: 13px;
+				color: white;
+				height: 150px;
+				width: 125px;
+				border-radius: 3px;
+				background: rgba(249, 217, 73, 0.81);
+				border: 1px solid rgba(249, 217, 73, 0.3);
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5.8px);
+				-webkit-backdrop-filter: blur(5.8px);
+				z-index: 100;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.small-div {
+				box-shadow: inset 0px 32px 15px -3px rgba(0, 0, 0, 0.1);
+				position: absolute;
+				top: 0;
+				height: 200px;
+				width: 160px;
+				border-radius: 3px;
+				background-color: red;
+				z-index: 100;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.small-div-1 {
+				height: 180px;
+				width: 140px;
+				border-radius: 3px;
+				background-color: red;
+				border: 2px dashed #BE2724;
+				display: flex;
+				justify-content: center;
+			}
+			.small-div-1 .mid-line {
+				height: 178px;
+				width: 0px;
+				border: 2px dashed #BE2724;
+			}
+			/* Use a separate class for the image */
+			.card img {
+				width: 100px;
+        pointer-events:none;
+			}
+			/* Use a separate class for the font family */
+			.card span {
+				font-family: 'Roboto Condensed', sans-serif;
+			}
+
+
+    </style>
+</head>
+
+<body>
+    
+    <h1 class="judul-atas text-center">
+        Happy Anniversary Sariii
+    </h1>
+    
+    <main>
+        
+    
+      <div class="box-canvas">
+          <div class="balloon-wrapper red">
+          <div class="string"></div>
+          <div class="balloon"></div>
+        </div>
+        <div class="balloon-wrapper yellow">
+          <div class="string"></div>
+          <div class="balloon"></div>
+        </div>
+        <div class="balloon-wrapper blue">
+          <div class="string"></div>
+          <div class="balloon"></div>
+        </div>
+        <div class="balloon-wrapper green">
+          <div class="string"></div>
+          <div class="balloon"></div>
+        </div>
+        <div class="balloon-wrapper orange">
+            <div class="string"></div>
+            <div class="balloon"></div>
+        </div>
+    </div>
+        <div class="big-div">
+            <a href="#">
+					<div class="curve"></div>
+				</a>
+				<div class="card">
+                    <!-- Use a separate span for the text -->
+					<span>SCAN AKUU</span>
+					<img src="https://media.tenor.com/7SE3IKEub60AAAAi/shinchan.gif" alt="animated GIF" loop>
+				</div>
+				<div class="small-div">
+					<div class="small-div-1">
+                        <div class="mid-line"></div>
+					</div>
+				</div>
+                
+            </div>
+        </main>
+    
+</body>
+        
+
+        
+<footer>
+    <script>
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</footer>
+</html>

@@ -416,6 +416,8 @@ class Report extends CI_Controller
         JOIN rate ON rate.id_route = routes.id and entry_data.date >= rate.start_date and rate.rate_type = entry_data.rate_type
         WHERE date >='{$tanggalAwalReport}' and date <='{$tanggalAkhirReport}' and ferry = '{$kapalReport}' and route = '{$lintasanReport}'
     ");
+
+
         $myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'Bukti Penyetoran');
         $spreadsheet->addSheet($myWorkSheet, 1);
         $titleSheet2 = 'Bukti Penyetoran';
