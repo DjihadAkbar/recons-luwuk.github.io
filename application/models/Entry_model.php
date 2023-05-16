@@ -63,8 +63,10 @@ class Entry_model extends CI_Model
         $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         $this->db->where('entry_data.id', $id);
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', 'b.harbour');
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', 'b.harbour');
         }
 
         $this->db->order_by('date DESC', 'ferry ASC');
@@ -79,8 +81,10 @@ class Entry_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         $this->db->where('entry_data.id', $id);
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $this->db->order_by('date DESC', 'ferry ASC');
         return $this->db->get('entry_data')->result_array();
@@ -124,8 +128,10 @@ class Entry_model extends CI_Model
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('*,rate.id as id_rate');
         $this->db->join('routes', 'routes.id = rate.id_route');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $query = $this->db->get('rate')->result_array();
         return $query;
@@ -144,8 +150,10 @@ class Entry_model extends CI_Model
         $this->db->distinct();
         $this->db->select('rate_type as tarif');
         $this->db->join('routes', 'rate.id_route = routes.id');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $this->db->order_by('start_date ASC');
         $query = $this->db->get('rate')->result_array();
@@ -204,8 +212,10 @@ class Entry_model extends CI_Model
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('route as lintasan, id');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $query = $this->db->get('routes')->result_array();
 
@@ -236,8 +246,10 @@ class Entry_model extends CI_Model
         $this->db->distinct();
         $this->db->select('harbour as pelabuhan, id_harbours, code, timezone, name');
         $this->db->join('routes', 'harbours.id_harbours = routes.origin');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         return $this->db->get('harbours')->result_array();
     }
@@ -252,8 +264,10 @@ class Entry_model extends CI_Model
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('route as lintasan');
         $this->db->where('id', $id);
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $query = $this->db->get('routes')->result_array();
 
@@ -264,8 +278,10 @@ class Entry_model extends CI_Model
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('harbour as pelabuhan');
         $this->db->where('id_harbours', $id);
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $query = $this->db->get('harbours')->result_array();
 
@@ -277,8 +293,10 @@ class Entry_model extends CI_Model
         $this->db->select('id');
         $this->db->where('route', $name);
         $this->db->where('origin', $id);
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         $query = $this->db->get('routes')->result_array();
 
