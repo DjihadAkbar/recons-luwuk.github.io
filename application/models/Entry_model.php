@@ -43,7 +43,7 @@ class Entry_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
-        $this->db->join('spb_harbour', 'spv_harbour.route = routes.id');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             // $this->db->where('routes.spv', $pelabuhan);
             $this->db->where('spv_harbour.spv', $pelabuhan);
