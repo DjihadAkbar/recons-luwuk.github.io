@@ -1998,6 +1998,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Bulan </th>
                                                 <th scope="col">Tahun </th>
                                                 <th scope="col">Minggu </th>
+                                                <th scope="col">Waktu Tiba </th>
                                                 <th scope="col">Waktu Keberangkatan </th>
                                                 <th scope="col">Nama Kapal </th>
                                                 <th scope="col">Lintasan </th>
@@ -2139,6 +2140,9 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     ?>
                                             // </td> -->
                                                     <td>
+                                                        <?php echo $value['departure_time']; ?>
+                                                    </td>
+                                                    <td>
                                                         <?php echo $value['time']; ?>
                                                     </td>
                                                     <td>
@@ -2151,6 +2155,9 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                         <?php echo $value['harbour']; ?>
                                                     </td>
                                                     <td>
+                                                        <?php echo $value['destination_harbour']; ?>
+                                                    </td>
+                                                    <td>
                                                         <?php echo $value['HSO']; ?>
                                                     </td>
                                                     <td>
@@ -2158,6 +2165,9 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     </td>
                                                     <td>
                                                         <?php echo $value['trip']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $value['total']; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $value['Dewasa Eksekutif']; ?>
@@ -2393,9 +2403,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     <td>
                                                         <?php echo $value['BarangPendapatanSerial_end']; ?>
                                                     </td>
-                                                    <td>
-                                                        <?php echo $value['total']; ?>
-                                                    </td>
+
 
                                                 </tr>
                                             <?php
@@ -2410,13 +2418,16 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Bulan </th>
                                                 <th scope="col">Tahun </th>
                                                 <th scope="col">Minggu </th>
+                                                <th scope="col">Waktu Tiba </th>
                                                 <th scope="col">Waktu Keberangkatan </th>
                                                 <th scope="col">Nama Kapal </th>
                                                 <th scope="col">Lintasan </th>
                                                 <th scope="col">Pelabuhan Asal </th>
+                                                <th scope="col">Pelabuhan Tujuan </th>
                                                 <th scope="col">HSO </th>
                                                 <th scope="col">HO </th>
                                                 <th scope="col">Jenis Trip </th>
+                                                <th scope="col">Total </th>
                                                 <th scope="col">Dewasa Eksekutif </th>
                                                 <th scope="col">Nomor Seri Awal </th>
                                                 <th scope="col">Nomor Seri Akhir </th>
@@ -2503,7 +2514,6 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Barang Curah </th>
                                                 <th scope="col">Nomor Seri Awal </th>
                                                 <th scope="col">Nomor Seri Akhir </th>
-                                                <th scope="col">Total </th>
                                             </tr>
                                         </tfoot>
                                     </table>

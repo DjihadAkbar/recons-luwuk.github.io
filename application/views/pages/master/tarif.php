@@ -627,6 +627,8 @@ $ifEdit = 'Edit'; ?>
                                     <th scope="col"> # </th>
                                     <th scope="col">Date </th>
                                     <th scope="col">Lintasan </th>
+                                    <th scope="col">Sandar </th>
+                                    <th scope="col">Tambat </th>
                                     <th scope="col">Golongan 1 </th>
                                     <th scope="col">Golongan 2 </th>
                                     <th scope="col">Golongan 3 </th>
@@ -780,6 +782,12 @@ $ifEdit = 'Edit'; ?>
                                         </td>
                                         <td>
                                             <?php echo $value['route']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Sandar']; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $value['Tambat']; ?>
                                         </td>
                                         <td>
                                             <?php echo $value['Gol1']; ?>
@@ -1179,6 +1187,142 @@ $ifEdit = 'Edit'; ?>
                                 }
                                 ?>
                             <tbody>
+                            <tfoot class="tfoot-dark">
+                                <tr>
+                                    <th scope="col"> # </th>
+                                    <th scope="col">Date </th>
+                                    <th scope="col">Lintasan </th>
+                                    <th scope="col">Sandar </th>
+                                    <th scope="col">Tambat </th>
+                                    <th scope="col">Golongan 1 </th>
+                                    <th scope="col">Golongan 2 </th>
+                                    <th scope="col">Golongan 3 </th>
+                                    <th scope="col">Golongan 4 - Penumpang </th>
+                                    <th scope="col">Golongan 4 - Barang </th>
+                                    <th scope="col">Golongan 5 - Penumpang </th>
+                                    <th scope="col">Golongan 5 - Barang </th>
+                                    <th scope="col">Golongan 6 - Penumpang </th>
+                                    <th scope="col">Golongan 6 - Barang </th>
+                                    <th scope="col">Golongan 7 </th>
+                                    <th scope="col">Golongan 8 </th>
+                                    <th scope="col">Golongan 9 </th>
+                                    <th scope="col">Dewasa Eksekutif </th>
+                                    <th scope="col">Bayi Eksekutif </th>
+                                    <th scope="col">Dewasa Bisnis </th>
+                                    <th scope="col">Bayi Bisnis </th>
+                                    <th scope="col">Dewasa Ekonomi </th>
+                                    <th scope="col">Bayi Ekonomi </th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi I Dewasa
+                                    </th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi I Anak
+                                    </th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi II Dewasa
+                                    </th>
+                                    <th scope="col">
+                                        Suplesi Ekonomi II Anak
+                                    </th>
+                                    <th scope="col">Hewan </th>
+                                    <th scope="col">Gayor </th>
+                                    <th scope="col">Carter </th>
+                                    <th scope="col">Barang Volume </th>
+                                    <th scope="col">Barang Curah </th>
+                                    <th scope="col">Golongan 1 TJP</th>
+                                    <th scope="col">Golongan 2 TJP</th>
+                                    <th scope="col">Golongan 3 TJP</th>
+                                    <th scope="col">Golongan 4 - Penumpang TJP</th>
+                                    <th scope="col">Golongan 4 - Barang TJP</th>
+                                    <th scope="col">Golongan 5 - Penumpang TJP</th>
+                                    <th scope="col">Golongan 5 - Barang TJP</th>
+                                    <th scope="col">Golongan 6 - Penumpang TJP</th>
+                                    <th scope="col">Golongan 6 - Barang TJP</th>
+                                    <th scope="col">Golongan 7 TJP</th>
+                                    <th scope="col">Golongan 8 TJP</th>
+                                    <th scope="col">Golongan 9 TJP</th>
+                                    <th scope="col">Dewasa Eksekutif TJP</th>
+                                    <th scope="col">Bayi Eksekutif TJP</th>
+                                    <th scope="col">Dewasa Bisnis TJP</th>
+                                    <th scope="col">Bayi Bisnis TJP</th>
+                                    <th scope="col">Dewasa Ekonomi TJP</th>
+                                    <th scope="col">Bayi Ekonomi TJP</th>
+                                    <th scope="col">Golongan 1 IW</th>
+                                    <th scope="col">Golongan 2 IW</th>
+                                    <th scope="col">Golongan 3 IW</th>
+                                    <th scope="col">Golongan 4 - Penumpang IW</th>
+                                    <th scope="col">Golongan 4 - Barang IW</th>
+                                    <th scope="col">Golongan 5 - Penumpang IW</th>
+                                    <th scope="col">Golongan 5 - Barang IW</th>
+                                    <th scope="col">Golongan 6 - Penumpang IW</th>
+                                    <th scope="col">Golongan 6 - Barang IW</th>
+                                    <th scope="col">Golongan 7 IW</th>
+                                    <th scope="col">Golongan 8 IW</th>
+                                    <th scope="col">Golongan 9 IW</th>
+                                    <th scope="col">Dewasa Eksekutif IW</th>
+                                    <th scope="col">Bayi Eksekutif IW</th>
+                                    <th scope="col">Dewasa Bisnis IW</th>
+                                    <th scope="col">Bayi Bisnis IW</th>
+                                    <th scope="col">Dewasa Ekonomi IW</th>
+                                    <th scope="col">Bayi Ekonomi IW</th>
+                                    <th scope="col">Golongan 1 Dermaga</th>
+                                    <th scope="col">Golongan 2 Dermaga</th>
+                                    <th scope="col">Golongan 3 Dermaga</th>
+                                    <th scope="col">Golongan 4 - Penumpang Dermaga</th>
+                                    <th scope="col">Golongan 4 - Barang Dermaga</th>
+                                    <th scope="col">Golongan 5 - Penumpang Dermaga</th>
+                                    <th scope="col">Golongan 5 - Barang Dermaga</th>
+                                    <th scope="col">Golongan 6 - Penumpang Dermaga</th>
+                                    <th scope="col">Golongan 6 - Barang Dermaga</th>
+                                    <th scope="col">Golongan 7 Dermaga</th>
+                                    <th scope="col">Golongan 8 Dermaga</th>
+                                    <th scope="col">Golongan 9 Dermaga</th>
+                                    <th scope="col">Dewasa Eksekutif Dermaga</th>
+                                    <th scope="col">Bayi Eksekutif Dermaga</th>
+                                    <th scope="col">Dewasa Bisnis Dermaga</th>
+                                    <th scope="col">Bayi Bisnis Dermaga</th>
+                                    <th scope="col">Dewasa Ekonomi Dermaga</th>
+                                    <th scope="col">Bayi Ekonomi Dermaga</th>
+                                    <th scope="col">Golongan 1 Terminal</th>
+                                    <th scope="col">Golongan 2 Terminal</th>
+                                    <th scope="col">Golongan 3 Terminal</th>
+                                    <th scope="col">Golongan 4 - Penumpang Terminal</th>
+                                    <th scope="col">Golongan 4 - Barang Terminal</th>
+                                    <th scope="col">Golongan 5 - Penumpang Terminal</th>
+                                    <th scope="col">Golongan 5 - Barang Terminal</th>
+                                    <th scope="col">Golongan 6 - Penumpang Terminal</th>
+                                    <th scope="col">Golongan 6 - Barang Terminal</th>
+                                    <th scope="col">Golongan 7 Terminal</th>
+                                    <th scope="col">Golongan 8 Terminal</th>
+                                    <th scope="col">Golongan 9 Terminal</th>
+                                    <th scope="col">Dewasa Eksekutif Terminal</th>
+                                    <th scope="col">Bayi Eksekutif Terminal</th>
+                                    <th scope="col">Dewasa Bisnis Terminal</th>
+                                    <th scope="col">Bayi Bisnis Terminal</th>
+                                    <th scope="col">Dewasa Ekonomi Terminal</th>
+                                    <th scope="col">Bayi Ekonomi Terminal</th>
+                                    <th scope="col">Golongan 1 Pas Masuk</th>
+                                    <th scope="col">Golongan 2 Pas Masuk</th>
+                                    <th scope="col">Golongan 3 Pas Masuk</th>
+                                    <th scope="col">Golongan 4 - Penumpang Pas Masuk</th>
+                                    <th scope="col">Golongan 4 - Barang Pas Masuk</th>
+                                    <th scope="col">Golongan 5 - Penumpang Pas Masuk</th>
+                                    <th scope="col">Golongan 5 - Barang Pas Masuk</th>
+                                    <th scope="col">Golongan 6 - Penumpang Pas Masuk</th>
+                                    <th scope="col">Golongan 6 - Barang Pas Masuk</th>
+                                    <th scope="col">Golongan 7 Pas Masuk</th>
+                                    <th scope="col">Golongan 8 Pas Masuk</th>
+                                    <th scope="col">Golongan 9 Pas Masuk</th>
+                                    <th scope="col">Dewasa Eksekutif Pas Masuk</th>
+                                    <th scope="col">Bayi Eksekutif Pas Masuk</th>
+                                    <th scope="col">Dewasa Bisnis Pas Masuk</th>
+                                    <th scope="col">Bayi Bisnis Pas Masuk</th>
+                                    <th scope="col">Dewasa Ekonomi Pas Masuk</th>
+                                    <th scope="col">Bayi Ekonomi Pas Masuk</th>
+                                    <th scope="col">Action </th>
+                                    <th scope="col"> </th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
