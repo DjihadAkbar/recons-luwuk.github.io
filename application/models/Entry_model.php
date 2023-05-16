@@ -263,7 +263,7 @@ class Entry_model extends CI_Model
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->select('routes.route as lintasan');
-        $this->db->where('id', $id);
+        $this->db->where('routes.id', $id);
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('spv_harbour.spv', $pelabuhan);
