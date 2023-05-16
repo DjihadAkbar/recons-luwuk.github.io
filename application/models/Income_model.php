@@ -46,7 +46,7 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
 
-        $this->db->select('*, b.harbour as destination_harbour,day(date) as day,year(date) as year,date,ferry, route AS rute,harbours.harbour,time, trips.trip as trip,
+        $this->db->select('*, b.harbour as destination_harbour,day(date) as day,year(date) as year,date,ferry, routes.route AS rute,harbours.harbour,time, trips.trip as trip,
                 SUM((rate.Gol1 + rate.Gol1TJP + rate.Gol1IW) * entry_data.Gol1) AS "Golongan I",
                 SUM((rate.Gol2 + rate.Gol2TJP + rate.Gol2IW)* entry_data.Gol2) AS "Golongan II", 
                 SUM((rate.Gol3 + rate.Gol3TJP + rate.Gol3IW)* entry_data.Gol3) AS "Golongan III", 
@@ -107,8 +107,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours AS b', 'b.id_harbours = routes.destination');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
