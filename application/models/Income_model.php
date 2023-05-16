@@ -236,14 +236,14 @@ class Income_model extends CI_Model
                         FROM entry_data as entry_b
                         JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
                         WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = 2022 AND entry_a.id_route = entry_b.id_route and entry_a.id_ferry = entry_b.id_ferry
-                        GROUP BY harbour,route
+                        GROUP BY harbour,routes.route
                     ) AS totalLastYear2,
                     (
                         SELECT COUNT(case when trip != 1 then 1 END)
                         FROM entry_data as entry_c
                         join trips on trips.id = entry_c.id_trip
                         WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = 2022 AND entry_a.id_route = entry_c.id_route and entry_a.id_ferry = entry_c.id_ferry
-                        GROUP BY harbour,route 
+                        GROUP BY harbour,routes.route 
                     ) as tripLastYear2');
         $this->db->join($textDepan . $textTengah . $textBelakang, $textAkhir);
 
