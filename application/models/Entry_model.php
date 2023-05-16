@@ -211,7 +211,7 @@ class Entry_model extends CI_Model
     public function lintasan()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('route as lintasan, id');
+        $this->db->select('routes.route as lintasan, id');
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('spv_harbour.spv', $pelabuhan);
@@ -223,7 +223,7 @@ class Entry_model extends CI_Model
     }
     public function semuaLintasan()
     {
-        $this->db->select('id, route as lintasan, asal.harbour as asal, tujuan.harbour as tujuan, segment,distance,travel_time');
+        $this->db->select('id, routes.route as lintasan, asal.harbour as asal, tujuan.harbour as tujuan, segment,distance,travel_time');
         $this->db->join('harbours as asal', 'asal.id_harbours = routes.origin');
         $this->db->join('harbours as tujuan', 'tujuan.id_harbours = routes.destination');
         $this->db->order_by('route');
@@ -262,7 +262,7 @@ class Entry_model extends CI_Model
     public function lintasanWIthId($id)
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('route as lintasan');
+        $this->db->select('routes.route as lintasan');
         $this->db->where('id', $id);
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
