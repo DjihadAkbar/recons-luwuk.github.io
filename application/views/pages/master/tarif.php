@@ -1187,7 +1187,7 @@ $ifEdit = 'Edit'; ?>
                                 }
                                 ?>
                             <tbody>
-                            <tfoot>
+                            <tfoot class="thead-dark">
                                 <tr>
                                     <th scope="col"> # </th>
                                     <th scope="col">Date </th>

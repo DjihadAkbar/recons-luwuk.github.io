@@ -279,10 +279,10 @@
                                                     ?>
                                             // </td> -->
                                         <td>
-                                            <?php echo $value['time']; ?>
+                                            <?php echo $value['departure_time']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['departure_time']; ?>
+                                            <?php echo $value['time']; ?>
                                         </td>
                                         <td>
                                             <?php echo $value['ferry']; ?>
