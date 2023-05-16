@@ -253,8 +253,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_a.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_a.date >= rate.start_date and entry_a.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_a.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -262,7 +264,7 @@ class Income_model extends CI_Model
         $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
-        $this->db->group_by(' month(entry_a.date), route');
+        $this->db->group_by(' month(entry_a.date), routes.route');
         $this->db->order_by('ferry');
         return $this->db->get('entry_data as entry_a')->result_array();
     }
@@ -408,8 +410,11 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_a.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_a.date >= rate.start_date and entry_a.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_a.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
+
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -565,8 +570,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_a.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_a.date >= rate.start_date and entry_a.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_a.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -617,8 +624,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -627,7 +636,7 @@ class Income_model extends CI_Model
         $this->db->where('MONTHname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
         // $this->db->where('entry_data.id_trip', 'REGULER');
-        $this->db->group_by('ferry, route');
+        $this->db->group_by('ferry, routes.route');
         return $this->db->get('entry_data')->result_array();
     }
 
@@ -670,8 +679,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -723,8 +734,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -828,8 +841,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -838,7 +853,7 @@ class Income_model extends CI_Model
         $this->db->where('monthname(date)', date("F"));
         // $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
         $this->db->where('year(date)', date("Y"));
-        $this->db->group_by(' month(date), ferry,route');
+        $this->db->group_by(' month(date), ferry,routes.route');
         return $this->db->get('entry_data')->result_array();
     }
 
@@ -934,8 +949,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
@@ -1040,8 +1057,10 @@ class Income_model extends CI_Model
         $this->db->join('harbours', 'harbours.id_harbours = entry_data.id_harbour');
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
+        $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
-            $this->db->where('routes.spv', $pelabuhan);
+            $this->db->where('spv_harbour.spv', $pelabuhan);
+            // $this->db->where('routes.spv', $pelabuhan);
         }
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
