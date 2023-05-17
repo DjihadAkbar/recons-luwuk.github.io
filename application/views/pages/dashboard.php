@@ -2168,241 +2168,241 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                         <?php echo $value['trip']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['total']; ?>
+                                                        <?php echo number_format($value['total'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Dewasa Eksekutif']; ?>
+                                                        <?php echo number_format($value['Dewasa Eksekutif'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['DewasaEksekutifSerial_start']; ?>
+                                                        <?php echo number_format($value['DewasaEksekutifSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['DewasaEksekutifSerial_end']; ?>
+                                                        <?php echo number_format($value['DewasaEksekutifSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Bayi Eksekutif']; ?>
+                                                        <?php echo number_format($value['Bayi Eksekutif'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BayiEksekutifSerial_start']; ?>
+                                                        <?php echo number_format($value['BayiEksekutifSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BayiEksekutifSerial_end']; ?>
+                                                        <?php echo number_format($value['BayiEksekutifSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Dewasa Bisnis']; ?>
+                                                        <?php echo number_format($value['Dewasa Bisnis'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['DewasaBisnisSerial_start']; ?>
+                                                        <?php echo number_format($value['DewasaBisnisSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['DewasaBisnisSerial_end']; ?>
+                                                        <?php echo number_format($value['DewasaBisnisSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Bayi Bisnis']; ?>
+                                                        <?php echo number_format($value['Bayi Bisnis'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BayiBisnisSerial_start']; ?>
+                                                        <?php echo number_format($value['BayiBisnisSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BayiBisnisSerial_end']; ?>
+                                                        <?php echo number_format($value['BayiBisnisSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Dewasa Ekonomi']; ?>
+                                                        <?php echo number_format($value['Dewasa Ekonomi'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['DewasaEkonomiSerial_start']; ?>
+                                                        <?php echo number_format($value['DewasaEkonomiSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['DewasaEkonomiSerial_end']; ?>
+                                                        <?php echo number_format($value['DewasaEkonomiSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Bayi Ekonomi']; ?>
+                                                        <?php echo number_format($value['Bayi Ekonomi'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BayiEkonomiSerial_start']; ?>
+                                                        <?php echo number_format($value['BayiEkonomiSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BayiEkonomiSerial_end']; ?>
+                                                        <?php echo number_format($value['BayiEkonomiSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan I']; ?>
+                                                        <?php echo number_format($value['Golongan I'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol1Serial_start']; ?>
+                                                        <?php echo number_format($value['Gol1Serial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol1Serial_end']; ?>
+                                                        <?php echo number_format($value['Gol1Serial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan II']; ?>
+                                                        <?php echo number_format($value['Golongan II'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol2Serial_start']; ?>
+                                                        <?php echo number_format($value['Gol2Serial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol2Serial_end']; ?>
+                                                        <?php echo number_format($value['Gol2Serial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan III']; ?>
+                                                        <?php echo number_format($value['Golongan III'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol3Serial_start']; ?>
+                                                        <?php echo number_format($value['Gol3Serial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol3Serial_end']; ?>
+                                                        <?php echo number_format($value['Gol3Serial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan IV - Penumpang']; ?>
+                                                        <?php echo number_format($value['Golongan IV - Penumpang'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol4PenSerial_start']; ?>
+                                                        <?php echo number_format($value['Gol4PenSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol4PenSerial_end']; ?>
+                                                        <?php echo number_format($value['Gol4PenSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan IV - Barang']; ?>
+                                                        <?php echo number_format($value['Golongan IV - Barang'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol4BarSerial_start']; ?>
+                                                        <?php echo number_format($value['Gol4BarSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol4BarSerial_end']; ?>
+                                                        <?php echo number_format($value['Gol4BarSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan V - Penumpang']; ?>
+                                                        <?php echo number_format($value['Golongan V - Penumpang'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol5PenSerial_start']; ?>
+                                                        <?php echo number_format($value['Gol5PenSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol5PenSerial_end']; ?>
+                                                        <?php echo number_format($value['Gol5PenSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan V - Barang']; ?>
+                                                        <?php echo number_format($value['Golongan V - Barang'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol5BarSerial_start']; ?>
+                                                        <?php echo number_format($value['Gol5BarSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol5BarSerial_end']; ?>
+                                                        <?php echo number_format($value['Gol5BarSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan VI - Penumpang']; ?>
+                                                        <?php echo number_format($value['Golongan VI - Penumpang'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol6PenSerial_start']; ?>
+                                                        <?php echo number_format($value['Gol6PenSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol6PenSerial_end']; ?>
+                                                        <?php echo number_format($value['Gol6PenSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan VI - Barang']; ?>
+                                                        <?php echo number_format($value['Golongan VI - Barang'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol6BarSerial_start']; ?>
+                                                        <?php echo number_format($value['Gol6BarSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol6BarSerial_end']; ?>
+                                                        <?php echo number_format($value['Gol6BarSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan VII']; ?>
+                                                        <?php echo number_format($value['Golongan VII'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol7Serial_start']; ?>
+                                                        <?php echo number_format($value['Gol7Serial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol7Serial_end']; ?>
+                                                        <?php echo number_format($value['Gol7Serial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan VIII']; ?>
+                                                        <?php echo number_format($value['Golongan VIII'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol8Serial_start']; ?>
+                                                        <?php echo number_format($value['Gol8Serial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol8Serial_end']; ?>
+                                                        <?php echo number_format($value['Gol8Serial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Golongan IX']; ?>
+                                                        <?php echo number_format($value['Golongan IX'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol9Serial_start']; ?>
+                                                        <?php echo number_format($value['Gol9Serial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gol9Serial_end']; ?>
+                                                        <?php echo number_format($value['Gol9Serial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi Ekonomi I Dewasa']; ?>
+                                                        <?php echo number_format($value['Suplesi Ekonomi I Dewasa'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi1DewasaSerial_start']; ?>
+                                                        <?php echo number_format($value['Suplesi1DewasaSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi1DewasaSerial_end']; ?>
+                                                        <?php echo number_format($value['Suplesi1DewasaSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi Ekonomi I Anak']; ?>
+                                                        <?php echo number_format($value['Suplesi Ekonomi I Anak'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi1AnakSerial_start']; ?>
+                                                        <?php echo number_format($value['Suplesi1AnakSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi1AnakSerial_end']; ?>
+                                                        <?php echo number_format($value['Suplesi1AnakSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi Ekonomi II Dewasa']; ?>
+                                                        <?php echo number_format($value['Suplesi Ekonomi II Dewasa'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi2DewasaSerial_start']; ?>
+                                                        <?php echo number_format($value['Suplesi2DewasaSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi2DewasaSerial_end']; ?>
+                                                        <?php echo number_format($value['Suplesi2DewasaSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi Ekonomi II Anak']; ?>
+                                                        <?php echo number_format($value['Suplesi Ekonomi II Anak'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi2AnakSerial_start']; ?>
+                                                        <?php echo number_format($value['Suplesi2AnakSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Suplesi2AnakSerial_end']; ?>
+                                                        <?php echo number_format($value['Suplesi2AnakSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Hewan']; ?>
+                                                        <?php echo number_format($value['Hewan'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['HewanSerial_start']; ?>
+                                                        <?php echo number_format($value['HewanSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['HewanSerial_end']; ?>
+                                                        <?php echo number_format($value['HewanSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Gayor']; ?>
+                                                        <?php echo number_format($value['Gayor'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['GayorSerial_start']; ?>
+                                                        <?php echo number_format($value['GayorSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['GayorSerial_end']; ?>
+                                                        <?php echo number_format($value['GayorSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Carter']; ?>
+                                                        <?php echo number_format($value['Carter'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['CarterSerial_start']; ?>
+                                                        <?php echo number_format($value['CarterSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['CarterSerial_end']; ?>
+                                                        <?php echo number_format($value['CarterSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['Barang Curah']; ?>
+                                                        <?php echo number_format($value['Barang Curah'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BarangPendapatanSerial_start']; ?>
+                                                        <?php echo number_format($value['BarangPendapatanSerial_start'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $value['BarangPendapatanSerial_end']; ?>
+                                                        <?php echo number_format($value['BarangPendapatanSerial_end'], 0, ",", "."); ?>
                                                     </td>
 
 
