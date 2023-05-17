@@ -2369,22 +2369,22 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                         <?php echo number_format($value['Suplesi2AnakSerial_end'], 0, ",", "."); ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo number_format($value['Hewan'], 0, ",", "."); ?>
+                                                        <?php echo $value['Hewan']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo number_format($value['HewanSerial_start'], 0, ",", "."); ?>
+                                                        <?php echo $value['HewanSerial_start']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo number_format($value['HewanSerial_end'], 0, ",", "."); ?>
+                                                        <?php echo $value['HewanSerial_end']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo number_format($value['Gayor'], 0, ",", "."); ?>
+                                                        <?php echo $value['Gayor']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo number_format($value['GayorSerial_start'], 0, ",", "."); ?>
+                                                        <?php echo $value['GayorSerial_start']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo number_format($value['GayorSerial_end'], 0, ",", "."); ?>
+                                                        <?php echo $value['GayorSerial_end']; ?>
                                                     </td>
                                                     <td>
                                                         <?php echo number_format($value['Carter'], 0, ",", "."); ?>
