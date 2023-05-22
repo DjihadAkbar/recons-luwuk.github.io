@@ -281,6 +281,7 @@ if (!$this->session->userdata('logged_in'))
         });
 
 
+        document.getElementById("tanggal_tiba").valueAsDate = new Date();
         document.getElementById("tanggal_berangkat").valueAsDate = new Date();
         document.getElementById("tanggal_akhir").valueAsDate = new Date();
     });

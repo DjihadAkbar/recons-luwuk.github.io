@@ -73,6 +73,13 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="tanggal_tiba" class="col-4 label-wrap"> Tanggal Tiba </label>
+
+            <div class="col-8">
+                <input class="form-control" type="date" id="tanggal_tiba" name="tanggal_tiba" value="2022-11-01" min="2022-11-01">
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="tanggal_berangkat" class="col-4 label-wrap"> Tanggal Berangkat </label>
 
             <div class="col-8">

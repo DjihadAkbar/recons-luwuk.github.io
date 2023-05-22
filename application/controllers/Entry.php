@@ -104,6 +104,7 @@ class Entry extends CI_Controller
 
         $dataInput = [
             'week' => $valueWeek,
+            'departure_date' => $this->input->post('edit_tanggal_tiba'),
             'date' => $this->input->post('edit_tanggal_berangkat'),
             'time' => $this->input->post('edit_waktu_berangkat'),
             'departure_time' => $this->input->post('edit_waktu_tiba'),
@@ -272,6 +273,7 @@ class Entry extends CI_Controller
 
         $dataInput = [
             'week' => $valueWeek,
+            'departure_date' => $this->input->post('tanggal_tiba'),
             'date' => $this->input->post('tanggal_berangkat'),
             'time' => $this->input->post('waktu_berangkat'),
             'departure_time' => $this->input->post('waktu_tiba'),

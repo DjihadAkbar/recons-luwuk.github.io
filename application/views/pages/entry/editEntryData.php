@@ -156,6 +156,13 @@ foreach ($editData as $row) {
         </div>
 
         <div class="form-group row">
+            <label for="edit_tanggal_tiba" class="col-4 label-wrap"> Tanggal Tiba </label>
+
+            <div class="col-8">
+                <input class="form-control" type="date" id="edit_tanggal_tiba" name="edit_tanggal_tiba" value=<?php echo $dataTanggal; ?> min="2022-11-01">
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="edit_tanggal_berangkat" class="col-4 label-wrap"> Tanggal Berangkat </label>
 
             <div class="col-8">

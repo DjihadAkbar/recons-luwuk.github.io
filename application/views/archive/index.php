@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Archive</h1>
+    <h1>E-Archive</h1>
 </body>
 </html>
