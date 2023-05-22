@@ -20,7 +20,7 @@
             <div class="card-body p-4 ml-auto mr-auto">
                 <div class="row">
                     <div class="wrapper" style="overflow-x: auto;">
-                        <table id="table-data" class="table table-striped table-data" style=" font-size:80%;">
+                        <table class="table table-striped table-data" style=" font-size:80%;">
                             <thead class="thead-dark">
                                 <tr>
                                     <th scope="col"> # </th>
