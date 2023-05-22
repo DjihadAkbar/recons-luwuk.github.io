@@ -1,15 +1,8 @@
 <div class="card-header d-flex justify-content-between align-items-center text-center"> 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <button type="button" class="btn btn-dark text-light" data-toggle="modal" data-target="#exampleModal">
     + Tambah Data
     </button>
-    <!-- <div class="tambah-data">  
-        <?php
-        $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
-        echo anchor('archive/addArchive', '+ Tambah Data', $dataAnchor);
-        ?>
-        
-    </div>  -->
 </div>    
 <div class="card ">    
     <div class="card-body p-4 ml-auto mr-auto">
@@ -141,7 +134,6 @@
     </div>
     </div>
     <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
         <?php
         $data = array(
             'content' => 'Close',
@@ -154,7 +146,7 @@
         ?>
         <div>
             <?php
-            echo form_submit(['name' => 'submit','class' => 'btn btn-dark btn-block'], 'Submit');
+            echo form_submit(['name' => 'submit','class' => 'btn btn-primary'], 'Submit');
             echo form_close();
             ?>
         </div>
