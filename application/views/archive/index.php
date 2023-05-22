@@ -151,9 +151,13 @@
         );
         
         echo form_button($data);
-        echo form_submit(['name' => 'submit','class' => 'btn btn-dark btn-block'], 'Submit');
-        echo form_close();
         ?>
+        <div>
+            <?php
+            echo form_submit(['name' => 'submit','class' => 'btn btn-dark btn-block'], 'Submit');
+            echo form_close();
+            ?>
+        </div>
       </div>
     </div>
   </div>
