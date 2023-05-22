@@ -124,5 +124,9 @@ $route['dashboard/report/downloadRekapAsuransi'] = 'report/downloadRekapAsuransi
 //Admin
 $route['dashboard/admin/accountSettings'] = 'admin/accountSettings';
 
+//Archive
+$route['dashboard/archive'] = 'archive/index';
+
+
 
 
