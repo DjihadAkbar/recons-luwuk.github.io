@@ -22,4 +22,10 @@ class Archive extends CI_Controller
     public function addArchive(){
 
     }
+    
+    public function deleteArchive()
+    {
+        $this->Archive_model->deleteArchive($_GET['id']);
+        redirect('archive');
+    }
 }

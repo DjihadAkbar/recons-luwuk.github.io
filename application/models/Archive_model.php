@@ -14,4 +14,20 @@ class Archive_model extends CI_Model
         return $this->db->get('archive_list')->result_array();
 
     }
+
+    public function editArchive($data, $id){
+        $this->db->where('archive_list.id', $id);
+        $this->db->update('archive_list', $data);
+    }
+
+    public function deleteArchive($id){
+        $this->db->where('archive_list.id', $id);
+        $this->db->delete('archive_list');
+    }
+
+    public function tambahArchive($data)
+    {
+        $this->db->insert('archive_list', $data);
+    }
+    
 }
