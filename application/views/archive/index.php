@@ -4,7 +4,7 @@
     <div class="tambah-data">  
         <?php
         $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
-        echo anchor('dashboard/master/pelabuhan/tambahPelabuhan', 'Tambah Data', $dataAnchor);
+        echo anchor('archive/addArchive', '+ Tambah Data', $dataAnchor);
         ?>
     </div> 
 </div>    
@@ -18,6 +18,7 @@
                             <th scope="col"> # </th>
                             <th scope="col">Nama Dokumen </th>
                             <th scope="col">Jenis Dokumen </th>
+                            <th scope="col">Lokasi Arsip </th>
                             <th scope="col">Tipe File </th>
                             <th scope="col">Tanggal Upload </th>
                             <th scope="col">Action </th>
@@ -38,6 +39,9 @@
                                 </th>
                                 <th scope="row">   
                                     <?php echo $arsip['document_type']; ?>
+                                </th>
+                                <th scope="row">   
+                                    <?php echo $arsip['archive']; ?>
                                 </th>
                                 <th scope="row">   
                                     <?php echo $arsip['file_type']; ?>
@@ -70,6 +74,7 @@
                             <th scope="col"> # </th>
                             <th scope="col">Nama Dokumen </th>
                             <th scope="col">Jenis Dokumen </th>
+                            <th scope="col">Lokasi Arsip </th>
                             <th scope="col">Tipe File </th>
                             <th scope="col">Tanggal Upload </th>
                             <th scope="col">Action </th>
