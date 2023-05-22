@@ -1,4 +1,4 @@
-<div class="card-header d-flex justify-content-between align-items-center text-center"> 
+<div class="card-header d-flex justify-content-between align-items-center text-center mb-10"> 
     <div class="tambah-data">  
         <?php
         $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
