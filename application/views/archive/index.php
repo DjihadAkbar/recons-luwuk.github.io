@@ -1,5 +1,13 @@
 
     <h1>E-Archive</h1>
+<div class="card-header d-flex justify-content-between align-items-center text-center"> 
+    <div class="tambah-data">  
+        <?php
+        $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
+        echo anchor('dashboard/master/pelabuhan/tambahPelabuhan', 'Tambah Data', $dataAnchor);
+        ?>
+    </div> 
+</div>    
 <div class="card">    
     <div class="card-body p-4 ml-auto mr-auto">
         <div class="row">
