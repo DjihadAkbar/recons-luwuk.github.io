@@ -1,4 +1,4 @@
-<div class="card-header d-flex justify-content-between align-items-center text-center mb-10"> 
+<div class="card-header d-flex justify-content-between align-items-center text-center"> 
     <div class="tambah-data">  
         <?php
         $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
@@ -6,7 +6,7 @@
         ?>
     </div> 
 </div>    
-<div class="card">    
+<div class="card mt-50">    
     <div class="card-body p-4 ml-auto mr-auto">
         <div class="row">
             <div class="wrapper" style="overflow-x: auto;">
