@@ -2,7 +2,8 @@
     <div class="tambah-data">  
         <?php
         $dataAnchor = ['class' => 'btn btn-dark text-light akses-button','data-toggle'=>'modal','data-target'=>'#exampleModal'];
-        echo anchor('archive/addArchive', '+ Tambah Data', $dataAnchor);
+        echo anchor('', '+ Tambah Data', $dataAnchor);
+        // echo anchor('archive/addArchive', '+ Tambah Data', $dataAnchor);
         ?>
         
     </div> 
