@@ -106,40 +106,35 @@
       <?php
         echo form_open(base_url('dashboard/entry/prosesEditEntryData?id=') . $_GET['id'], ['class' => 'form-entry']);
         ?>
+        
         <div class="form-group row">
-            <label for="nama_kapal" class="col-4 label-wrap"> Nama Kapal </label>
+            <label for="jenis_dokumen" class="col-4 label-wrap"> Nama Kapal </label>
             <div class="col">
-                <select class="form-control" name="nama_kapal" id="nama_kapal" required>
+                <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" required>
                     <option value="">No Selected</option>
-                    <?php foreach ($kapal_spv as $row) : ?>
-                        <?php if ($row['id_ferry'] == $dataKapal) { ?>
-                            <option value="<?php echo $row['id_ferry']; ?>" selected>
-                                <?php echo $row['kapal']; ?>
-                            </option>
-                        <?php } else { ?>
-                            <option value="<?php echo $row['id_ferry']; ?>">
-                                <?php echo $row['kapal']; ?>
-                            </option>
-                        <?php
-                        }
-                        ?>
-                    <?php endforeach; ?>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
                 </select>
                 <?php
-                echo form_error('nama_kapal');
+                echo form_error('jenis_dokumen');
                 ?>
             </div>
         </div>
-
-
         <div class="form-group row">
-            <label for="edit_tanggal_tiba" class="col-4 label-wrap"> Tanggal Tiba </label>
-
-            <div class="col-8">
-                <input class="form-control" type="date" id="edit_tanggal_tiba" name="edit_tanggal_tiba" value=<?php echo $dataTanggal; ?> min="2022-11-01">
+            <label for="nama_dokumen" class="col-4 label-wrap"> Nama Dokumen </label>
+            <div class="col">
+                <?php
+                $data = array(
+                    'name'          => 'nama_dokumen',
+                    'id'            => 'nama_dokumen',
+                );
+                
+                echo form_input($data);
+                echo form_error('nama_dokumen');
+                ?>
             </div>
         </div>
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -147,7 +142,7 @@
         echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
         echo form_close();
         ?>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
