@@ -12,7 +12,7 @@ class Archive extends CI_Controller
     {
         $data['title'] = 'Archive';
         $data['contentView'] = 'archive/index';
-        $data['pendapatan'] = $this->Income_model->pendapatan();
+        $data['archive_list'] = $this->Archive_model->index();
 
 
         $this->load->view('template/dashboard/body', $data);
