@@ -19,7 +19,7 @@ class Archive extends CI_Controller
         // $this->load->view('pages/dashboard', $data);
     }
 
-    public addArchive(){
-        
+    public function addArchive(){
+
     }
 }
