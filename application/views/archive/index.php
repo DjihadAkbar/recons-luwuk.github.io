@@ -110,7 +110,7 @@
         ?>
         
         <div class="form-group row">
-            <label for="jenis_dokumen" class="col-4 label-wrap"> Nama Kapal </label>
+            <label for="jenis_dokumen" class="col-4 label-wrap"> Jenis Dokumen </label>
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" required>
                     <option value="">No Selected</option>
@@ -143,7 +143,14 @@
     <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <?php
-        echo form_submit(['name' => 'submit', 'type'=> 'button','class' => 'btn btn-dark btn-block'], 'Submit');
+        $data = array(
+            'type'          => 'button',
+            'class'       => 'btn btn-secondary',
+            'data-dismiss' => 'modal'
+        );
+        
+        echo form_button($data);
+        echo form_submit(['name' => 'submit','class' => 'btn btn-dark btn-block'], 'Submit');
         echo form_close();
         ?>
       </div>
