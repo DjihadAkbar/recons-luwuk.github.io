@@ -104,7 +104,7 @@
       </div>
       <div class="modal-body">
       <?php
-        echo form_open(base_url('dashboard/entry/prosesEditEntryData?id=') . $_GET['id'], ['class' => 'form-entry']);
+        echo form_open(base_url('archive/addArchive'), ['class' => 'form-entry']);
         ?>
         
         <div class="form-group row">

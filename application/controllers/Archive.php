@@ -20,7 +20,7 @@ class Archive extends CI_Controller
     }
 
     public function addArchive(){
-
+        
     }
     
     public function deleteArchive()
