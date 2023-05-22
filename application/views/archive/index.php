@@ -1,11 +1,15 @@
 <div class="card-header d-flex justify-content-between align-items-center text-center"> 
-    <div class="tambah-data">  
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    + Tambah Data
+    </button>
+    <!-- <div class="tambah-data">  
         <?php
         $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
         echo anchor('archive/addArchive', '+ Tambah Data', $dataAnchor);
         ?>
         
-    </div> 
+    </div>  -->
 </div>    
 <div class="card ">    
     <div class="card-body p-4 ml-auto mr-auto">
@@ -86,14 +90,11 @@
         </div>
     </div>
 </div>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
@@ -102,11 +103,51 @@
         </button>
       </div>
       <div class="modal-body">
-        ...
+      <?php
+        echo form_open(base_url('dashboard/entry/prosesEditEntryData?id=') . $_GET['id'], ['class' => 'form-entry']);
+        ?>
+        <div class="form-group row">
+            <label for="nama_kapal" class="col-4 label-wrap"> Nama Kapal </label>
+            <div class="col">
+                <select class="form-control" name="nama_kapal" id="nama_kapal" required>
+                    <option value="">No Selected</option>
+                    <?php foreach ($kapal_spv as $row) : ?>
+                        <?php if ($row['id_ferry'] == $dataKapal) { ?>
+                            <option value="<?php echo $row['id_ferry']; ?>" selected>
+                                <?php echo $row['kapal']; ?>
+                            </option>
+                        <?php } else { ?>
+                            <option value="<?php echo $row['id_ferry']; ?>">
+                                <?php echo $row['kapal']; ?>
+                            </option>
+                        <?php
+                        }
+                        ?>
+                    <?php endforeach; ?>
+                </select>
+                <?php
+                echo form_error('nama_kapal');
+                ?>
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="edit_tanggal_tiba" class="col-4 label-wrap"> Tanggal Tiba </label>
+
+            <div class="col-8">
+                <input class="form-control" type="date" id="edit_tanggal_tiba" name="edit_tanggal_tiba" value=<?php echo $dataTanggal; ?> min="2022-11-01">
+            </div>
+        </div>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <?php
+        echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
+        echo form_close();
+        ?>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div>
   </div>
