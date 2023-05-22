@@ -103,7 +103,9 @@
         </button>
       </div>
       <div class="modal-body">
-      <?php
+        <div>
+
+            <?php
         echo form_open(base_url('archive/addArchive'), ['class' => 'form-entry']);
         ?>
         
@@ -126,6 +128,7 @@
             <div class="col">
                 <?php
                 $data = array(
+                    'class'          => 'form-control',
                     'name'          => 'nama_dokumen',
                     'id'            => 'nama_dokumen',
                 );
@@ -135,14 +138,14 @@
                 ?>
             </div>
         </div>
-      </div>
-      <div class="modal-footer">
+    </div>
+    </div>
+    <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <?php
-        echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block'], 'Submit');
+        echo form_submit(['name' => 'submit', 'type'=> 'button','class' => 'btn btn-dark btn-block'], 'Submit');
         echo form_close();
         ?>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
