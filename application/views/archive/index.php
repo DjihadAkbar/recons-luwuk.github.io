@@ -1,13 +1,13 @@
 
     <h1>E-Archive</h1>
-    
-    <div class="card-body p-4">
+<div class="card">    
+    <div class="card-body p-4 ml-auto mr-auto">
         <div class="row">
             <div class="wrapper" style="overflow-x: auto;">
-                <table class="table table-striped table-data" style="display: block; max-width: -moz-fit-content; max-width: fit-content; margin: 0 auto; font-size:80%;">
+                <table id="table-data" class="table table-striped table-data" style=" font-size:80%;">
                     <thead class="thead-dark">
                         <tr>
-                        <th scope="col"> # </th>
+                            <th scope="col"> # </th>
                             <th scope="col">Nama Dokumen </th>
                             <th scope="col">Jenis Dokumen </th>
                             <th scope="col">Tipe File </th>
@@ -72,5 +72,4 @@
             </div>
         </div>
     </div>
- 
-    
+</div>
