@@ -41,12 +41,12 @@
                                         </th>
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $value['id_entry']; ?>"><i class="fas fa-file-edit"></i></a>
+                                                <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
                                             </div>
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
+                                                <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $arsip['id']; ?>">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                             </div>
