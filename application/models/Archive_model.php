@@ -14,3 +14,4 @@ class Archive_model extends CI_Model
         return $this->db->get('archive_list')->result_array();
 
     }
+}
