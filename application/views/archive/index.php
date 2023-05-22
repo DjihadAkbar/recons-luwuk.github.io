@@ -1,5 +1,3 @@
-
-    <h1>E-Archive</h1>
 <div class="card-header d-flex justify-content-between align-items-center text-center"> 
     <div class="tambah-data">  
         <?php
@@ -19,7 +17,7 @@
                             <th scope="col">Nama Dokumen </th>
                             <th scope="col">Jenis Dokumen </th>
                             <th scope="col">Lokasi Arsip </th>
-                            <th scope="col">Tipe File </th>
+                            <!-- <th scope="col">Tipe File </th> -->
                             <th scope="col">Tanggal Upload </th>
                             <th scope="col">Action </th>
                             <th scope="col"> </th>
@@ -43,9 +41,9 @@
                                 <th scope="row">   
                                     <?php echo $arsip['archive']; ?>
                                 </th>
-                                <th scope="row">   
+                                <!-- <th scope="row">   
                                     <?php echo $arsip['file_type']; ?>
-                                </th>
+                                </th> -->
                                 <td scope="col"> <?php
                                                     $original_date = $arsip['archive_date'];
                                                     echo getHari($original_date);
@@ -75,7 +73,7 @@
                             <th scope="col">Nama Dokumen </th>
                             <th scope="col">Jenis Dokumen </th>
                             <th scope="col">Lokasi Arsip </th>
-                            <th scope="col">Tipe File </th>
+                            <!-- <th scope="col">Tipe File </th> -->
                             <th scope="col">Tanggal Upload </th>
                             <th scope="col">Action </th>
                             <th scope="col"> </th>
