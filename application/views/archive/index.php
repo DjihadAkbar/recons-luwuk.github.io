@@ -17,8 +17,7 @@
                             <th scope="col">Lokasi Arsip </th>
                             <!-- <th scope="col">Tipe File </th> -->
                             <th scope="col">Tanggal Upload </th>
-                            <th scope="col">Action </th>
-                            <th scope="col"> </th>
+                            <th scope="col" colspan="2" >Action </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,11 +70,10 @@
                             <th scope="col"> # </th>
                             <th scope="col">Nama Dokumen </th>
                             <th scope="col">Jenis Dokumen </th>
-                            <th scope="col">Lokasi Arsip </th>
+                            <th scope="col">Lokasi Dokumen </th>
                             <!-- <th scope="col">Tipe File </th> -->
                             <th scope="col">Tanggal Upload </th>
-                            <th scope="col">Action </th>
-                            <th scope="col"> </th>
+                            <th scope="col" colspan="2">Action </th>
                         </tr>
                     </tfoot>
                 </table>
@@ -103,7 +101,7 @@
         ?>
         
         <div class="form-group row">
-            <label for="jenis_dokumen"> Jenis Dokumen </label>
+            <label for="jenis_dokumen" class="label-wrap"> Jenis Dokumen </label>
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" required>
                     <option value="">No Selected</option>
@@ -121,13 +119,28 @@
             <div class="col">
                 <?php
                 $data = array(
-                    'class'          => 'form-control',
-                    'name'          => 'nama_dokumen',
-                    'id'            => 'nama_dokumen',
+                    'class'   => 'form-control',
+                    'name'    => 'nama_dokumen',
+                    'id'      => 'nama_dokumen',
                 );
                 
                 echo form_input($data);
                 echo form_error('nama_dokumen');
+                ?>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lokasi_dokumen" class="label-wrap"> Lokasi Dokumen </label>
+            <div class="col">
+                <?php
+                $data = array(
+                    'class'   => 'form-control',
+                    'name'    => 'lokasi_dokumen',
+                    'id'      => 'lokasi_dokumen',
+                );
+                
+                echo form_input($data);
+                echo form_error('lokasi_dokumen');
                 ?>
             </div>
         </div>
@@ -136,10 +149,10 @@
     <div class="modal-footer">
         <?php
         $data = array(
-            'content' => 'Close',
+            'content'       => 'Close',
             'type'          => 'button',
-            'class'       => 'btn btn-secondary',
-            'data-dismiss' => 'modal'
+            'class'         => 'btn btn-secondary',
+            'data-dismiss'  => 'modal'
         );
         
         echo form_button($data);
