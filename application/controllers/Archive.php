@@ -25,7 +25,7 @@ class Archive extends CI_Controller
         'document_type' => $this->input->post("document_type"),
         'archive' => $this->input->post("archive"),
         ];
-        $this->Archive_model->addArchive($data);
+        $this->Archive_model->tambahArchive($data);
         redirect('archive');
 
     }

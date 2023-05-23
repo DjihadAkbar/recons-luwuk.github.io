@@ -107,9 +107,9 @@
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" required>
                     <option value="">No Selected</option>
-                    <option value="">1</option>
-                    <option value="">2</option>
-                    <option value="">3</option>
+                    <option value="Nota Dinas">Nota Dinas</option>
+                    <option value="Surat Keluar">Surat Keluar</option>
+                    <option value="Surat Masuk">Surat Masuk</option>
                 </select>
                 <?php
                 echo form_error('jenis_dokumen');
