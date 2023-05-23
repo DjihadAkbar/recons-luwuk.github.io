@@ -20,7 +20,14 @@ class Archive extends CI_Controller
     }
 
     public function addArchive(){
-        
+        $data = [
+        'document_name' => $this->input->post("document_name"),
+        'document_type' => $this->input->post("document_type"),
+        'archive' => $this->input->post("archive"),
+        ];
+        $this->Archive_model->addArchive($data);
+        redirect('archive');
+
     }
     
     public function deleteArchive()
