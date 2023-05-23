@@ -103,7 +103,7 @@
         ?>
         
         <div class="form-group row">
-            <label for="jenis_dokumen" class="label-wrap"> Jenis Dokumen </label>
+            <label for="jenis_dokumen"> Jenis Dokumen </label>
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" required>
                     <option value="">No Selected</option>
