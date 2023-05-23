@@ -17,7 +17,7 @@
                             <th scope="col">Lokasi Arsip </th>
                             <!-- <th scope="col">Tipe File </th> -->
                             <th scope="col">Tanggal Upload </th>
-                            <th scope="col" colspan="2" >Action </th>
+                            <th scope="col" rowspan="2" >Action </th>
                         </tr>
                     </thead>
                     <tbody>
