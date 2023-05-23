@@ -103,7 +103,7 @@
         ?>
         
         <div class="form-group row">
-            <label for="jenis_dokumen" class="col-4 label-wrap"> Jenis Dokumen </label>
+            <label for="jenis_dokumen" class="label-wrap"> Jenis Dokumen </label>
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" required>
                     <option value="">No Selected</option>
@@ -117,7 +117,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="nama_dokumen" class="col-4 label-wrap"> Nama Dokumen </label>
+            <label for="nama_dokumen" class="label-wrap"> Nama Dokumen </label>
             <div class="col">
                 <?php
                 $data = array(
