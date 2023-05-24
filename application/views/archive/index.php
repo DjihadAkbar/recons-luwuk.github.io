@@ -86,34 +86,22 @@
 
 <!-- Modal Delete -->
 <div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete Document</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-      </div>
-    </div>
-    <div class="modal-footer">
-        <?php
-        $data = array(
-            'content'       => 'Close',
-            'type'          => 'button',
-            'class'         => 'btn btn-secondary',
-            'data-dismiss'  => 'modal'
-        );
-        
-        echo form_button($data);
-        ?>
-        <a data-id="" class="btn btn-danger confirm-delete">Delete</a>
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan Data</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Hapus Data?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a href="hapusperusahaan.php?id=<?php echo $list['id_perusahaan'];?>" class="btn btn-danger" href="logout.php">Hapus</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
 <!-- Modal Add Archive -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
