@@ -206,7 +206,7 @@
         <div>
 
             <?php
-        echo form_open(base_url('archive/addArchive'), ['class' => 'form-entry']);
+        echo form_open(base_url('archive/addArchive'), ['class' => 'form-entry', 'id'=>'formAdd']);
         ?>
         
         <div class="form-group row">
