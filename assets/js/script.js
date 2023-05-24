@@ -89,6 +89,7 @@ $(document).ready(function(){
 
     $('.delete-button').on('click', function (e) {
         var id = $(this).attr('data-id');
+        alert(id);
          $('.confirm-delete').attr('data-id',id);
         
         });
