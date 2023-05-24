@@ -862,7 +862,8 @@
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
+                                                <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $value['id_entry']; ?>" >
+                                                <!-- <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>"> -->
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                             </div>
@@ -1091,36 +1092,25 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
 
+<!-- Modal Delete -->
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan Data</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Hapus Data?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a data-id="" class="btn btn-danger text-dark confirm-delete">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- Modal delete -->
-<!-- <div class="modal fade" id="deleteConfirmation" tabindex="2" role="dialog"
-                                                    aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <h5 class="modal-title" id="deleteConfirmationLabel">Logout Confirmation</h5>
-                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                    <span aria-hidden="true">&times;</span>
-                                                                </button>
-                                                            </div>
-                                                            <div class="modal-body">
-                                                                Are you sure?
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 
-                                                                <div class="delete-button">
-                                                                    <a class="btn btn-primary" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>">
-                                                                    <?php echo $value['id_entry']; ?>Sure
-                                                                    </a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> -->
-<!-- Modal Logout End -->
