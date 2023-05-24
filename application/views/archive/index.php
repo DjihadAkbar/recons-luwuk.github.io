@@ -50,7 +50,7 @@
                                 </th>
                                 <td>    
                                     <div class="akses-button">
-                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" data-href="archive/editArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
+                                        <a class="btn btn-warning text-dark" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" data-href="archive/editArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
                                         <!-- <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a> -->
                                     </div>
                                 </td>
