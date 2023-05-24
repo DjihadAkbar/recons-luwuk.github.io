@@ -53,57 +53,7 @@
                                         <a class="btn btn-warning text-dark" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" data-href="archive/editArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
                                         <!-- <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a> -->
                                     </div>
-                                </td>
-                                <td>
-                                    <div class="akses-button">
-                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="archive/deleteArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
-                                            <i class="fas fa-delete-left"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                        <?php
-                        }
-                        ?>
-                    <tbody>
-                    <tfoot class="thead-dark">
-                        <tr>
-                            <th scope="col"> # </th>
-                            <th scope="col">Nama Dokumen </th>
-                            <th scope="col">Jenis Dokumen </th>
-                            <th scope="col">Lokasi Dokumen </th>
-                            <!-- <th scope="col">Tipe File </th> -->
-                            <th scope="col">Tanggal Upload </th>
-                            <th scope="col">Action </th>
-                            <th scope="col"> </th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Modal Delete -->
-<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan Data</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Hapus Data?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a data-id="" data-href="" class="btn btn-danger text-dark confirm-delete">Hapus</a>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Modal Edit Archive -->
+                                    <!-- Modal Edit Archive -->
 <div class="modal fade" id="edit<?php echo $arsip['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -189,6 +139,57 @@
     </div>
   </div>
 </div>
+                                </td>
+                                <td>
+                                    <div class="akses-button">
+                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="archive/deleteArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
+                                            <i class="fas fa-delete-left"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    <tbody>
+                    <tfoot class="thead-dark">
+                        <tr>
+                            <th scope="col"> # </th>
+                            <th scope="col">Nama Dokumen </th>
+                            <th scope="col">Jenis Dokumen </th>
+                            <th scope="col">Lokasi Dokumen </th>
+                            <!-- <th scope="col">Tipe File </th> -->
+                            <th scope="col">Tanggal Upload </th>
+                            <th scope="col">Action </th>
+                            <th scope="col"> </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Delete -->
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan Data</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Hapus Data?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a data-id="" data-href="" class="btn btn-danger text-dark confirm-delete">Hapus</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!-- Modal Add Archive -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
