@@ -129,92 +129,92 @@ class Master_model extends CI_Model
     
     
     //Menampilkan Tarif yang diupload ataupun diedit
-    public function aprovedTarif(){
-        $this->db->select('*,aproval_rate.id as id_apr,count(IF(aprove_status = "P",1,NULL)) as count_pending');
-        $this->db->join('routes', 'routes.id = aproval_rate.id_route');
-        $this->db->order_by('post_date', 'DESC');
+    // public function aprovedTarif(){
+    //     $this->db->select('*,aproval_rate.id as id_apr,count(IF(aprove_status = "P",1,NULL)) as count_pending');
+    //     $this->db->join('routes', 'routes.id = aproval_rate.id_route');
+    //     $this->db->order_by('post_date', 'DESC');
     
         
-        return $this->db->get('aproval_rate')->result_array();    
-    }
+    //     return $this->db->get('aproval_rate')->result_array();    
+    // }
     
-    public function countPendingTarif(){
-        $this->db->select('count(aprove_status) as count_pending');
-        $this->db->where('aprove_status','P');
+    // public function countPendingTarif(){
+    //     $this->db->select('count(aprove_status) as count_pending');
+    //     $this->db->where('aprove_status','P');
     
         
-        return $this->db->get('aproval_rate')->result_array();    
+    //     return $this->db->get('aproval_rate')->result_array();    
 
-    }
+    // }
 
-    //Update data aprove yang telah disetujui
-    public function updateAproveTarif($dataAprove, $dataRate, $id){
+    // //Update data aprove yang telah disetujui
+    // public function updateAproveTarif($dataAprove, $dataRate, $id){
         
-        $this->db->where('aproval_rate.id', $id);
-        $this->db->update('aproval_rate', $dataAprove);
+    //     $this->db->where('aproval_rate.id', $id);
+    //     $this->db->update('aproval_rate', $dataAprove);
 
 
-        $this->db->query('INSERT rate (is_displaying, is_aproved, uploader, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
-        Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
-        Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
-        Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
-        Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
-        Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
-        Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
-        Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk)
-        SELECT aprove_status, aprove_status, post_person, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
-        Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
-        Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
-        Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
-        Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
-        Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
-        Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
-        Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk
-        FROM aproval_rate
-        WHERE aproval_rate.id ='.$id);
+    //     $this->db->query('INSERT rate (is_displaying, is_aproved, uploader, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
+    //     Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
+    //     Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
+    //     Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
+    //     Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
+    //     Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
+    //     Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
+    //     Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk)
+    //     SELECT aprove_status, aprove_status, post_person, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
+    //     Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
+    //     Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
+    //     Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
+    //     Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
+    //     Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
+    //     Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
+    //     Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk
+    //     FROM aproval_rate
+    //     WHERE aproval_rate.id ='.$id);
         
-    }
+    // }
 
-    //update data disaprove yang telah tidak disetujui
-    public function updateDisaproveTarif($dataAprove, $id){
+    // //update data disaprove yang telah tidak disetujui
+    // public function updateDisaproveTarif($dataAprove, $id){
         
-        $this->db->where('aproval_rate.id', $id);
-        $this->db->update('aproval_rate', $dataAprove);        
-    }
+    //     $this->db->where('aproval_rate.id', $id);
+    //     $this->db->update('aproval_rate', $dataAprove);        
+    // }
     
 
-    public function updateAproveEditTarif($dataAprove, $idAprove, $idRate){
-        $this->db->where('aproval_rate.id', $idAprove);
-        $this->db->update('aproval_rate', $dataAprove);
+    // public function updateAproveEditTarif($dataAprove, $idAprove, $idRate){
+    //     $this->db->where('aproval_rate.id', $idAprove);
+    //     $this->db->update('aproval_rate', $dataAprove);
         
-        $this->db->where('rate.id', $idRate);
-        $this->db->delete('rate');
+    //     $this->db->where('rate.id', $idRate);
+    //     $this->db->delete('rate');
 
-        $this->db->query('INSERT rate (is_displaying, is_aproved, uploader, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
-        Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
-        Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
-        Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
-        Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
-        Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
-        Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
-        Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk)
-        SELECT aprove_status, aprove_status, post_person, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
-        Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
-        Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
-        Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
-        Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
-        Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
-        Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
-        Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk
-        FROM aproval_rate
-        WHERE aproval_rate.id ='.$idAprove);
-    }
+    //     $this->db->query('INSERT rate (is_displaying, is_aproved, uploader, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
+    //     Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
+    //     Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
+    //     Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
+    //     Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
+    //     Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
+    //     Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
+    //     Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk)
+    //     SELECT aprove_status, aprove_status, post_person, act, id_route, start_date, rate_type, Gol1,Gol2,Gol3,Gol4Pen,Gol4Bar,
+    //     Gol5Pen,Gol5Bar,Gol6Pen,Gol6Bar,Gol7,Gol8,Gol9,DewasaEksekutif,BayiEksekutif,DewasaBisnis,BayiBisnis,DewasaEkonomi,BayiEkonomi,Suplesi1Dewasa,
+    //     Suplesi1Anak,Suplesi2Dewasa,Suplesi2Anak,Hewan,Gayor,Carter,BarangVolume,BarCur,
+    //     Gol1TJP,Gol2TJP,Gol3TJP,Gol4PenTJP,Gol4BarTJP,Gol5PenTJP,Gol5BarTJP,Gol6PenTJP,Gol6BarTJP,Gol7TJP,Gol8TJP,Gol9TJP,DewasaEksekutifTJP,BayiEksekutifTJP,DewasaBisnisTJP,BayiBisnisTJP,DewasaEkonomiTJP,BayiEkonomiTJP,
+    //     Gol1IW,Gol2IW,Gol3IW,Gol4PenIW,Gol4BarIW,Gol5PenIW,Gol5BarIW,Gol6PenIW,Gol6BarIW,Gol7IW,Gol8IW,Gol9IW,DewasaEksekutifIW,BayiEksekutifIW,DewasaBisnisIW,BayiBisnisIW,DewasaEkonomiIW,BayiEkonomiIW,
+    //     Gol1Dermaga,Gol2Dermaga,Gol3Dermaga,Gol4PenDermaga,Gol4BarDermaga,Gol5PenDermaga,Gol5BarDermaga,Gol6PenDermaga,Gol6BarDermaga,Gol7Dermaga,Gol8Dermaga,Gol9Dermaga,DewasaEksekutifDermaga,BayiEksekutifDermaga,DewasaBisnisDermaga,BayiBisnisDermaga,DewasaEkonomiDermaga,BayiEkonomiDermaga,
+    //     Gol1Terminal,Gol2Terminal,Gol3Terminal,Gol4PenTerminal,Gol4BarTerminal,Gol5PenTerminal,Gol5BarTerminal,Gol6PenTerminal,Gol6BarTerminal,Gol7Terminal,Gol8Terminal,Gol9Terminal,DewasaEksekutifTerminal,BayiEksekutifTerminal,DewasaBisnisTerminal,BayiBisnisTerminal,DewasaEkonomiTerminal,BayiEkonomiTerminal,
+    //     Gol1PasMasuk,Gol2PasMasuk,Gol3PasMasuk,Gol4PenPasMasuk,Gol4BarPasMasuk,Gol5PenPasMasuk,Gol5BarPasMasuk,Gol6PenPasMasuk,Gol6BarPasMasuk,Gol7PasMasuk,Gol8PasMasuk,Gol9PasMasuk,DewasaEksekutifPasMasuk,BayiEksekutifPasMasuk,DewasaBisnisPasMasuk,BayiBisnisPasMasuk,DewasaEkonomiPasMasuk,BayiEkonomiPasMasuk
+    //     FROM aproval_rate
+    //     WHERE aproval_rate.id ='.$idAprove);
+    // }
 
-    public function updateDisaproveEditTarif($dataAprove, $id){
+    // public function updateDisaproveEditTarif($dataAprove, $id){
         
-        $this->db->where('aproval_rate.id', $id);
-        $this->db->update('aproval_rate', $dataAprove);        
-    }
+    //     $this->db->where('aproval_rate.id', $id);
+    //     $this->db->update('aproval_rate', $dataAprove);        
+    // }
     
     public function kapal_spv()
     {
