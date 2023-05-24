@@ -55,7 +55,7 @@
                                 </td>
                                 <td>
                                     <div class="akses-button">
-                                        <a class="btn btn-danger text-darkdelete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" >
+                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" >
                                             <i class="fas fa-delete-left"></i>
                                         </a>
                                     </div>
