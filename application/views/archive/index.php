@@ -43,23 +43,22 @@
                                     <?php echo $arsip['file_type']; ?>
                                 </th> -->
                                 <td scope="col"> <?php
-                                                    $original_date = $arsip['archive_date'];
-                                                    echo $original_date;
-                                                    // echo getHari($original_date);
-                                                    ?></td>
+                                                $original_date = $arsip['archive_date'];
+                                                echo $original_date;
+                                                // echo getHari($original_date);
+                                                ?></td>
                                 </th>
-                                <td>
-                                    <div>
-                                        <div class="akses-button">
-                                            <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
-                                        </div>
-                                        <div class="akses-button">
-                                            <a class="btn btn-danger text-dark" href="archive/deleteArchive?id=<?php echo $arsip['id']; ?>">
-                                                <i class="fas fa-delete-left"></i>
-                                            </a>
-                                        </div>
+                                <td>    
+                                    <div class="akses-button">
+                                        <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
                                     </div>
-
+                                </td>
+                                <td>
+                                    <div class="akses-button">
+                                        <a class="btn btn-danger text-dark" href="archive/deleteArchive?id=<?php echo $arsip['id']; ?>">
+                                            <i class="fas fa-delete-left"></i>
+                                        </a>
+                                    </div>
                                 </td>
                             </tr>
                         <?php
@@ -85,7 +84,34 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal Delete -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Document</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+    <div class="modal-footer">
+        <?php
+        $data = array(
+            'content'       => 'Close',
+            'type'          => 'button',
+            'class'         => 'btn btn-secondary',
+            'data-dismiss'  => 'modal'
+        );
+        
+        echo form_button($data);
+        ?>
+        <a data-id="" class="btn btn-danger confirm-delete">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Add Archive -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

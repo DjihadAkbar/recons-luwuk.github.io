@@ -87,7 +87,16 @@ $(document).ready(function(){
         }
     });
 
-
+    $('.delete-button').on('click', function (e) {
+        var id = $(this).attr('data-id');
+         $('.confirm-delete').attr('data-id',id);
+        
+        });
+        $(".confirm-delete").on('click', function (e) {
+            var id = $(this).attr('data-id');
+            console.log(id);
+            location.href="hapusperusahaan.php?id="+id;
+        });
 
     
     //Auto FIlter Pelabuhan di report
