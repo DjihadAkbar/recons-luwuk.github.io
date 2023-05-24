@@ -88,16 +88,19 @@ $(document).ready(function(){
     });
 
     $('.delete-button').click(function() {
-        var id = $(this).attr('data-id');
-        alert(id);
-         $('.confirm-delete').attr('data-id',id);
+        alert($(this).attr("data-id"));
+    });
+    // $('.delete-button').click(function() {
+    //     var id = $(this).attr('data-id');
+    //     alert(id);
+    //      $('.confirm-delete').attr('data-id',id);
         
-        });
-        $(".confirm-delete").click(function() {
-            var id = $(this).attr('data-id');
-            console.log(id);
-            location.href="archive/deleteArchive?id="+id;
-        });
+    //     });
+    //     $(".confirm-delete").click(function() {
+    //         var id = $(this).attr('data-id');
+    //         console.log(id);
+    //         location.href="archive/deleteArchive?id="+id;
+    //     });
 
     
     //Auto FIlter Pelabuhan di report
