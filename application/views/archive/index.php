@@ -78,7 +78,7 @@
                                     <div>
 
                                         <?php
-                                    echo form_open(base_url('archive/editArchive?id=').$arsip['id'], ['class' => 'form-entry','id'=>"formEdit"]);
+                                    echo form_open(base_url('archive/editArchive?id=').$arsip['id'], ['class' => 'form-entry']);
                                     ?>
                                     
                                     <div class="form-group row">
@@ -142,7 +142,7 @@
                                     ?>
                                     <div>
                                         <?php
-                                        echo form_submit(['name' => 'submit','class' => 'btn btn-primary','form'=>'formEdit'], 'Submit');
+                                        echo form_submit(['name' => 'submit','class' => 'btn btn-primary'], 'Submit');
                                         echo form_close();
                                         ?>
                                     </div>
@@ -206,7 +206,7 @@
         <div>
 
             <?php
-        echo form_open(base_url('archive/addArchive'), ['class' => 'form-entry', 'id'=>'formAdd']);
+        echo form_open(base_url('archive/addArchive'), ['class' => 'form-entry']);
         ?>
         
         <div class="form-group row">
@@ -268,7 +268,7 @@
         ?>
         <div>
             <?php
-            echo form_submit(['name' => 'submit','class' => 'btn btn-primary','form' => 'formAdd'], 'Submit');
+            echo form_submit(['name' => 'submit','class' => 'btn btn-primary'], 'Submit');
             echo form_close();
             ?>
         </div>

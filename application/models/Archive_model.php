@@ -12,7 +12,6 @@ class Archive_model extends CI_Model
         // $this->db->join('ferry', 'routes.id_ferry = ferry.id');
         // $this->db->group_by('monthname(date), route');
         return $this->db->get('archive_list')->result_array();
-
     }
 
     public function editArchive($data, $id){
