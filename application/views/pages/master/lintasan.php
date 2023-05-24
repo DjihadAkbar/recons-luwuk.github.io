@@ -72,39 +72,13 @@
                                                 <!-- <a data-toggle="modal" data-target="#deleteConfirmation" aria-expanded="true" class="dropdown-sidebar-asdp btn btn-danger text-dark " data-toggle="collapse" href="">
                                                     <i class="fas fa-delete-left"></i>
                                                 </a> -->
-                                                <a class="btn btn-danger text-dark" href="lintasan/deleteLintasan?id=<?php echo $value['id']; ?>">
+                                                <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="lintasan/deleteLintasan?id=" data-id="<?php echo $value['id']; ?>" >
+                                                <!-- <a class="btn btn-danger text-dark" href="lintasan/deleteLintasan?id=<?php echo $value['id']; ?>"> -->
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
                                             </div>
                                         </td>
                                     </tr>
-                                    <!-- Modal delete
-                                    <div class="modal fade" id="deleteConfirmation" tabindex="2" role="dialog"
-                                        aria-labelledby="deleteConfirmationLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="deleteConfirmationLabel">Logout Confirmation</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Are you sure?
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                                                    <div class="delete-button">
-                                                        <a class="btn btn-primary" href="lintasan/deleteLintasan?id=<?php echo $value['id']; ?>">
-                                                            Sure
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    Modal Logout End -->
                                     <?php
                                 }
                                 ?>
@@ -116,3 +90,21 @@
         </div>
     </div>
 </div>
+<!-- Modal Delete -->
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan Data</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Hapus Data?</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a data-id="" data-href="" class="btn btn-danger text-dark confirm-delete">Hapus</a>
+        </div>
+      </div>
+    </div>
+  </div>
