@@ -10,8 +10,8 @@ class Master_model extends CI_Model
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('routes.spv', $pelabuhan);
         }
-        $this->db->where('is_displaying', 'Y');
-        $this->db->where('is_aproved', 'Y');
+        // $this->db->where('is_displaying', 'Y');
+        // $this->db->where('is_aproved', 'Y');
         $query = $this->db->get('rate')->result_array();
         return $query;
     }
