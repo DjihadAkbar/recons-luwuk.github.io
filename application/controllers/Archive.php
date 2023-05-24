@@ -14,16 +14,15 @@ class Archive extends CI_Controller
         $data['contentView'] = 'archive/index';
         $data['archive_list'] = $this->Archive_model->index();
 
-
         $this->load->view('template/dashboard/body', $data);
         // $this->load->view('pages/dashboard', $data);
     }
 
     public function addArchive(){
         $data = [
-        'document_name' => $this->input->post("nama_dokumen"),
-        'document_type' => $this->input->post("jenis_dokumen"),
-        'archive' => $this->input->post("lokasi_dokumen"),
+            'document_name' => $this->input->post("nama_dokumen"),
+            'document_type' => $this->input->post("jenis_dokumen"),
+            'archive' => $this->input->post("lokasi_dokumen"),
         ];
         $this->Archive_model->tambahArchive($data);
         redirect('archive');

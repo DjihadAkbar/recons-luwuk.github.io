@@ -49,15 +49,15 @@
                                                     ?></td>
                                 </th>
                                 <td>
-                                    <div class="akses-button">
-                                        <a class="btn btn-warning text-dark" href="entry/editEntryData?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="akses-button">
-                                        <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $arsip['id']; ?>">
-                                            <i class="fas fa-delete-left"></i>
-                                        </a>
+                                    <div>
+                                        <div class="akses-button">
+                                            <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
+                                        </div>
+                                        <div class="akses-button">
+                                            <a class="btn btn-danger text-dark" href="archive/deleteArchive?id=<?php echo $arsip['id']; ?>">
+                                                <i class="fas fa-delete-left"></i>
+                                            </a>
+                                        </div>
                                     </div>
 
                                 </td>
