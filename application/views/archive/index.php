@@ -97,7 +97,7 @@
         <div class="modal-body">Hapus Data?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a href="hapusperusahaan.php?id=<?php echo $list['id_perusahaan'];?>" class="btn btn-danger" href="logout.php">Hapus</a>
+          <a data-id="" class="btn btn-danger confirm-delete">Hapus</a>
         </div>
       </div>
     </div>
