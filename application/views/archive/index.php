@@ -50,8 +50,9 @@
                                 </th>
                                 <td>    
                                     <div class="akses-button">
-                                        <a class="btn btn-warning text-dark" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" data-href="archive/editArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
-                                        <!-- <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a> -->
+                                        <a class="btn btn-warning text-dark" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" >
+                                            <i class="fas fa-file-edit"></i>
+                                        </a>
                                     </div>
                                     
                                 </td>
@@ -84,7 +85,7 @@
             <label for="jenis_dokumen" class="label-wrap"> Jenis Dokumen </label>
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" value="<?php echo $arsip['document_type']; ?>" required>
-                    <option value="<?php echo $arsip['document_type']; ?>"><?php echo $arsip['document_type']; ?></option>
+                    <option hidden selected value="<?php echo $arsip['document_type']; ?>"><?php echo $arsip['document_type']; ?></option>
                     <option value="Nota Dinas">Nota Dinas</option>
                     <option value="Surat Keluar">Surat Keluar</option>
                     <option value="Surat Masuk">Surat Masuk</option>

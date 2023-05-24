@@ -27,6 +27,15 @@ class Archive extends CI_Controller
         $this->Archive_model->tambahArchive($data);
         redirect('archive');
     }
+    public function editArchive(){
+        $data = [
+            'document_name' => $this->input->post("nama_dokumen"),
+            'document_type' => $this->input->post("jenis_dokumen"),
+            'archive' => $this->input->post("lokasi_dokumen"),
+        ];
+        $this->Archive_model->tambahArchive($data);
+        redirect('archive');
+    }
     
     public function deleteArchive()
     {
