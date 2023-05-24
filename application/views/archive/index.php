@@ -142,7 +142,7 @@
                                     ?>
                                     <div>
                                         <?php
-                                        echo form_submit(['name' => 'submit','class' => 'btn btn-primary','form'=>'formAdd'], 'Submit');
+                                        echo form_submit(['name' => 'submit','class' => 'btn btn-primary','form'=>'formEdit'], 'Submit');
                                         echo form_close();
                                         ?>
                                     </div>
