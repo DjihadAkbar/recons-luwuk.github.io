@@ -54,11 +54,12 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="akses-button">
+                                    <button data-id="<?php echo $arsip['id'];?>" type="button" data-toggle="modal" data-target="#konfirmasi" class="btn btn-danger btn-sm delete-button" style="margin-left: 10px;"><i class="fas fa-delete-left"></i></button> 
+                                    <!-- <div class="akses-button">
                                         <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" >
                                             <i class="fas fa-delete-left"></i>
                                         </a>
-                                    </div>
+                                    </div> -->
                                 </td>
                             </tr>
                         <?php
