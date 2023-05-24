@@ -65,7 +65,7 @@
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="pelabuhan/deletePelabuhan?id=" data-id="<?php echo $value['id']; ?>" >
+                                                <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="pelabuhan/deletePelabuhan?id=" data-id="<?php echo $value['id_harbours']; ?>" >
                                                 <!-- <a class="btn btn-danger text-dark" href="pelabuhan/deletePelabuhan?id=<?php echo $value['id_harbours']; ?>"> -->
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
