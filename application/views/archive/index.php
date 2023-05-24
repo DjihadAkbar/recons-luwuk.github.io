@@ -55,7 +55,7 @@
                                 </td>
                                 <td>
                                     <div class="akses-button">
-                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" >
+                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="archive/deleteArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
                                             <i class="fas fa-delete-left"></i>
                                         </a>
                                     </div>
@@ -97,7 +97,7 @@
         <div class="modal-body">Hapus Data?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a data-id="" class="btn btn-danger confirm-delete">Hapus</a>
+          <a data-id="" data-href="" class="btn btn-danger text-dark confirm-delete">Hapus</a>
         </div>
       </div>
     </div>

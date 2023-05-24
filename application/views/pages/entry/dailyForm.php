@@ -862,7 +862,7 @@
                                         </td>
                                         <td>
                                             <div class="akses-button">
-                                                <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $value['id_entry']; ?>" >
+                                                <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="entry/deleteEntryData?id=" data-id="<?php echo $value['id_entry']; ?>" >
                                                 <!-- <a class="btn btn-danger text-dark" href="entry/deleteEntryData?id=<?php echo $value['id_entry']; ?>"> -->
                                                     <i class="fas fa-delete-left"></i>
                                                 </a>
@@ -1107,7 +1107,7 @@
         <div class="modal-body">Hapus Data?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a data-id="" class="btn btn-danger text-dark confirm-delete">Delete</a>
+          <a data-id="" data-href="" class="btn btn-danger text-dark confirm-delete">Delete</a>
         </div>
       </div>
     </div>

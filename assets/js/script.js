@@ -90,12 +90,15 @@ $(document).ready(function(){
     
     $('.delete-button').click(function() {
         var id = $(this).attr('data-id');
+        var href = $(this).attr('data-href');
          $('.confirm-delete').attr('data-id',id);
+         $('.confirm-delete').attr('data-href',href);
     });
     $(".confirm-delete").click(function() {
         var id = $(this).attr('data-id');
+        var href = $(this).attr('data-href');
         console.log(id);
-        location.href="archive/deleteArchive?id="+id;
+        location.href=href+id;
     });
 
     
