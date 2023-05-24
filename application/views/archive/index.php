@@ -50,7 +50,7 @@
                                 </th>
                                 <td>    
                                     <div class="akses-button">
-                                        <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
+                                        <a class="btn btn-warning text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" ><i class="fas fa-file-edit"></i></a>
                                     </div>
                                 </td>
                                 <td>
@@ -85,7 +85,7 @@
 
 
 <!-- Modal Delete -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
