@@ -54,7 +54,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <button data-id="<?php echo $arsip['id'];?>" type="button" data-toggle="modal" data-target="#konfirmasi" class="btn btn-danger btn-sm delete-button" style="margin-left: 10px;"><i class="fas fa-delete-left"></i></button> 
+                                    <button data-id="<?php echo $arsip['id'];?>" type="button" data-toggle="modal2" data-target="#konfirmasi" class="btn btn-danger btn-sm delete-button" style="margin-left: 10px;"><i class="fas fa-delete-left"></i></button> 
                                     <!-- <div class="akses-button">
                                         <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" >
                                             <i class="fas fa-delete-left"></i>
@@ -86,12 +86,12 @@
 
 
 <!-- Modal Delete -->
-<div class="modal fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal2 fade" id="konfirmasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Penghapusan Data</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <button class="close" type="button" data-dismiss="modal2" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
