@@ -84,7 +84,7 @@
             <label for="jenis_dokumen" class="label-wrap"> Jenis Dokumen </label>
             <div class="col">
                 <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" value="<?php echo $arsip['document_type']; ?>" required>
-                    <option value="">No Selected</option>
+                    <option value="<?php echo $arsip['document_type']; ?>"><?php echo $arsip['document_type']; ?></option>
                     <option value="Nota Dinas">Nota Dinas</option>
                     <option value="Surat Keluar">Surat Keluar</option>
                     <option value="Surat Masuk">Surat Masuk</option>
