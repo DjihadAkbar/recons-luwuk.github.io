@@ -33,7 +33,7 @@ class Archive extends CI_Controller
             'document_type' => $this->input->post("jenis_dokumen"),
             'archive' => $this->input->post("lokasi_dokumen"),
         ];
-        $this->Archive_model->editArchive($data);
+        $this->Archive_model->editArchive($data, $_GET['id']);
         redirect('archive');
     }
     
