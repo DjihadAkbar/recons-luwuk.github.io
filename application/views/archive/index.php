@@ -53,7 +53,17 @@
                                         <a class="btn btn-warning text-dark" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" data-href="archive/editArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
                                         <!-- <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a> -->
                                     </div>
-                                    <!-- Modal Edit Archive -->
+                                    
+                                </td>
+                                <td>
+                                    <div class="akses-button">
+                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="archive/deleteArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
+                                            <i class="fas fa-delete-left"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <!-- Modal Edit Archive -->
 <div class="modal fade" id="edit<?php echo $arsip['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -139,15 +149,6 @@
     </div>
   </div>
 </div>
-                                </td>
-                                <td>
-                                    <div class="akses-button">
-                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#konfirmasi" data-href="archive/deleteArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
-                                            <i class="fas fa-delete-left"></i>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
                         <?php
                         }
                         ?>
