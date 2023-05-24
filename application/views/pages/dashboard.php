@@ -12,7 +12,6 @@ function formatRupiah($angka)
 }
 
 if ($this->session->userdata['type'] != '') {
-
 ?>
     <div id="accordion">
         <div class="card">

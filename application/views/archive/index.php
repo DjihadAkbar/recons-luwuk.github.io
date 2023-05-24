@@ -50,7 +50,8 @@
                                 </th>
                                 <td>    
                                     <div class="akses-button">
-                                        <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
+                                        <a class="btn btn-danger text-dark delete-button" data-toggle="modal" data-target="#edit<?php echo $arsip['id']; ?>" data-href="archive/editArchive?id=" data-id="<?php echo $arsip['id']; ?>" >
+                                        <!-- <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a> -->
                                     </div>
                                 </td>
                                 <td>
@@ -102,6 +103,92 @@
       </div>
     </div>
   </div>
+<!-- Modal Edit Archive -->
+<div class="modal fade" id="edit<?php echo $arsip['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Dokumen</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+
+            <?php
+        echo form_open(base_url('archive/editArchive'), ['class' => 'form-entry']);
+        ?>
+        
+        <div class="form-group row">
+            <label for="jenis_dokumen" class="label-wrap"> Jenis Dokumen </label>
+            <div class="col">
+                <select class="form-control" name="jenis_dokumen" id="jenis_dokumen" value="<?php echo $arsip['document_type']; ?>" required>
+                    <option value="">No Selected</option>
+                    <option value="Nota Dinas">Nota Dinas</option>
+                    <option value="Surat Keluar">Surat Keluar</option>
+                    <option value="Surat Masuk">Surat Masuk</option>
+                </select>
+                <?php
+                echo form_error('jenis_dokumen');
+                ?>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="nama_dokumen" class="label-wrap"> Nama Dokumen </label>
+            <div class="col">
+                <?php
+                $data = array(
+                    'class'   => 'form-control',
+                    'name'    => 'nama_dokumen',
+                    'id'      => 'nama_dokumen',
+                    'value'   => $arsip['document_name']
+                );
+                
+                echo form_input($data);
+                echo form_error('nama_dokumen');
+                ?>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="lokasi_dokumen" class="label-wrap"> Lokasi Dokumen </label>
+            <div class="col">
+                <?php
+                $data = array(
+                    'class'   => 'form-control',
+                    'name'    => 'lokasi_dokumen',
+                    'id'      => 'lokasi_dokumen',
+                    'value'   => $arsip['archive']     
+                );
+                
+                echo form_input($data);
+                echo form_error('lokasi_dokumen');
+                ?>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+        <?php
+        $data = array(
+            'content'       => 'Close',
+            'type'          => 'button',
+            'class'         => 'btn btn-secondary',
+            'data-dismiss'  => 'modal'
+        );
+        
+        echo form_button($data);
+        ?>
+        <div>
+            <?php
+            echo form_submit(['name' => 'submit','class' => 'btn btn-primary'], 'Submit');
+            echo form_close();
+            ?>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal Add Archive -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
