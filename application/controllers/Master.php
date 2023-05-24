@@ -248,7 +248,7 @@ class Master extends CI_Controller
         $data['title'] = 'Tarif';
         $data['contentView'] = "pages/master/tarif";
         $data['tarif'] = $this->Master_model->rate();
-        $data['aprovedTarif'] = $this->Master_model->aprovedTarif();
+        // $data['aprovedTarif'] = $this->Master_model->aprovedTarif();
         $data['countPendingTarif'] = $this->Master_model->countPendingTarif();
 
         $this->load->view('template/dashboard/body', $data);
