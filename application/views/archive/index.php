@@ -50,12 +50,12 @@
                                 </th>
                                 <td>    
                                     <div class="akses-button">
-                                        <a class="btn btn-warning text-dark delete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" ><i class="fas fa-file-edit"></i></a>
+                                        <a class="btn btn-warning text-dark" href="archive/editArchive?id=<?php echo $arsip['id']; ?>"><i class="fas fa-file-edit"></i></a>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="akses-button">
-                                        <a class="btn btn-danger text-dark" href="archive/deleteArchive?id=<?php echo $arsip['id']; ?>">
+                                        <a class="btn btn-danger text-darkdelete-button" data-toggle="modal" data-target="#konfirmasi"  data-id="<?php echo $arsip['id']; ?>" >
                                             <i class="fas fa-delete-left"></i>
                                         </a>
                                     </div>
@@ -93,6 +93,9 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+      </div>
+      <div class="modal-body">
+
       </div>
     </div>
     <div class="modal-footer">

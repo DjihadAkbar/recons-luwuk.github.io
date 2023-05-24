@@ -95,7 +95,7 @@ $(document).ready(function(){
         $(".confirm-delete").on('click', function (e) {
             var id = $(this).attr('data-id');
             console.log(id);
-            location.href="hapusperusahaan.php?id="+id;
+            location.href="archive/deleteArchive?id="+id;
         });
 
     
