@@ -281,12 +281,12 @@ if ($this->session->userdata['type'] != '') {
                                 //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                 // } else {
                                 echo "Total Pendapatan Pertanggal" ?> 
+                            <input type="number" class="form-control col-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
                             </div>
-                            <input type="number" class="form-control col-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
                             <div>
                                 <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
                             </div>
-                            <input type="number" class="form-control col-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
+                            <input type="number" class="form-control col-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
                             <div>
                                 <?php echo " " . getBulan(date("F")) . " " . date("Y");
                             // }
