@@ -3,7 +3,7 @@
     <button type="button" class="btn btn-dark text-light" data-toggle="modal" data-target="#exampleModal">
     + Tambah Data
     </button>
-</div>    
+</div>
 <div class="card ">    
     <div class="card-body p-4 ml-auto mr-auto">
         <div class="row">

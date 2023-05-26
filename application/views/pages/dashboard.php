@@ -278,7 +278,8 @@ if ($this->session->userdata['type'] != '') {
                             // if (getBulan(date("F")) != null) {
                             //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                             // } else {
-                            echo "Total Pendapatan Pertanggal 1  " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                            echo "Total Pendapatan Pertanggal 1 " ?> <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                            <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                             // }
                             ?>
                         </div>
