@@ -274,14 +274,24 @@ if ($this->session->userdata['type'] != '') {
                 <h5 class="mb-0">
                     <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div style="white-space:normal">
-                            <?php
+                            <div>
+
+                                <?php
                             // if (getBulan(date("F")) != null) {
-                            //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
-                            // } else {
-                            echo "Total Pendapatan Pertanggal" ?> <input type="number" class="form-control col-1" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
-                            <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  <?php echo " " . getBulan(date("F")) . " " . date("Y");
+                                //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                // } else {
+                                echo "Total Pendapatan Pertanggal" ?> 
+                            </div>
+                            <input type="number" class="form-control col-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
+                            <div>
+                                <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
+                            </div>
+                            <input type="number" class="form-control col-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
+                            <div>
+                                <?php echo " " . getBulan(date("F")) . " " . date("Y");
                             // }
                             ?>
+                            </div>
                         </div> 
                     </button>
                 </h5>
