@@ -274,19 +274,19 @@ if ($this->session->userdata['type'] != '') {
                 <h5 class="mb-0">
                     <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div style="white-space:normal">
-                            <div>
-
+                            
+                            <span>
                                 <?php
                             // if (getBulan(date("F")) != null) {
                                 //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                 // } else {
                                 echo "Total Pendapatan Pertanggal" ?> 
-                            <input type="number" class="form-control col-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
-                            </div>
+                            </span>
+                            <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
                             <div>
                                 <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
                             </div>
-                            <input type="number" class="form-control col-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
+                            <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
                             <div>
                                 <?php echo " " . getBulan(date("F")) . " " . date("Y");
                             // }
