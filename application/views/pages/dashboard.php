@@ -274,30 +274,31 @@ if ($this->session->userdata['type'] != '') {
                 <h5 class="mb-0">
                     <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div style="white-space:normal">
-                        <row>
-                                <col>
-                                        
-                                <?php
-                                // if (getBulan(date("F")) != null) {
+                            <div class="row">
+
+                                <div class="col-sm">
+                                    
+                                        <?php
+                                    // if (getBulan(date("F")) != null) {
                                     //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                     // } else {
                                     echo "Total Pendapatan Pertanggal" ?> 
-                                </col>
-                                <col>
-                                <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
-                                </col>
-                                <col>
+                                </div>
+                                <div class="col-sm">
+                                    <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
+                                </div>
+                                <div class="col-sm">
                                     <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
-                                </col>
-                                <col>
+                                </div>
+                                <div class="col-sm">
                                     <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
-                                </col>
-                                <col>
+                                </div>
+                                <div class="col-sm">
                                     <?php echo " " . getBulan(date("F")) . " " . date("Y");
                                     // }
                                     ?>
-                                </col>
-                            </row>
+                                </div>
+                            </div>
                         </div> 
                     </button>
                 </h5>
