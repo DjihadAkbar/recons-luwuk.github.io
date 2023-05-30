@@ -288,44 +288,16 @@ if ($this->session->userdata['type'] != '') {
                                     <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
                                 </div>
                                 <div class="col-sm">
-                                    <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
-                                            <?php
-
-                                            $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
-
-
-                                            for ($i = 0; $i < 12; $i++) {
-                                            $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
-                                            $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
-                                            $ValueBulan     = date('n', $AmbilNamaBulan);
-                                            // if ($ValueBulan <= $i ) continue;
-                                        ?>
-                                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
-                                        <?php }?>
-                                    </select> 
+                                    <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
                                 </div>
                                 <div class="col-sm">
-                                    <?php echo " " . date("Y") . " s.d " ?> 
+                                    <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
                                 </div>
                                 <div class="col-sm">
                                     <input type="number" class="form-control col-4" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
                                 </div>
                                 <div class="col-sm">
-                                    <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
-                                            <?php
-
-                                            $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
-
-
-                                            for ($i = 0; $i < 12; $i++) {
-                                            $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
-                                            $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
-                                            $ValueBulan     = date('n', $AmbilNamaBulan);
-                                            // if ($ValueBulan <= $i ) continue;
-                                        ?>
-                                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
-                                        <?php }?>
-                                    </select>
+                                    <?php echo " " . getBulan(date("F")) . " " . date("Y");?>
                                 </div>
                                 <div class="col-sm">
                                     <?php echo " " . date("Y");?>
