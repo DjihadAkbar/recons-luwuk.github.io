@@ -865,7 +865,7 @@ class Income_model extends CI_Model
         return $this->db->get('entry_data')->result_array();
     }
 
-    public function totalDailyPerShip()
+    public function totalDailyPerShip($firstDate, $lastDate, $month)
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -965,7 +965,12 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('day(date) <=', date("d"));
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('day(date) <=', date("d"));
+        } else {
+            $this->db->where('day(date) >=', $firstDate);
+            $this->db->where('day(date) <=', $lastDate);
+        }
         // $this->db->where('monthname(date)', date("F"));
         $this->db->where('monthname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));
@@ -973,7 +978,7 @@ class Income_model extends CI_Model
         return $this->db->get('entry_data')->result_array();
     }
 
-    public function totalDailyPerHarbour()
+    public function totalDailyPerHarbour($firstDate, $lastDate, $month)
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -1073,7 +1078,12 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('day(date) <=', date("d"));
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('day(date) <=', date("d"));
+        } else {
+            $this->db->where('day(date) >=', $firstDate);
+            $this->db->where('day(date) <=', $lastDate);
+        }
         // $this->db->where('monthname(date)', date("F"));
         $this->db->where('monthname(date)', date("F"));
         $this->db->where('year(date)', date("Y"));

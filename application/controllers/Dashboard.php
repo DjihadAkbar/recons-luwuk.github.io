@@ -23,8 +23,8 @@ class Dashboard extends CI_Controller
         $data['incomeDailyPerShip'] = $this->Income_model->incomeDailyPerShip();
         $data['incomeDailyPerHarbour'] = $this->Income_model->incomeDailyPerHarbour();
         $data['totalDaily'] = $this->Income_model->totalDaily($data['firstDate'], $data['lastDate'], $data['month']);
-        $data['totalDailyPerShip'] = $this->Income_model->totalDailyPerShip();
-        $data['totalDailyPerHarbour'] = $this->Income_model->totalDailyPerHarbour();
+        $data['totalDailyPerShip'] = $this->Income_model->totalDailyPerShip($data['firstDate'], $data['lastDate'], $data['month']);
+        $data['totalDailyPerHarbour'] = $this->Income_model->totalDailyPerHarbour($data['firstDate'], $data['lastDate'], $data['month']);
 
 
         $this->load->view('template/dashboard/body', $data);

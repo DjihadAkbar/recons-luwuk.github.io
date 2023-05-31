@@ -360,7 +360,13 @@ if ($this->session->userdata['type'] != '') {
                                                 Lintasan
                                             </th>
                                             <th scope="col">
-                                                <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
+                                                <?php 
+                                                if($firstDate == null || $firstDate == ''){
+                                                    echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                                } else {
+                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F")) . " " . date("Y") . " s.d " . $lastDate . " " . getBulan(date("F")) . " " . date("Y");
+                                                } 
+                                                ?>
                                             </th>
                                             <th scope="col">
                                                 Jumlah Trip
@@ -431,7 +437,13 @@ if ($this->session->userdata['type'] != '') {
                                             </th>
                                             <th scope="col">
 
-                                                <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
+                                            <?php 
+                                                if($firstDate == null || $firstDate == ''){
+                                                    echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                                } else {
+                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F")) . " " . date("Y") . " s.d " . $lastDate . " " . getBulan(date("F")) . " " . date("Y");
+                                                } 
+                                                ?>
                                             </th>
                                             <th scope="col">
                                                 Jumlah Trip
@@ -501,7 +513,13 @@ if ($this->session->userdata['type'] != '') {
                                             </th>
                                             <th scope="col">
 
-                                                <?php echo "Total Tanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y"); ?>
+                                            <?php 
+                                                if($firstDate == null || $firstDate == ''){
+                                                    echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                                } else {
+                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F")) . " " . date("Y") . " s.d " . $lastDate . " " . getBulan(date("F")) . " " . date("Y");
+                                                } 
+                                                ?>
                                             </th>
                                             <th scope="col">
                                                 Jumlah Trip
