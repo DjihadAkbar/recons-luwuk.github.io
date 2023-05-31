@@ -309,7 +309,7 @@ if ($this->session->userdata['type'] != '') {
                                     // if (getBulan(date("F")) != null) {
                                     //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                     // } else {
-                                    echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                    echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                     ?> 
                         </div> 
                     </button>
