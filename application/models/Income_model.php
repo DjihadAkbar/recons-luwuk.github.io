@@ -972,7 +972,11 @@ class Income_model extends CI_Model
             $this->db->where('day(date) <=', $lastDate);
         }
         // $this->db->where('monthname(date)', date("F"));
-        $this->db->where('monthname(date)', date("F"));
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('monthname(date)', date("F"));
+        } else {
+            $this->db->where('month(date)', $month);
+        }
         $this->db->where('year(date)', date("Y"));
         $this->db->group_by(' month(date), ferry');
         return $this->db->get('entry_data')->result_array();
