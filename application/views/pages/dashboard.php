@@ -275,7 +275,6 @@ if ($this->session->userdata['type'] != '') {
                     <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div style="white-space:normal">
                             <div class="row">
-
                                 <div class="col-sm">
                                     
                                         <?php
@@ -295,9 +294,6 @@ if ($this->session->userdata['type'] != '') {
                                 </div>
                                 <div class="col-sm">
                                     <?php echo " " . getBulan(date("F")) . " " . date("Y");?>
-                                </div>
-                                <div class="col-sm">
-                                    <?php echo " " . date("Y");?>
                                 </div>
                             </div>
                         </div> 
