@@ -52,7 +52,7 @@ if ($this->session->userdata['type'] != '') {
             </div>
             <div class="form-group col-3">
             <?php
-            echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block' ], 'Download');
+            echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block' ], 'Filter');
             echo form_close();
             ?>     
             </div>
