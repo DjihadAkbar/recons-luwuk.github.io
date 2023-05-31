@@ -29,26 +29,24 @@ if ($this->session->userdata['type'] != '') {
             </div>
             <div class="form-group col-4">
                 <label for="bulan_report" class="label-wrap">Bulan </label>
-                <div class="col">
-                    <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
-                            <?php
+                <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
+                        <?php
 
-                            $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
+                        $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
 
 
-                            for ($i = 0; $i < 12; $i++) {
-                            $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
-                            $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
-                            $ValueBulan     = date('n', $AmbilNamaBulan);
-                            // if ($ValueBulan <= $i ) continue;
-                        ?>
-                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
-                        <?php }?>
-                    </select>
-                    <?php
-                    echo form_error('bulan_report');
+                        for ($i = 0; $i < 12; $i++) {
+                        $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
+                        $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
+                        $ValueBulan     = date('n', $AmbilNamaBulan);
+                        // if ($ValueBulan <= $i ) continue;
                     ?>
-                </div>
+                    <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
+                    <?php }?>
+                </select>
+                <?php
+                echo form_error('bulan_report');
+                ?>
             </div>
         </div>
     </div>
