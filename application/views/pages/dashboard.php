@@ -43,7 +43,7 @@ if ($this->session->userdata['type'] != '') {
                     ?>
                 </div>
             </div>
-</div>
+        </div>
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingTwo">
@@ -305,27 +305,12 @@ if ($this->session->userdata['type'] != '') {
                 <h5 class="mb-0">
                     <button style="text-decoration:none;  display: block; color: black;" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         <div style="white-space:normal">
-                            <div class="row">
-                                <div class="col-sm">
                                     <?php
                                     // if (getBulan(date("F")) != null) {
                                     //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                     // } else {
-                                    echo "Total Pendapatan Pertanggal" ?> 
-                                </div>
-                                <div class="col-sm">
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
-                                </div>
-                                <div class="col-sm">
-                                    <?php echo getBulan(date("F")) . " " . date("Y") . " s.d " ?> 
-                                </div>
-                                <div class="col-sm">
-                                    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="<?php echo date("d");?>">  
-                                </div>
-                                <div class="col-sm">
-                                    <?php echo " " . getBulan(date("F")) . " " . date("Y");?>
-                                </div>
-                            </div>
+                                    echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                    ?> 
                         </div> 
                     </button>
                 </h5>
