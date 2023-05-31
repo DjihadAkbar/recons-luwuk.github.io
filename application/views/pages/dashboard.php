@@ -37,11 +37,12 @@ if ($this->session->userdata['type'] != '') {
 
                         for ($i = 0; $i < 12; $i++) {
                         $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
+                        $tanggal = date('n', $AmbilNamaBulan);
                         $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
                         $ValueBulan     = date('n', $AmbilNamaBulan);
                         // if ($ValueBulan <= $i ) continue;
                     ?>
-                    <option value="<?php echo $ValueBulan;?>"><?php echo $AmbilNamaBulan;?></option>
+                    <option value="<?php echo $ValueBulan;?>"><?php echo $tanggal;?></option>
                     <?php }?>
                 </select>
                 <?php
