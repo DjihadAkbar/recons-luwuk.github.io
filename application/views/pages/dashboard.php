@@ -30,7 +30,7 @@ if ($this->session->userdata['type'] != '') {
             <div class="form-group col-3">
                 <label for="bulan_dashboard" class="label-wrap">Bulan </label>
                 <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
-                        <?php
+                        <!-- <?php
 
                         $bulan = [1 => "JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
 
@@ -40,7 +40,15 @@ if ($this->session->userdata['type'] != '') {
                         $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
                         $ValueBulan     = date('n', $AmbilNamaBulan);
                         // if ($ValueBulan <= $i ) continue;
-                    ?>
+                    ?> -->
+                     <?php
+    for ($i = 0; $i < 12; $i++) {
+        $time = strtotime(sprintf('%d months', $i));   
+        $label = date('F', $time);   
+        $value = date('n', $time);
+        echo "<option value='$value'>$label</option>";
+    }
+    ?>
                     <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
                     <?php }?>
                 </select>
