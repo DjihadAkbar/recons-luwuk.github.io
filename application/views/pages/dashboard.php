@@ -13,6 +13,26 @@ function formatRupiah($angka)
 
 if ($this->session->userdata['type'] != '') {
 ?>
+<div class="">
+    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
+    <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
+    <div class="form-group col">
+                <label for="nama_kapal" class="label-wrap  ml-2"> NAMA KAPAL </label>
+                <div class="col">
+                    <select class="form-control" name="nama_kapal" id="nama_kapal" required>
+                        <option value="" disabled Selected>No Selected</option>
+                        <?php foreach ($kapal as $row) : ?>
+                            <option value="<?php echo $row['kapal']; ?>">
+                                <?php echo $row['kapal']; ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                    <?php
+                    echo form_error('nama_kapal');
+                    ?>
+                </div>
+            </div>
+</div>
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingTwo">
@@ -276,8 +296,7 @@ if ($this->session->userdata['type'] != '') {
                         <div style="white-space:normal">
                             <div class="row">
                                 <div class="col-sm">
-                                    
-                                        <?php
+                                    <?php
                                     // if (getBulan(date("F")) != null) {
                                     //     echo "Total Pendapatan Pertanggal 1  " . getBulan(getBulan(date("F"))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                     // } else {
