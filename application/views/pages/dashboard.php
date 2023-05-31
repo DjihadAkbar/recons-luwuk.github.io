@@ -17,10 +17,10 @@ if ($this->session->userdata['type'] != '') {
     <div class="form-group col-4">
     </div>
     <div class="form-group col">
-        <div class="form-group row">
     <?php
         echo form_open(base_url('dashboard/filterDashboard'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
             ?>
+        <div class="form-group row">
             <div class="form-group col-4">
                 <label for="bulan_report" class="label-wrap">Tanggal Awal </label>
                 <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
