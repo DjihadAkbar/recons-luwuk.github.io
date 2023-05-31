@@ -36,7 +36,7 @@ if ($this->session->userdata['type'] != '') {
 
 
                         for ($i = 0; $i < 12; $i++) {
-                        $AmbilNamaBulan = strtotime(sprintf('month', $i));
+                        $AmbilNamaBulan = strtotime(sprintf('+1 month', $i));
                         $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
                         $ValueBulan     = date('n', $AmbilNamaBulan);
                         // if ($ValueBulan <= $i ) continue;
