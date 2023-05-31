@@ -13,6 +13,7 @@ class Dashboard extends CI_Controller
         $data['firstDate'] = $this->input->post('tanggalAwalDashboard');
         $data['lastDate'] = $this->input->post('tanggalAkhirDashboard');
         $data['month'] = $this->input->post('bulan_dashboard');
+        $data['year'] = $this->input->post('tahun_dashboard');
         $data['title'] = 'Dashboard';
         $data['contentView'] = 'pages/dashboard';
         $data['pendapatan'] = $this->Income_model->pendapatan();
@@ -22,9 +23,9 @@ class Dashboard extends CI_Controller
         $data['incomeDaily'] = $this->Income_model->incomeDaily();
         $data['incomeDailyPerShip'] = $this->Income_model->incomeDailyPerShip();
         $data['incomeDailyPerHarbour'] = $this->Income_model->incomeDailyPerHarbour();
-        $data['totalDaily'] = $this->Income_model->totalDaily($data['firstDate'], $data['lastDate'], $data['month']);
-        $data['totalDailyPerShip'] = $this->Income_model->totalDailyPerShip($data['firstDate'], $data['lastDate'], $data['month']);
-        $data['totalDailyPerHarbour'] = $this->Income_model->totalDailyPerHarbour($data['firstDate'], $data['lastDate'], $data['month']);
+        $data['totalDaily'] = $this->Income_model->totalDaily($data['firstDate'], $data['lastDate'], $data['month'], $data['year']);
+        $data['totalDailyPerShip'] = $this->Income_model->totalDailyPerShip($data['firstDate'], $data['lastDate'], $data['month'], $data['year']);
+        $data['totalDailyPerHarbour'] = $this->Income_model->totalDailyPerHarbour($data['firstDate'], $data['lastDate'], $data['month'], $data['year']);
 
 
         $this->load->view('template/dashboard/body', $data);

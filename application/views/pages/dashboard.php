@@ -45,13 +45,13 @@ if ($this->session->userdata['type'] != '') {
                     <?php }?>
                 </select>
                 <?php
-                echo form_error('bulan_report');
+                echo form_error('bulan_dashboard');
                 ?>
             </div>
             <div class="form-group col-2">
-                <label for="tahun_report" class="label-wrap  ml-2"> TAHUN </label>
+                <label for="tahun_dashboard" class="label-wrap  ml-2"> TAHUN </label>
                 <div class="col">
-                    <select class="form-control" name="tahun_report" id="tahun_report" required size='1' >
+                    <select class="form-control" name="tahun_dashboard" id="tahun_dashboard" required size='1' >
                     <?php 
                     for($i = date('Y') -2; $i < date('Y') + 1; $i++){
                         echo "<option>$i</option>";
@@ -60,7 +60,7 @@ if ($this->session->userdata['type'] != '') {
                     ?>
                     </select>
                     <?php
-                    echo form_error('tahun_report');
+                    echo form_error('tahun_dashboard');
                     ?>
                 </div>
             </div>

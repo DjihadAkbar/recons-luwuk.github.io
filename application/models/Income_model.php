@@ -753,7 +753,7 @@ class Income_model extends CI_Model
         return $this->db->get('entry_data')->result_array();
     }
 
-    public function totalDaily($firstDate, $lastDate, $month)
+    public function totalDaily($firstDate, $lastDate, $month, $year)
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -858,19 +858,23 @@ class Income_model extends CI_Model
             $this->db->where('day(date) >=', $firstDate);
             $this->db->where('day(date) <=', $lastDate);
         }
-        
+
         if($firstDate == null || $firstDate == ''){
             $this->db->where('monthname(date)', date("F"));
         } else {
             $this->db->where('month(date)', $month);
         }
         // $this->db->where('monthname(date)', date("F", strtotime('-2 month')));
-        $this->db->where('year(date)', date("Y"));
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('year(date)', date("Y"));
+        } else {
+            $this->db->where('year(date)', $year);
+        }
         $this->db->group_by(' month(date), ferry,routes.route');
         return $this->db->get('entry_data')->result_array();
     }
 
-    public function totalDailyPerShip($firstDate, $lastDate, $month)
+    public function totalDailyPerShip($firstDate, $lastDate, $month, $year)
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -982,12 +986,17 @@ class Income_model extends CI_Model
         } else {
             $this->db->where('month(date)', $month);
         }
-        $this->db->where('year(date)', date("Y"));
+
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('year(date)', date("Y"));
+        } else {
+            $this->db->where('year(date)', $year);
+        }
         $this->db->group_by(' month(date), ferry');
         return $this->db->get('entry_data')->result_array();
     }
 
-    public function totalDailyPerHarbour($firstDate, $lastDate, $month)
+    public function totalDailyPerHarbour($firstDate, $lastDate, $month, $year)
     {
         if ($this->session->userdata('logged_in'))
             $pelabuhan = $this->session->userdata['pelabuhan'];
@@ -1099,7 +1108,11 @@ class Income_model extends CI_Model
         } else {
             $this->db->where('month(date)', $month);
         }
-        $this->db->where('year(date)', date("Y"));
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('year(date)', date("Y"));
+        } else {
+            $this->db->where('year(date)', $year);
+        }
         $this->db->group_by(' month(date), harbour');
         return $this->db->get('entry_data')->result_array();
     }
