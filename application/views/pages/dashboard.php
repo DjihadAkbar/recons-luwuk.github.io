@@ -14,7 +14,7 @@ function formatRupiah($angka)
 if ($this->session->userdata['type'] != '') {
 ?>
 <div class="form-group row mb-n4">
-    <div class="form-group col-4">
+    <div class="form-group col-1">
     </div>
     <div class="form-group col">
     <?php
