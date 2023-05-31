@@ -22,16 +22,16 @@ if ($this->session->userdata['type'] != '') {
             ?>
         <div class="form-group row">
             <div class="form-group col-3">
-                <label for="bulan_report" class="label-wrap">Tanggal Awal </label>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
+                <label for="tanggalAwalDashboard" class="label-wrap">Tanggal Awal </label>
+                <input type="number" name="tanggalAwalDashboard" id="tanggalAwalDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
             </div>
             <div class="form-group col-3">
-                <label for="bulan_report" class="label-wrap">Tanggal Akhir </label>
-                <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="31" min="1" max="31">
+                <label for="tanggalAkhirDashboard" class="label-wrap">Tanggal Akhir </label>
+                <input type="number" name="tanggalAkhirDashboard" id="tanggalAkhirDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="31" min="1" max="31">
             </div>
             <div class="form-group col-3">
-                <label for="bulan_report" class="label-wrap">Bulan </label>
-                <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
+                <label for="bulan_dashboard" class="label-wrap">Bulan </label>
+                <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
                         <?php
 
                         $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];

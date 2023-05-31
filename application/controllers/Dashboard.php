@@ -10,6 +10,7 @@ class Dashboard extends CI_Controller
     }
     public function index()
     {
+        $firstDate = $this->input->('');
         $data['title'] = 'Dashboard';
         $data['contentView'] = 'pages/dashboard';
         $data['pendapatan'] = $this->Income_model->pendapatan();
