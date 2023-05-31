@@ -13,19 +13,26 @@ function formatRupiah($angka)
 
 if ($this->session->userdata['type'] != '') {
 ?>
-<div class="">
+<div class="form-group row">
     <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
     <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
     <div class="form-group col">
                 <label for="nama_kapal" class="label-wrap  ml-2"> NAMA KAPAL </label>
                 <div class="col">
-                    <select class="form-control" name="nama_kapal" id="nama_kapal" required>
-                        <option value="" disabled Selected>No Selected</option>
-                        <?php foreach ($kapal as $row) : ?>
-                            <option value="<?php echo $row['kapal']; ?>">
-                                <?php echo $row['kapal']; ?>
-                            </option>
-                        <?php endforeach; ?>
+                    <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
+                            <?php
+
+                            $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
+
+
+                            for ($i = 0; $i < 12; $i++) {
+                            $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
+                            $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
+                            $ValueBulan     = date('n', $AmbilNamaBulan);
+                            // if ($ValueBulan <= $i ) continue;
+                        ?>
+                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
+                        <?php }?>
                     </select>
                     <?php
                     echo form_error('nama_kapal');
