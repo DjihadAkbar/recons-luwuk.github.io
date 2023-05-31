@@ -14,20 +14,20 @@ function formatRupiah($angka)
 if ($this->session->userdata['type'] != '') {
 ?>
 <div class="form-group row">
-    <div class="form-group col">
+    <div class="form-group col-6">
 
     </div>
     <div class="form-group col">
         <div class="form-group row">
-            <div class="form-group col-4-sm">
+            <div class="form-group col-2">
                 <label for="bulan_report" class="label-wrap  ml-2">Tanggal Awal </label>
                 <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
             </div>
-            <div class="form-group col-4-sm">
+            <div class="form-group col-2">
                 <label for="bulan_report" class="label-wrap  ml-2">Tanggal Akhir </label>
                 <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1">
             </div>
-            <div class="form-group col-4-sm">
+            <div class="form-group col-2">
                 <label for="bulan_report" class="label-wrap  ml-2">Bulan </label>
                 <div class="col">
                     <select class="form-control" name="bulan_report" id="bulan_report" required size='1'>
