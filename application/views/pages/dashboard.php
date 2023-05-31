@@ -32,14 +32,14 @@ if ($this->session->userdata['type'] != '') {
                 <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
                         <?php
 
-                        $bulan = [1 => "JANUARI","FEBURARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
+                        $bulan = [1 => "JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
 
 
                         for ($i = 0; $i < 12; $i++) {
                         $AmbilNamaBulan = strtotime(sprintf('%d months', $i));
                         $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
                         $ValueBulan     = date('n', $AmbilNamaBulan);
-                        if ($ValueBulan <= $i ) continue;
+                        // if ($ValueBulan <= $i ) continue;
                     ?>
                     <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
                     <?php }?>
