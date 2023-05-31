@@ -13,12 +13,15 @@ function formatRupiah($angka)
 
 if ($this->session->userdata['type'] != '') {
 ?>
-<div class="form-group row">
+<div class="form-group row mb-n4">
     <div class="form-group col-4">
 
     </div>
     <div class="form-group col">
         <div class="form-group row">
+        <?php
+        echo form_open(base_url('dashboard/report/downloadRekapAsuransi'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
+            ?>
             <div class="form-group col-4">
                 <label for="bulan_report" class="label-wrap">Tanggal Awal </label>
                 <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
@@ -47,6 +50,12 @@ if ($this->session->userdata['type'] != '') {
                 <?php
                 echo form_error('bulan_report');
                 ?>
+            </div>
+            <div class="form-group col-4">
+            <?php
+            echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block' ], 'Download');
+            echo form_close();
+            ?>
             </div>
         </div>
     </div>
