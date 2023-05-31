@@ -18,7 +18,7 @@ if ($this->session->userdata['type'] != '') {
     </div>
     <div class="form-group col">
     <?php
-        echo form_open(base_url('dashboard/filterDashboard'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
+        echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
             ?>
         <div class="form-group row">
             <div class="form-group col-3">
