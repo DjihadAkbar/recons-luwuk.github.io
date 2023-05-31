@@ -14,18 +14,16 @@ function formatRupiah($angka)
 if ($this->session->userdata['type'] != '') {
 ?>
 <div class="form-group row mb-n4">
-    <div class="form-group col-1">
-    </div>
     <div class="form-group col">
     <?php
         echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
             ?>
         <div class="form-group row">
-            <div class="form-group col-3">
+            <div class="form-group col-2">
                 <label for="tanggalAwalDashboard" class="label-wrap">Tanggal Awal </label>
                 <input type="number" name="tanggalAwalDashboard" id="tanggalAwalDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
             </div>
-            <div class="form-group col-3">
+            <div class="form-group col-2">
                 <label for="tanggalAkhirDashboard" class="label-wrap">Tanggal Akhir </label>
                 <input type="number" name="tanggalAkhirDashboard" id="tanggalAkhirDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="31" min="1" max="31">
             </div>
@@ -49,6 +47,22 @@ if ($this->session->userdata['type'] != '') {
                 <?php
                 echo form_error('bulan_report');
                 ?>
+            </div>
+            <div class="form-group col-2">
+                <label for="tahun_report" class="label-wrap  ml-2"> TAHUN </label>
+                <div class="col">
+                    <select class="form-control" name="tahun_report" id="tahun_report" required size='1' >
+                    <?php 
+                    for($i = date('Y') -2; $i < date('Y') + 1; $i++){
+                        echo "<option>$i</option>";
+                        
+                    }
+                    ?>
+                    </select>
+                    <?php
+                    echo form_error('tahun_report');
+                    ?>
+                </div>
             </div>
             <div class="form-group col-3">
             <label for="bulan_report" class="label-wrap">&#8203 </label>
@@ -577,7 +591,11 @@ if ($this->session->userdata['type'] != '') {
                         // if (getBulan(date("F")) != null) {
                         //     echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                         // } else {
-                        echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                            if($firstDate == null || $firstDate == ''){
+                                echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                            } else {
+                                echo "Jumlah Produksi Pertanggal ". $firstDate . " " . getBulan(date("F")) . " " . date("Y") . " s.d " . $lastDate . " " . getBulan(date("F")) . " " . date("Y");
+                            }
                         // }
                         ?>
                     </button>
