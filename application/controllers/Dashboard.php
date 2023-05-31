@@ -10,7 +10,9 @@ class Dashboard extends CI_Controller
     }
     public function index()
     {
-        $firstDate = $this->input->('');
+        $firstDate = $this->input->post('tanggalAwalDashboard');
+        $lastDate = $this->input->post('tanggalAkhirDashboard');
+        $month = $this->input->post('bulan_dashboard');
         $data['title'] = 'Dashboard';
         $data['contentView'] = 'pages/dashboard';
         $data['pendapatan'] = $this->Income_model->pendapatan();
@@ -20,7 +22,7 @@ class Dashboard extends CI_Controller
         $data['incomeDaily'] = $this->Income_model->incomeDaily();
         $data['incomeDailyPerShip'] = $this->Income_model->incomeDailyPerShip();
         $data['incomeDailyPerHarbour'] = $this->Income_model->incomeDailyPerHarbour();
-        $data['totalDaily'] = $this->Income_model->totalDaily();
+        $data['totalDaily'] = $this->Income_model->totalDaily($firstDate, $lastDate, $month);
         $data['totalDailyPerShip'] = $this->Income_model->totalDailyPerShip();
         $data['totalDailyPerHarbour'] = $this->Income_model->totalDailyPerHarbour();
 
