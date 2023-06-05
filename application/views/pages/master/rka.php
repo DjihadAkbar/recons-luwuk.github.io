@@ -37,6 +37,7 @@
                         </thead>
                         <tbody>
                             <?php
+                            print_r($target);
                             $no = 1;
                             foreach ($target as $key => $value) {
                                 ?>
