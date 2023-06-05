@@ -239,7 +239,7 @@ class Master_model extends CI_Model
     public function lintasan()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('route as lintasan, id');
+        $this->db->select('routes.route as lintasan, id');
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
             // $this->db->where('routes.spv', $pelabuhan);
