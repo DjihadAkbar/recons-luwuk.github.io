@@ -203,49 +203,7 @@ class Income_model extends CI_Model
                 (rate.Gayor * entry_a.Gayor) +
                 (rate.Carter * entry_a.Carter) +
                 (rate.BarCur * entry_a.BarangPendapatan))
-                AS total,
-                (
-                    SELECT
-                    SUM(
-                        (rate.Gol1 * entry_b.Gol1) + 
-                        (rate.Gol2 * entry_b.Gol2) +
-                        (rate.Gol3 * entry_b.Gol3) +
-                        (rate.Gol4Pen * entry_b.Gol4Pen) +
-                        (rate.Gol4Bar * entry_b.Gol4Bar) +
-                        (rate.Gol5Pen * entry_b.Gol5Pen) +
-                        (rate.Gol5Bar * entry_b.Gol5Bar) +
-                        (rate.Gol6Pen * entry_b.Gol6Pen) +
-                        (rate.Gol6Bar * entry_b.Gol6Bar) +
-                        (rate.Gol7 * entry_b.Gol7) +
-                        (rate.Gol8 * entry_b.Gol8) +
-                        (rate.Gol9 * entry_b.Gol9) +
-                        (rate.DewasaEksekutif * entry_b.DewasaEksekutif) +
-                        (rate.BayiEksekutif * entry_b.BayiEksekutif) +
-                        (rate.DewasaBisnis * entry_b.DewasaBisnis) +
-                        (rate.BayiBisnis * entry_b.BayiBisnis) +
-                        (rate.DewasaEkonomi * entry_b.DewasaEkonomi) +
-                        (rate.BayiEkonomi * entry_b.BayiEkonomi) +
-                        (rate.Suplesi1Dewasa * entry_b.Suplesi1Dewasa) +
-                        (rate.Suplesi1Anak * entry_b.Suplesi1Anak) +
-                        (rate.Suplesi2Dewasa * entry_b.Suplesi2Dewasa) +
-                        (rate.Suplesi2Anak * entry_b.Suplesi2Anak) +
-                        (rate.Hewan * entry_b.Hewan) +
-                        (rate.Gayor * entry_b.Gayor) +
-                        (rate.Carter * entry_b.Carter) +
-                        (rate.BarCur * entry_b.BarangPendapatan)
-                        )
-                        FROM entry_data as entry_b
-                        JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
-                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = 2022 AND entry_a.id_route = entry_b.id_route and entry_a.id_ferry = entry_b.id_ferry
-                        GROUP BY harbour,routes.route
-                    ) AS totalLastYear2,
-                    (
-                        SELECT COUNT(case when trip != 1 then 1 END)
-                        FROM entry_data as entry_c
-                        join trips on trips.id = entry_c.id_trip
-                        WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = 2022 AND entry_a.id_route = entry_c.id_route and entry_a.id_ferry = entry_c.id_ferry
-                        GROUP BY harbour,routes.route 
-                    ) as tripLastYear2');
+                AS total');
         $this->db->join($textDepan . $textTengah . $textBelakang, $textAkhir);
 
         $this->db->join('routes', 'entry_a.id_route = routes.id');
@@ -352,47 +310,6 @@ class Income_model extends CI_Model
                 (rate.Carter * entry_a.Carter) +
                 (rate.BarCur * entry_a.BarangPendapatan))
                 AS total,
-                (
-                    SELECT
-                    SUM(
-                        (rate.Gol1 * entry_b.Gol1) + 
-                        (rate.Gol2 * entry_b.Gol2) +
-                        (rate.Gol3 * entry_b.Gol3) +
-                        (rate.Gol4Pen * entry_b.Gol4Pen) +
-                        (rate.Gol4Bar * entry_b.Gol4Bar) +
-                        (rate.Gol5Pen * entry_b.Gol5Pen) +
-                        (rate.Gol5Bar * entry_b.Gol5Bar) +
-                        (rate.Gol6Pen * entry_b.Gol6Pen) +
-                        (rate.Gol6Bar * entry_b.Gol6Bar) +
-                        (rate.Gol7 * entry_b.Gol7) +
-                        (rate.Gol8 * entry_b.Gol8) +
-                        (rate.Gol9 * entry_b.Gol9) +
-                        (rate.DewasaEksekutif * entry_b.DewasaEksekutif) +
-                        (rate.BayiEksekutif * entry_b.BayiEksekutif) +
-                        (rate.DewasaBisnis * entry_b.DewasaBisnis) +
-                        (rate.BayiBisnis * entry_b.BayiBisnis) +
-                        (rate.DewasaEkonomi * entry_b.DewasaEkonomi) +
-                        (rate.BayiEkonomi * entry_b.BayiEkonomi) +
-                        (rate.Suplesi1Dewasa * entry_b.Suplesi1Dewasa) +
-                        (rate.Suplesi1Anak * entry_b.Suplesi1Anak) +
-                        (rate.Suplesi2Dewasa * entry_b.Suplesi2Dewasa) +
-                        (rate.Suplesi2Anak * entry_b.Suplesi2Anak) +
-                        (rate.Hewan * entry_b.Hewan) +
-                        (rate.Gayor * entry_b.Gayor) +
-                        (rate.Carter * entry_b.Carter) +
-                        (rate.BarCur * entry_b.BarangPendapatan)
-                        )
-                        FROM entry_data as entry_b
-                        JOIN rate ON routes.id = rate.id_route AND entry_b.date >= rate.start_date and entry_b.rate_type = rate.rate_type
-                        WHERE MONTHNAME(entry_b.DATE) = "' . $lastMonth . '" AND YEAR(entry_b.DATE) = "' . $lastYear . '" and entry_b.id_ferry = entry_a.id_ferry
-                    ) AS totalLastYear2,
-                    (
-                        SELECT COUNT(case when trips.trip != 1 then 1 END)
-                        FROM entry_data as entry_c
-                        join trips on trips.id = entry_c.id_trip
-                        WHERE MONTHNAME(entry_c.DATE) = "' . $lastMonth . '" AND YEAR(entry_c.DATE) = "' . $lastYear . '"  AND entry_a.id_ferry = entry_c.id_ferry
-                        GROUP BY entry_c.id_ferry     
-                    ) as tripLastYear2,
                     (
                         SELECT sum(trip)
                         FROM harbour_target
