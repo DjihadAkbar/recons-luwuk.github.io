@@ -2237,7 +2237,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                             $originalTime = new DateTime($value["departure_date"]." ".$value['departure_time']);
                                                             $targedTime = new DateTime($value["date"]." ".$value['time']);
                                                             $interval = $originalTime->diff($targedTime);
-                                                            echo $interval->h.' Jam';
+                                                            echo $interval->h.' Jam ';
                                                             echo $interval->i.' Menit';
                                                         ?>
                                                     </td>

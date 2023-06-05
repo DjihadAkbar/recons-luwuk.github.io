@@ -5,6 +5,7 @@ $dataPelabuhan = '';
 $dataPelabuhanTiba = '';
 $dataTrip = '';
 $dataTanggal = '';
+$dataTanggalTiba = '';
 $dataWaktu = '';
 $dataWaktuTiba = '';
 $dataTarif = '';
@@ -30,6 +31,7 @@ foreach ($editData as $row) {
     $dataLintasan = $row['id_route'];
     $dataPelabuhan = $row['id_harbour'];
     $dataTrip = $row['id_trip'];
+    $dataTanggalTiba = $row['departure_date'];
     $dataTanggal = $row['date'];
     $dataWaktu = $row['time'];
     $dataWaktuTiba = $row['departure_time'];
@@ -159,7 +161,7 @@ foreach ($editData as $row) {
             <label for="edit_tanggal_tiba" class="col-4 label-wrap"> Tanggal Tiba </label>
 
             <div class="col-8">
-                <input class="form-control" type="date" id="edit_tanggal_tiba" name="edit_tanggal_tiba" value=<?php echo $dataTanggal; ?> min="2022-11-01">
+                <input class="form-control" type="date" id="edit_tanggal_tiba" name="edit_tanggal_tiba" value=<?php echo $dataTanggalTiba; ?> min="2022-11-01">
             </div>
         </div>
         <div class="form-group row">
