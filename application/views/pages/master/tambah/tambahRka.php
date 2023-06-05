@@ -11,7 +11,7 @@
             <div class="col">
                 <select class="form-control" name="nama_kapal" id="nama_kapal" required>
                     <option value="">No Selected</option>
-                    <?php print_r($kapal); foreach ($kapal as $row) : ?>
+                    <?php foreach ($kapal as $row) : ?>
                         <option value="<?php echo $row['id']; ?>">
                             <?php echo $row['kapal']; ?>
                         </option>

@@ -104,9 +104,7 @@ class Master extends CI_Controller
     {
         $data['title'] = 'Tambah Lintasan';
         $data['contentView'] = "pages/master/tambah/tambahLintasan";
-        $data['kapal'] = $this->Master_model->kapal();
-        $data['lintasan'] = $this->Master_model->semuaLintasan();
-        $data['pelabuhan'] = $this->Master_model->semuaPelabuhan();
+        $data['pelabuhan'] = $this->Master_model->harbourAll();
         
         $this->load->view('template/dashboard/body', $data);
     }
@@ -681,6 +679,9 @@ class Master extends CI_Controller
     {
         $data['title'] = 'Tambah RKA';
         $data['contentView'] = "pages/master/tambah/tambahRka";
+        $data['kapal'] = $this->Master_model->kapal();
+        $data['lintasan'] = $this->Master_model->semuaLintasan();
+        $data['pelabuhan'] = $this->Master_model->semuaPelabuhan();
         
         $this->load->view('template/dashboard/body', $data);
     }
