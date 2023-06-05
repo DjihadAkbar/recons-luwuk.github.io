@@ -104,7 +104,9 @@ class Master extends CI_Controller
     {
         $data['title'] = 'Tambah Lintasan';
         $data['contentView'] = "pages/master/tambah/tambahLintasan";
-        $data['pelabuhan'] = $this->Master_model->harbourAll();
+        $data['kapal'] = $this->Master_model->kapal();
+        $data['lintasan'] = $this->Master_model->semuaLintasan();
+        $data['pelabuhan'] = $this->Master_model->semuaPelabuhan();
         
         $this->load->view('template/dashboard/body', $data);
     }
