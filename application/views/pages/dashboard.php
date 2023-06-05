@@ -2282,7 +2282,8 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                             // Print the result
                                                             printf("%d Hari, %d Jam, "
                                                                 . "%d Menit", $days, $hours, $minutes);
-                                                                echo $hourdiff = round((strtotime($originalTime) - strtotime($targedTime))/3600, 1);
+                                                                $seconds = strtotime($originalTime) - strtotime($targedTime);
+                                                                echo $hours = $seconds / 60 /  60;
                                                         ?>
                                                     </td>
                                                     <td>
