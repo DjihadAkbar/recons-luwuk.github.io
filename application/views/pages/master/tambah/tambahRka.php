@@ -13,7 +13,7 @@
                     <option value="">No Selected</option>
                     <?php foreach ($kapal as $row) : ?>
                         <option value="<?php echo $row['id']; ?>">
-                            <?php echo $row['kapal'].$row['id']; ?>
+                            <?php echo $row['kapal']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -30,7 +30,7 @@
                     <option value="">No Selected</option>
                     <?php foreach ($lintasan as $row) : ?>
                         <option value="<?php echo $row['id']; ?>">
-                            <?php echo $row['lintasan'].$row['id']; ?>
+                            <?php echo $row['lintasan']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -46,12 +46,54 @@
                     <option value="">No Selected</option>
                     <?php foreach ($pelabuhan as $row) : ?>
                         <option value="<?php echo $row['id_harbours']; ?>">
-                            <?php echo $row['pelabuhan'].$row['id_harbours']; ?>
+                            <?php echo $row['pelabuhan']; ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
                 <?php
                 echo form_error('pelabuhan_asal');
                 ?>
+            </div>
+        </div>
+        <div class="form-group row">
+                <label for="tanggalAwalDashboard" class="label-wrap">Tanggal Awal </label>
+            <div class="col">
+                <label for="bulan_dashboard" class="label-wrap">Bulan </label>
+                <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
+                        <?php
+
+                        $bulan = [1 => "JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
+
+
+                        for ($i = 0; $i < 12; $i++) {
+                        $AmbilNamaBulan = strtotime(sprintf('%d month', $i));
+                        $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
+                        $ValueBulan     = date('n', $AmbilNamaBulan);
+                        // if ($ValueBulan <= $i ) continue;
+                    ?>
+                    <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
+                    <?php }?>
+                </select>
+                <?php
+                echo form_error('bulan_dashboard');
+                ?>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="tahun_dashboard" class="label-wrap  ml-2"> TAHUN </label>
+            <div class="col">
+                <div class="col">
+                    <select class="form-control" name="tahun_dashboard" id="tahun_dashboard" required size='1' >
+                    <?php 
+                    for($i = date('Y') -2; $i < date('Y') + 1; $i++){
+                        echo "<option>$i</option>";
+                        
+                    }
+                    ?>
+                    </select>
+                    <?php
+                    echo form_error('tahun_dashboard');
+                    ?>
+                </div>
             </div>
         </div>
