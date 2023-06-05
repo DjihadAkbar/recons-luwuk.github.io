@@ -83,6 +83,20 @@
                             }
                             ?>
                         <tbody>
+                        <tfoot class="thead-dark">
+                            <tr>
+                                <th scope="col"> # </th>
+                                <th scope="col"> Pelabuhan </th>
+                                <th scope="col"> Rute </th>
+                                <th scope="col"> Kapal </th>
+                                <th scope="col"> Bulan </th>
+                                <th scope="col"> Tahun </th>
+                                <th scope="col"> Target Trip </th>
+                                <th scope="col"> Target Pendapatan </th>
+                                <th scope="col"> Action </th>
+                                <th scope="col"> </th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
