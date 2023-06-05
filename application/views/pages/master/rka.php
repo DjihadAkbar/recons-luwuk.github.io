@@ -24,8 +24,8 @@
                         <thead class="thead-dark">
                             <tr>
                                 <th scope="col"> # </th>
+                                <th scope="col"> Lintasan </th>
                                 <th scope="col"> Pelabuhan </th>
-                                <th scope="col"> Rute </th>
                                 <th scope="col"> Kapal </th>
                                 <th scope="col"> Bulan </th>
                                 <th scope="col"> Tahun </th>
@@ -45,10 +45,10 @@
                                         <?php echo $no++; ?>
                                     </th>
                                     <td>
-                                        <?php echo $value['harbour']; ?>
+                                        <?php echo $value['route']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['route']; ?>
+                                        <?php echo $value['harbour']; ?>
                                     </td>
                                     <td>
                                         <?php echo $value['ferry']; ?>
@@ -63,7 +63,7 @@
                                         <?php echo $value['trip']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['target']; ?>
+                                        <?php echo number_format($value['target'], 0, ",", "."); ?>
                                     </td>
                                     <td>
                                         <div class="akses-button">
