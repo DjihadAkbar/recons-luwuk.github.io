@@ -646,4 +646,72 @@ class Master extends CI_Controller
         $this->Master_model->deleteKapal($_GET['id']);
         redirect('dashboard/master/kapal');
     }
+
+    public function rka()
+    {
+        $data['title'] = 'RKA';
+        $data['contentView'] = "pages/master/rka";
+        $data['pelabuhan'] = $this->Master_model->semuaPelabuhan();
+        $this->load->view('template/dashboard/body', $data);
+        // $this->load->view('pages/dashboard', $data);
+    }
+
+    public function editDataRka(){
+        $data['title'] = 'Edit RKA';
+        $data['contentView'] = 'pages/master/edit/editRka';
+        $data['pelabuhan'] = $this->Master_model->pelabuhan();
+        $data['editDataPelabuhan'] = $this->Master_model->editDataPelabuhan($_GET['id']);
+        $this->load->view('template/dashboard/body', $data);
+    }
+
+    public function prosesEditRka(){
+        
+        $dataInput = [
+            'name' => $this->input->post('nama_pelabuhan'),
+            'code' => $this->input->post('code_pelabuhan'),
+            'timezone' => $this->input->post('timezone_pelabuhan'),
+        ];
+        $this->Master_model->editPelabuhan($dataInput, $_GET['id']);
+        redirect('dashboard/master/rka');
+    }
+
+    public function tambahRka()
+    {
+        $data['title'] = 'Tambah RKA';
+        $data['contentView'] = "pages/master/tambah/tambahRka";
+        
+        $this->load->view('template/dashboard/body', $data);
+    }
+    
+    public function prosesTambahRka()
+    {
+        $data['idHighest'] = 0;
+        $id = '';
+        foreach($this->Master_model->harbourAll() as $key => $value){
+            
+            if($data['idHighest'] < substr($value['id_harbours'], strlen($value['id_harbours'])-2,strlen($value['id_harbours']))){
+                $data['idHighest'] = intval(substr($value['id_harbours'], strlen($value['id_harbours'])-2,strlen($value['id_harbours'])));
+            }
+        }
+        if(strlen($data['idHighest']+1) == 1){
+            $id = substr($value['id_harbours'], 0,strlen($value['id_harbours'])-1).$data['idHighest'] + 1;
+        } else {
+            $id = substr($value['id_harbours'], 0,2).$data['idHighest'] + 1;
+        }
+        
+        $dataInput = [
+            'id_harbours' => $id,
+            'harbour' => $this->input->post('pelabuhan'),
+            'name' => $this->input->post('nama_pelabuhan'),
+            'code' => $this->input->post('code_pelabuhan'),
+            'timezone' => $this->input->post('timezone_pelabuhan'),
+        ];
+        $this->Master_model->tambahPelabuhan($dataInput);
+        redirect('dashboard/master/rka');
+    }
+
+    public function deleteRka(){
+        $this->Master_model->deletePelabuhan($_GET['id']);
+        redirect('dashboard/master/rka');
+    }
 }

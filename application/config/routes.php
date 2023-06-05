@@ -114,6 +114,7 @@ $route['dashboard/master/kapal/tambahRka'] = 'master/tambahRka';
 $route['dashboard/master/kapal/prosesTambahRka'] = 'master/prosesTambahRka';
 $route['dashboard/master/kapal/deleteRka'] = 'master/deleteRka';
 $route['dashboard/master/kapal/prosesEditRka'] = 'master/prosesEditRka';
+$route['dashboard/master/rka'] = 'master/rka';
 
 
 //Report
