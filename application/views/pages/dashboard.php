@@ -2511,6 +2511,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Minggu </th>
                                                 <th scope="col">Waktu Tiba </th>
                                                 <th scope="col">Waktu Keberangkatan </th>
+                                                <th scope="col">Waktu Sandar </th>
                                                 <th scope="col">Nama Kapal </th>
                                                 <th scope="col">Lintasan </th>
                                                 <th scope="col">Pelabuhan Asal </th>
