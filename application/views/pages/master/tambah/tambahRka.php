@@ -56,10 +56,9 @@
             </div>
         </div>
         <div class="form-group row">
-                <label for="tanggalAwalDashboard" class="label-wrap">Tanggal Awal </label>
+            <label for="bulanRka" class=" col-4 label-wrap"> Bulan </label>
             <div class="col">
-                <label for="bulan_dashboard" class="label-wrap">Bulan </label>
-                <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
+                <select class="form-control" name="bulanRka" id="bulanRka" required size='1'>
                         <?php
 
                         $bulan = [1 => "JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
@@ -75,25 +74,22 @@
                     <?php }?>
                 </select>
                 <?php
-                echo form_error('bulan_dashboard');
+                echo form_error('bulanRka');
                 ?>
             </div>
         </div>
         <div class="form-group row">
-            <label for="tahun_dashboard" class="label-wrap  ml-2"> TAHUN </label>
+            <label for="tahunRka" class="col-4 label-wrap"> Tahun </label>
             <div class="col">
-                <div class="col">
-                    <select class="form-control" name="tahun_dashboard" id="tahun_dashboard" required size='1' >
+                    <select class="form-control" name="tahunRka" id="tahunRka" required size='1' >
                     <?php 
                     for($i = date('Y') -2; $i < date('Y') + 1; $i++){
                         echo "<option>$i</option>";
-                        
                     }
                     ?>
                     </select>
                     <?php
-                    echo form_error('tahun_dashboard');
+                    echo form_error('tahunRka');
                     ?>
-                </div>
             </div>
         </div>
