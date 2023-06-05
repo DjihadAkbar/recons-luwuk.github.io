@@ -2282,7 +2282,8 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                             // Print the result
                                                             printf("%d Hari %d Jam "
                                                                 . "%d Menit", $days, $hours, $minutes);
-                                                                $durasiSandar = $hours + ($days * 24);
+                                                            
+                                                            $durasiSandar = $hours + ($days * 24);
                                                         ?>
                                                     </td>
                                                     <td>

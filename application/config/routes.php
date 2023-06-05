@@ -110,6 +110,10 @@ $route['dashboard/master/tarif/deleteTarif'] = 'master/deleteTarif';
 $route['dashboard/master/pelabuhan/deletePelabuhan'] = 'master/deletePelabuhan';
 $route['dashboard/master/lintasan/deleteLintasan'] = 'master/deleteLintasan';
 $route['dashboard/master/kapal/deleteKapal'] = 'master/deleteKapal';
+$route['dashboard/master/kapal/tambahRka'] = 'master/tambahRka';
+$route['dashboard/master/kapal/prosesTambahRka'] = 'master/prosesTambahRka';
+$route['dashboard/master/kapal/deleteRka'] = 'master/deleteRka';
+$route['dashboard/master/kapal/prosesEditRka'] = 'master/prosesEditRka';
 
 
 //Report
