@@ -83,7 +83,7 @@
             <div class="col">
                     <select class="form-control" name="tahunRka" id="tahunRka" required size='1' >
                     <?php 
-                    for($i = date('Y') -2; $i < date('Y') + 1; $i++){
+                    for($i = date('Y') -1; $i < date('Y') + 1; $i++){
                         echo "<option>$i</option>";
                     }
                     ?>
