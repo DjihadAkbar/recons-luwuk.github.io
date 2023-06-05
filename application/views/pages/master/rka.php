@@ -45,13 +45,13 @@
                                         <?php echo $no++; ?>
                                     </th>
                                     <td>
-                                        <?php echo $value['id_harbours']; ?>
+                                        <?php echo $value['harbour']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['id_route']; ?>
+                                        <?php echo $value['route']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['id_ferry']; ?>
+                                        <?php echo $value['ferry']; ?>
                                     </td>
                                     <td>
                                         <?php echo $value['month']; ?>
