@@ -325,7 +325,7 @@ class Master_model extends CI_Model
     public function target()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('*');
+        $this->db->select('*, routes.route as rute');
         $this->db->join('routes', 'routes.id = harbour_target.id_route');
         $this->db->join('harbours', 'harbours.id_harbours = harbour_target.id_harbour');
         $this->db->join('ferry', 'ferry.id = harbour_target.id_ferry');
