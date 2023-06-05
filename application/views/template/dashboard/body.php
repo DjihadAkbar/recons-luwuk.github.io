@@ -40,7 +40,7 @@ if (!$this->session->userdata('logged_in'))
                             <?php echo anchor('dashboard/master/lintasan', 'Lintasan') ?>
                             <?php echo anchor('dashboard/master/kapal', 'Kapal') ?>
                             <?php echo anchor('dashboard/master/tarif', 'Tarif') ?>
-                            <?php echo anchor('dashboard/rka', 'RKA') ?>
+                            <?php echo anchor('dashboard/master/rka', 'RKA') ?>
                         </li>
                     </ul>
                 </li>
