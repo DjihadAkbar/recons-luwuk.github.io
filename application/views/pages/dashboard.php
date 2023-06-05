@@ -2234,8 +2234,8 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     </td>
                                                     <td>
                                                         <?php
-                                                            $originalTime = $value['departure_time'];
-                                                            $targedTime = $value['time'];
+                                                            $originalTime = new DateTime($value['departure_time']);
+                                                            $targedTime = new DateTime($value['time']);
                                                             $interval = $originalTime->diff($targedTime);
                                                             echo $interval->format("%H:%I:%S (Full days: %a)"), "\n";
                                                         ?>
