@@ -1120,9 +1120,7 @@ if ($this->session->userdata['type'] != '') {
         <div class="card">
             <div class="card-header" id="headingFour">
                 <h5 class="mb-0">
-                    <button style="text-decoration:none;
-    display: block;
-color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    <button style="text-decoration:none; display: block; color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         <?php
                         // if (getBulan(date("F")) != null) {
                         //     echo "Perbandingan Realisasi " . getBulan(date("F")) . " " . date("Y") . " & RKA " . getBulan(date("F")) . " " . date("Y");
@@ -1138,6 +1136,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                     <!-- Perbandingan Total Bulan dan RKA -->
                     <div class="card mt-3">
                         <?php
+                        print_r($incomePerRoute);
                         foreach ($incomePerRoute as $key => $value) {
                         ?>
                             <?php $monthname = $value['month_date']; ?>
