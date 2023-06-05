@@ -2280,8 +2280,8 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                                             - $hours*60*60 - $minutes*60));
                                                             
                                                             // Print the result
-                                                            printf("%d days, %d hours, "
-                                                                . "%d minutes", $days, $hours, $minutes);
+                                                            printf("%d Hari, %d Jam, "
+                                                                . "%d Menit", $days, $hours, $minutes);
                                                         ?>
                                                     </td>
                                                     <td>
