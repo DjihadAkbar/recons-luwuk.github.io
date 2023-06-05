@@ -2085,6 +2085,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                 <th scope="col">Minggu </th>
                                                 <th scope="col">Waktu Tiba </th>
                                                 <th scope="col">Waktu Keberangkatan </th>
+                                                <th scope="col">Waktu Sandar </th>
                                                 <th scope="col">Nama Kapal </th>
                                                 <th scope="col">Lintasan </th>
                                                 <th scope="col">Pelabuhan Asal </th>
@@ -2230,6 +2231,14 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     </td>
                                                     <td>
                                                         <?php echo $value['time']; ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php
+                                                            $originalTime = $value['departure_time'];
+                                                            $targedTime = $value['time'];
+                                                            $interval = $originalTime->diff($targedTime);
+                                                            echo $interval->format("%H:%I:%S (Full days: %a)"), "\n";
+                                                        ?>
                                                     </td>
                                                     <td>
                                                         <?php echo $value['ferry']; ?>
