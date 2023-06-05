@@ -12,7 +12,7 @@
             <div class="tambah-data">  
                 <?php
                 $dataAnchor = ['class' => 'btn btn-dark text-light akses-button'];
-                echo anchor('dashboard/master/rka/tambahRka', 'Tambah Data', $dataAnchor);
+                echo anchor('master/tambahRka', 'Tambah Data', $dataAnchor);
                 ?>
             </div>
     </div>
