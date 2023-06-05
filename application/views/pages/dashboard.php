@@ -2281,7 +2281,7 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                             
                                                             // Print the result
                                                             printf("%d days, %d hours, "
-                                                                . "%d minutes, %d seconds", $days, $hours, $minutes, $seconds);
+                                                                . "%d minutes", $days, $hours, $minutes);
                                                         ?>
                                                     </td>
                                                     <td>
