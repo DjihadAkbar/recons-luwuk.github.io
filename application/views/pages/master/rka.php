@@ -38,7 +38,7 @@
                         <tbody>
                             <?php
                             $no = 1;
-                            foreach ($pelabuhan as $key => $value) {
+                            foreach ($target as $key => $value) {
                                 ?>
                                 <tr>
                                     <th scope="row">
@@ -48,18 +48,23 @@
                                         <?php echo $value['id_harbours']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['pelabuhan']; ?>
+                                        <?php echo $value['id_route']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['name']; ?>
+                                        <?php echo $value['id_ferry']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['code']; ?>
+                                        <?php echo $value['month']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $value['timezone']; ?>
+                                        <?php echo $value['year']; ?>
                                     </td>
-
+                                    <td>
+                                        <?php echo $value['trip']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $value['target']; ?>
+                                    </td>
                                     <td>
                                         <div class="akses-button">
                                         <a class="btn btn-warning text-dark" href="pelabuhan/editDataPelabuhan?id=<?php echo $value['id_harbours']; ?>"><i class="fas fa-file-edit"></i></a>

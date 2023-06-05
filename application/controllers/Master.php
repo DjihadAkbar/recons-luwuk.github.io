@@ -651,7 +651,7 @@ class Master extends CI_Controller
     {
         $data['title'] = 'RKA';
         $data['contentView'] = "pages/master/rka";
-        $data['target'] = $this->Master_model->harbour_target();
+        $data['target'] = $this->Master_model->target();
         $this->load->view('template/dashboard/body', $data);
         // $this->load->view('pages/dashboard', $data);
     }
