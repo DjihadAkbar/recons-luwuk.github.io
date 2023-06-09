@@ -5,7 +5,7 @@ class Master_model extends CI_Model
     public function rate()
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('*,rate.id as id_rate');
+        $this->db->select('*,rate.id as id_rate, routes.route as rute');
         $this->db->join('routes', 'routes.id = rate.id_route');
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
@@ -21,7 +21,7 @@ class Master_model extends CI_Model
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->distinct();
-        $this->db->select('rate_type as tarif, routes.route as rute');
+        $this->db->select('rate_type as tarif');
         $this->db->join('routes', 'rate.id_route = routes.id');
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
