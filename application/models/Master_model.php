@@ -14,7 +14,7 @@ class Master_model extends CI_Model
         }
         // $this->db->where('is_displaying', 'Y');
         // $this->db->where('is_aproved', 'Y');
-        $this->db->order_by('start_date ASC');
+        $this->db->order_by('start_date DESC');
         $query = $this->db->get('rate')->result_array();
         return $query;
     }
@@ -297,7 +297,7 @@ class Master_model extends CI_Model
     public function lintasanWIthId($id)
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
-        $this->db->select('route as lintasan');
+        $this->db->select('routes.route as lintasan');
         $this->db->where('id', $id);
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {
