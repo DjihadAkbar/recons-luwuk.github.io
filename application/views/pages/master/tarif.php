@@ -781,7 +781,7 @@ $ifEdit = 'Edit'; ?>
                                             ?>
                                         </td>
                                         <td>
-                                            <?php echo $value['route']; ?>
+                                            <?php echo $value['rute']; ?>
                                         </td>
                                         <td>
                                             <?php echo $value['Sandar']; ?>
