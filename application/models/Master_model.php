@@ -14,6 +14,7 @@ class Master_model extends CI_Model
         }
         // $this->db->where('is_displaying', 'Y');
         // $this->db->where('is_aproved', 'Y');
+        $this->db->order_by('start_date ASC');
         $query = $this->db->get('rate')->result_array();
         return $query;
     }
