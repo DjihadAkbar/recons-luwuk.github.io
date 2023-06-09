@@ -504,10 +504,10 @@ class Master extends CI_Controller
         $dataInput = [
             'start_date' => $this->input->post('tanggal_berangkat'),
             // 'rate_type' => $this->input->post('jenis_tarif'),
-            'post_person' => $this->session->userdata['name'],
+            // 'post_person' => $this->session->userdata['name'],
             // 'uploader' => $this->session->userdata['name'],
-            'act' => 'UPLOAD',
-            'aprove_status' => 'P',
+            // 'act' => 'UPLOAD',
+            // 'aprove_status' => 'P',
             'rate_type' => $valueTarif,
             'id_route' => $this->input->post('lintasan'),
             'Gol1' => $this->input->post('Gol1'),
