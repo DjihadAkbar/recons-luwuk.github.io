@@ -412,7 +412,8 @@ class Master extends CI_Controller
             'BayiEkonomiPasMasuk' => $this->input->post('BayiEkonomiPasMasuk'),
         ];
         $this->Master_model->editTarif($dataInput, $_GET['id']);
-        redirect('dashboard/master/tarif');
+        // redirect('dashboard/master/tarif');
+        redirect('dashboard/entry/testEntry');
     }
 
 
