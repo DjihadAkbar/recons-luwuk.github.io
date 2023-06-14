@@ -629,7 +629,7 @@ class Master extends CI_Controller
         $this->Master_model->tambahTarif($dataInput);
         // redirect('dashboard/master/tarif');
         
-        redirect('dashboard/pages/entry/testEntry');
+        redirect('dashboard/entry/testEntry');
     }
 
     public function deleteTarif(){

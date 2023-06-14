@@ -73,6 +73,7 @@ $route['dashboard/entry/editEntryDestination'] = 'entry/editEntryDestination';
 $route['dashboard/entry/prosesEditEntryDestination'] = 'entry/prosesEditEntryDestination';
 $route['dashboard/entry/entryData'] = 'entry/entryData';
 $route['dashboard/entry/prosesEntry'] = 'entry/prosesEntry';
+$route['dashboard/entry/testEntry'] = 'entry/testEntry';
 $route['dashboard/machine'] = 'machine/index';
 $route['dashboard/account'] = 'account/index';
 $route['dashboard/account/changeAccount'] = 'account/changeAccount';
