@@ -493,6 +493,9 @@ class Master extends CI_Controller
         $data['lintasan'] = $this->Master_model->lintasanWIthId($this->input->post('lintasan'));
         $tahun = substr($this->input->post('tanggal_berangkat'),2,-6);
         $bulan = substr($this->input->post('tanggal_berangkat'),5,-3);
+
+        $data['title'] = 'Tambah Tarif';
+        $data['contentView'] = "pages/master/tambah/tambahTarif";
         
         foreach($data['lintasan'] as $key => $value){
             $namaLintasan = str_replace(' ', '',ucwords(str_replace('-', ' ', strtolower($value['lintasan']))));
@@ -628,8 +631,6 @@ class Master extends CI_Controller
         ];
         $this->Master_model->tambahTarif($dataInput);
         // redirect('dashboard/master/tarif');
-        
-        redirect('dashboard/entry/testEntry');
     }
 
     public function deleteTarif(){
