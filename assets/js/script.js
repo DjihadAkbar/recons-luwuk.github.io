@@ -119,5 +119,15 @@ $(document).ready(function(){
     //     // $("#lintasan option[value='"+$(this).val+"']").remove();
     // })
 
+    //Hide Filter
+    $('#hideFilter').click(function(){
+        var filter = document.getElementById('#filterDashboard');
+        if(filter.getAttribute("hidden") == null){
+            filter.hide();
+        } else {
+            filter.show();
+        }
+    })
+    
 });
 
