@@ -14,8 +14,8 @@ function formatRupiah($angka)
 if ($this->session->userdata['type'] != '') {
 ?>
 
-<a href="" id="hideFilter">Filter</a>
-<div class="form-group row mb-n4" id="filterDashboard" hidden>
+<a href="" class="hideFilter">Filter</a>
+<div class="form-group row mb-n4" class="filterDashboard" hidden>
     <div class="form-group col">
     <?php
         echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
