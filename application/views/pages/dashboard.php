@@ -23,7 +23,7 @@ if ($this->session->userdata['type'] != '') {
     </button>
 </div>
 <div class="collapse" id="collapse1">
-    <div class="form-group row mb-n4" class="filterDashboard" hidden>
+    <div class="form-group row mb-n4" class="filterDashboard">
         <div class="form-group col">
         <?php
             echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
