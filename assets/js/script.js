@@ -121,14 +121,17 @@ $(document).ready(function(){
 
     //Hide Filter
     $('#hideFilter').click(function(){
-        var filter = document.getElementById('#filterDashboard');
-        alert(filter);
-        if(filter.getAttribute("hidden") == null){
-            filter.hide();
+        if(document.getElementById('#filterDashboard').getAttribute("hidden") == null){
+            document.getElementById('#filterDashboard').hide();
+            $(this).text("-");
         } else {
-            filter.show();
+            document.getElementById('#filterDashboard').show();
+            $(this).text("+");
         }
+
+
     })
+
     
 });
 
