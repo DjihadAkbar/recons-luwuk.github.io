@@ -122,6 +122,7 @@ $(document).ready(function(){
     //Hide Filter
     $('#hideFilter').click(function(){
         var filter = document.getElementById('#filterDashboard');
+        alert(filter);
         if(filter.getAttribute("hidden") == null){
             filter.hide();
         } else {
