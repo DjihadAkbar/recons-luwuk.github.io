@@ -13,65 +13,74 @@ function formatRupiah($angka)
 
 if ($this->session->userdata['type'] != '') {
 ?>
-
-<a href="" class="hideFilter">Filter</a>
-<div class="form-group row mb-n4" class="filterDashboard" hidden>
-    <div class="form-group col">
-    <?php
-        echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
-            ?>
-        <div class="form-group row">
-            <div class="form-group col-2">
-                <label for="tanggalAwalDashboard" class="label-wrap">Tanggal Awal </label>
-                <input type="number" name="tanggalAwalDashboard" id="tanggalAwalDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
-            </div>
-            <div class="form-group col-2">
-                <label for="tanggalAkhirDashboard" class="label-wrap">Tanggal Akhir </label>
-                <input type="number" name="tanggalAkhirDashboard" id="tanggalAkhirDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="31" min="1" max="31">
-            </div>
-            <div class="form-group col-3">
-                <label for="bulan_dashboard" class="label-wrap">Bulan </label>
-                <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
-                        <?php
-
-                        $bulan = [1 => "JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
-
-
-                        for ($i = 0; $i < 12; $i++) {
-                        $AmbilNamaBulan = strtotime(sprintf('%d month', $i));
-                        $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
-                        $ValueBulan     = date('n', $AmbilNamaBulan);
-                        // if ($ValueBulan <= $i ) continue;
-                    ?>
-                    <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
-                    <?php }?>
-                </select>
-                <?php
-                echo form_error('bulan_dashboard');
+<div class="col-1">
+    <button style="background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="<?php echo $row['id_production'] . "2serialNumber" ?>">
+        Filter
+    </button>
+</div>
+<div class="collapse" id="collapse1">
+    <div class="form-group row mb-n4" class="filterDashboard" hidden>
+        <div class="form-group col">
+        <?php
+            echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
                 ?>
-            </div>
-            <div class="form-group col-2">
-                <label for="tahun_dashboard" class="label-wrap  ml-2"> TAHUN </label>
-                <div class="col">
-                    <select class="form-control" name="tahun_dashboard" id="tahun_dashboard" required size='1' >
-                    <?php 
-                    for($i = date('Y') -2; $i < date('Y') + 1; $i++){
-                        echo "<option>$i</option>";
-                        
-                    }
-                    ?>
+            <div class="form-group row">
+                <div class="form-group col-2">
+                    <label for="tanggalAwalDashboard" class="label-wrap">Tanggal Awal </label>
+                    <input type="number" name="tanggalAwalDashboard" id="tanggalAwalDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="1" min="1" max="31">
+                </div>
+                <div class="form-group col-2">
+                    <label for="tanggalAkhirDashboard" class="label-wrap">Tanggal Akhir </label>
+                    <input type="number" name="tanggalAkhirDashboard" id="tanggalAkhirDashboard" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" value="31" min="1" max="31">
+                </div>
+                <div class="form-group col-3">
+                    <label for="bulan_dashboard" class="label-wrap">Bulan </label>
+                    <select class="form-control" name="bulan_dashboard" id="bulan_dashboard" required size='1'>
+                            <?php
+
+                            $bulan = [1 => "JANUARI","FEBRUARI","MARET","APRIL","MEI","JUNI","JULI","AGUSTUS","SEPTEMBER","OKTOBER","NOVEMBER","DESEMBER"];
+
+
+                            for ($i = 0; $i < 12; $i++) {
+                            $AmbilNamaBulan = strtotime(sprintf('%d month', $i));
+                            $LabelBulan     = $bulan[date('n', $AmbilNamaBulan)];
+                            $ValueBulan     = date('n', $AmbilNamaBulan);
+                            // if ($ValueBulan <= $i ) continue;
+                        ?>
+                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
+                        <?php }?>
                     </select>
                     <?php
-                    echo form_error('tahun_dashboard');
+                    echo form_error('bulan_dashboard');
                     ?>
                 </div>
-            </div>
-            <div class="form-group col-3">
-            <label for="bulan_report" class="label-wrap">&#8203 </label>
-            <?php
-            echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block' ], 'Filter');
-            echo form_close();
-            ?>     
+                <div class="form-group col-2">
+                    <label for="tahun_dashboard" class="label-wrap  ml-2"> TAHUN </label>
+                    <div class="col">
+                        <select class="form-control" name="tahun_dashboard" id="tahun_dashboard" required size='1' >
+                        <?php 
+                        for($i = date('Y') -2; $i < date('Y') + 1; $i++){
+                            echo "<option>$i</option>";
+                            
+                        }
+                        ?>
+                        </select>
+                        <?php
+                        echo form_error('tahun_dashboard');
+                        ?>
+                    </div>
+                </div>
+                <div class="form-group col-3">
+                <label for="bulan_report" class="label-wrap">&#8203 </label>
+                <?php
+                echo form_submit(['name' => 'submit', 'class' => 'btn btn-dark btn-block' ], 'Filter');
+                echo form_close();
+                ?>     
+                </div>
             </div>
         </div>
     </div>
