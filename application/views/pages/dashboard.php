@@ -14,7 +14,7 @@ function formatRupiah($angka)
 if ($this->session->userdata['type'] != '') {
 ?>
 
-<button id="hideFilter">Filter</button>
+<a href="" id="hideFilter">Filter</a>
 <div class="form-group row mb-n4" id="filterDashboard" hidden>
     <div class="form-group col">
     <?php
