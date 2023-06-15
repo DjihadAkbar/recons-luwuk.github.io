@@ -18,7 +18,7 @@ if ($this->session->userdata['type'] != '') {
     border:none;
     margin:0;
     padding:0;
-    cursor: pointer;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="<?php echo $row['id_production'] . "2serialNumber" ?>">
+    cursor: pointer;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
         Filter
     </button>
 </div>
