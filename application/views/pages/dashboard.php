@@ -355,7 +355,7 @@ if ($this->session->userdata['type'] != '') {
                                         if($firstDate == null || $firstDate == ''){
                                             echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                         } else {
-                                            echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", strtotime($month))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", strtotime($month))) . " " . $year;
+                                            echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year;
                                         }
                                     ?> 
                         </div> 
@@ -391,7 +391,7 @@ if ($this->session->userdata['type'] != '') {
                                                 if($firstDate == null || $firstDate == ''){
                                                     echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                                 } else {
-                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", strtotime($month))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", strtotime($month))) . " " . $year;
+                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year;
                                                 } 
                                                 ?>
                                             </th>
@@ -468,7 +468,7 @@ if ($this->session->userdata['type'] != '') {
                                                 if($firstDate == null || $firstDate == ''){
                                                     echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                                                 } else {
-                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", strtotime($month))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", strtotime($month))) . " " . $year;
+                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year;
                                                 } 
                                                 ?>
                                             </th>
@@ -544,7 +544,7 @@ if ($this->session->userdata['type'] != '') {
                                                 if($firstDate == null || $firstDate == ''){
                                                     echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F",strtotime('month'))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F",strtotime('month'))) . " " . date("Y");
                                                 } else {
-                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", strtotime($month))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", strtotime($month))) . " " . $year;
+                                                    echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year;
                                                 } 
                                                 ?>
                                             </th>
@@ -607,7 +607,7 @@ if ($this->session->userdata['type'] != '') {
                             if($firstDate == null || $firstDate == ''){
                                 echo "Jumlah Produksi Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
                             } else {
-                                echo "Jumlah Produksi Pertanggal ". $firstDate . " " . getBulan(date("F", strtotime($month))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", strtotime($month))) . " " . $year;
+                                echo "Jumlah Produksi Pertanggal ". $firstDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", mktime(0, 0, 0, $month, 10))) . " " . $year;
                             }
                         // }
                         ?>
