@@ -14,11 +14,12 @@ function formatRupiah($angka)
 if ($this->session->userdata['type'] != '') {
 ?>
 <div class="col-1">
-    <button style="background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+    <button style="border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
         Filter
     </button>
 </div>
