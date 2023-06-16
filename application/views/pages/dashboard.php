@@ -541,7 +541,7 @@ if ($this->session->userdata['type'] != '') {
 
                                             <?php 
                                                 if($firstDate == null || $firstDate == ''){
-                                                    echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F")) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F")) . " " . date("Y");
+                                                    echo "Total Pendapatan Pertanggal 1 " . getBulan(date("F",strtotime('month'))) . " " . date("Y") . " s.d " . date("d") . " " . getBulan(date("F",strtotime('month'))) . " " . date("Y");
                                                 } else {
                                                     echo "Total Pendapatan Pertanggal ". $firstDate . " " . getBulan(date("F", strtotime($month))) . " " . $year . " s.d " . $lastDate . " " . getBulan(date("F", strtotime($month))) . " " . $year;
                                                 } 
