@@ -16,6 +16,7 @@ if ($this->session->userdata['type'] != '') {
 <div class="col-1">
     <button style="border: none;
   background-color: inherit;
+  color: black;
   padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
