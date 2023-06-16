@@ -17,7 +17,6 @@ if ($this->session->userdata['type'] != '') {
     <button style="border: none;
   background-color: inherit;
   color: black;
-  padding: 14px 28px;
   font-size: 16px;
   cursor: pointer;
   display: inline-block;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
