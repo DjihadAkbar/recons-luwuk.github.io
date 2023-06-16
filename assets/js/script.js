@@ -120,14 +120,11 @@ $(document).ready(function(){
     // })
 
     //Hide Filter
-    $('#hideFilter').click(function(){
-         
-        if($("#filterDashboard").attr("hidden") == null){
-            $("#filterDashboard").hide();
-            $(this).text("Tutup Filter");
+    $('.hideFilter').click(function(){
+        if($(this).attr("aria-expanded") == 'true'){
+            $(this).text("-");
         } else {
-            $('#filterDashboard').show();
-            $(this).text("Filter");
+            $(this).text("+");
         }
     })
 

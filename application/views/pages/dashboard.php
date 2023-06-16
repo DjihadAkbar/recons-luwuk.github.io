@@ -19,7 +19,7 @@ if ($this->session->userdata['type'] != '') {
   color: black;
   font-size: 16px;
   cursor: pointer;
-  display: inline-block;" class="btn btn-primary button-collapse" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+  display: inline-block;" class="btn btn-primary hideFilter" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
         Filter
     </button>
 </div>
