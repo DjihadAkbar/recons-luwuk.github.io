@@ -13,7 +13,7 @@ function formatRupiah($angka)
 
 if ($this->session->userdata['type'] != '') {
 ?>
-<div class="col-1">
+<div class="col">
     <button style="border: none;
     margin-left:0;
   background-color: inherit;
