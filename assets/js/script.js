@@ -124,10 +124,10 @@ $(document).ready(function(){
          
         if($("#filterDashboard").attr("hidden") == null){
             $("#filterDashboard").hide();
-            $(this).text("-");
+            $(this).text("Tutup Filter");
         } else {
             $('#filterDashboard').show();
-            $(this).text("+");
+            $(this).text("Filter");
         }
     })
 
