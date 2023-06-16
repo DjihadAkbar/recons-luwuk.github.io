@@ -4,7 +4,6 @@ $datename = '';
 $totalTrip = 0;
 $dailyTrip = 0;
 $merged_array = [];
-echo $month;
 function formatRupiah($angka)
 {
     $formatRupiah = "Rp " . number_format($angka, 0, ',', '.');
