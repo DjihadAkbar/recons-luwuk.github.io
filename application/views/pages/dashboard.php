@@ -18,7 +18,6 @@ if ($this->session->userdata['type'] != '') {
     margin-left:0;
   background-color: inherit;
   color: black;
-  padding-right:16px;
   font-size: 16px;
   cursor: pointer;
   display: inline-block;" class="btn btn-primary hideFilter" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
