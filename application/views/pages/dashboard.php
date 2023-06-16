@@ -52,7 +52,7 @@ if ($this->session->userdata['type'] != '') {
                             $ValueBulan     = date('n', $AmbilNamaBulan);
                             // if ($ValueBulan <= $i ) continue;
                         ?>
-                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
+                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan.$ValueBulan;?></option>
                         <?php }?>
                     </select>
                     <?php
