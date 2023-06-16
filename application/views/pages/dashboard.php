@@ -15,6 +15,7 @@ if ($this->session->userdata['type'] != '') {
 ?>
 <div class="col-1">
     <button style="border: none;
+    margin-left:0;
   background-color: inherit;
   color: black;
   padding-right:16px;
@@ -53,7 +54,7 @@ if ($this->session->userdata['type'] != '') {
                             $ValueBulan     = date('n', $AmbilNamaBulan);
                             // if ($ValueBulan <= $i ) continue;
                         ?>
-                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan.$ValueBulan;?></option>
+                        <option value="<?php echo $ValueBulan;?>"><?php echo $LabelBulan;?></option>
                         <?php }?>
                     </select>
                     <?php
