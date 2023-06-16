@@ -122,9 +122,9 @@ $(document).ready(function(){
     //Hide Filter
     $('.hideFilter').click(function(){
         if($(this).attr("aria-expanded") == 'true'){
-            $(this).text("-");
+            $(this).text("Tutup Filter");
         } else {
-            $(this).text("+");
+            $(this).text("Filter");
         }
     })
 
