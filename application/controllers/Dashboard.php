@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller
         $data['lastDate'] = $this->input->post('tanggalAkhirDashboard');
         $data['month'] = $this->input->post('bulan_dashboard');
         $data['year'] = $this->input->post('tahun_dashboard');
+        
         $data['title'] = 'Dashboard';
         $data['contentView'] = 'pages/dashboard';
         $data['pendapatan'] = $this->Income_model->pendapatan();
