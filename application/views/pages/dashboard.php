@@ -20,7 +20,7 @@ if ($this->session->userdata['type'] != '') {
     <div class="form-group row mb-n4" class="filterDashboard">
         <div class="form-group col">
         <?php
-            echo form_open(base_url('dashboard/index'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
+            echo form_open(base_url('dashboard'), ['class' => 'form-report','method' => 'POST', 'id' => 'form-report']);
                 ?>
             <div class="form-group row">
                 <div class="form-group col-2">
