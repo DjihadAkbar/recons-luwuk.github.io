@@ -12,7 +12,7 @@ function formatRupiah($angka)
 
 if ($this->session->userdata['type'] != '') {
 ?>
-<button style="margin-bottom:10px;" class="btn btn-primary hideFilter" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+<button style="margin-bottom:10px;" class="btn btn-dark text-light hideFilter" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
     Filter
 </button>
 
