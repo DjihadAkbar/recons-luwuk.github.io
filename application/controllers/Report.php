@@ -797,8 +797,6 @@ class Report extends CI_Controller
         // $myWorkSheet->getStyle('C18:J30')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
         // $myWorkSheet->getStyle('C32:J34')->getNumberFormat()->setFormatCode(\PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_NUMBER_0);
 
-        $sheet->getPageSetup()->setPrintArea('A1:J45');
-
         $styleArray = array(
             'allBorders' => array(
                 'outline' => array(
