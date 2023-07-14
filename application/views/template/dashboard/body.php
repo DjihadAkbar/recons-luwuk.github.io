@@ -14,7 +14,7 @@ if (!$this->session->userdata('logged_in'))
             <li class="<?php
                         echo menuAktif('dashboard');
                         ?>">
-                <?php echo anchor('dashboard', 'Dashboard'+$title) ?>
+                <?php echo anchor('dashboard', 'Dashboard') ?>
             </li>
             <?php
             if ($this->session->userdata['type'] != '') {
@@ -258,7 +258,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'excelHtml5',
-                    filename: 'Ini Judulnya',
+                    filename: userType,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
