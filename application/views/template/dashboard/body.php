@@ -196,13 +196,14 @@ if (!$this->session->userdata('logged_in'))
         $('.akses-button').show();
     }
 
+    var title = "<?php echo $title" ?>";
+    if (title != "Dashboard") {
+        title = "<?php echo $title; ?>";
+    } else {
+        title = '';
+    }
+    
     $(document).ready(function() {
-        var title = "<?php echo "$title" ?>"
-        if (title != "Dashboard") {
-            title = "<?php echo "$title" ?>"
-        } else {
-            title = '';
-        }
 
         $('table.table-data').DataTable({
             columnDefs: [{
@@ -235,21 +236,21 @@ if (!$this->session->userdata('logged_in'))
             
             buttons: [{
                     extend: 'copy',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-primary mr-1 mb-2',
                     text: '<i class="fas fa-copy"></i> ',
                     titleAttr: 'Copy to Clipboard',
                 },
                 {
                     extend: 'csv',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-csv"></i> ',
                     titleAttr: 'Export to CSV',
                 },
                 {
                     extend: 'pdfHtml5',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-danger mr-1 mb-2',
                     text: '<i class="fas fa-file-pdf"></i> ',
                     titleAttr: 'Export to PDF',
@@ -258,7 +259,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'excelHtml5',
-                    filename: userType,
+                    filename: 'Ini Judulnya',
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
@@ -270,7 +271,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'print',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-secondary mr-1 mb-2',
                     text: '<i class="fa fa-print"></i> ',
                     titleAttr: 'Imprimir',
