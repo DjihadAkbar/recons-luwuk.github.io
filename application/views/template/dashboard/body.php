@@ -14,7 +14,7 @@ if (!$this->session->userdata('logged_in'))
             <li class="<?php
                         echo menuAktif('dashboard');
                         ?>">
-                <?php echo anchor('dashboard', 'Dashboard'.$title) ?>
+                <?php echo anchor('dashboard', 'Dashboard') ?>
             </li>
             <?php
             if ($this->session->userdata['type'] != '') {
@@ -197,9 +197,9 @@ if (!$this->session->userdata('logged_in'))
     }
 
     $(document).ready(function() {
-        var title = "<?php echo "$title" ?>";
+        var title = "<?php echo "$title" ?>"
         if (title != "Dashboard") {
-            title = "<?php echo "$title" ?>";
+            title = "<?php echo "$title" ?>"
         } else {
             title = '';
         }
@@ -258,7 +258,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'excelHtml5',
-                    filename: title,
+                    filename: 'Ini Judulnya',
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
