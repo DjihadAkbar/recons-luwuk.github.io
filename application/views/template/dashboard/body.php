@@ -252,7 +252,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'excelHtml5',
-                    filename: *,
+                    filename: title,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
