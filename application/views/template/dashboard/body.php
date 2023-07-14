@@ -197,9 +197,9 @@ if (!$this->session->userdata('logged_in'))
     }
 
     $(document).ready(function() {
-        var title = "<?php echo "$title" ?>"
+        var title = "<?php echo "$title" ?>";
         if (title != "Dashboard") {
-            title = "<?php echo "$title" ?>"
+            title = "<?php echo "$title" ?>";
         } else {
             title = '';
         }
