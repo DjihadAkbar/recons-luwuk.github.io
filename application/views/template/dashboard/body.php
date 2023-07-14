@@ -196,11 +196,11 @@ if (!$this->session->userdata('logged_in'))
     }
 
     $(document).ready(function() {
-        var title = "<?php echo $title; ?>"
-        if (title != "Dashboard") {
-            title = "<?php echo $title; ?>"
+        var $title = "<?php echo $title; ?>"
+        if ($title != "Dashboard") {
+            $title = "<?php echo $title; ?>"
         } else {
-            title = '';
+            $title = '';
         }
 
         $('table.table-data').DataTable({
@@ -229,21 +229,21 @@ if (!$this->session->userdata('logged_in'))
             dom: 'Bfrtip',
             buttons: [{
                     extend: 'copy',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-primary mr-1 mb-2',
                     text: '<i class="fas fa-copy"></i> ',
                     titleAttr: 'Copy to Clipboard',
                 },
                 {
                     extend: 'csv',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-csv"></i> ',
                     titleAttr: 'Export to CSV',
                 },
                 {
                     extend: 'pdfHtml5',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-danger mr-1 mb-2',
                     text: '<i class="fas fa-file-pdf"></i> ',
                     titleAttr: 'Export to PDF',
@@ -252,7 +252,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'excelHtml5',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
@@ -264,7 +264,7 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'print',
-                    filename: title,
+                    filename: $title,
                     className: 'btn btn-secondary mr-1 mb-2',
                     text: '<i class="fa fa-print"></i> ',
                     titleAttr: 'Imprimir',
