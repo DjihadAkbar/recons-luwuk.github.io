@@ -202,6 +202,7 @@ if (!$this->session->userdata('logged_in'))
         } else {
             title = '';
         }
+        const date = new Date();
 
         $('table.table-data').DataTable({
             initComplete: function() {
@@ -225,6 +226,14 @@ if (!$this->session->userdata('logged_in'))
                                 select.append('<option value="' + d + '">' + d + '</option>');
                             });
                     });
+            },
+            columns: [
+                { data: "1", render: $.fn.dataTable.render.text() },
+                { data: "2", render: $.fn.dataTable.render.number('.', ',', 0, '$') }
+            ],
+            footerCallback: function (tfoot, data, start, end, display) {
+                var $th = $(tfoot).find('th').eq(1);
+                $th.text($.fn.dataTable.render.number('.', ',', 0, '$').display($th.text()))
             },
             dom: 'Bfrtip',
             buttons: [{
