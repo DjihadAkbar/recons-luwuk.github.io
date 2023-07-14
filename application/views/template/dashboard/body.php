@@ -14,7 +14,7 @@ if (!$this->session->userdata('logged_in'))
             <li class="<?php
                         echo menuAktif('dashboard');
                         ?>">
-                <?php echo anchor('dashboard', 'Dashboard') ?>
+                <?php echo anchor('dashboard', 'Dashboard'+$title) ?>
             </li>
             <?php
             if ($this->session->userdata['type'] != '') {
