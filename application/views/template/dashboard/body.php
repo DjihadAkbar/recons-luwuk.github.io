@@ -229,21 +229,21 @@ if (!$this->session->userdata('logged_in'))
             dom: 'Bfrtip',
             buttons: [{
                     extend: 'copy',
-                    title: title,
+                    filename: title,
                     className: 'btn btn-primary mr-1 mb-2',
                     text: '<i class="fas fa-copy"></i> ',
                     titleAttr: 'Copy to Clipboard',
                 },
                 {
                     extend: 'csv',
-                    title: title,
+                    filename: title,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-csv"></i> ',
                     titleAttr: 'Export to CSV',
                 },
                 {
                     extend: 'pdfHtml5',
-                    title: title,
+                    filename: title,
                     className: 'btn btn-danger mr-1 mb-2',
                     text: '<i class="fas fa-file-pdf"></i> ',
                     titleAttr: 'Export to PDF',
@@ -252,20 +252,19 @@ if (!$this->session->userdata('logged_in'))
                 },
                 {
                     extend: 'excelHtml5',
-                    title: title,
+                    filename: title,
                     className: 'btn btn-success mr-1 mb-2',
                     text: '<i class="fas fa-file-excel"></i> ',
                     titleAttr: 'Export to Excel',
                 },
                 {
                     extend: 'print',
-                    title: title,
+                    filename: title,
                     className: 'btn btn-secondary mr-1 mb-2',
                     text: '<i class="fa fa-print"></i> ',
                     titleAttr: 'Imprimir',
                     orientation: 'landscape',
                     pageSize: 'LEGAL'
-
                 },
             ],
 
