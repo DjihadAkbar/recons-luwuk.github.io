@@ -52,6 +52,11 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.min.js"></script>
+    
+<!-- Datatables for Currency -->
+<script type="text/javascript" language="javascript"
+    src="https://cdn.datatables.net/plug-ins/1.13.5/sorting/currency.js"></script>
+
 </body>
 
 </html>
