@@ -265,7 +265,8 @@ if (!$this->session->userdata('logged_in'))
                         modifier: {
                             page: 'all'
                         }
-                    }
+                    }, 
+                    render: DataTable.render.number(null, null, 2, '')
                 },
                 {
                     extend: 'print',
