@@ -266,7 +266,7 @@ if (!$this->session->userdata('logged_in'))
                             page: 'all'
                         }
                     }, 
-                    render: DataTable.render.number(null, null, 2, '')
+                    render: $.fn.dataTable.render.number( '.', ',', 0, 'Rp ' )
                 },
                 {
                     extend: 'print',
