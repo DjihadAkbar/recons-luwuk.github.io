@@ -267,7 +267,7 @@ if (!$this->session->userdata('logged_in'))
                     titleAttr: 'Export to Excel',
                     exportOptions: {
                         modifier: {
-                            page: 'all'
+                            page: 'current'
                         }
                     }
                 },
