@@ -6,7 +6,7 @@ $dailyTrip = 0;
 $merged_array = [];
 function formatRupiah($angka)
 {
-    $formatRupiah = "Rp " . number_format($angka, 0, ',', '.');
+    $formatRupiah = "Rp " . number_format($angka, 0, '.', ',');
     return $formatRupiah;
 }
 
