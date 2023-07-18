@@ -231,9 +231,6 @@ if (!$this->session->userdata('logged_in'))
                 var $th = $(tfoot).find('th').eq(1);
                 $th.text($.fn.dataTable.render.number('.', ',', 0, '$').display($th.text()))
             },
-            columnDefs: [
-                { type: 'currency', targets: 50 }
-            ],
             dom: 'Bfrtip',
             buttons: [{
                     extend: 'copy',
