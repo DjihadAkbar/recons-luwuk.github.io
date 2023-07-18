@@ -2516,16 +2516,16 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                         <?php echo $value['Hewan']; ?>
                                                     </td>
                                                     <td>
-                                                        $value['HewanSerial_start'] </td>
+                                                        <?php echo $value['HewanSerial_start']; ?> </td>
                                                     <td>
-                                                        $value['HewanSerial_end'] </td>
+                                                        <?php echo $value['HewanSerial_end']; ?> </td>
                                                     <td>
                                                         <?php echo $value['Gayor']; ?>
                                                     </td>
                                                     <td>
-                                                        $value['GayorSerial_start'] </td>
+                                                        <?php echo $value['GayorSerial_start']; ?> </td>
                                                     <td>
-                                                        $value['GayorSerial_end'] </td>
+                                                        <?php echo $value['GayorSerial_end']; ?> </td>
                                                     <td>
                                                         <?php echo number_format($value['Carter'], 0, ",", "."); ?>
                                                     </td>
@@ -2544,8 +2544,6 @@ color: black;" class="btn btn-link collapsed" data-toggle="collapse" data-target
                                                     <td>
                                                         <?php echo $value['BarangPendapatanSerial_end']; ?>
                                                     </td>
-
-
                                                 </tr>
                                             <?php
                                             }
