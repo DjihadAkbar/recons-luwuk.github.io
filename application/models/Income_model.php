@@ -121,7 +121,7 @@ class Income_model extends CI_Model
         return $this->db->get('entry_data')->result_array();
     }
 
-    public function incomePerRoute()
+    public function incomePerRoute($firstDate, $lastDate, $month, $year)
     {
         $lastMonth = date("F", strtotime('-1 month'));
         $lastYear = date("Y") - 1;
@@ -169,9 +169,14 @@ class Income_model extends CI_Model
         } else {
             $textTengah = ' WHERE ';
         }
-        // $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
-        $textBelakang = 'MONTHNAME(entry_data.DATE) = "January" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
-                GROUP BY entry_data.id_route) as entry_d';
+
+        if($firstDate == null || $firstDate == ''){
+            $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
+            GROUP BY entry_data.id_route) as entry_d';
+        } else {
+            $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . date('F', mktime(0, 0, 0, $month-1, 10)) . '" AND YEAR(entry_data.DATE) = "' . $year-1 . '"
+            GROUP BY entry_data.id_route) as entry_d';
+        }
         $textAkhir = 'entry_a.id_route = entry_d.id_route';
 
         $this->db->select('ofc_route,ferry.ferry,monthname(entry_a.date) as month_date,entry_a.date,harbour, entry_d.total as totalLastYear, entry_d.trip as tripLastYear,
@@ -221,9 +226,17 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', "January");
-        // $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
-        $this->db->where('year(entry_a.date)', date("Y"));
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month'))); 
+        } else {
+            $this->db->where('monthname(entry_a.date)', date('F', mktime(0, 0, 0, $month-1, 10)));
+        }
+        
+        if($firstDate == null || $firstDate == ''){
+            $this->db->where('year(entry_a.date)', date("Y"));
+        } else {
+            $this->db->where('year(entry_a.date)', $year-1);
+        }
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date), routes.route');
         $this->db->order_by('ferry');

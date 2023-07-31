@@ -18,7 +18,7 @@ class Dashboard extends CI_Controller
         $data['title'] = 'Dashboard';
         $data['contentView'] = 'pages/dashboard';
         $data['pendapatan'] = $this->Income_model->pendapatan();
-        $data['incomePerRoute'] = $this->Income_model->incomePerRoute();
+        $data['incomePerRoute'] = $this->Income_model->incomePerRoute($data['firstDate'], $data['lastDate'], $data['month'], $data['year']);
         $data['incomePerHarbour'] = $this->Income_model->incomePerHarbour();
         $data['incomePerShip'] = $this->Income_model->incomePerShip();
         $data['incomeDaily'] = $this->Income_model->incomeDaily();

@@ -59,7 +59,6 @@ if ($this->session->userdata['type'] != '') {
                         <?php 
                         for($i = date('Y') -2; $i < date('Y') + 1; $i++){
                             echo "<option>$i</option>";
-                            
                         }
                         ?>
                         </select>
@@ -99,7 +98,6 @@ if ($this->session->userdata['type'] != '') {
                         }
                         ?>
                         <h5 class="card-header d-flex justify-content-between align-items-center">
-
                             <?php echo "Lintasan"; ?>
                         </h5>
 
