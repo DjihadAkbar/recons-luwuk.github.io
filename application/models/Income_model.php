@@ -169,7 +169,8 @@ class Income_model extends CI_Model
         } else {
             $textTengah = ' WHERE ';
         }
-        $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
+        // $textBelakang = 'MONTHNAME(entry_data.DATE) = "' . $lastMonth . '" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
+        $textBelakang = 'MONTHNAME(entry_data.DATE) = "January" AND YEAR(entry_data.DATE) = "' . $lastYear . '"
                 GROUP BY entry_data.id_route) as entry_d';
         $textAkhir = 'entry_a.id_route = entry_d.id_route';
 
@@ -220,7 +221,8 @@ class Income_model extends CI_Model
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'NAHKODA') {
             $this->db->where('ferry.ferry', $pelabuhan);
         }
-        $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
+        $this->db->where('monthname(entry_a.date)', "January");
+        // $this->db->where('monthname(entry_a.date)', date("F", strtotime('-1 month')));
         $this->db->where('year(entry_a.date)', date("Y"));
         // $this->db->where('entry_a.id_trip', 'REGULER');
         $this->db->group_by(' month(entry_a.date), routes.route');
