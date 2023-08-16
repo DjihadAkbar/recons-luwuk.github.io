@@ -48,7 +48,6 @@ class Entry_model extends CI_Model
             // $this->db->where('routes.spv', $pelabuhan);
             $this->db->where('spv_harbour.spv', $pelabuhan);
         }
-        $this->db->group_by('entry_data.id');
         // $this->db->order_by('entry_data.id DESC');
         $this->db->order_by('year(date) DESC, month(date) DESC, day(date) DESC');
         return $this->db->get('entry_data')->result_array();

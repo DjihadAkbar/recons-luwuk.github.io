@@ -108,7 +108,6 @@ class Income_model extends CI_Model
         $this->db->join('rate', 'routes.id = rate.id_route AND entry_data.date >= rate.start_date and entry_data.rate_type = rate.rate_type');
         $this->db->join('trips', 'trips.id = entry_data.id_trip');
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
-        
         if ($this->session->userdata('logged_in') && $this->session->userdata['jabatan'] == 'SUPERVISOR') {
             $this->db->where('spv_harbour.spv', $pelabuhan);
             // $this->db->where('routes.spv', $pelabuhan);
