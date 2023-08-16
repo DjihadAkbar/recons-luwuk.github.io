@@ -293,7 +293,7 @@ class Master extends CI_Controller
             // 'rate_type' => $this->input->post('jenis_tarif'),
             'rate_type' => $valueTarif,
             // 'uploader' => $this->session->userdata['name'],
-            'act' => 'EDIT',
+            // 'act' => 'EDIT',
             'id_route' => $this->input->post('lintasan'),
             'Gol1' => $this->input->post('Gol1'),
             'Gol2' => $this->input->post('Gol2'),
