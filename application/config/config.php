@@ -104,7 +104,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -534,3 +534,17 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips']           = '';
 $config['javascript_location'] = 'http://localhost/codeigniter/themes/js/jquery/';
 $config['javascript_ajax_img'] = 'images/ajax-loader.gif';
+
+/*
+|--------------------------------------------------------------------------
+| Maintenance Mode
+|--------------------------------------------------------------------------
+|
+| For whatever reason sometimes a site needs to be taken offline.
+| Set $config['maintenance_mode'] to TRUE if the site has to be offline
+|
+| $config['maintenance_mode'] = TRUE; // site is offline
+| $config['maintenance_mode'] = FALSE; // site is online
+*/
+$config['maintenance_mode'] = TRUE;
+
