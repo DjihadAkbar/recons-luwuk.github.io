@@ -256,13 +256,13 @@ class Entry extends CI_Controller
             // }
         }
         $valueTarif = '';
-        // foreach ($tarif as $key => $value) {
-        //     if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
-        //         if (substr($value['tarif'], -2) >= $tahun) {
-        //             $tahun = substr($value['tarif'], -2);
-        //         }
-        //     }
-        // }
+        foreach ($tarif as $key => $value) {
+            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
+                if (substr($value['tarif'], -2) >= $tahun) {
+                    $tahun = substr($value['tarif'], -2);
+                }
+            }
+        }
         foreach ($tarif as $key => $value) {
             if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
                 // if ($tahun <= substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan ) {
