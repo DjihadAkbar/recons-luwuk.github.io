@@ -148,7 +148,7 @@ class Entry_model extends CI_Model
     {
         $pelabuhan = $this->session->userdata['pelabuhan'];
         $this->db->distinct();
-        $this->db->select('rate_type as tarif');
+        $this->db->select('rate_type as tarif, start_date as tanggalBerlaku');
         $this->db->join('routes', 'rate.id_route = routes.id');
         $this->db->join('spv_harbour', 'spv_harbour.route = routes.id');
         if ($this->session->userdata['jabatan'] == 'SUPERVISOR') {

@@ -87,17 +87,22 @@ class Entry extends CI_Controller
             // }
         }
         $valueTarif = '';
+        // foreach ($tarif as $key => $value) {
+        //     if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $namaLintasan) {
+        //         if (substr($value['tarif'], -2) >= $tahun) {
+        //             $tahun = substr($value['tarif'], -2);
+        //         }
+        //     }
+        // }
         foreach ($tarif as $key => $value) {
             if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $namaLintasan) {
-                if (substr($value['tarif'], -2) >= $tahun) {
-                    $tahun = substr($value['tarif'], -2);
-                }
-            }
-        }
-        foreach ($tarif as $key => $value) {
-            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $namaLintasan) {
-                if ($tahun == substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan) {
+                // if ($tahun == substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan) {
+                //     $valueTarif = $value['tarif'];
+                // }
+                if ($tanggalMembeliTiket >  $value['tanggalBerlaku']) {
                     $valueTarif = $value['tarif'];
+                } else {
+                    break;
                 }
             }
         }
@@ -234,6 +239,7 @@ class Entry extends CI_Controller
         $tahun = 0;
         $bulan = 0;
         $tarif = $this->Entry_model->tarif();
+        $tanggalMembeliTiket = $this->input->post('tanggal_berangkat');
         // $lintasan = $this->Entry_model->lintasanWIthId($dataIdLintasan);
         $lintasan = $this->Entry_model->lintasanWIthId($this->input->post('lintasan'));
         // $pelabuhan = $this->Entry_model->harbourWIthId($this->input->post('pelabuhan_asal'));
@@ -250,18 +256,23 @@ class Entry extends CI_Controller
             // }
         }
         $valueTarif = '';
+        // foreach ($tarif as $key => $value) {
+        //     if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
+        //         if (substr($value['tarif'], -2) >= $tahun) {
+        //             $tahun = substr($value['tarif'], -2);
+        //         }
+        //     }
+        // }
         foreach ($tarif as $key => $value) {
             if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
-                if (substr($value['tarif'], -2) >= $tahun) {
-                    $tahun = substr($value['tarif'], -2);
-                }
-            }
-        }
-        foreach ($tarif as $key => $value) {
-            if (substr($value['tarif'], 0, strlen($value['tarif']) - 4) == $data['namaLintasan']) {
-                if ($tahun == substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan) {
+                // if ($tahun <= substr($value['tarif'], -2) && substr($value['tarif'], -4, -2) >= $bulan ) {
+                //     $valueTarif = $value['tarif'];
+                //     $data['tarif'] = $valueTarif;
+                // }
+                if ($tanggalMembeliTiket >  $value['tanggalBerlaku']) {
                     $valueTarif = $value['tarif'];
-                    $data['tarif'] = $valueTarif;
+                } else {
+                    break;
                 }
             }
         }
